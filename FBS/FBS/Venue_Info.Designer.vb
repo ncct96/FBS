@@ -35,6 +35,7 @@ Partial Class Venue_Info
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btn_back = New System.Windows.Forms.Button()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +48,7 @@ Partial Class Venue_Info
         '
         Me.lbl_item1.AutoSize = True
         Me.lbl_item1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_item1.Location = New System.Drawing.Point(353, 453)
+        Me.lbl_item1.Location = New System.Drawing.Point(334, 453)
         Me.lbl_item1.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_item1.Name = "lbl_item1"
         Me.lbl_item1.Size = New System.Drawing.Size(155, 29)
@@ -58,7 +59,7 @@ Partial Class Venue_Info
         '
         Me.lbl_item2.AutoSize = True
         Me.lbl_item2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_item2.Location = New System.Drawing.Point(353, 498)
+        Me.lbl_item2.Location = New System.Drawing.Point(334, 498)
         Me.lbl_item2.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_item2.Name = "lbl_item2"
         Me.lbl_item2.Size = New System.Drawing.Size(220, 29)
@@ -83,7 +84,7 @@ Partial Class Venue_Info
         '
         Me.lbl_item3.AutoSize = True
         Me.lbl_item3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_item3.Location = New System.Drawing.Point(353, 543)
+        Me.lbl_item3.Location = New System.Drawing.Point(334, 543)
         Me.lbl_item3.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_item3.Name = "lbl_item3"
         Me.lbl_item3.Size = New System.Drawing.Size(257, 29)
@@ -183,12 +184,28 @@ Partial Class Venue_Info
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
+        'btn_back
+        '
+        Me.btn_back.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_back.FlatAppearance.BorderSize = 2
+        Me.btn_back.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight
+        Me.btn_back.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_back.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_back.Location = New System.Drawing.Point(13, 13)
+        Me.btn_back.Name = "btn_back"
+        Me.btn_back.Size = New System.Drawing.Size(50, 50)
+        Me.btn_back.TabIndex = 14
+        Me.btn_back.Text = "<"
+        Me.btn_back.UseVisualStyleBackColor = False
+        '
         'Venue_Info
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_people)
         Me.Controls.Add(Me.lbl_time)
@@ -230,4 +247,5 @@ Partial Class Venue_Info
     Friend WithEvents lbl_time As Label
     Friend WithEvents lbl_people As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents btn_back As Button
 End Class
