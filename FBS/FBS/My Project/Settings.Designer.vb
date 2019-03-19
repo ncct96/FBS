@@ -14,35 +14,16 @@ Option Explicit On
 
 Namespace My
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0"),
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
-=======
-    <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0"), _
-     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
-    <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0"), _
-     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
 
         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings), MySettings)
 
 #Region "My.Settings Auto-Save Functionality"
-<<<<<<< HEAD
 #If _MYTYPE = "WindowsForms" Then
-=======
-#If _MyType = "WindowsForms" Then
-<<<<<<< HEAD
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
         Private Shared addedHandler As Boolean
 
         Private Shared addedHandlerLockObject As New Object
@@ -59,15 +40,7 @@ Namespace My
         Public Shared ReadOnly Property [Default]() As MySettings
             Get
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #If _MYTYPE = "WindowsForms" Then
-=======
-#If _MyType = "WindowsForms" Then
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
-#If _MyType = "WindowsForms" Then
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
                    If Not addedHandler Then
                         SyncLock addedHandlerLockObject
                             If Not addedHandler Then
@@ -80,8 +53,6 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
@@ -93,39 +64,17 @@ Namespace My
                 Return CType(Me("ConnectionString"), String)
             End Get
         End Property
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
     End Class
 End Namespace
 
 Namespace My
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>
     Friend Module MySettingsProperty
 
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>
-=======
-    <Global.Microsoft.VisualBasic.HideModuleNameAttribute(), _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()> _
-    Friend Module MySettingsProperty
-
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
-    <Global.Microsoft.VisualBasic.HideModuleNameAttribute(), _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()> _
-    Friend Module MySettingsProperty
-
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
         Friend ReadOnly Property Settings() As Global.FBS.My.MySettings
             Get
                 Return Global.FBS.My.MySettings.Default
