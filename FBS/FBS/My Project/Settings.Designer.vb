@@ -56,11 +56,12 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96")>  _
-        Public ReadOnly Property FBSConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Passwo"& _ 
+            "rd=Wmq6783Aew5352;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;A"& _ 
+            "pplicationIntent=ReadWrite;MultiSubnetFailover=False"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10))>  _
+        Public ReadOnly Property ConnectionString() As String
             Get
-                Return CType(Me("FBSConnectionString"),String)
+                Return CType(Me("ConnectionString"),String)
             End Get
         End Property
     End Class
