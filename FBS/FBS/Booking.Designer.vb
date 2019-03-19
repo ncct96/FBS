@@ -22,6 +22,7 @@ Partial Class Booking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbTime = New System.Windows.Forms.ComboBox()
         Me.dtpBooking = New System.Windows.Forms.DateTimePicker()
@@ -30,20 +31,29 @@ Partial Class Booking
         Me.lblVenue = New System.Windows.Forms.Label()
         Me.cbVenue = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblWeekDayPrice = New System.Windows.Forms.Label()
         Me.lblWeekendPrice = New System.Windows.Forms.Label()
+        Me.lblWeekDayPrice = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnBook = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbActivityType = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbDuration = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.VenueDS = New FBS.VenueDS()
+        Me.VenueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VenueTableAdapter = New FBS.VenueDSTableAdapters.VenueTableAdapter()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblPrice = New System.Windows.Forms.Label()
+        Me.lblRate = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VenueDS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -51,7 +61,7 @@ Partial Class Booking
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(290, 39)
+        Me.Label1.Location = New System.Drawing.Point(320, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(383, 55)
         Me.Label1.TabIndex = 0
@@ -61,7 +71,7 @@ Partial Class Booking
         'cbTime
         '
         Me.cbTime.FormattingEnabled = True
-        Me.cbTime.Location = New System.Drawing.Point(250, 309)
+        Me.cbTime.Location = New System.Drawing.Point(242, 272)
         Me.cbTime.Name = "cbTime"
         Me.cbTime.Size = New System.Drawing.Size(121, 21)
         Me.cbTime.TabIndex = 1
@@ -69,7 +79,7 @@ Partial Class Booking
         'dtpBooking
         '
         Me.dtpBooking.Checked = False
-        Me.dtpBooking.Location = New System.Drawing.Point(250, 272)
+        Me.dtpBooking.Location = New System.Drawing.Point(242, 235)
         Me.dtpBooking.MinDate = New Date(2019, 3, 18, 0, 0, 0, 0)
         Me.dtpBooking.Name = "dtpBooking"
         Me.dtpBooking.Size = New System.Drawing.Size(200, 20)
@@ -78,7 +88,7 @@ Partial Class Booking
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(168, 312)
+        Me.Label2.Location = New System.Drawing.Point(160, 275)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(33, 13)
         Me.Label2.TabIndex = 3
@@ -87,7 +97,7 @@ Partial Class Booking
         'lblDate
         '
         Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(168, 278)
+        Me.lblDate.Location = New System.Drawing.Point(160, 241)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(33, 13)
         Me.lblDate.TabIndex = 4
@@ -96,7 +106,7 @@ Partial Class Booking
         'lblVenue
         '
         Me.lblVenue.AutoSize = True
-        Me.lblVenue.Location = New System.Drawing.Point(168, 210)
+        Me.lblVenue.Location = New System.Drawing.Point(160, 173)
         Me.lblVenue.Name = "lblVenue"
         Me.lblVenue.Size = New System.Drawing.Size(41, 13)
         Me.lblVenue.TabIndex = 7
@@ -104,11 +114,14 @@ Partial Class Booking
         '
         'cbVenue
         '
+        Me.cbVenue.DataSource = Me.VenueBindingSource
+        Me.cbVenue.DisplayMember = "VenueName"
         Me.cbVenue.FormattingEnabled = True
-        Me.cbVenue.Location = New System.Drawing.Point(250, 207)
+        Me.cbVenue.Location = New System.Drawing.Point(242, 170)
         Me.cbVenue.Name = "cbVenue"
         Me.cbVenue.Size = New System.Drawing.Size(121, 21)
         Me.cbVenue.TabIndex = 8
+        Me.cbVenue.ValueMember = "VenueID"
         '
         'GroupBox1
         '
@@ -116,39 +129,12 @@ Partial Class Booking
         Me.GroupBox1.Controls.Add(Me.lblWeekDayPrice)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(682, 125)
+        Me.GroupBox1.Location = New System.Drawing.Point(753, 75)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(235, 218)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pricing Details"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 32)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(105, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Weekdays (Mon-Fri):"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 69)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(107, 13)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Weekend (Sat&&Sun):"
-        '
-        'lblWeekDayPrice
-        '
-        Me.lblWeekDayPrice.AutoSize = True
-        Me.lblWeekDayPrice.Location = New System.Drawing.Point(142, 32)
-        Me.lblWeekDayPrice.Name = "lblWeekDayPrice"
-        Me.lblWeekDayPrice.Size = New System.Drawing.Size(38, 13)
-        Me.lblWeekDayPrice.TabIndex = 2
-        Me.lblWeekDayPrice.Text = "Rm 10"
         '
         'lblWeekendPrice
         '
@@ -159,9 +145,36 @@ Partial Class Booking
         Me.lblWeekendPrice.TabIndex = 3
         Me.lblWeekendPrice.Text = "Rm 10"
         '
+        'lblWeekDayPrice
+        '
+        Me.lblWeekDayPrice.AutoSize = True
+        Me.lblWeekDayPrice.Location = New System.Drawing.Point(142, 32)
+        Me.lblWeekDayPrice.Name = "lblWeekDayPrice"
+        Me.lblWeekDayPrice.Size = New System.Drawing.Size(38, 13)
+        Me.lblWeekDayPrice.TabIndex = 2
+        Me.lblWeekDayPrice.Text = "Rm 10"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(17, 69)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(107, 13)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Weekend (Sat&&Sun):"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(17, 32)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(105, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Weekdays (Mon-Fri):"
+        '
         'btnBook
         '
-        Me.btnBook.Location = New System.Drawing.Point(271, 418)
+        Me.btnBook.Location = New System.Drawing.Point(311, 479)
         Me.btnBook.Name = "btnBook"
         Me.btnBook.Size = New System.Drawing.Size(75, 23)
         Me.btnBook.TabIndex = 11
@@ -170,7 +183,7 @@ Partial Class Booking
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(405, 418)
+        Me.btnCancel.Location = New System.Drawing.Point(425, 479)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 12
@@ -179,7 +192,7 @@ Partial Class Booking
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(400, 194)
+        Me.PictureBox1.Location = New System.Drawing.Point(463, 155)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.TabIndex = 9
@@ -188,7 +201,7 @@ Partial Class Booking
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(168, 157)
+        Me.Label6.Location = New System.Drawing.Point(160, 120)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 13)
         Me.Label6.TabIndex = 13
@@ -196,8 +209,10 @@ Partial Class Booking
         '
         'cbActivityType
         '
+        Me.cbActivityType.DataSource = Me.VenueBindingSource
+        Me.cbActivityType.DisplayMember = "VenueType"
         Me.cbActivityType.FormattingEnabled = True
-        Me.cbActivityType.Location = New System.Drawing.Point(250, 154)
+        Me.cbActivityType.Location = New System.Drawing.Point(242, 117)
         Me.cbActivityType.Name = "cbActivityType"
         Me.cbActivityType.Size = New System.Drawing.Size(121, 21)
         Me.cbActivityType.TabIndex = 14
@@ -205,41 +220,98 @@ Partial Class Booking
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(168, 361)
+        Me.Label4.Location = New System.Drawing.Point(422, 275)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 13)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Duration:"
         '
-        'ComboBox1
+        'cbDuration
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(250, 358)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(41, 21)
-        Me.ComboBox1.TabIndex = 16
+        Me.cbDuration.FormattingEnabled = True
+        Me.cbDuration.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
+        Me.cbDuration.Location = New System.Drawing.Point(495, 272)
+        Me.cbDuration.Name = "cbDuration"
+        Me.cbDuration.Size = New System.Drawing.Size(41, 21)
+        Me.cbDuration.TabIndex = 16
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(297, 361)
+        Me.Label7.Location = New System.Drawing.Point(542, 275)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 13)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "hour(s)"
         '
+        'VenueDS
+        '
+        Me.VenueDS.DataSetName = "VenueDS"
+        Me.VenueDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VenueBindingSource
+        '
+        Me.VenueBindingSource.DataMember = "Venue"
+        Me.VenueBindingSource.DataSource = Me.VenueDS
+        '
+        'VenueTableAdapter
+        '
+        Me.VenueTableAdapter.ClearBeforeFill = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(160, 333)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(34, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Price:"
+        '
+        'lblPrice
+        '
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblPrice.Location = New System.Drawing.Point(239, 333)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(26, 15)
+        Me.lblPrice.TabIndex = 19
+        Me.lblPrice.Text = "RM"
+        '
+        'lblRate
+        '
+        Me.lblRate.AutoSize = True
+        Me.lblRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblRate.Location = New System.Drawing.Point(379, 173)
+        Me.lblRate.Name = "lblRate"
+        Me.lblRate.Size = New System.Drawing.Size(26, 15)
+        Me.lblRate.TabIndex = 20
+        Me.lblRate.Text = "RM"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(411, 173)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(46, 13)
+        Me.Label11.TabIndex = 21
+        Me.Label11.Text = "per hour"
+        '
         'Booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(956, 488)
+        Me.ClientSize = New System.Drawing.Size(1051, 591)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lblRate)
+        Me.Controls.Add(Me.lblPrice)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbDuration)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.cbActivityType)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.cbActivityType)
         Me.Controls.Add(Me.btnBook)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cbVenue)
@@ -254,6 +326,8 @@ Partial Class Booking
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VenueDS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -277,6 +351,13 @@ Partial Class Booking
     Friend WithEvents Label6 As Label
     Friend WithEvents cbActivityType As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbDuration As ComboBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents VenueDS As VenueDS
+    Friend WithEvents VenueBindingSource As BindingSource
+    Friend WithEvents VenueTableAdapter As VenueDSTableAdapters.VenueTableAdapter
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lblPrice As Label
+    Friend WithEvents lblRate As Label
+    Friend WithEvents Label11 As Label
 End Class
