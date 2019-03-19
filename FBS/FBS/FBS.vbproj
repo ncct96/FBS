@@ -136,6 +136,11 @@
     <Compile Include="Report_Generator.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VenueDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VenueDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Venue_Info.Designer.vb">
       <DependentUpon>Venue_Info.vb</DependentUpon>
     </Compile>
@@ -178,6 +183,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="VenueDS.xsc">
+      <DependentUpon>VenueDS.xsd</DependentUpon>
+    </None>
+    <None Include="VenueDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VenueDS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VenueDS.xss">
+      <DependentUpon>VenueDS.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
