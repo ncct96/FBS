@@ -31,6 +31,7 @@ Partial Class Venue_Info
         Me.lbl_recommend = New System.Windows.Forms.Label()
         Me.picture_venue = New System.Windows.Forms.PictureBox()
         Me.btn_back = New System.Windows.Forms.Button()
+        Me.lbl_name = New System.Windows.Forms.Label()
         CType(Me.picture_venue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,7 +39,7 @@ Partial Class Venue_Info
         '
         Me.lbl_item1.AutoSize = True
         Me.lbl_item1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_item1.Location = New System.Drawing.Point(334, 453)
+        Me.lbl_item1.Location = New System.Drawing.Point(330, 491)
         Me.lbl_item1.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_item1.Name = "lbl_item1"
         Me.lbl_item1.Size = New System.Drawing.Size(155, 29)
@@ -49,7 +50,7 @@ Partial Class Venue_Info
         '
         Me.lbl_item2.AutoSize = True
         Me.lbl_item2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_item2.Location = New System.Drawing.Point(334, 498)
+        Me.lbl_item2.Location = New System.Drawing.Point(330, 536)
         Me.lbl_item2.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_item2.Name = "lbl_item2"
         Me.lbl_item2.Size = New System.Drawing.Size(220, 29)
@@ -74,7 +75,7 @@ Partial Class Venue_Info
         '
         Me.lbl_item3.AutoSize = True
         Me.lbl_item3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_item3.Location = New System.Drawing.Point(334, 543)
+        Me.lbl_item3.Location = New System.Drawing.Point(330, 581)
         Me.lbl_item3.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_item3.Name = "lbl_item3"
         Me.lbl_item3.Size = New System.Drawing.Size(257, 29)
@@ -85,7 +86,7 @@ Partial Class Venue_Info
         '
         Me.lbl_time.AutoSize = True
         Me.lbl_time.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_time.Location = New System.Drawing.Point(607, 453)
+        Me.lbl_time.Location = New System.Drawing.Point(603, 491)
         Me.lbl_time.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_time.Name = "lbl_time"
         Me.lbl_time.Size = New System.Drawing.Size(322, 29)
@@ -96,7 +97,7 @@ Partial Class Venue_Info
         '
         Me.lbl_people.AutoSize = True
         Me.lbl_people.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_people.Location = New System.Drawing.Point(607, 498)
+        Me.lbl_people.Location = New System.Drawing.Point(603, 536)
         Me.lbl_people.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_people.Name = "lbl_people"
         Me.lbl_people.Size = New System.Drawing.Size(133, 29)
@@ -107,7 +108,7 @@ Partial Class Venue_Info
         '
         Me.lbl_recommend.AutoSize = True
         Me.lbl_recommend.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_recommend.Location = New System.Drawing.Point(607, 543)
+        Me.lbl_recommend.Location = New System.Drawing.Point(603, 581)
         Me.lbl_recommend.Margin = New System.Windows.Forms.Padding(8)
         Me.lbl_recommend.Name = "lbl_recommend"
         Me.lbl_recommend.Size = New System.Drawing.Size(162, 29)
@@ -139,12 +140,23 @@ Partial Class Venue_Info
         Me.btn_back.Text = "<"
         Me.btn_back.UseVisualStyleBackColor = False
         '
+        'lbl_name
+        '
+        Me.lbl_name.AutoSize = True
+        Me.lbl_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_name.Location = New System.Drawing.Point(550, 427)
+        Me.lbl_name.Name = "lbl_name"
+        Me.lbl_name.Size = New System.Drawing.Size(163, 29)
+        Me.lbl_name.TabIndex = 15
+        Me.lbl_name.Text = "Venue Name"
+        '
         'Venue_Info
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.lbl_name)
         Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.lbl_recommend)
         Me.Controls.Add(Me.lbl_people)
@@ -173,4 +185,5 @@ Partial Class Venue_Info
     Friend WithEvents lbl_people As Label
     Friend WithEvents lbl_recommend As Label
     Friend WithEvents btn_back As Button
+    Friend WithEvents lbl_name As Label
 End Class

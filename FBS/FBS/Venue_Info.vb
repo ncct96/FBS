@@ -7,19 +7,21 @@ Public Class Venue_Info
         Try
             conn.Open()
 
-            Dim query As String = "SELECT * FROM Venue WHERE VenueID = 1"
+            Dim query As String = "SELECT * FROM Venue WHERE VenueID = @ID"
             Dim command As New SqlCommand(query, conn)
+            command.Parameters.AddWithValue("@ID", 1)
             Dim reader As SqlDataReader = command.ExecuteReader()
             If reader.HasRows Then
                 reader.Read()
-                Debug.WriteLine("Data: " + reader.GetString(2))
+                Debug.WriteLine("Data found")
             Else
                 Debug.WriteLine("No records were returned")
             End If
 
-            lbl_time.Text = reader.GetString(4) + " - " + reader.GetString(5) + ", " + reader.GetValue(6).ToString() + " - " + reader.GetValue(7).ToString()
-            lbl_people.Text = reader.GetInt32(9)
-            lbl_recommend.Text = reader.GetString(10)
+            lbl_name.Text = reader.GetString(2)
+            lbl_time.Text = ": " + reader.GetString(3) + " - " + reader.GetString(4) + ", " + reader.GetDateTime(5).ToString("HH:mm:ss") + " - " + reader.GetDateTime(6).ToString("HH:mm:ss")
+            lbl_people.Text = ": " + reader.GetInt32(8)
+            lbl_recommend.Text = ": " + reader.GetString(9)
 
             conn.Close()
         Catch Exception As Exception
