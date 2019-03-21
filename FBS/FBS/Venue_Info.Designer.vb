@@ -32,6 +32,7 @@ Partial Class Venue_Info
         Me.picture_venue = New System.Windows.Forms.PictureBox()
         Me.btn_back = New System.Windows.Forms.Button()
         Me.lbl_name = New System.Windows.Forms.Label()
+
         CType(Me.picture_venue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '

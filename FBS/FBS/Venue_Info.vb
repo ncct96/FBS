@@ -6,7 +6,6 @@ Public Class Venue_Info
         Dim conn As New SqlConnection(connectionString)
         Try
             conn.Open()
-
             Dim query As String = "SELECT * FROM Venue WHERE VenueID = @ID"
             Dim command As New SqlCommand(query, conn)
             command.Parameters.AddWithValue("@ID", 1)
@@ -17,7 +16,7 @@ Public Class Venue_Info
             Else
                 Debug.WriteLine("No records were returned")
             End If
-
+      
             lbl_name.Text = reader.GetString(2)
             lbl_time.Text = ": " + reader.GetString(3) + " - " + reader.GetString(4) + ", " + reader.GetDateTime(5).ToString("HH:mm:ss") + " - " + reader.GetDateTime(6).ToString("HH:mm:ss")
             lbl_people.Text = ": " + reader.GetInt32(8)
