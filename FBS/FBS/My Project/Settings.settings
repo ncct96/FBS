@@ -1,55 +1,17 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
+    <Setting Name="FBSConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Password = Wmq6783Aew5352&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Password = Wmq6783Aew5352</Value>
+    </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Password=Wmq6783Aew5352;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-</Value>
+      <Value Profile="(Default)">Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Password=Wmq6783Aew5352;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
-=======
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" UseMySettingsClassName="true">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 571431c... Updated database references
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c4d6d82... Edited booking UI
-=======
->>>>>>> parent of c725de7... Merge pull request #5 from ncct96/ChiuPeeng
