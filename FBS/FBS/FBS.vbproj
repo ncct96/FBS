@@ -72,6 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -100,6 +101,12 @@
       <DependentUpon>Booking.vb</DependentUpon>
     </Compile>
     <Compile Include="Booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingHistory.Designer.vb">
+      <DependentUpon>BookingHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Image_Modal.Designer.vb">
@@ -151,6 +158,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Booking.resx">
       <DependentUpon>Booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingHistory.resx">
+      <DependentUpon>BookingHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Image_Modal.resx">
       <DependentUpon>Image_Modal.vb</DependentUpon>
