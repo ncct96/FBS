@@ -41,7 +41,6 @@ Partial Class Booking
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbActivityType = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.VenueTableAdapter = New FBS.VenueDSTableAdapters.VenueTableAdapter()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -49,13 +48,49 @@ Partial Class Booking
         Me.lblRate = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueDS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -82,11 +117,11 @@ Partial Class Booking
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(160, 281)
+        Me.Label2.Location = New System.Drawing.Point(160, 335)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 13)
+        Me.Label2.Size = New System.Drawing.Size(33, 13)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Start Time:"
+        Me.Label2.Text = "Time:"
         '
         'lblDate
         '
@@ -133,7 +168,7 @@ Partial Class Booking
         Me.GroupBox1.Controls.Add(Me.lblWeekDayPrice)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(829, 77)
+        Me.GroupBox1.Location = New System.Drawing.Point(834, 57)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(235, 218)
         Me.GroupBox1.TabIndex = 10
@@ -178,7 +213,7 @@ Partial Class Booking
         '
         'btnBook
         '
-        Me.btnBook.Location = New System.Drawing.Point(311, 479)
+        Me.btnBook.Location = New System.Drawing.Point(311, 553)
         Me.btnBook.Name = "btnBook"
         Me.btnBook.Size = New System.Drawing.Size(75, 23)
         Me.btnBook.TabIndex = 11
@@ -187,7 +222,7 @@ Partial Class Booking
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(425, 479)
+        Me.btnCancel.Location = New System.Drawing.Point(425, 553)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 12
@@ -221,19 +256,10 @@ Partial Class Booking
         Me.cbActivityType.Size = New System.Drawing.Size(121, 21)
         Me.cbActivityType.TabIndex = 14
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(383, 281)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 13)
-        Me.Label4.TabIndex = 15
-        Me.Label4.Text = "End Time:"
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(549, 281)
+        Me.Label7.Location = New System.Drawing.Point(161, 33)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 13)
         Me.Label7.TabIndex = 17
@@ -285,41 +311,262 @@ Partial Class Booking
         '
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.lblPrice)
-        Me.GroupBox2.Location = New System.Drawing.Point(163, 327)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Location = New System.Drawing.Point(163, 401)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(351, 122)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Booking Summary"
         '
-        'DateTimePicker1
+        'TableLayoutPanel1
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker1.Location = New System.Drawing.Point(242, 275)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(99, 20)
-        Me.DateTimePicker1.TabIndex = 23
+        Me.TableLayoutPanel1.ColumnCount = 12
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.888889!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.777778!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.07407!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.957416!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.076358!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.370044!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.076358!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.929515!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.076358!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.223201!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.240224!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.379889!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox11, 10, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox10, 9, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox9, 8, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox8, 7, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox7, 6, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox6, 5, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox5, 4, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox4, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox3, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox2, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox3, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox4, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox6, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox5, 4, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox7, 5, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox8, 7, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox9, 6, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox10, 9, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox11, 8, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox12, 10, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox13, 11, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TextBox12, 11, 0)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(242, 305)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.50794!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.49206!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(716, 63)
+        Me.TableLayoutPanel1.TabIndex = 23
         '
-        'DateTimePicker2
+        'TextBox11
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker2.Location = New System.Drawing.Point(444, 275)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(99, 20)
-        Me.DateTimePicker2.TabIndex = 24
+        Me.TextBox11.Location = New System.Drawing.Point(600, 3)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(51, 20)
+        Me.TextBox11.TabIndex = 22
+        Me.TextBox11.Text = "7pm-8pm"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(543, 3)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox10.TabIndex = 21
+        Me.TextBox10.Text = "6pm-7pm"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(487, 3)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox9.TabIndex = 20
+        Me.TextBox9.Text = "5pm-6pm"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(432, 3)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(49, 20)
+        Me.TextBox8.TabIndex = 19
+        Me.TextBox8.Text = "4pm-5pm"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(376, 3)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox7.TabIndex = 18
+        Me.TextBox7.Text = "3pm-4pm"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(318, 3)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(49, 20)
+        Me.TextBox6.TabIndex = 17
+        Me.TextBox6.Text = "2pm-3pm"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(262, 3)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox5.TabIndex = 16
+        Me.TextBox5.Text = "1pm-2pm"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(200, 3)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox4.TabIndex = 15
+        Me.TextBox4.Text = "12pm-1pm"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(131, 3)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(63, 20)
+        Me.TextBox3.TabIndex = 14
+        Me.TextBox3.Text = "11am-12pm"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(64, 3)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(60, 20)
+        Me.TextBox2.TabIndex = 13
+        Me.TextBox2.Text = "10am-11am"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 26)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(55, 34)
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(64, 26)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(61, 34)
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Location = New System.Drawing.Point(131, 26)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(62, 34)
+        Me.PictureBox4.TabIndex = 2
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Location = New System.Drawing.Point(200, 26)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(55, 34)
+        Me.PictureBox6.TabIndex = 4
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Location = New System.Drawing.Point(262, 26)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(49, 34)
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Location = New System.Drawing.Point(318, 26)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(49, 34)
+        Me.PictureBox7.TabIndex = 5
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Location = New System.Drawing.Point(432, 26)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(49, 34)
+        Me.PictureBox8.TabIndex = 6
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Location = New System.Drawing.Point(376, 26)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(50, 34)
+        Me.PictureBox9.TabIndex = 7
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Location = New System.Drawing.Point(543, 26)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(50, 34)
+        Me.PictureBox10.TabIndex = 8
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Location = New System.Drawing.Point(487, 26)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(50, 34)
+        Me.PictureBox11.TabIndex = 9
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Location = New System.Drawing.Point(600, 26)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(51, 34)
+        Me.PictureBox12.TabIndex = 10
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Location = New System.Drawing.Point(657, 26)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(56, 34)
+        Me.PictureBox13.TabIndex = 11
+        Me.PictureBox13.TabStop = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(55, 20)
+        Me.TextBox1.TabIndex = 12
+        Me.TextBox1.Text = "9am-10am"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(657, 3)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(49, 20)
+        Me.TextBox12.TabIndex = 23
+        Me.TextBox12.Text = "8pm-9pm"
         '
         'Booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1097, 595)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.ClientSize = New System.Drawing.Size(1219, 595)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblRate)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.cbActivityType)
         Me.Controls.Add(Me.btnBook)
@@ -341,6 +588,20 @@ Partial Class Booking
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -362,7 +623,6 @@ Partial Class Booking
     Friend WithEvents btnCancel As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents cbActivityType As ComboBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents VenueDS As VenueDS
     Friend WithEvents VenueBindingSource As BindingSource
@@ -372,6 +632,29 @@ Partial Class Booking
     Friend WithEvents lblRate As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox12 As TextBox
 End Class
