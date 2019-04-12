@@ -72,6 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
@@ -112,7 +113,22 @@
     <Compile Include="ImagePopUp.Designer.vb">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
+    <Compile Include="BookingHistory.Designer.vb">
+      <DependentUpon>BookingHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BookingHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image_Modal.Designer.vb">
+      <DependentUpon>Image_Modal.vb</DependentUpon>
+    </Compile>
     <Compile Include="ImagePopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.vb">
@@ -137,8 +153,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ReportGenerator.Designer.vb">
-      <DependentUpon>ReportGenerator.vb</DependentUpon>
+    <Compile Include="Register.Designer.vb">
+      <DependentUpon>Register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_Generator.Designer.vb">
+      <DependentUpon>Report_Generator.vb</DependentUpon>
     </Compile>
     <Compile Include="ReportGenerator.vb">
       <SubType>Form</SubType>
@@ -171,6 +193,15 @@
     <EmbeddedResource Include="ImagePopUp.resx">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BookingHistory.resx">
+      <DependentUpon>BookingHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image_Modal.resx">
+      <DependentUpon>Image_Modal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +216,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.vb</DependentUpon>
+    </EmbeddedResource>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueList.resx">
       <DependentUpon>VenueList.vb</DependentUpon>

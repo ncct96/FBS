@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Configuration
 Public Class Booking
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'VenueDS.Venue' table. You can move, or remove it, as needed.
@@ -12,18 +13,22 @@ Public Class Booking
 
     Private Sub cbVenue_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbVenue.SelectedIndexChanged
         Try
-            Dim ds As DataSet
-            Dim connectionString As String = "Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Password=Wmq6783Aew5352;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
-            Dim conn As New SqlConnection(connectionString)
-            conn.Open()
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+            Dim conn As New SqlConnection(strConn)
 
-            Dim queryPic As String = "SELECT VenueRate FROM Venue WHERE VenueID = " + cbVenue.SelectedValue
-            Dim comm As New SqlCommand(queryPic, conn)
-            Dim adapter As New SqlDataAdapter(comm)
-            adapter.Fill(ds, "Test")
-            lblRate.DataBindings.Add("Text", ds, "VenueRate")
+            Dim rateSQL As String = "SELECT VenueRate FROM Venue WHERE VenueID = @ID"
+            Dim cmd As New SqlCommand(rateSQL, conn)
+            cmd.Parameters.AddWithValue("@ID", cbVenue.SelectedValue)
+
+            conn.Open()
+      
+            lblRate.Text = "RM " & Format(cmd.ExecuteScalar, "f")
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class
