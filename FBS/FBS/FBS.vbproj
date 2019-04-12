@@ -162,9 +162,7 @@
     <Compile Include="Report_Generator.Designer.vb">
       <DependentUpon>Report_Generator.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReportGenerator.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ReportGenerator.vb" />
     <Compile Include="VenueDS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,7 +217,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
-    </EmbeddedResource>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueList.resx">
       <DependentUpon>VenueList.vb</DependentUpon>
