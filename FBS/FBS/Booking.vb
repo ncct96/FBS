@@ -21,7 +21,7 @@ Public Class Booking
             cmd.Parameters.AddWithValue("@ID", cbVenue.SelectedValue)
 
             conn.Open()
-
+      
             lblRate.Text = "RM " & Format(cmd.ExecuteScalar, "f")
         Catch ex As Exception
 
