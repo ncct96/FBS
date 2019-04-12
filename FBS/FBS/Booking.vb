@@ -21,7 +21,7 @@ Public Class Booking
             Dim comm As New SqlCommand(queryPic, conn)
             Dim adapter As New SqlDataAdapter(comm)
             adapter.Fill(ds, "Test")
-            lblRate.DataBindings.Add("Text", dt, "VenueRate")
+            lblRate.DataBindings.Add("Text", ds, "VenueRate")
         Catch ex As Exception
 
         End Try

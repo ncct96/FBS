@@ -73,6 +73,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -96,16 +97,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Venue.Designer.vb">
+      <DependentUpon>Admin_Venue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Venue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Booking.Designer.vb">
       <DependentUpon>Booking.vb</DependentUpon>
     </Compile>
     <Compile Include="Booking.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Image_Modal.Designer.vb">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
+    <Compile Include="ImagePopUp.Designer.vb">
+      <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
-    <Compile Include="Image_Modal.vb">
+    <Compile Include="ImagePopUp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.vb">
@@ -130,10 +137,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Report_Generator.Designer.vb">
-      <DependentUpon>Report_Generator.vb</DependentUpon>
+    <Compile Include="ReportGenerator.Designer.vb">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </Compile>
-    <Compile Include="Report_Generator.vb">
+    <Compile Include="ReportGenerator.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VenueDS.Designer.vb">
@@ -141,19 +148,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VenueDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Venue_Info.Designer.vb">
-      <DependentUpon>Venue_Info.vb</DependentUpon>
+    <Compile Include="VenueInfo.Designer.vb">
+      <DependentUpon>VenueInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Venue_Info.vb">
+    <Compile Include="VenueInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenueList.Designer.vb">
+      <DependentUpon>VenueList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VenueList.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin_Venue.resx">
+      <DependentUpon>Admin_Venue.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Booking.resx">
       <DependentUpon>Booking.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Image_Modal.resx">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
+    <EmbeddedResource Include="ImagePopUp.resx">
+      <DependentUpon>ImagePopUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
@@ -164,11 +180,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report_Generator.resx">
-      <DependentUpon>Report_Generator.vb</DependentUpon>
+    <EmbeddedResource Include="ReportGenerator.resx">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Venue_Info.resx">
-      <DependentUpon>Venue_Info.vb</DependentUpon>
+    <EmbeddedResource Include="VenueInfo.resx">
+      <DependentUpon>VenueInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VenueList.resx">
+      <DependentUpon>VenueList.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\66938284_p0.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
