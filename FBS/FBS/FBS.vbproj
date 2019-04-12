@@ -98,10 +98,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin_Venue.Designer.vb">
-      <DependentUpon>Admin_Venue.vb</DependentUpon>
+	<Compile Include="AdminVenue.Designer.vb">
+      <DependentUpon>AdminVenue.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Venue.vb">
+    <Compile Include="AdminVenue.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Booking.Designer.vb">
@@ -118,9 +118,6 @@
     </Compile>
     <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Image_Modal.Designer.vb">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
     </Compile>
     <Compile Include="ImagePopUp.vb">
       <SubType>Form</SubType>
@@ -182,8 +179,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Admin_Venue.resx">
-      <DependentUpon>Admin_Venue.vb</DependentUpon>
+	<EmbeddedResource Include="AdminVenue.resx">
+      <DependentUpon>AdminVenue.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking.resx">
       <DependentUpon>Booking.vb</DependentUpon>
@@ -193,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BookingHistory.resx">
       <DependentUpon>BookingHistory.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Image_Modal.resx">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -208,9 +202,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportGenerator.resx">
-      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>
