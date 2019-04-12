@@ -98,7 +98,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="AdminVenue.Designer.vb">
+    <Compile Include="AdminVenue.Designer.vb">
       <DependentUpon>AdminVenue.vb</DependentUpon>
     </Compile>
     <Compile Include="AdminVenue.vb">
@@ -156,10 +156,6 @@
     <Compile Include="Register.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report_Generator.Designer.vb">
-      <DependentUpon>Report_Generator.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ReportGenerator.vb" />
     <Compile Include="VenueDS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,7 +175,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-	<EmbeddedResource Include="AdminVenue.resx">
+    <EmbeddedResource Include="AdminVenue.resx">
       <DependentUpon>AdminVenue.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking.resx">
