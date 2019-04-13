@@ -86,6 +86,17 @@ Namespace My
                 Return CType(Me("FBSConnectionString1"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Passwo"& _ 
+            "rd=Wmq6783Aew5352;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False")>  _
+        Public ReadOnly Property FBSConnectionString2() As String
+            Get
+                Return CType(Me("FBSConnectionString2"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

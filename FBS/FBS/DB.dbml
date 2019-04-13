@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FBS" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="FBS.My.MySettings" SettingsPropertyName="FBSConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Venue" Member="Venues">
+    <Type Name="Venue">
+      <Column Name="VenueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VenueType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VenueName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="VenuePicture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VenueMaxCapacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VenueRecommendations" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="VenueRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

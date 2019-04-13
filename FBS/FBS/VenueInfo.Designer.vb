@@ -26,14 +26,10 @@ Partial Class VenueInfo
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblType = New System.Windows.Forms.Label()
-        Me.lblDays = New System.Windows.Forms.Label()
-        Me.lblTime = New System.Windows.Forms.Label()
         Me.lblRate = New System.Windows.Forms.Label()
         Me.lblCapacity = New System.Windows.Forms.Label()
         Me.lblEvent = New System.Windows.Forms.Label()
@@ -57,7 +53,7 @@ Partial Class VenueInfo
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(90, 452)
+        Me.Label7.Location = New System.Drawing.Point(90, 379)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(269, 29)
         Me.Label7.TabIndex = 43
@@ -67,7 +63,7 @@ Partial Class VenueInfo
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(174, 360)
+        Me.Label6.Location = New System.Drawing.Point(174, 287)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(185, 29)
         Me.Label6.TabIndex = 41
@@ -77,37 +73,17 @@ Partial Class VenueInfo
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(122, 406)
+        Me.Label5.Location = New System.Drawing.Point(122, 333)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(237, 29)
         Me.Label5.TabIndex = 39
         Me.Label5.Text = "Maximum Capacity:"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(165, 314)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(194, 29)
-        Me.Label4.TabIndex = 38
-        Me.Label4.Text = "Available Time:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(168, 268)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(191, 29)
-        Me.Label3.TabIndex = 37
-        Me.Label3.Text = "Available Days:"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(280, 223)
+        Me.Label2.Location = New System.Drawing.Point(280, 242)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 29)
         Me.Label2.TabIndex = 35
@@ -117,7 +93,7 @@ Partial Class VenueInfo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(270, 176)
+        Me.Label1.Location = New System.Drawing.Point(270, 195)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 29)
         Me.Label1.TabIndex = 33
@@ -127,7 +103,7 @@ Partial Class VenueInfo
         '
         Me.lblName.AutoEllipsis = True
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(370, 176)
+        Me.lblName.Location = New System.Drawing.Point(370, 195)
         Me.lblName.Margin = New System.Windows.Forms.Padding(8)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(315, 30)
@@ -138,40 +114,18 @@ Partial Class VenueInfo
         '
         Me.lblType.AutoEllipsis = True
         Me.lblType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType.Location = New System.Drawing.Point(370, 222)
+        Me.lblType.Location = New System.Drawing.Point(370, 241)
         Me.lblType.Margin = New System.Windows.Forms.Padding(8)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(315, 30)
         Me.lblType.TabIndex = 55
         Me.lblType.Text = "Type"
         '
-        'lblDays
-        '
-        Me.lblDays.AutoEllipsis = True
-        Me.lblDays.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDays.Location = New System.Drawing.Point(370, 268)
-        Me.lblDays.Margin = New System.Windows.Forms.Padding(8)
-        Me.lblDays.Name = "lblDays"
-        Me.lblDays.Size = New System.Drawing.Size(315, 30)
-        Me.lblDays.TabIndex = 56
-        Me.lblDays.Text = "Days"
-        '
-        'lblTime
-        '
-        Me.lblTime.AutoEllipsis = True
-        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(370, 314)
-        Me.lblTime.Margin = New System.Windows.Forms.Padding(8)
-        Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(315, 30)
-        Me.lblTime.TabIndex = 57
-        Me.lblTime.Text = "Time"
-        '
         'lblRate
         '
         Me.lblRate.AutoEllipsis = True
         Me.lblRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRate.Location = New System.Drawing.Point(370, 360)
+        Me.lblRate.Location = New System.Drawing.Point(370, 287)
         Me.lblRate.Margin = New System.Windows.Forms.Padding(8)
         Me.lblRate.Name = "lblRate"
         Me.lblRate.Size = New System.Drawing.Size(315, 30)
@@ -182,7 +136,7 @@ Partial Class VenueInfo
         '
         Me.lblCapacity.AutoEllipsis = True
         Me.lblCapacity.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCapacity.Location = New System.Drawing.Point(370, 406)
+        Me.lblCapacity.Location = New System.Drawing.Point(370, 333)
         Me.lblCapacity.Margin = New System.Windows.Forms.Padding(8)
         Me.lblCapacity.Name = "lblCapacity"
         Me.lblCapacity.Size = New System.Drawing.Size(315, 30)
@@ -193,7 +147,7 @@ Partial Class VenueInfo
         '
         Me.lblEvent.AutoEllipsis = True
         Me.lblEvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEvent.Location = New System.Drawing.Point(370, 452)
+        Me.lblEvent.Location = New System.Drawing.Point(370, 379)
         Me.lblEvent.Margin = New System.Windows.Forms.Padding(8)
         Me.lblEvent.Name = "lblEvent"
         Me.lblEvent.Size = New System.Drawing.Size(315, 30)
@@ -221,8 +175,6 @@ Partial Class VenueInfo
         Me.Controls.Add(Me.lblEvent)
         Me.Controls.Add(Me.lblCapacity)
         Me.Controls.Add(Me.lblRate)
-        Me.Controls.Add(Me.lblTime)
-        Me.Controls.Add(Me.lblDays)
         Me.Controls.Add(Me.lblType)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnReserve)
@@ -230,8 +182,6 @@ Partial Class VenueInfo
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -249,14 +199,10 @@ Partial Class VenueInfo
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lblName As Label
     Friend WithEvents lblType As Label
-    Friend WithEvents lblDays As Label
-    Friend WithEvents lblTime As Label
     Friend WithEvents lblRate As Label
     Friend WithEvents lblCapacity As Label
     Friend WithEvents lblEvent As Label

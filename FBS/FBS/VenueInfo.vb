@@ -1,7 +1,30 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class VenueInfo
-    Private Sub LoadStyles(sender As Object, e As EventArgs)
+    Private Sub OnFormLoad(sender As Object, e As EventArgs)
+        Try
+            Dim db As New DBDataContext
+            Dim venue = db.Venues.FirstOrDefault(Function(o) o.VenueID = 3)
+            If venue Is Nothing Then
+                MsgBox("Venue not found", MsgBoxStyle.Exclamation, "Error")
+                Me.Close()
+                Return
+            End If
+
+            lblName.Text = venue.VenueName
+            lblRate.Text = venue.VenueRate
+            lblType.Text = venue.VenueType
+            lblCapacity.Text = venue.VenueMaxCapacity
+            lblEvent.Text = venue.VenueRecommendations
+            picVenue.Image = Image.FromStream(New IO.MemoryStream(venue.VenuePicture.ToArray))
+            Return
+        Catch exception As Exception
+            MsgBox("Venue not found", MsgBoxStyle.Exclamation, "Error")
+            Me.Close()
+            Return
+        End Try
+
         Dim connectionString As String = My.Settings.ConnectionString
         Dim conn As New SqlConnection(connectionString)
         Try
@@ -18,8 +41,6 @@ Public Class VenueInfo
             End If
 
             lblName.Text = reader.GetString(2)
-            lblDays.Text = reader.GetString(3) + " - " + reader.GetString(4)
-            lblTime.Text = reader.GetDateTime(5).ToString("HH:mm:ss") + " - " + reader.GetDateTime(6).ToString("HH:mm:ss")
             lblCapacity.Text = reader.GetInt32(8)
             lblEvent.Text = reader.GetString(9)
 
