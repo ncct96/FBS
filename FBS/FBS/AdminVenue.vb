@@ -12,7 +12,7 @@ Public Class AdminVenue
     'UPLOAD PHOTO HANDLER
     Private Sub UploadPhoto(sender As Object, e As EventArgs) Handles picVenue.Click
         Dim OpenFileDialog As New OpenFileDialog With {
-            .Filter = "Picture Files (*)|*.bmp;*.gif;*.jpg;*.jpeg,*.png"
+            .Filter = "Picture Files (*)|*.bmp;*.jpg;*.jpeg,*.png"
         }
 
         If OpenFileDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -62,36 +62,45 @@ Public Class AdminVenue
                 Return
             End Try
 
-            MsgBox("Updated Database Successfully", MsgBoxStyle.Information, "Success!")
+            MsgBox("Updated Database Successfully!", MsgBoxStyle.Information, "Success!")
 
             OnFormLoad(New Object, New EventArgs)
         Else
-            Dim db As New DBDataContext
-            Dim venue = db.Venues.FirstOrDefault(Function(v) v.VenueID = Integer.Parse(cboID.SelectedValue))
+            If MsgBox("Confirm Update?", MsgBoxStyle.OkCancel, "Updating record") = DialogResult.OK Then
+                Dim db As New DBDataContext
+                Dim venue = db.Venues.FirstOrDefault(Function(v) v.VenueID = Integer.Parse(cboID.SelectedValue))
 
-            venue.VenueName = VenueName
-            venue.VenueRate = Rate
-            venue.VenueType = Type
-            venue.VenueMaxCapacity = Capacity
-            venue.VenueRecommendations = VenueEvent
+                venue.VenueName = VenueName
+                venue.VenueRate = Rate
+                venue.VenueType = Type
+                venue.VenueMaxCapacity = Capacity
+                venue.VenueRecommendations = VenueEvent
 
-            If PictureChanged Then
-                Try
-                    Dim ms As New MemoryStream
-                    picVenue.Image.Save(ms, Imaging.ImageFormat.Jpeg)
-                    venue.VenuePicture = CType(ms.ToArray, Linq.Binary)
-                Catch exception As Exception
-                    MsgBox("Invalid Image", MsgBoxStyle.Exclamation, "Error")
-                    Return
-                End Try
+                If PictureChanged Then
+                    Try
+                        Dim ms As New MemoryStream
+                        picVenue.Image.Save(ms, Imaging.ImageFormat.Jpeg)
+                        venue.VenuePicture = CType(ms.ToArray, Linq.Binary)
+                    Catch exception As Exception
+                        MsgBox("Invalid Image", MsgBoxStyle.Exclamation, "Error")
+                        Return
+                    End Try
+                End If
+
+                db.SubmitChanges()
+                MsgBox("Updated Database Successfully!", MsgBoxStyle.Information, "Success!")
             End If
-
-            db.SubmitChanges()
         End If
     End Sub
 
     'VENUE ID CHANGED
     Private Sub VenueChanged(sender As Object, e As EventArgs) Handles cboID.SelectedIndexChanged
+        If Modified Or PictureChanged Then
+            If MsgBox("You have unsaved changes, do you still want to navigate away?", MsgBoxStyle.OkCancel, "Unsaved changes") <> DialogResult.OK Then
+                Return
+            End If
+        End If
+
         If cboID.SelectedIndex = 0 Or cboID.SelectedIndex = -1 Then
             btnUpdate.Text = "Add As New"
             txtCapacity.Text = ""
@@ -120,6 +129,7 @@ Public Class AdminVenue
             btnDelete.Enabled = True
         End If
 
+        PictureChanged = False
         Modified = False
         btnUpdate.Enabled = False
         btnDelete.Text = "Delete"
@@ -130,10 +140,11 @@ Public Class AdminVenue
         If Modified Then
             If MsgBox("Reset all fields to their original state?", MsgBoxStyle.OkCancel, "Reset fields") = DialogResult.OK Then
                 VenueChanged(New Object, New EventArgs)
+                PictureChanged = False
                 Modified = False
             End If
         Else
-            If MsgBox("Delete Record? This action cannot be undone", MsgBoxStyle.OkCancel, "Deleting record") = DialogResult.OK Then
+            If MsgBox("Delete Record? This action cannot be undone.", MsgBoxStyle.OkCancel, "Deleting record") = DialogResult.OK Then
                 Dim db As New DBDataContext
                 Dim venue = db.Venues.FirstOrDefault(Function(v) v.VenueID = Integer.Parse(cboID.SelectedValue))
 
@@ -144,6 +155,8 @@ Public Class AdminVenue
 
                 db.Venues.DeleteOnSubmit(venue)
                 db.SubmitChanges()
+
+                MsgBox("Record Deleted! No turning back now.", MsgBoxStyle.Information, "Success!")
 
                 OnFormLoad(New Object, New EventArgs)
             End If
@@ -205,6 +218,7 @@ Public Class AdminVenue
         cboID.DataSource = dt
         cboID.SelectedIndex = 0
 
+        PictureChanged = False
         Modified = False
         IsNew = True
         PictureChanged = False
