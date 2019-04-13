@@ -2,7 +2,7 @@
 Imports System.IO
 
 Public Class VenueInfo
-    Private Sub OnFormLoad(sender As Object, e As EventArgs)
+    Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim db As New DBDataContext
             Dim venue = db.Venues.FirstOrDefault(Function(o) o.VenueID = 3)
@@ -24,30 +24,6 @@ Public Class VenueInfo
             Me.Close()
             Return
         End Try
-
-        Dim connectionString As String = My.Settings.ConnectionString
-        Dim conn As New SqlConnection(connectionString)
-        Try
-            conn.Open()
-            Dim query As String = "SELECT * FROM Venue WHERE VenueID = @ID"
-            Dim command As New SqlCommand(query, conn)
-            command.Parameters.AddWithValue("@ID", 1)
-            Dim reader As SqlDataReader = command.ExecuteReader()
-            If reader.HasRows Then
-                reader.Read()
-                Debug.WriteLine("Data found")
-            Else
-                Debug.WriteLine("No records were returned")
-            End If
-
-            lblName.Text = reader.GetString(2)
-            lblCapacity.Text = reader.GetInt32(8)
-            lblEvent.Text = reader.GetString(9)
-
-            conn.Close()
-        Catch Exception As Exception
-            Debug.WriteLine(Exception)
-        End Try
     End Sub
 
     Private Sub MouseEnter_Event(sender As Object, e As EventArgs) Handles picVenue.MouseEnter, btnReserve.MouseEnter
@@ -66,7 +42,7 @@ Public Class VenueInfo
 
     Private Sub PictureBox_Click(sender As Object, e As EventArgs) Handles picVenue.Click
         Dim ImgPopUp As New ImagePopUp
-        ImgPopUp.picImage.Image = My.Resources._66938284_p0
+        ImgPopUp.picImage.Image = picVenue.Image
         ImgPopUp.Text = "Image"
         ImgPopUp.ShowDialog()
     End Sub

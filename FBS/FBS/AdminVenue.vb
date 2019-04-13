@@ -139,9 +139,9 @@ Public Class AdminVenue
     Private Sub DeleteVenue(sender As Object, e As EventArgs) Handles btnDelete.Click
         If Modified Then
             If MsgBox("Reset all fields to their original state?", MsgBoxStyle.OkCancel, "Reset fields") = DialogResult.OK Then
-                VenueChanged(New Object, New EventArgs)
                 PictureChanged = False
                 Modified = False
+                VenueChanged(New Object, New EventArgs)
             End If
         Else
             If MsgBox("Delete Record? This action cannot be undone.", MsgBoxStyle.OkCancel, "Deleting record") = DialogResult.OK Then
@@ -218,13 +218,27 @@ Public Class AdminVenue
         cboID.DataSource = dt
         cboID.SelectedIndex = 0
 
-        PictureChanged = False
-        Modified = False
         IsNew = True
         PictureChanged = False
         btnUpdate.Text = "Add As New"
         btnDelete.Text = "Delete"
         btnUpdate.Enabled = False
         btnDelete.Enabled = False
+        PictureChanged = False
+        Modified = False
+    End Sub
+
+    Private Sub MouseEnter_Event(sender As Object, e As EventArgs) Handles picVenue.MouseEnter, btnUpdate.MouseEnter, btnDelete.MouseEnter, cboID.MouseEnter
+        Me.Cursor = Cursors.Hand
+        If sender.Equals(picVenue) Then
+            picVenue.SizeMode = PictureBoxSizeMode.CenterImage
+        End If
+    End Sub
+
+    Private Sub MouseLeave_Event(sender As Object, e As EventArgs) Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave
+        Me.Cursor = Cursors.Default
+        If sender.Equals(picVenue) Then
+            picVenue.SizeMode = PictureBoxSizeMode.Zoom
+        End If
     End Sub
 End Class
