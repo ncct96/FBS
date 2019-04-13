@@ -22,6 +22,7 @@ Partial Class AdminVenue
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminVenue))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtType = New System.Windows.Forms.TextBox()
@@ -150,6 +151,8 @@ Partial Class AdminVenue
         '
         'btnDelete
         '
+        Me.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.Location = New System.Drawing.Point(662, 463)
         Me.btnDelete.Name = "btnDelete"
@@ -160,8 +163,8 @@ Partial Class AdminVenue
         '
         'cboID
         '
-        Me.cboID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.cboID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboID.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboID.FormattingEnabled = True
         Me.cboID.Location = New System.Drawing.Point(490, 33)
@@ -171,6 +174,8 @@ Partial Class AdminVenue
         '
         'btnUpdate
         '
+        Me.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.Location = New System.Drawing.Point(899, 463)
         Me.btnUpdate.Name = "btnUpdate"
@@ -198,7 +203,8 @@ Partial Class AdminVenue
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdminVenue"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin_Venue"

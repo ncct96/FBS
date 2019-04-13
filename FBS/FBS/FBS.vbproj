@@ -70,6 +70,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>FBS.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -269,6 +272,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\66938284_p0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FBS.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
