@@ -10,7 +10,7 @@ Public Class Login
         Dim err As New StringBuilder()
         Dim ctr As Control = Nothing
         Try
-            If username.Equals("") Or password.Equals("") Then
+            If username.Equals("") Then
                 err.AppendLine("Please Input Your Account's Username.")
                 ctr = If(ctr, usernametxt)
             ElseIf password.Equals("") Then
@@ -20,23 +20,35 @@ Public Class Login
                 Dim stringCon As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
                 Dim connection As New SqlConnection(stringCon)
 
-                ' Open Database Connection
+                ' Open Database Connection for userCommand
                 connection.Open()
                 Dim userSelect As String = "SELECT CustName FROM Customer WHERE CustName = @Name AND CustPass = @Pass"
-                Dim command As New SqlCommand(userSelect, connection)
-                command.Parameters.AddWithValue("@Name", username)
-                command.Parameters.AddWithValue("@Pass", password)
-                Dim retrieval As SqlDataReader = command.ExecuteReader
+                Dim userCommand As New SqlCommand(userSelect, connection)
+                userCommand.Parameters.AddWithValue("@Name", username)
+                userCommand.Parameters.AddWithValue("@Pass", password)
+                Dim userRetrieval As SqlDataReader = userCommand.ExecuteReader
 
                 ' If Else Statement for Customer SQL
-                If retrieval.HasRows Then
-                    MessageBox.Show("Welcome Back " + "", "User Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If userRetrieval.HasRows Then
+                    MessageBox.Show("Welcome Back " + "User", "User Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GlobalVars.currentUser = username
                 Else
-                    MessageBox.Show("Invalid Login Information.", "Account not found", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
+                    ' Close Database Connection
+                    connection.Close()
 
-                ' Close Database Connection
-                connection.Close()
+                    connection.Open()
+                    Dim adminSelect As String = "SELECT AdminName FROM Admin WHERE AdminName = @Name AND AdminPassw = @Passw"
+                    Dim adminCommand As New SqlCommand(adminSelect, connection)
+                    adminCommand.Parameters.AddWithValue("@Name", username)
+                    adminCommand.Parameters.AddWithValue("@Passw", password)
+                    Dim adminRetrieval As SqlDataReader = adminCommand.ExecuteReader
+                    If adminRetrieval.HasRows Then
+                        MessageBox.Show("Welcome Back " + "Admin", "Admin Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        GlobalVars.currentUser = username
+                    Else
+                        MessageBox.Show("Invalid Login Information.", "Account not found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End If
             End If
             If err.Length > 0 Then
                 MessageBox.Show(err.ToString(), "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
