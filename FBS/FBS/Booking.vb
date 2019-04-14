@@ -5,7 +5,7 @@ Public Class Booking
     Dim timeSlotCount As Integer
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'VenueDS.Venue' table. You can move, or remove it, as needed.
-        Me.VenueTableAdapter.Fill(Me.VenueDS.Venue)
+        Me.VenueTableAdapter.FillVenue(Me.VenueDS.Venue)
         rate = LoadVenueRate()
         dtpBooking.MinDate = Date.Today().AddDays(1)
         dtpBooking.MaxDate = Date.Today().AddDays(10)

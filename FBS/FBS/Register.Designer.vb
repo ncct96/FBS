@@ -23,19 +23,25 @@ Partial Class Register
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.RegisterForm = New System.Windows.Forms.GroupBox()
-        Me.unlbl = New System.Windows.Forms.Label()
-        Me.pwlbl = New System.Windows.Forms.Label()
-        Me.untxt = New System.Windows.Forms.TextBox()
-        Me.pwtxt = New System.Windows.Forms.TextBox()
-        Me.phonelbl = New System.Windows.Forms.Label()
+        Me.passwShow = New System.Windows.Forms.CheckBox()
+        Me.retypetxt = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.phonetxt = New System.Windows.Forms.MaskedTextBox()
         Me.registerbtn = New System.Windows.Forms.Button()
         Me.cancelbtn = New System.Windows.Forms.Button()
-        Me.phonetxt = New System.Windows.Forms.MaskedTextBox()
+        Me.phonelbl = New System.Windows.Forms.Label()
+        Me.pwtxt = New System.Windows.Forms.TextBox()
+        Me.untxt = New System.Windows.Forms.TextBox()
+        Me.pwlbl = New System.Windows.Forms.Label()
+        Me.unlbl = New System.Windows.Forms.Label()
         Me.RegisterForm.SuspendLayout()
         Me.SuspendLayout()
         '
         'RegisterForm
         '
+        Me.RegisterForm.Controls.Add(Me.passwShow)
+        Me.RegisterForm.Controls.Add(Me.retypetxt)
+        Me.RegisterForm.Controls.Add(Me.Label1)
         Me.RegisterForm.Controls.Add(Me.phonetxt)
         Me.RegisterForm.Controls.Add(Me.registerbtn)
         Me.RegisterForm.Controls.Add(Me.cancelbtn)
@@ -47,18 +53,88 @@ Partial Class Register
         Me.RegisterForm.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RegisterForm.Location = New System.Drawing.Point(61, 21)
         Me.RegisterForm.Name = "RegisterForm"
-        Me.RegisterForm.Size = New System.Drawing.Size(313, 263)
+        Me.RegisterForm.Size = New System.Drawing.Size(323, 319)
         Me.RegisterForm.TabIndex = 0
         Me.RegisterForm.TabStop = False
         '
-        'unlbl
+        'passwShow
         '
-        Me.unlbl.AutoSize = True
-        Me.unlbl.Location = New System.Drawing.Point(54, 63)
-        Me.unlbl.Name = "unlbl"
-        Me.unlbl.Size = New System.Drawing.Size(80, 16)
-        Me.unlbl.TabIndex = 0
-        Me.unlbl.Text = "Username : "
+        Me.passwShow.AutoSize = True
+        Me.passwShow.Location = New System.Drawing.Point(166, 164)
+        Me.passwShow.Name = "passwShow"
+        Me.passwShow.Size = New System.Drawing.Size(123, 20)
+        Me.passwShow.TabIndex = 9
+        Me.passwShow.Text = "Show Password"
+        Me.passwShow.UseVisualStyleBackColor = True
+        '
+        'retypetxt
+        '
+        Me.retypetxt.Location = New System.Drawing.Point(166, 136)
+        Me.retypetxt.Name = "retypetxt"
+        Me.retypetxt.Size = New System.Drawing.Size(100, 22)
+        Me.retypetxt.TabIndex = 8
+        Me.retypetxt.UseSystemPasswordChar = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(24, 142)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(124, 16)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Retype Password : "
+        '
+        'phonetxt
+        '
+        Me.phonetxt.Location = New System.Drawing.Point(166, 196)
+        Me.phonetxt.Mask = "000-0000000"
+        Me.phonetxt.Name = "phonetxt"
+        Me.phonetxt.Size = New System.Drawing.Size(100, 22)
+        Me.phonetxt.TabIndex = 6
+        '
+        'registerbtn
+        '
+        Me.registerbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.registerbtn.Location = New System.Drawing.Point(56, 255)
+        Me.registerbtn.Name = "registerbtn"
+        Me.registerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.registerbtn.TabIndex = 1
+        Me.registerbtn.Text = "Register"
+        Me.registerbtn.UseVisualStyleBackColor = True
+        '
+        'cancelbtn
+        '
+        Me.cancelbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.cancelbtn.Location = New System.Drawing.Point(168, 255)
+        Me.cancelbtn.Name = "cancelbtn"
+        Me.cancelbtn.Size = New System.Drawing.Size(75, 23)
+        Me.cancelbtn.TabIndex = 2
+        Me.cancelbtn.Text = "Cancel"
+        Me.cancelbtn.UseVisualStyleBackColor = True
+        '
+        'phonelbl
+        '
+        Me.phonelbl.AutoSize = True
+        Me.phonelbl.Location = New System.Drawing.Point(35, 199)
+        Me.phonelbl.Name = "phonelbl"
+        Me.phonelbl.Size = New System.Drawing.Size(113, 16)
+        Me.phonelbl.TabIndex = 5
+        Me.phonelbl.Text = "Contact Number : "
+        '
+        'pwtxt
+        '
+        Me.pwtxt.Location = New System.Drawing.Point(166, 97)
+        Me.pwtxt.Name = "pwtxt"
+        Me.pwtxt.Size = New System.Drawing.Size(100, 22)
+        Me.pwtxt.TabIndex = 3
+        Me.pwtxt.UseSystemPasswordChar = True
+        '
+        'untxt
+        '
+        Me.untxt.Location = New System.Drawing.Point(166, 57)
+        Me.untxt.Name = "untxt"
+        Me.untxt.Size = New System.Drawing.Size(100, 22)
+        Me.untxt.TabIndex = 2
         '
         'pwlbl
         '
@@ -69,56 +145,14 @@ Partial Class Register
         Me.pwlbl.TabIndex = 1
         Me.pwlbl.Text = "Password : "
         '
-        'untxt
+        'unlbl
         '
-        Me.untxt.Location = New System.Drawing.Point(154, 56)
-        Me.untxt.Name = "untxt"
-        Me.untxt.Size = New System.Drawing.Size(100, 22)
-        Me.untxt.TabIndex = 2
-        '
-        'pwtxt
-        '
-        Me.pwtxt.Location = New System.Drawing.Point(154, 96)
-        Me.pwtxt.Name = "pwtxt"
-        Me.pwtxt.Size = New System.Drawing.Size(100, 22)
-        Me.pwtxt.TabIndex = 3
-        '
-        'phonelbl
-        '
-        Me.phonelbl.AutoSize = True
-        Me.phonelbl.Location = New System.Drawing.Point(23, 141)
-        Me.phonelbl.Name = "phonelbl"
-        Me.phonelbl.Size = New System.Drawing.Size(113, 16)
-        Me.phonelbl.TabIndex = 5
-        Me.phonelbl.Text = "Contact Number : "
-        '
-        'registerbtn
-        '
-        Me.registerbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.registerbtn.Location = New System.Drawing.Point(56, 192)
-        Me.registerbtn.Name = "registerbtn"
-        Me.registerbtn.Size = New System.Drawing.Size(75, 23)
-        Me.registerbtn.TabIndex = 1
-        Me.registerbtn.Text = "Register"
-        Me.registerbtn.UseVisualStyleBackColor = True
-        '
-        'cancelbtn
-        '
-        Me.cancelbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.cancelbtn.Location = New System.Drawing.Point(179, 192)
-        Me.cancelbtn.Name = "cancelbtn"
-        Me.cancelbtn.Size = New System.Drawing.Size(75, 23)
-        Me.cancelbtn.TabIndex = 2
-        Me.cancelbtn.Text = "Cancel"
-        Me.cancelbtn.UseVisualStyleBackColor = True
-        '
-        'phonetxt
-        '
-        Me.phonetxt.Location = New System.Drawing.Point(154, 138)
-        Me.phonetxt.Mask = "000-0000000"
-        Me.phonetxt.Name = "phonetxt"
-        Me.phonetxt.Size = New System.Drawing.Size(100, 22)
-        Me.phonetxt.TabIndex = 6
+        Me.unlbl.AutoSize = True
+        Me.unlbl.Location = New System.Drawing.Point(54, 63)
+        Me.unlbl.Name = "unlbl"
+        Me.unlbl.Size = New System.Drawing.Size(80, 16)
+        Me.unlbl.TabIndex = 0
+        Me.unlbl.Text = "Username : "
         '
         'Register
         '
@@ -126,7 +160,7 @@ Partial Class Register
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.cancelbtn
-        Me.ClientSize = New System.Drawing.Size(438, 307)
+        Me.ClientSize = New System.Drawing.Size(448, 365)
         Me.Controls.Add(Me.RegisterForm)
         Me.Name = "Register"
         Me.Text = "Register"
@@ -145,4 +179,7 @@ Partial Class Register
     Friend WithEvents pwlbl As Label
     Friend WithEvents unlbl As Label
     Friend WithEvents phonetxt As MaskedTextBox
+    Friend WithEvents passwShow As CheckBox
+    Friend WithEvents retypetxt As TextBox
+    Friend WithEvents Label1 As Label
 End Class
