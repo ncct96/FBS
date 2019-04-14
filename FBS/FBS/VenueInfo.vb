@@ -1,11 +1,11 @@
-﻿Imports System.Data.SqlClient
-Imports System.IO
+﻿Public Class VenueInfo
+    Public ID As Integer
 
-Public Class VenueInfo
+    'ON FORM LOAD
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim db As New DBDataContext
-            Dim venue = db.Venues.FirstOrDefault(Function(o) o.VenueID = 3)
+            Dim venue = db.Venues.FirstOrDefault(Function(o) o.VenueID = ID)
             If venue Is Nothing Then
                 MsgBox("Venue not found", MsgBoxStyle.Exclamation, "Error")
                 Me.Close()
@@ -13,14 +13,14 @@ Public Class VenueInfo
             End If
 
             lblName.Text = venue.VenueName
-            lblRate.Text = venue.VenueRate
+            lblRate.Text = Decimal.Parse(venue.VenueRate).ToString("0.00")
             lblType.Text = venue.VenueType
-            lblCapacity.Text = venue.VenueMaxCapacity
+            lblCapacity.Text = venue.VenueMaxCapacity.ToString
             lblEvent.Text = venue.VenueRecommendations
             picVenue.Image = Image.FromStream(New IO.MemoryStream(venue.VenuePicture.ToArray))
             Return
         Catch exception As Exception
-            MsgBox("Venue not found", MsgBoxStyle.Exclamation, "Error")
+            MsgBox("Unable to contact database, please try again later.", MsgBoxStyle.Exclamation, "Error")
             Me.Close()
             Return
         End Try
@@ -40,6 +40,7 @@ Public Class VenueInfo
         End If
     End Sub
 
+    'OPEN POPUP
     Private Sub PictureBox_Click(sender As Object, e As EventArgs) Handles picVenue.Click
         Dim ImgPopUp As New ImagePopUp
         ImgPopUp.picImage.Image = picVenue.Image

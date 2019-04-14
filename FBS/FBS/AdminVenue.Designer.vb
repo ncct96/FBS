@@ -115,6 +115,7 @@ Partial Class AdminVenue
         Me.txtEvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEvent.Location = New System.Drawing.Point(314, 399)
         Me.txtEvent.Margin = New System.Windows.Forms.Padding(8)
+        Me.txtEvent.MaxLength = 30
         Me.txtEvent.Name = "txtEvent"
         Me.txtEvent.Size = New System.Drawing.Size(315, 34)
         Me.txtEvent.TabIndex = 21

@@ -7,8 +7,11 @@ Public Class AdminVenue
     Private IsFirstRun = True
     Private Modified As Boolean = False
     Private IsNew As Boolean = True
+    Private OverPay As Boolean = False
+    Private OverSized As Boolean = False
     Private PictureChanged = False
     Private VenueTypes() As String = {"Badminton Court", "Basketball Court", "Football Field", "Gymnasium", "Tennis Court", "Swimming Pool"}
+
     'UPLOAD PHOTO HANDLER
     Private Sub UploadPhoto(sender As Object, e As EventArgs) Handles picVenue.Click
         Dim OpenFileDialog As New OpenFileDialog With {
@@ -187,29 +190,42 @@ Public Class AdminVenue
             MsgBox("Please enter a valid rate", MsgBoxStyle.Exclamation, "Error")
             Rate = Math.Round(Rate, 2)
             Return False
+        ElseIf Rate > 5000 And OverPay = False Then
+            If MsgBox("Hold on there cowboy! Are you sure that your services are THAT expensive?", MsgBoxStyle.YesNo, "Whoa there!") = DialogResult.No Then
+                Return False
+            Else
+                OverPay = True
+            End If
         ElseIf Not Integer.TryParse(txtCapacity.Text.Trim(" "), Capacity) Then
             MsgBox("Please enter a valid capacity", MsgBoxStyle.Exclamation, "Error")
             Return False
         ElseIf Capacity < 1 Then
             MsgBox("Please enter a valid capacity", MsgBoxStyle.Exclamation, "Error")
             Return False
+        ElseIf Capacity > 5000 And OverSized = False Then
+            If MsgBox("Hold on there cowboy! Are you sure that the facility can hold that many people?", MsgBoxStyle.YesNo, "Whoa there!") = DialogResult.No Then
+                Return False
+            Else
+                OverSized = True
+            End If
         ElseIf VenueEvent = "" Then
             MsgBox("Please enter a valid recommended event", MsgBoxStyle.Exclamation, "Error")
             Return False
-        Else
-            Return True
         End If
+
+        Rate = Decimal.Parse(txtRate.Text.Trim(" "))
+        Capacity = Integer.Parse(txtCapacity.Text.Trim(" "))
+        OverPay = False
+        OverSized = False
+        Return True
     End Function
 
     'FORM LOAD
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        If IsFirstRun Then
-            cboType.Items.Clear()
-            For Each type In VenueTypes
-                cboType.Items.Add(type)
-            Next
-            IsFirstRun = False
-        End If
+        cboType.Items.Clear()
+        For Each type In VenueTypes
+            cboType.Items.Add(type)
+        Next
 
         cboID.DataSource = Nothing
         cboID.Items.Clear()
@@ -241,14 +257,14 @@ Public Class AdminVenue
         Modified = False
     End Sub
 
-    Private Sub MouseEnter_Event(sender As Object, e As EventArgs) 'Handles picVenue.MouseEnter, btnUpdate.MouseEnter, btnDelete.MouseEnter, cboID.MouseEnter
+    Private Sub MouseEnter_Event(sender As Object, e As EventArgs) Handles picVenue.MouseEnter, btnUpdate.MouseEnter, btnDelete.MouseEnter, cboID.MouseEnter
         Me.Cursor = Cursors.Hand
         If sender.Equals(picVenue) Then
             picVenue.SizeMode = PictureBoxSizeMode.CenterImage
         End If
     End Sub
 
-    Private Sub MouseLeave_Event(sender As Object, e As EventArgs) 'Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave
+    Private Sub MouseLeave_Event(sender As Object, e As EventArgs) Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave
         Me.Cursor = Cursors.Default
         If sender.Equals(picVenue) Then
             picVenue.SizeMode = PictureBoxSizeMode.Zoom
