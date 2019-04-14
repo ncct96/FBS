@@ -5,6 +5,8 @@ Public Class Booking
     Dim timeSlotCount As Integer
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'VenueDS.Venue' table. You can move, or remove it, as needed.
+        dtpStart.Format = DateTimePickerFormat.Time
+        dtpStart.ShowUpDown = True
         Me.VenueTableAdapter.FillVenue(Me.VenueDS.Venue)
         rate = LoadVenueRate()
         dtpBooking.MinDate = Date.Today().AddDays(1)
@@ -17,7 +19,7 @@ Public Class Booking
 
     Private Sub cbVenue_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbVenue.SelectedIndexChanged
         rate = LoadVenueRate()
-        timeSlotCount = cblbTimeslot.CheckedItems.Count + 1
+        timeSlotCount = 3
         Dim totalPayment As Double = CalcTotalPymt(rate, timeSlotCount)
         lblTotalPayment.Text = "RM " & Format(totalPayment, "f")
     End Sub
@@ -61,8 +63,8 @@ Public Class Booking
         Me.Close()
     End Sub
 
-    Private Sub cblbTimeslot_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles cblbTimeslot.ItemCheck
-        Dim totalPayment As Double = CalcTotalPymt(rate, cblbTimeslot.CheckedItems.Count + 1)
+    Private Sub cblbTimeslot_ItemCheck(sender As Object, e As ItemCheckEventArgs)
+        Dim totalPayment As Double = CalcTotalPymt(rate, 3)
         lblTotalPayment.Text = "RM " & Format(totalPayment, "f")
     End Sub
 End Class

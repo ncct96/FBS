@@ -46,7 +46,9 @@ Partial Class Booking
         Me.lblTotalPayment = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cblbTimeslot = New System.Windows.Forms.CheckedListBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.dtpStart = New System.Windows.Forms.DateTimePicker()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueDS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,28 +263,39 @@ Partial Class Booking
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "x"
         '
-        'cblbTimeslot
+        'Label3
         '
-        Me.cblbTimeslot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.cblbTimeslot.CheckOnClick = True
-        Me.cblbTimeslot.ColumnWidth = 150
-        Me.cblbTimeslot.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cblbTimeslot.FormattingEnabled = True
-        Me.cblbTimeslot.Items.AddRange(New Object() {"9:00 am - 10:00 am", "10:00 am - 11:00 am", "11:00 am - 12:00 pm", "12:00 pm - 1:00 pm", "1:00 pm - 2:00 pm", "2:00 pm - 3:00 pm", "3:00 pm - 4:00 pm", "4:00 pm - 5:00 pm", "5:00 pm - 6:00 pm", "6:00 pm - 7:00 pm", "7:00 pm - 8:00 pm", "8:00 pm - 9:00 pm", "9:00 pm - 10:00 pm", "10:00 pm - 11:00 pm", "11:00 pm - 12:00 am"})
-        Me.cblbTimeslot.Location = New System.Drawing.Point(148, 288)
-        Me.cblbTimeslot.MultiColumn = True
-        Me.cblbTimeslot.Name = "cblbTimeslot"
-        Me.cblbTimeslot.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cblbTimeslot.Size = New System.Drawing.Size(604, 74)
-        Me.cblbTimeslot.TabIndex = 23
-        Me.cblbTimeslot.ThreeDCheckBoxes = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(145, 332)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Start:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(407, 332)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 13)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "End:"
+        '
+        'dtpStart
+        '
+        Me.dtpStart.Location = New System.Drawing.Point(183, 326)
+        Me.dtpStart.Name = "dtpStart"
+        Me.dtpStart.Size = New System.Drawing.Size(200, 20)
+        Me.dtpStart.TabIndex = 25
         '
         'Booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(798, 595)
-        Me.Controls.Add(Me.cblbTimeslot)
+        Me.Controls.Add(Me.dtpStart)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblRate)
@@ -329,8 +342,10 @@ Partial Class Booking
     Friend WithEvents lblRate As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents cblbTimeslot As CheckedListBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents lblTotalPayment As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents dtpStart As DateTimePicker
 End Class
