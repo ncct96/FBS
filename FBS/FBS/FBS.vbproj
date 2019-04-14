@@ -70,10 +70,14 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>FBS.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -97,11 +101,25 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminVenue.Designer.vb">
+      <DependentUpon>AdminVenue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminVenue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Booking.Designer.vb">
       <DependentUpon>Booking.vb</DependentUpon>
     </Compile>
     <Compile Include="Booking.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ImagePopUp.Designer.vb">
+      <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
     <Compile Include="BookingHistory.Designer.vb">
       <DependentUpon>BookingHistory.vb</DependentUpon>
@@ -109,11 +127,11 @@
     <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlobalVars.vb" />
     <Compile Include="Image_Modal.Designer.vb">
       <DependentUpon>Image_Modal.vb</DependentUpon>
     </Compile>
     <Compile Include="Image_Modal.vb">
+    <Compile Include="ImagePopUp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -150,33 +168,36 @@
     <Compile Include="Register.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report_Generator.Designer.vb">
-      <DependentUpon>Report_Generator.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Report_Generator.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="VenueDS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VenueDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Venue_Info.Designer.vb">
-      <DependentUpon>Venue_Info.vb</DependentUpon>
+    <Compile Include="VenueInfo.Designer.vb">
+      <DependentUpon>VenueInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Venue_Info.vb">
+    <Compile Include="VenueInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenueList.Designer.vb">
+      <DependentUpon>VenueList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VenueList.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdminVenue.resx">
+      <DependentUpon>AdminVenue.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Booking.resx">
       <DependentUpon>Booking.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImagePopUp.resx">
+      <DependentUpon>ImagePopUp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookingHistory.resx">
       <DependentUpon>BookingHistory.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Image_Modal.resx">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -190,17 +211,25 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="VenueInfo.resx">
+      <DependentUpon>VenueInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report_Generator.resx">
-      <DependentUpon>Report_Generator.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Venue_Info.resx">
-      <DependentUpon>Venue_Info.vb</DependentUpon>
+    <EmbeddedResource Include="VenueList.resx">
+      <DependentUpon>VenueList.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB.dbml.layout">
+      <DependentUpon>DB.dbml</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -241,6 +270,15 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\66938284_p0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FBS.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
