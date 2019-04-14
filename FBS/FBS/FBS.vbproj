@@ -118,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.dbml</DependentUpon>
     </Compile>
+	<Compile Include="GlobalVars.vb" />
     <Compile Include="ImagePopUp.Designer.vb">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
@@ -127,10 +128,6 @@
     <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Image_Modal.Designer.vb">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Image_Modal.vb">
     <Compile Include="ImagePopUp.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +163,12 @@
       <DependentUpon>Register.vb</DependentUpon>
     </Compile>
     <Compile Include="Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGenerator.Designer.vb">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGenerator.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VenueDS.Designer.vb">
@@ -210,6 +213,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGenerator.resx">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>
@@ -266,16 +272,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\1200px-Donald_Trump_official_portrait.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\66938284_p0.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FBS.ico" />
