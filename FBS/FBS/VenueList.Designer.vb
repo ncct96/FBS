@@ -24,7 +24,7 @@ Partial Class VenueList
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VenueList))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboType = New System.Windows.Forms.ComboBox()
         Me.pnl2 = New System.Windows.Forms.Panel()
         Me.picVenue2 = New System.Windows.Forms.PictureBox()
         Me.lblType2 = New System.Windows.Forms.Label()
@@ -70,21 +70,22 @@ Partial Class VenueList
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(484, 68)
+        Me.Label1.Location = New System.Drawing.Point(535, 68)
         Me.Label1.Margin = New System.Windows.Forms.Padding(8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(149, 29)
+        Me.Label1.Size = New System.Drawing.Size(98, 29)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Venue Type:"
+        Me.Label1.Text = "Display:"
         '
-        'ComboBox1
+        'cboType
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(644, 65)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(200, 37)
-        Me.ComboBox1.TabIndex = 2
+        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboType.FormattingEnabled = True
+        Me.cboType.Location = New System.Drawing.Point(644, 65)
+        Me.cboType.Name = "cboType"
+        Me.cboType.Size = New System.Drawing.Size(200, 37)
+        Me.cboType.TabIndex = 2
         '
         'pnl2
         '
@@ -413,13 +414,15 @@ Partial Class VenueList
         Me.Controls.Add(Me.pnl5)
         Me.Controls.Add(Me.pnl3)
         Me.Controls.Add(Me.pnl2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "VenueList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VenueList"
+        Me.TransparencyKey = System.Drawing.Color.Maroon
         Me.pnl2.ResumeLayout(False)
         CType(Me.picVenue2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl3.ResumeLayout(False)
@@ -437,7 +440,7 @@ Partial Class VenueList
 
     End Sub
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboType As ComboBox
     Friend WithEvents pnl2 As Panel
     Friend WithEvents pnl3 As Panel
     Friend WithEvents pnl1 As Panel

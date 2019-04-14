@@ -43,8 +43,10 @@ Partial Class AdminVenue
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(214, 202)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label1.Location = New System.Drawing.Point(274, 195)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 29)
         Me.Label1.TabIndex = 8
@@ -53,7 +55,7 @@ Partial Class AdminVenue
         'txtName
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(314, 199)
+        Me.txtName.Location = New System.Drawing.Point(374, 192)
         Me.txtName.Margin = New System.Windows.Forms.Padding(8)
         Me.txtName.MaxLength = 35
         Me.txtName.Name = "txtName"
@@ -63,8 +65,10 @@ Partial Class AdminVenue
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(224, 252)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label2.Location = New System.Drawing.Point(284, 240)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 29)
         Me.Label2.TabIndex = 10
@@ -73,7 +77,7 @@ Partial Class AdminVenue
         'txtRate
         '
         Me.txtRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRate.Location = New System.Drawing.Point(314, 299)
+        Me.txtRate.Location = New System.Drawing.Point(374, 285)
         Me.txtRate.Margin = New System.Windows.Forms.Padding(8)
         Me.txtRate.MaxLength = 10
         Me.txtRate.Name = "txtRate"
@@ -83,8 +87,10 @@ Partial Class AdminVenue
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(69, 352)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label5.Location = New System.Drawing.Point(126, 338)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(237, 29)
         Me.Label5.TabIndex = 16
@@ -93,7 +99,7 @@ Partial Class AdminVenue
         'txtCapacity
         '
         Me.txtCapacity.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCapacity.Location = New System.Drawing.Point(314, 349)
+        Me.txtCapacity.Location = New System.Drawing.Point(374, 335)
         Me.txtCapacity.Margin = New System.Windows.Forms.Padding(8)
         Me.txtCapacity.MaxLength = 5
         Me.txtCapacity.Name = "txtCapacity"
@@ -103,17 +109,19 @@ Partial Class AdminVenue
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(128, 302)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label6.Location = New System.Drawing.Point(178, 288)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(178, 29)
+        Me.Label6.Size = New System.Drawing.Size(185, 29)
         Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Rate Per Hour"
+        Me.Label6.Text = "Rate Per Hour:"
         '
         'txtEvent
         '
         Me.txtEvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEvent.Location = New System.Drawing.Point(314, 399)
+        Me.txtEvent.Location = New System.Drawing.Point(374, 385)
         Me.txtEvent.Margin = New System.Windows.Forms.Padding(8)
         Me.txtEvent.MaxLength = 30
         Me.txtEvent.Name = "txtEvent"
@@ -123,8 +131,10 @@ Partial Class AdminVenue
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(34, 402)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label7.Location = New System.Drawing.Point(94, 388)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(269, 29)
         Me.Label7.TabIndex = 20
@@ -133,7 +143,7 @@ Partial Class AdminVenue
         'picVenue
         '
         Me.picVenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picVenue.Location = New System.Drawing.Point(662, 187)
+        Me.picVenue.Location = New System.Drawing.Point(700, 172)
         Me.picVenue.Name = "picVenue"
         Me.picVenue.Size = New System.Drawing.Size(462, 260)
         Me.picVenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -145,7 +155,7 @@ Partial Class AdminVenue
         Me.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(662, 463)
+        Me.btnDelete.Location = New System.Drawing.Point(700, 438)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(225, 50)
         Me.btnDelete.TabIndex = 23
@@ -168,7 +178,7 @@ Partial Class AdminVenue
         Me.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(899, 463)
+        Me.btnUpdate.Location = New System.Drawing.Point(937, 438)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(225, 50)
         Me.btnUpdate.TabIndex = 25
@@ -181,7 +191,7 @@ Partial Class AdminVenue
         Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboType.FormattingEnabled = True
-        Me.cboType.Location = New System.Drawing.Point(314, 249)
+        Me.cboType.Location = New System.Drawing.Point(374, 237)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(315, 37)
         Me.cboType.TabIndex = 27
@@ -190,6 +200,8 @@ Partial Class AdminVenue
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.cboID)
@@ -207,9 +219,11 @@ Partial Class AdminVenue
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "AdminVenue"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin_Venue"
+        Me.TransparencyKey = System.Drawing.Color.Maroon
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
