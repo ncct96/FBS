@@ -3,13 +3,39 @@
     Private Result As New List(Of Venue)
     Private IDs(6) As Integer
     Private Index = 0
+    Private FirstRun = True
+    Private VenueTypes() As String = {"Badminton Court", "Basketball Court", "Football Field", "Gymnasium", "Tennis Court", "Swimming Pool"}
 
     'ON FORM LOAD
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        If FirstRun Then
+            cboType.Items.Clear()
+            cboType.Items.Add("All")
+            For Each type In VenueTypes
+                cboType.Items.Add(type)
+            Next
+            FirstRun = False
+        End If
+
+        cboType.SelectedIndex = 0
+
+        If Result.Count > 6 Then
+            MaxStep = Result.Count / 6
+        Else
+            MaxStep = 1
+        End If
+    End Sub
+
+    Private Sub OnIndexChange(sender As Object, e As EventArgs) Handles cboType.SelectedIndexChanged
         Try
             Dim db As New DBDataContext
-            Dim rs = From venue In db.Venues Select venue
-            Result = rs.ToList
+            If cboType.SelectedIndex = 0 Then
+                Dim rs = From venue In db.Venues Select venue
+                Result = rs.ToList
+            Else
+                Dim rs = From venue In db.Venues Select venue Where venue.VenueType = cboType.SelectedItem.ToString
+                Result = rs.ToList
+            End If
         Catch ex As Exception
             MsgBox("Unable to contact database", MsgBoxStyle.Exclamation, "Error")
             Me.Close()
@@ -20,12 +46,6 @@
             MsgBox("No records found!", MsgBoxStyle.Exclamation, "Error")
             Me.Close()
             Return
-        End If
-
-        If Result.Count > 6 Then
-            MaxStep = Result.Count / 6
-        Else
-            MaxStep = 1
         End If
 
         Index = 0

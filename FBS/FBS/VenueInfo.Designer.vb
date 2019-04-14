@@ -43,7 +43,7 @@ Partial Class VenueInfo
         Me.btnReserve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnReserve.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReserve.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReserve.Location = New System.Drawing.Point(714, 448)
+        Me.btnReserve.Location = New System.Drawing.Point(700, 438)
         Me.btnReserve.Name = "btnReserve"
         Me.btnReserve.Size = New System.Drawing.Size(462, 50)
         Me.btnReserve.TabIndex = 46
@@ -53,8 +53,10 @@ Partial Class VenueInfo
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(90, 379)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label7.Location = New System.Drawing.Point(94, 374)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(269, 29)
         Me.Label7.TabIndex = 43
@@ -63,8 +65,10 @@ Partial Class VenueInfo
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(174, 287)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label6.Location = New System.Drawing.Point(178, 282)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(185, 29)
         Me.Label6.TabIndex = 41
@@ -73,8 +77,10 @@ Partial Class VenueInfo
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(122, 333)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label5.Location = New System.Drawing.Point(126, 328)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(237, 29)
         Me.Label5.TabIndex = 39
@@ -83,8 +89,10 @@ Partial Class VenueInfo
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(280, 242)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label2.Location = New System.Drawing.Point(284, 236)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 29)
         Me.Label2.TabIndex = 35
@@ -93,8 +101,10 @@ Partial Class VenueInfo
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(270, 195)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label1.Location = New System.Drawing.Point(274, 190)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 29)
         Me.Label1.TabIndex = 33
@@ -103,8 +113,10 @@ Partial Class VenueInfo
         'lblName
         '
         Me.lblName.AutoEllipsis = True
+        Me.lblName.BackColor = System.Drawing.Color.Transparent
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(370, 195)
+        Me.lblName.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblName.Location = New System.Drawing.Point(374, 190)
         Me.lblName.Margin = New System.Windows.Forms.Padding(8)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(315, 30)
@@ -114,8 +126,10 @@ Partial Class VenueInfo
         'lblType
         '
         Me.lblType.AutoEllipsis = True
+        Me.lblType.BackColor = System.Drawing.Color.Transparent
         Me.lblType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType.Location = New System.Drawing.Point(370, 241)
+        Me.lblType.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblType.Location = New System.Drawing.Point(374, 236)
         Me.lblType.Margin = New System.Windows.Forms.Padding(8)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(315, 30)
@@ -125,8 +139,10 @@ Partial Class VenueInfo
         'lblRate
         '
         Me.lblRate.AutoEllipsis = True
+        Me.lblRate.BackColor = System.Drawing.Color.Transparent
         Me.lblRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRate.Location = New System.Drawing.Point(370, 287)
+        Me.lblRate.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblRate.Location = New System.Drawing.Point(374, 282)
         Me.lblRate.Margin = New System.Windows.Forms.Padding(8)
         Me.lblRate.Name = "lblRate"
         Me.lblRate.Size = New System.Drawing.Size(315, 30)
@@ -136,8 +152,10 @@ Partial Class VenueInfo
         'lblCapacity
         '
         Me.lblCapacity.AutoEllipsis = True
+        Me.lblCapacity.BackColor = System.Drawing.Color.Transparent
         Me.lblCapacity.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCapacity.Location = New System.Drawing.Point(370, 333)
+        Me.lblCapacity.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblCapacity.Location = New System.Drawing.Point(374, 328)
         Me.lblCapacity.Margin = New System.Windows.Forms.Padding(8)
         Me.lblCapacity.Name = "lblCapacity"
         Me.lblCapacity.Size = New System.Drawing.Size(315, 30)
@@ -147,8 +165,10 @@ Partial Class VenueInfo
         'lblEvent
         '
         Me.lblEvent.AutoEllipsis = True
+        Me.lblEvent.BackColor = System.Drawing.Color.Transparent
         Me.lblEvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEvent.Location = New System.Drawing.Point(370, 379)
+        Me.lblEvent.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblEvent.Location = New System.Drawing.Point(374, 374)
         Me.lblEvent.Margin = New System.Windows.Forms.Padding(8)
         Me.lblEvent.Name = "lblEvent"
         Me.lblEvent.Size = New System.Drawing.Size(315, 30)
@@ -159,8 +179,7 @@ Partial Class VenueInfo
         '
         Me.picVenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.picVenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picVenue.Image = Global.FBS.My.Resources.Resources._66938284_p0
-        Me.picVenue.Location = New System.Drawing.Point(714, 172)
+        Me.picVenue.Location = New System.Drawing.Point(700, 172)
         Me.picVenue.Name = "picVenue"
         Me.picVenue.Size = New System.Drawing.Size(462, 260)
         Me.picVenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -172,6 +191,7 @@ Partial Class VenueInfo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.lblEvent)
         Me.Controls.Add(Me.lblCapacity)
@@ -191,6 +211,7 @@ Partial Class VenueInfo
         Me.Name = "VenueInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VenueInfo"
+        Me.TransparencyKey = System.Drawing.Color.Maroon
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -165,6 +165,12 @@
     <Compile Include="Register.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportGenerator.Designer.vb">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VenueDS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +213,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGenerator.resx">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>
