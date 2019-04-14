@@ -1,13 +1,16 @@
 ﻿Imports System.IO
-Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class AdminVenue
-    Private VenueName, Type, VenueEvent As String
+    Private VenueName, VenueEvent As String
     Private Rate As Decimal
     Private Capacity As Integer
+    Private IsFirstRun = True
     Private Modified As Boolean = False
     Private IsNew As Boolean = True
+    Private OverPay As Boolean = False
+    Private OverSized As Boolean = False
     Private PictureChanged = False
+    Private VenueTypes() As String = {"Badminton Court", "Basketball Court", "Football Field", "Gymnasium", "Tennis Court", "Swimming Pool"}
 
     'UPLOAD PHOTO HANDLER
     Private Sub UploadPhoto(sender As Object, e As EventArgs) Handles picVenue.Click
@@ -22,7 +25,7 @@ Public Class AdminVenue
         End If
     End Sub
 
-    Private Sub ValueChanged(sender As Object, e As EventArgs) Handles txtType.TextChanged, txtRate.TextChanged, txtName.TextChanged, txtEvent.TextChanged, txtCapacity.TextChanged
+    Private Sub ValueChanged(sender As Object, e As EventArgs) Handles txtRate.TextChanged, txtName.TextChanged, txtEvent.TextChanged, txtCapacity.TextChanged, cboType.SelectedIndexChanged
         Modified = True
         btnDelete.Text = "Reset"
         btnDelete.Enabled = True
@@ -39,7 +42,7 @@ Public Class AdminVenue
             Dim venue As New Venue With {
             .VenueName = VenueName,
             .VenueRate = Rate,
-            .VenueType = Type,
+            .VenueType = cboType.SelectedItem,
             .VenueMaxCapacity = Capacity,
             .VenueRecommendations = VenueEvent
             }
@@ -64,6 +67,9 @@ Public Class AdminVenue
 
             MsgBox("Updated Database Successfully!", MsgBoxStyle.Information, "Success!")
 
+            PictureChanged = False
+            Modified = False
+            btnUpdate.Enabled = False
             OnFormLoad(New Object, New EventArgs)
         Else
             If MsgBox("Confirm Update?", MsgBoxStyle.OkCancel, "Updating record") = DialogResult.OK Then
@@ -72,7 +78,7 @@ Public Class AdminVenue
 
                 venue.VenueName = VenueName
                 venue.VenueRate = Rate
-                venue.VenueType = Type
+                venue.VenueType = cboType.SelectedItem
                 venue.VenueMaxCapacity = Capacity
                 venue.VenueRecommendations = VenueEvent
 
@@ -89,6 +95,9 @@ Public Class AdminVenue
 
                 db.SubmitChanges()
                 MsgBox("Updated Database Successfully!", MsgBoxStyle.Information, "Success!")
+                PictureChanged = False
+                Modified = False
+                btnUpdate.Enabled = False
             End If
         End If
     End Sub
@@ -107,7 +116,7 @@ Public Class AdminVenue
             txtEvent.Text = ""
             txtName.Text = ""
             txtRate.Text = ""
-            txtType.Text = ""
+            cboType.SelectedIndex = -1
             picVenue.Image = Nothing
 
             IsNew = True
@@ -121,7 +130,7 @@ Public Class AdminVenue
             txtEvent.Text = venue.VenueRecommendations
             txtName.Text = venue.VenueName
             txtRate.Text = Decimal.Parse(venue.VenueRate).ToString("0.00")
-            txtType.Text = venue.VenueType
+            cboType.SelectedIndex = cboType.FindString(venue.VenueType)
             picVenue.Image = Image.FromStream(New MemoryStream(venue.VenuePicture.ToArray))
 
             IsNew = False
@@ -166,14 +175,13 @@ Public Class AdminVenue
     'VALIDATE DETAILS
     Private Function ValidateControls() As Boolean
         VenueName = txtName.Text.Trim(" ")
-        Type = txtType.Text.Trim(" ")
         VenueEvent = txtEvent.Text.Trim(" ")
 
         If VenueName = "" Then
             MsgBox("Please enter a name", MsgBoxStyle.Exclamation, "Error")
             Return False
-        ElseIf Type = "" Then
-            MsgBox("Please enter a type", MsgBoxStyle.Exclamation, "Error")
+        ElseIf cboType.SelectedIndex = -1 Then
+            MsgBox("Please select a type", MsgBoxStyle.Exclamation, "Error")
             Return False
         ElseIf Not Decimal.TryParse(txtRate.Text.Trim(" "), Rate) Then
             MsgBox("Please enter a valid rate", MsgBoxStyle.Exclamation, "Error")
@@ -182,22 +190,43 @@ Public Class AdminVenue
             MsgBox("Please enter a valid rate", MsgBoxStyle.Exclamation, "Error")
             Rate = Math.Round(Rate, 2)
             Return False
+        ElseIf Rate > 5000 And OverPay = False Then
+            If MsgBox("Hold on there cowboy! Are you sure that your services are THAT expensive?", MsgBoxStyle.YesNo, "Whoa there!") = DialogResult.No Then
+                Return False
+            Else
+                OverPay = True
+            End If
         ElseIf Not Integer.TryParse(txtCapacity.Text.Trim(" "), Capacity) Then
             MsgBox("Please enter a valid capacity", MsgBoxStyle.Exclamation, "Error")
             Return False
         ElseIf Capacity < 1 Then
             MsgBox("Please enter a valid capacity", MsgBoxStyle.Exclamation, "Error")
             Return False
+        ElseIf Capacity > 5000 And OverSized = False Then
+            If MsgBox("Hold on there cowboy! Are you sure that the facility can hold that many people?", MsgBoxStyle.YesNo, "Whoa there!") = DialogResult.No Then
+                Return False
+            Else
+                OverSized = True
+            End If
         ElseIf VenueEvent = "" Then
             MsgBox("Please enter a valid recommended event", MsgBoxStyle.Exclamation, "Error")
             Return False
-        Else
-            Return True
         End If
+
+        Rate = Decimal.Parse(txtRate.Text.Trim(" "))
+        Capacity = Integer.Parse(txtCapacity.Text.Trim(" "))
+        OverPay = False
+        OverSized = False
+        Return True
     End Function
 
     'FORM LOAD
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        cboType.Items.Clear()
+        For Each type In VenueTypes
+            cboType.Items.Add(type)
+        Next
+
         cboID.DataSource = Nothing
         cboID.Items.Clear()
         cboID.DisplayMember = "Text"

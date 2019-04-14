@@ -25,7 +25,6 @@ Partial Class AdminVenue
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminVenue))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtType = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtRate = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -37,6 +36,7 @@ Partial Class AdminVenue
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.cboID = New System.Windows.Forms.ComboBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.cboType = New System.Windows.Forms.ComboBox()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,16 +59,6 @@ Partial Class AdminVenue
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(315, 34)
         Me.txtName.TabIndex = 9
-        '
-        'txtType
-        '
-        Me.txtType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtType.Location = New System.Drawing.Point(314, 249)
-        Me.txtType.Margin = New System.Windows.Forms.Padding(8)
-        Me.txtType.MaxLength = 30
-        Me.txtType.Name = "txtType"
-        Me.txtType.Size = New System.Drawing.Size(315, 34)
-        Me.txtType.TabIndex = 11
         '
         'Label2
         '
@@ -125,6 +115,7 @@ Partial Class AdminVenue
         Me.txtEvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEvent.Location = New System.Drawing.Point(314, 399)
         Me.txtEvent.Margin = New System.Windows.Forms.Padding(8)
+        Me.txtEvent.MaxLength = 30
         Me.txtEvent.Name = "txtEvent"
         Me.txtEvent.Size = New System.Drawing.Size(315, 34)
         Me.txtEvent.TabIndex = 21
@@ -184,11 +175,23 @@ Partial Class AdminVenue
         Me.btnUpdate.Text = "Add As New"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'cboType
+        '
+        Me.cboType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboType.FormattingEnabled = True
+        Me.cboType.Location = New System.Drawing.Point(314, 249)
+        Me.cboType.Name = "cboType"
+        Me.cboType.Size = New System.Drawing.Size(315, 37)
+        Me.cboType.TabIndex = 27
+        '
         'AdminVenue
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.cboID)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnDelete)
@@ -199,7 +202,6 @@ Partial Class AdminVenue
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtRate)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtType)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label1)
@@ -216,7 +218,6 @@ Partial Class AdminVenue
 
     Friend WithEvents Label1 As Label
     Friend WithEvents txtName As TextBox
-    Friend WithEvents txtType As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtRate As TextBox
     Friend WithEvents Label5 As Label
@@ -228,4 +229,5 @@ Partial Class AdminVenue
     Friend WithEvents btnDelete As Button
     Friend WithEvents cboID As ComboBox
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents cboType As ComboBox
 End Class
