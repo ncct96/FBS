@@ -23,6 +23,9 @@ Partial Class Register
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.RegisterForm = New System.Windows.Forms.GroupBox()
+        Me.passwShow = New System.Windows.Forms.CheckBox()
+        Me.retypetxt = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.phonetxt = New System.Windows.Forms.MaskedTextBox()
         Me.registerbtn = New System.Windows.Forms.Button()
         Me.cancelbtn = New System.Windows.Forms.Button()
@@ -31,9 +34,6 @@ Partial Class Register
         Me.untxt = New System.Windows.Forms.TextBox()
         Me.pwlbl = New System.Windows.Forms.Label()
         Me.unlbl = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.retypetxt = New System.Windows.Forms.TextBox()
-        Me.passwShow = New System.Windows.Forms.CheckBox()
         Me.RegisterForm.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,6 +56,33 @@ Partial Class Register
         Me.RegisterForm.Size = New System.Drawing.Size(323, 319)
         Me.RegisterForm.TabIndex = 0
         Me.RegisterForm.TabStop = False
+        '
+        'passwShow
+        '
+        Me.passwShow.AutoSize = True
+        Me.passwShow.Location = New System.Drawing.Point(166, 164)
+        Me.passwShow.Name = "passwShow"
+        Me.passwShow.Size = New System.Drawing.Size(123, 20)
+        Me.passwShow.TabIndex = 9
+        Me.passwShow.Text = "Show Password"
+        Me.passwShow.UseVisualStyleBackColor = True
+        '
+        'retypetxt
+        '
+        Me.retypetxt.Location = New System.Drawing.Point(166, 136)
+        Me.retypetxt.Name = "retypetxt"
+        Me.retypetxt.Size = New System.Drawing.Size(100, 22)
+        Me.retypetxt.TabIndex = 8
+        Me.retypetxt.UseSystemPasswordChar = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(24, 142)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(124, 16)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Retype Password : "
         '
         'phonetxt
         '
@@ -126,33 +153,6 @@ Partial Class Register
         Me.unlbl.Size = New System.Drawing.Size(80, 16)
         Me.unlbl.TabIndex = 0
         Me.unlbl.Text = "Username : "
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 142)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(124, 16)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Retype Password : "
-        '
-        'retypetxt
-        '
-        Me.retypetxt.Location = New System.Drawing.Point(166, 136)
-        Me.retypetxt.Name = "retypetxt"
-        Me.retypetxt.Size = New System.Drawing.Size(100, 22)
-        Me.retypetxt.TabIndex = 8
-        Me.retypetxt.UseSystemPasswordChar = True
-        '
-        'passwShow
-        '
-        Me.passwShow.AutoSize = True
-        Me.passwShow.Location = New System.Drawing.Point(166, 164)
-        Me.passwShow.Name = "passwShow"
-        Me.passwShow.Size = New System.Drawing.Size(123, 20)
-        Me.passwShow.TabIndex = 9
-        Me.passwShow.Text = "Show Password"
-        Me.passwShow.UseVisualStyleBackColor = True
         '
         'Register
         '

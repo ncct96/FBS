@@ -89,4 +89,8 @@ Public Class Register
             retypetxt.UseSystemPasswordChar = True
         End If
     End Sub
+
+    Private Sub Register_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        untxt.Text = GlobalVars.currentUser
+    End Sub
 End Class

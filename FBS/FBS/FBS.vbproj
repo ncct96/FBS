@@ -109,6 +109,7 @@
     <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GlobalVars.vb" />
     <Compile Include="Image_Modal.Designer.vb">
       <DependentUpon>Image_Modal.vb</DependentUpon>
     </Compile>
