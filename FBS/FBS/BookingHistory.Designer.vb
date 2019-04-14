@@ -90,10 +90,10 @@ Partial Class BookingHistory
         Me.UsagesFilter.AutoSize = True
         Me.UsagesFilter.Location = New System.Drawing.Point(20, 75)
         Me.UsagesFilter.Name = "UsagesFilter"
-        Me.UsagesFilter.Size = New System.Drawing.Size(61, 17)
+        Me.UsagesFilter.Size = New System.Drawing.Size(91, 17)
         Me.UsagesFilter.TabIndex = 2
         Me.UsagesFilter.TabStop = True
-        Me.UsagesFilter.Text = "Usages"
+        Me.UsagesFilter.Text = "Facility Usage"
         Me.UsagesFilter.UseVisualStyleBackColor = True
         '
         'advanceGrpBox
