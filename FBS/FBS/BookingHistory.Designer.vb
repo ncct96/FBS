@@ -25,13 +25,15 @@ Partial Class BookingHistory
         Me.FBSMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TodaysHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewBookingHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewBookingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FBSMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'FBSMenuStrip
         '
-        Me.FBSMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem})
+        Me.FBSMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountToolStripMenuItem, Me.ViewToolStripMenuItem})
         Me.FBSMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.FBSMenuStrip.Name = "FBSMenuStrip"
         Me.FBSMenuStrip.Size = New System.Drawing.Size(824, 24)
@@ -39,7 +41,7 @@ Partial Class BookingHistory
         '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TodaysHistoryToolStripMenuItem, Me.ViewBookingHistoryToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TodaysHistoryToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
         Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.ViewToolStripMenuItem.Text = "Navigate"
@@ -47,14 +49,29 @@ Partial Class BookingHistory
         'TodaysHistoryToolStripMenuItem
         '
         Me.TodaysHistoryToolStripMenuItem.Name = "TodaysHistoryToolStripMenuItem"
-        Me.TodaysHistoryToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.TodaysHistoryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TodaysHistoryToolStripMenuItem.Text = "Make A Booking"
         '
-        'ViewBookingHistoryToolStripMenuItem
+        'AccountToolStripMenuItem
         '
-        Me.ViewBookingHistoryToolStripMenuItem.Name = "ViewBookingHistoryToolStripMenuItem"
-        Me.ViewBookingHistoryToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-        Me.ViewBookingHistoryToolStripMenuItem.Text = "View Booking History"
+        Me.AccountToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeUserToolStripMenuItem, Me.ViewBookingsToolStripMenuItem})
+        Me.AccountToolStripMenuItem.Name = "AccountToolStripMenuItem"
+        Me.AccountToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.AccountToolStripMenuItem.Text = "Account"
+        '
+        'ChangeUserToolStripMenuItem
+        '
+        Me.ChangeUserToolStripMenuItem.Name = "ChangeUserToolStripMenuItem"
+        Me.ChangeUserToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
+        Me.ChangeUserToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ChangeUserToolStripMenuItem.Text = "&Change User"
+        '
+        'ViewBookingsToolStripMenuItem
+        '
+        Me.ViewBookingsToolStripMenuItem.Name = "ViewBookingsToolStripMenuItem"
+        Me.ViewBookingsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.ViewBookingsToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.ViewBookingsToolStripMenuItem.Text = "&View Bookings"
         '
         'BookingHistory
         '
@@ -75,5 +92,7 @@ Partial Class BookingHistory
     Friend WithEvents FBSMenuStrip As MenuStrip
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TodaysHistoryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewBookingHistoryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AccountToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChangeUserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewBookingsToolStripMenuItem As ToolStripMenuItem
 End Class
