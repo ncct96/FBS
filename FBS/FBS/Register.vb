@@ -25,7 +25,7 @@ Public Class Register
             err.AppendLine("Please ensure the password retype is correct.")
             ctr = If(ctr, retypetxt)
         Else
-            Dim stringCon As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+            Dim stringCon As String = My.Settings.FBSConnectionString
             Dim connection As New SqlConnection(stringCon)
 
             ' Open 1st Database Connection

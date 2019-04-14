@@ -17,7 +17,7 @@ Public Class Login
                 err.AppendLine("Please Input Your Account's Password.")
                 ctr = If(ctr, passwordtxt)
             Else
-                Dim stringCon As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+                Dim stringCon As String = My.Settings.FBSConnectionString
                 Dim connection As New SqlConnection(stringCon)
 
                 ' Open Database Connection for userCommand
@@ -32,6 +32,7 @@ Public Class Login
                 If userRetrieval.HasRows Then
                     MessageBox.Show("Welcome Back " + "User", "User Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     GlobalVars.currentUser = username
+                    GlobalVars.currentType = "Customer"
                 Else
                     ' Close Database Connection
                     connection.Close()
@@ -45,6 +46,7 @@ Public Class Login
                     If adminRetrieval.HasRows Then
                         MessageBox.Show("Welcome Back " + "Admin", "Admin Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         GlobalVars.currentUser = username
+                        GlobalVars.currentType = "Admin"
                     Else
                         MessageBox.Show("Invalid Login Information.", "Account not found", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
