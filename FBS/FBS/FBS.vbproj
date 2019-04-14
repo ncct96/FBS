@@ -272,16 +272,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\1200px-Donald_Trump_official_portrait.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\66938284_p0.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FBS.ico" />
