@@ -127,10 +127,6 @@
     <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Image_Modal.Designer.vb">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Image_Modal.vb">
     <Compile Include="ImagePopUp.vb">
       <SubType>Form</SubType>
     </Compile>
