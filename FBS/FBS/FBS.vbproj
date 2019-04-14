@@ -118,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.dbml</DependentUpon>
     </Compile>
+	<Compile Include="GlobalVars.vb" />
     <Compile Include="ImagePopUp.Designer.vb">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
