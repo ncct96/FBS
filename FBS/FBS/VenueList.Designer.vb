@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VenueList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,93 +20,459 @@ Partial Class VenueList
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.dgvVenueList = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        CType(Me.dgvVenueList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl2 = New System.Windows.Forms.Panel()
+        Me.lblType2 = New System.Windows.Forms.Label()
+        Me.lblName2 = New System.Windows.Forms.Label()
+        Me.pnl3 = New System.Windows.Forms.Panel()
+        Me.lblType3 = New System.Windows.Forms.Label()
+        Me.lblName3 = New System.Windows.Forms.Label()
+        Me.pnl1 = New System.Windows.Forms.Panel()
+        Me.lblType1 = New System.Windows.Forms.Label()
+        Me.lblName1 = New System.Windows.Forms.Label()
+        Me.pnl5 = New System.Windows.Forms.Panel()
+        Me.lblType5 = New System.Windows.Forms.Label()
+        Me.lblName5 = New System.Windows.Forms.Label()
+        Me.pnl6 = New System.Windows.Forms.Panel()
+        Me.lblRate6 = New System.Windows.Forms.Label()
+        Me.lblName6 = New System.Windows.Forms.Label()
+        Me.pnl4 = New System.Windows.Forms.Panel()
+        Me.lblType4 = New System.Windows.Forms.Label()
+        Me.lblName4 = New System.Windows.Forms.Label()
+        Me.btnPrevious = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.lblPage = New System.Windows.Forms.Label()
+        Me.picVenue1 = New System.Windows.Forms.PictureBox()
+        Me.picVenue2 = New System.Windows.Forms.PictureBox()
+        Me.picVenue3 = New System.Windows.Forms.PictureBox()
+        Me.picVenue4 = New System.Windows.Forms.PictureBox()
+        Me.picVenue5 = New System.Windows.Forms.PictureBox()
+        Me.picVenue6 = New System.Windows.Forms.PictureBox()
+        Me.lblType6 = New System.Windows.Forms.Label()
+        Me.pnl2.SuspendLayout()
+        Me.pnl3.SuspendLayout()
+        Me.pnl1.SuspendLayout()
+        Me.pnl5.SuspendLayout()
+        Me.pnl6.SuspendLayout()
+        Me.pnl4.SuspendLayout()
+        CType(Me.picVenue1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVenue2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVenue3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVenue4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVenue5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVenue6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'dgvVenueList
-        '
-        Me.dgvVenueList.AllowUserToAddRows = False
-        Me.dgvVenueList.AllowUserToDeleteRows = False
-        Me.dgvVenueList.BackgroundColor = System.Drawing.Color.White
-        Me.dgvVenueList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvVenueList.Location = New System.Drawing.Point(400, 156)
-        Me.dgvVenueList.Margin = New System.Windows.Forms.Padding(8)
-        Me.dgvVenueList.Name = "dgvVenueList"
-        Me.dgvVenueList.ReadOnly = True
-        Me.dgvVenueList.RowTemplate.Height = 24
-        Me.dgvVenueList.Size = New System.Drawing.Size(480, 500)
-        Me.dgvVenueList.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(480, 68)
+        Me.Label1.Location = New System.Drawing.Point(484, 68)
         Me.Label1.Margin = New System.Windows.Forms.Padding(8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(149, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Venue Type:"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(465, 111)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 29)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Day Available:"
-        '
         'ComboBox1
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(640, 65)
+        Me.ComboBox1.Location = New System.Drawing.Point(644, 65)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(200, 37)
-        Me.ComboBox1.TabIndex = 4
+        Me.ComboBox1.TabIndex = 2
         '
-        'ComboBox2
+        'pnl2
         '
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(640, 108)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(200, 37)
-        Me.ComboBox2.TabIndex = 5
+        Me.pnl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl2.Controls.Add(Me.picVenue2)
+        Me.pnl2.Controls.Add(Me.lblType2)
+        Me.pnl2.Controls.Add(Me.lblName2)
+        Me.pnl2.Location = New System.Drawing.Point(490, 150)
+        Me.pnl2.Margin = New System.Windows.Forms.Padding(8)
+        Me.pnl2.Name = "pnl2"
+        Me.pnl2.Size = New System.Drawing.Size(300, 200)
+        Me.pnl2.TabIndex = 4
         '
-        'Venue_List
+        'lblType2
+        '
+        Me.lblType2.BackColor = System.Drawing.Color.Transparent
+        Me.lblType2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType2.Location = New System.Drawing.Point(4, 169)
+        Me.lblType2.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblType2.Name = "lblType2"
+        Me.lblType2.Size = New System.Drawing.Size(290, 25)
+        Me.lblType2.TabIndex = 16
+        Me.lblType2.Text = "Type2"
+        '
+        'lblName2
+        '
+        Me.lblName2.AutoEllipsis = True
+        Me.lblName2.BackColor = System.Drawing.Color.Transparent
+        Me.lblName2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName2.Location = New System.Drawing.Point(4, 135)
+        Me.lblName2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
+        Me.lblName2.Name = "lblName2"
+        Me.lblName2.Size = New System.Drawing.Size(290, 30)
+        Me.lblName2.TabIndex = 14
+        Me.lblName2.Text = "Venue 2"
+        '
+        'pnl3
+        '
+        Me.pnl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl3.Controls.Add(Me.lblType3)
+        Me.pnl3.Controls.Add(Me.lblName3)
+        Me.pnl3.Controls.Add(Me.picVenue3)
+        Me.pnl3.Location = New System.Drawing.Point(806, 150)
+        Me.pnl3.Margin = New System.Windows.Forms.Padding(8)
+        Me.pnl3.Name = "pnl3"
+        Me.pnl3.Size = New System.Drawing.Size(300, 200)
+        Me.pnl3.TabIndex = 5
+        '
+        'lblType3
+        '
+        Me.lblType3.BackColor = System.Drawing.Color.Transparent
+        Me.lblType3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType3.Location = New System.Drawing.Point(4, 169)
+        Me.lblType3.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblType3.Name = "lblType3"
+        Me.lblType3.Size = New System.Drawing.Size(290, 25)
+        Me.lblType3.TabIndex = 16
+        Me.lblType3.Text = "Type3"
+        '
+        'lblName3
+        '
+        Me.lblName3.AutoEllipsis = True
+        Me.lblName3.BackColor = System.Drawing.Color.Transparent
+        Me.lblName3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName3.Location = New System.Drawing.Point(4, 135)
+        Me.lblName3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
+        Me.lblName3.Name = "lblName3"
+        Me.lblName3.Size = New System.Drawing.Size(290, 30)
+        Me.lblName3.TabIndex = 14
+        Me.lblName3.Text = "Venue 3"
+        '
+        'pnl1
+        '
+        Me.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl1.Controls.Add(Me.lblType1)
+        Me.pnl1.Controls.Add(Me.lblName1)
+        Me.pnl1.Controls.Add(Me.picVenue1)
+        Me.pnl1.Location = New System.Drawing.Point(174, 150)
+        Me.pnl1.Margin = New System.Windows.Forms.Padding(8)
+        Me.pnl1.Name = "pnl1"
+        Me.pnl1.Size = New System.Drawing.Size(300, 200)
+        Me.pnl1.TabIndex = 3
+        '
+        'lblType1
+        '
+        Me.lblType1.BackColor = System.Drawing.Color.Transparent
+        Me.lblType1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType1.Location = New System.Drawing.Point(4, 169)
+        Me.lblType1.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblType1.Name = "lblType1"
+        Me.lblType1.Size = New System.Drawing.Size(290, 25)
+        Me.lblType1.TabIndex = 14
+        Me.lblType1.Text = "Type1"
+        '
+        'lblName1
+        '
+        Me.lblName1.AutoEllipsis = True
+        Me.lblName1.BackColor = System.Drawing.Color.Transparent
+        Me.lblName1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName1.Location = New System.Drawing.Point(4, 135)
+        Me.lblName1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
+        Me.lblName1.Name = "lblName1"
+        Me.lblName1.Size = New System.Drawing.Size(290, 30)
+        Me.lblName1.TabIndex = 13
+        Me.lblName1.Text = "Venue 1"
+        '
+        'pnl5
+        '
+        Me.pnl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl5.Controls.Add(Me.lblName5)
+        Me.pnl5.Controls.Add(Me.lblType5)
+        Me.pnl5.Controls.Add(Me.lblRate6)
+        Me.pnl5.Controls.Add(Me.picVenue5)
+        Me.pnl5.Location = New System.Drawing.Point(490, 366)
+        Me.pnl5.Margin = New System.Windows.Forms.Padding(8)
+        Me.pnl5.Name = "pnl5"
+        Me.pnl5.Size = New System.Drawing.Size(300, 200)
+        Me.pnl5.TabIndex = 7
+        '
+        'lblType5
+        '
+        Me.lblType5.BackColor = System.Drawing.Color.Transparent
+        Me.lblType5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType5.Location = New System.Drawing.Point(4, 169)
+        Me.lblType5.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblType5.Name = "lblType5"
+        Me.lblType5.Size = New System.Drawing.Size(290, 25)
+        Me.lblType5.TabIndex = 16
+        Me.lblType5.Text = "Type5"
+        '
+        'lblName5
+        '
+        Me.lblName5.AutoEllipsis = True
+        Me.lblName5.BackColor = System.Drawing.Color.Transparent
+        Me.lblName5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName5.Location = New System.Drawing.Point(4, 135)
+        Me.lblName5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
+        Me.lblName5.Name = "lblName5"
+        Me.lblName5.Size = New System.Drawing.Size(290, 30)
+        Me.lblName5.TabIndex = 14
+        Me.lblName5.Text = "Venue 5"
+        '
+        'pnl6
+        '
+        Me.pnl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl6.Controls.Add(Me.lblType6)
+        Me.pnl6.Controls.Add(Me.picVenue6)
+        Me.pnl6.Controls.Add(Me.lblName6)
+        Me.pnl6.Location = New System.Drawing.Point(806, 366)
+        Me.pnl6.Margin = New System.Windows.Forms.Padding(8)
+        Me.pnl6.Name = "pnl6"
+        Me.pnl6.Size = New System.Drawing.Size(300, 200)
+        Me.pnl6.TabIndex = 8
+        '
+        'lblRate6
+        '
+        Me.lblRate6.BackColor = System.Drawing.Color.Transparent
+        Me.lblRate6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRate6.Location = New System.Drawing.Point(71, 211)
+        Me.lblRate6.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblRate6.Name = "lblRate6"
+        Me.lblRate6.Size = New System.Drawing.Size(282, 25)
+        Me.lblRate6.TabIndex = 16
+        Me.lblRate6.Text = "Type6"
+        '
+        'lblName6
+        '
+        Me.lblName6.AutoEllipsis = True
+        Me.lblName6.BackColor = System.Drawing.Color.Transparent
+        Me.lblName6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName6.Location = New System.Drawing.Point(4, 135)
+        Me.lblName6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
+        Me.lblName6.Name = "lblName6"
+        Me.lblName6.Size = New System.Drawing.Size(290, 30)
+        Me.lblName6.TabIndex = 14
+        Me.lblName6.Text = "Venue 6"
+        '
+        'pnl4
+        '
+        Me.pnl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl4.Controls.Add(Me.picVenue4)
+        Me.pnl4.Controls.Add(Me.lblType4)
+        Me.pnl4.Controls.Add(Me.lblName4)
+        Me.pnl4.Location = New System.Drawing.Point(174, 366)
+        Me.pnl4.Margin = New System.Windows.Forms.Padding(8)
+        Me.pnl4.Name = "pnl4"
+        Me.pnl4.Size = New System.Drawing.Size(300, 200)
+        Me.pnl4.TabIndex = 6
+        '
+        'lblType4
+        '
+        Me.lblType4.BackColor = System.Drawing.Color.Transparent
+        Me.lblType4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType4.Location = New System.Drawing.Point(4, 169)
+        Me.lblType4.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblType4.Name = "lblType4"
+        Me.lblType4.Size = New System.Drawing.Size(290, 25)
+        Me.lblType4.TabIndex = 16
+        Me.lblType4.Text = "Type4"
+        '
+        'lblName4
+        '
+        Me.lblName4.AutoEllipsis = True
+        Me.lblName4.BackColor = System.Drawing.Color.Transparent
+        Me.lblName4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName4.Location = New System.Drawing.Point(4, 135)
+        Me.lblName4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
+        Me.lblName4.Name = "lblName4"
+        Me.lblName4.Size = New System.Drawing.Size(290, 30)
+        Me.lblName4.TabIndex = 14
+        Me.lblName4.Text = "Venue 4"
+        '
+        'btnPrevious
+        '
+        Me.btnPrevious.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrevious.Location = New System.Drawing.Point(437, 606)
+        Me.btnPrevious.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(150, 50)
+        Me.btnPrevious.TabIndex = 10
+        Me.btnPrevious.Text = "Previous"
+        Me.btnPrevious.UseVisualStyleBackColor = True
+        '
+        'btnNext
+        '
+        Me.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.Location = New System.Drawing.Point(689, 606)
+        Me.btnNext.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(150, 50)
+        Me.btnNext.TabIndex = 11
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'lblPage
+        '
+        Me.lblPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPage.Location = New System.Drawing.Point(598, 606)
+        Me.lblPage.Name = "lblPage"
+        Me.lblPage.Size = New System.Drawing.Size(80, 50)
+        Me.lblPage.TabIndex = 13
+        Me.lblPage.Text = "0"
+        Me.lblPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picVenue1
+        '
+        Me.picVenue1.Location = New System.Drawing.Point(0, 0)
+        Me.picVenue1.Margin = New System.Windows.Forms.Padding(0)
+        Me.picVenue1.Name = "picVenue1"
+        Me.picVenue1.Size = New System.Drawing.Size(298, 132)
+        Me.picVenue1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picVenue1.TabIndex = 14
+        Me.picVenue1.TabStop = False
+        '
+        'picVenue2
+        '
+        Me.picVenue2.Location = New System.Drawing.Point(0, 0)
+        Me.picVenue2.Margin = New System.Windows.Forms.Padding(0)
+        Me.picVenue2.Name = "picVenue2"
+        Me.picVenue2.Size = New System.Drawing.Size(298, 132)
+        Me.picVenue2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picVenue2.TabIndex = 15
+        Me.picVenue2.TabStop = False
+        '
+        'picVenue3
+        '
+        Me.picVenue3.Location = New System.Drawing.Point(0, 0)
+        Me.picVenue3.Margin = New System.Windows.Forms.Padding(0)
+        Me.picVenue3.Name = "picVenue3"
+        Me.picVenue3.Size = New System.Drawing.Size(298, 132)
+        Me.picVenue3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picVenue3.TabIndex = 15
+        Me.picVenue3.TabStop = False
+        '
+        'picVenue4
+        '
+        Me.picVenue4.Location = New System.Drawing.Point(0, 0)
+        Me.picVenue4.Margin = New System.Windows.Forms.Padding(0)
+        Me.picVenue4.Name = "picVenue4"
+        Me.picVenue4.Size = New System.Drawing.Size(298, 132)
+        Me.picVenue4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picVenue4.TabIndex = 15
+        Me.picVenue4.TabStop = False
+        '
+        'picVenue5
+        '
+        Me.picVenue5.Location = New System.Drawing.Point(0, 0)
+        Me.picVenue5.Margin = New System.Windows.Forms.Padding(0)
+        Me.picVenue5.Name = "picVenue5"
+        Me.picVenue5.Size = New System.Drawing.Size(298, 132)
+        Me.picVenue5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picVenue5.TabIndex = 15
+        Me.picVenue5.TabStop = False
+        '
+        'picVenue6
+        '
+        Me.picVenue6.Location = New System.Drawing.Point(0, 0)
+        Me.picVenue6.Margin = New System.Windows.Forms.Padding(0)
+        Me.picVenue6.Name = "picVenue6"
+        Me.picVenue6.Size = New System.Drawing.Size(298, 132)
+        Me.picVenue6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picVenue6.TabIndex = 15
+        Me.picVenue6.TabStop = False
+        '
+        'lblType6
+        '
+        Me.lblType6.BackColor = System.Drawing.Color.Transparent
+        Me.lblType6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType6.Location = New System.Drawing.Point(4, 169)
+        Me.lblType6.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblType6.Name = "lblType6"
+        Me.lblType6.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblType6.Size = New System.Drawing.Size(290, 25)
+        Me.lblType6.TabIndex = 17
+        Me.lblType6.Text = "Type6"
+        '
+        'VenueList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1262, 673)
-        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.pnl1)
+        Me.Controls.Add(Me.lblPage)
+        Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.btnPrevious)
+        Me.Controls.Add(Me.pnl4)
+        Me.Controls.Add(Me.pnl6)
+        Me.Controls.Add(Me.pnl5)
+        Me.Controls.Add(Me.pnl3)
+        Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.dgvVenueList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Name = "Venue_List"
+        Me.Name = "VenueList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Venue_List"
-        CType(Me.dgvVenueList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl2.ResumeLayout(False)
+        Me.pnl3.ResumeLayout(False)
+        Me.pnl1.ResumeLayout(False)
+        Me.pnl5.ResumeLayout(False)
+        Me.pnl6.ResumeLayout(False)
+        Me.pnl4.ResumeLayout(False)
+        CType(Me.picVenue1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picVenue2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picVenue3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picVenue4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picVenue5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picVenue6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents dgvVenueList As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents pnl2 As Panel
+    Friend WithEvents pnl3 As Panel
+    Friend WithEvents pnl1 As Panel
+    Friend WithEvents pnl5 As Panel
+    Friend WithEvents pnl6 As Panel
+    Friend WithEvents pnl4 As Panel
+    Friend WithEvents btnPrevious As Button
+    Friend WithEvents btnNext As Button
+    Friend WithEvents lblName2 As Label
+    Friend WithEvents lblName3 As Label
+    Friend WithEvents lblName1 As Label
+    Friend WithEvents lblName5 As Label
+    Friend WithEvents lblName6 As Label
+    Friend WithEvents lblName4 As Label
+    Friend WithEvents lblType1 As Label
+    Friend WithEvents lblType2 As Label
+    Friend WithEvents lblType3 As Label
+    Friend WithEvents lblType5 As Label
+    Friend WithEvents lblRate6 As Label
+    Friend WithEvents lblType4 As Label
+    Friend WithEvents lblPage As Label
+    Friend WithEvents picVenue2 As PictureBox
+    Friend WithEvents picVenue3 As PictureBox
+    Friend WithEvents picVenue1 As PictureBox
+    Friend WithEvents picVenue5 As PictureBox
+    Friend WithEvents picVenue6 As PictureBox
+    Friend WithEvents picVenue4 As PictureBox
+    Friend WithEvents lblType6 As Label
 End Class
