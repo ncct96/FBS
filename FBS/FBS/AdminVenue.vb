@@ -257,14 +257,14 @@ Public Class AdminVenue
         Modified = False
     End Sub
 
-    Private Sub MouseEnter_Event(sender As Object, e As EventArgs) Handles picVenue.MouseEnter, btnUpdate.MouseEnter, btnDelete.MouseEnter, cboID.MouseEnter
+    Private Sub MouseEnterEvent(sender As Object, e As EventArgs) Handles picVenue.MouseEnter, btnUpdate.MouseEnter, btnDelete.MouseEnter, cboID.MouseEnter, cboType.MouseEnter
         Me.Cursor = Cursors.Hand
         If sender.Equals(picVenue) Then
             picVenue.SizeMode = PictureBoxSizeMode.CenterImage
         End If
     End Sub
 
-    Private Sub MouseLeave_Event(sender As Object, e As EventArgs) Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave
+    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave, cboType.MouseLeave
         Me.Cursor = Cursors.Default
         If sender.Equals(picVenue) Then
             picVenue.SizeMode = PictureBoxSizeMode.Zoom

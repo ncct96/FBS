@@ -44,6 +44,7 @@ Partial Class ImagePopUp
         Me.Controls.Add(Me.picImage)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "ImagePopUp"
         Me.Text = "ImagePopUp"
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).EndInit()
