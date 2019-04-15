@@ -77,8 +77,8 @@ Public Class Login
             End If
 
             If tf Then
-                Dim pass = New BookingHistory
-                pass.Show()
+                Dim pass As New VenueList
+                pass.ShowDialog()
             End If
         Catch ex As Exception
 
