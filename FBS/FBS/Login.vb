@@ -77,8 +77,10 @@ Public Class Login
             End If
 
             If tf Then
-                Dim pass As New VenueList
+                Dim pass As New Main
+                Me.Hide()
                 pass.ShowDialog()
+                Me.Show()
             End If
         Catch ex As Exception
 

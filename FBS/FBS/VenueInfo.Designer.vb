@@ -35,6 +35,7 @@ Partial Class VenueInfo
         Me.lblCapacity = New System.Windows.Forms.Label()
         Me.lblEvent = New System.Windows.Forms.Label()
         Me.picVenue = New System.Windows.Forms.PictureBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -186,6 +187,18 @@ Partial Class VenueInfo
         Me.picVenue.TabIndex = 45
         Me.picVenue.TabStop = False
         '
+        'btnBack
+        '
+        Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(100, 40)
+        Me.btnBack.TabIndex = 61
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'VenueInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -193,6 +206,7 @@ Partial Class VenueInfo
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.lblEvent)
         Me.Controls.Add(Me.lblCapacity)
         Me.Controls.Add(Me.lblRate)
@@ -229,4 +243,5 @@ Partial Class VenueInfo
     Friend WithEvents lblRate As Label
     Friend WithEvents lblCapacity As Label
     Friend WithEvents lblEvent As Label
+    Friend WithEvents btnBack As Button
 End Class
