@@ -209,7 +209,7 @@ Partial Public Class Venue
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VenuePicture", DbType:="Image", CanBeNull:=true, UpdateCheck:=UpdateCheck.Never)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VenuePicture", DbType:="Image", UpdateCheck:=UpdateCheck.Never)>  _
 	Public Property VenuePicture() As System.Data.Linq.Binary
 		Get
 			Return Me._VenuePicture
