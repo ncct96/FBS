@@ -46,9 +46,7 @@ Partial Class Booking
         Me.lblTotalPayment = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.dtpStart = New System.Windows.Forms.DateTimePicker()
+        Me.lstTimeslot = New System.Windows.Forms.ListBox()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueDS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,11 +77,11 @@ Partial Class Booking
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(66, 332)
+        Me.Label2.Location = New System.Drawing.Point(66, 306)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(33, 13)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Timeslot:"
+        Me.Label2.Text = "Time:"
         '
         'lblDate
         '
@@ -126,7 +124,7 @@ Partial Class Booking
         '
         'btnBook
         '
-        Me.btnBook.Location = New System.Drawing.Point(217, 550)
+        Me.btnBook.Location = New System.Drawing.Point(236, 518)
         Me.btnBook.Name = "btnBook"
         Me.btnBook.Size = New System.Drawing.Size(75, 23)
         Me.btnBook.TabIndex = 11
@@ -135,7 +133,7 @@ Partial Class Booking
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(331, 550)
+        Me.btnCancel.Location = New System.Drawing.Point(340, 518)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 12
@@ -144,7 +142,7 @@ Partial Class Booking
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(387, 154)
+        Me.PictureBox1.Location = New System.Drawing.Point(415, 154)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.TabIndex = 9
@@ -172,7 +170,7 @@ Partial Class Booking
         'lblHour
         '
         Me.lblHour.AutoSize = True
-        Me.lblHour.Location = New System.Drawing.Point(194, 29)
+        Me.lblHour.Location = New System.Drawing.Point(195, 34)
         Me.lblHour.Name = "lblHour"
         Me.lblHour.Size = New System.Drawing.Size(39, 13)
         Me.lblHour.TabIndex = 17
@@ -185,7 +183,7 @@ Partial Class Booking
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 31)
+        Me.Label8.Location = New System.Drawing.Point(17, 36)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(34, 13)
         Me.Label8.TabIndex = 18
@@ -195,7 +193,7 @@ Partial Class Booking
         '
         Me.lblPrice.AutoSize = True
         Me.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblPrice.Location = New System.Drawing.Point(105, 29)
+        Me.lblPrice.Location = New System.Drawing.Point(106, 34)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(26, 15)
         Me.lblPrice.TabIndex = 19
@@ -214,7 +212,7 @@ Partial Class Booking
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(335, 170)
+        Me.Label11.Location = New System.Drawing.Point(369, 170)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(46, 13)
         Me.Label11.TabIndex = 21
@@ -228,18 +226,18 @@ Partial Class Booking
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.lblPrice)
         Me.GroupBox2.Controls.Add(Me.lblHour)
-        Me.GroupBox2.Location = New System.Drawing.Point(69, 398)
+        Me.GroupBox2.Location = New System.Drawing.Point(69, 356)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(351, 122)
+        Me.GroupBox2.Size = New System.Drawing.Size(395, 108)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Booking Summary"
+        Me.GroupBox2.Text = "Price Summary"
         '
         'lblTotalPayment
         '
         Me.lblTotalPayment.AutoSize = True
         Me.lblTotalPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotalPayment.Location = New System.Drawing.Point(105, 70)
+        Me.lblTotalPayment.Location = New System.Drawing.Point(106, 70)
         Me.lblTotalPayment.Name = "lblTotalPayment"
         Me.lblTotalPayment.Size = New System.Drawing.Size(26, 15)
         Me.lblTotalPayment.TabIndex = 22
@@ -248,7 +246,7 @@ Partial Class Booking
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(16, 72)
+        Me.Label9.Location = New System.Drawing.Point(17, 72)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 13)
         Me.Label9.TabIndex = 21
@@ -257,45 +255,27 @@ Partial Class Booking
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(158, 29)
+        Me.Label4.Location = New System.Drawing.Point(159, 34)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(12, 13)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "x"
         '
-        'Label3
+        'lstTimeslot
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(145, 332)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 13)
-        Me.Label3.TabIndex = 23
-        Me.Label3.Text = "Start:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(407, 332)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 13)
-        Me.Label5.TabIndex = 24
-        Me.Label5.Text = "End:"
-        '
-        'dtpStart
-        '
-        Me.dtpStart.Location = New System.Drawing.Point(183, 326)
-        Me.dtpStart.Name = "dtpStart"
-        Me.dtpStart.Size = New System.Drawing.Size(200, 20)
-        Me.dtpStart.TabIndex = 25
+        Me.lstTimeslot.FormattingEnabled = True
+        Me.lstTimeslot.Items.AddRange(New Object() {"10:00 am - 12:00 pm", "12:00 pm - 2:00 pm", "2:00 pm - 4:00 pm", "4:00 pm - 6:00 pm", "6:00 pm - 8:00 pm", "8:00 pm - 10:00 pm"})
+        Me.lstTimeslot.Location = New System.Drawing.Point(148, 287)
+        Me.lstTimeslot.Name = "lstTimeslot"
+        Me.lstTimeslot.Size = New System.Drawing.Size(144, 43)
+        Me.lstTimeslot.TabIndex = 23
         '
         'Booking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(798, 595)
-        Me.Controls.Add(Me.dtpStart)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(738, 561)
+        Me.Controls.Add(Me.lstTimeslot)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblRate)
@@ -345,7 +325,5 @@ Partial Class Booking
     Friend WithEvents Label9 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents lblTotalPayment As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents dtpStart As DateTimePicker
+    Friend WithEvents lstTimeslot As ListBox
 End Class
