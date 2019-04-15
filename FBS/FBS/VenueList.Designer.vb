@@ -52,12 +52,7 @@ Partial Class VenueList
         Me.lblName4 = New System.Windows.Forms.Label()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
-        Me.bookHistoBtn = New System.Windows.Forms.Button()
-        Me.mkBookBtn = New System.Windows.Forms.Button()
-        Me.pwChangeBtn = New System.Windows.Forms.Button()
-        Me.venueMngBtn = New System.Windows.Forms.Button()
-        Me.genReportBtn = New System.Windows.Forms.Button()
-        Me.cancelBtn = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.pnl2.SuspendLayout()
         CType(Me.picVenue2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl3.SuspendLayout()
@@ -76,10 +71,10 @@ Partial Class VenueList
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(600, 69)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(6)
+        Me.Label1.Location = New System.Drawing.Point(525, 90)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 24)
+        Me.Label1.Size = New System.Drawing.Size(98, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Display:"
         '
@@ -88,10 +83,10 @@ Partial Class VenueList
         Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboType.FormattingEnabled = True
-        Me.cboType.Location = New System.Drawing.Point(675, 69)
-        Me.cboType.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboType.Location = New System.Drawing.Point(634, 87)
+        Me.cboType.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(151, 32)
+        Me.cboType.Size = New System.Drawing.Size(200, 37)
         Me.cboType.TabIndex = 2
         '
         'pnl2
@@ -100,10 +95,10 @@ Partial Class VenueList
         Me.pnl2.Controls.Add(Me.picVenue2)
         Me.pnl2.Controls.Add(Me.lblType2)
         Me.pnl2.Controls.Add(Me.lblName2)
-        Me.pnl2.Location = New System.Drawing.Point(368, 122)
-        Me.pnl2.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnl2.Location = New System.Drawing.Point(491, 150)
+        Me.pnl2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.pnl2.Name = "pnl2"
-        Me.pnl2.Size = New System.Drawing.Size(226, 163)
+        Me.pnl2.Size = New System.Drawing.Size(301, 200)
         Me.pnl2.TabIndex = 4
         '
         'picVenue2
@@ -111,7 +106,7 @@ Partial Class VenueList
         Me.picVenue2.Location = New System.Drawing.Point(0, 0)
         Me.picVenue2.Margin = New System.Windows.Forms.Padding(0)
         Me.picVenue2.Name = "picVenue2"
-        Me.picVenue2.Size = New System.Drawing.Size(224, 107)
+        Me.picVenue2.Size = New System.Drawing.Size(299, 132)
         Me.picVenue2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue2.TabIndex = 15
         Me.picVenue2.TabStop = False
@@ -120,10 +115,10 @@ Partial Class VenueList
         '
         Me.lblType2.BackColor = System.Drawing.Color.Transparent
         Me.lblType2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType2.Location = New System.Drawing.Point(3, 137)
-        Me.lblType2.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblType2.Location = New System.Drawing.Point(4, 169)
+        Me.lblType2.Margin = New System.Windows.Forms.Padding(4)
         Me.lblType2.Name = "lblType2"
-        Me.lblType2.Size = New System.Drawing.Size(218, 20)
+        Me.lblType2.Size = New System.Drawing.Size(291, 25)
         Me.lblType2.TabIndex = 16
         Me.lblType2.Text = "Type2"
         '
@@ -132,10 +127,10 @@ Partial Class VenueList
         Me.lblName2.AutoEllipsis = True
         Me.lblName2.BackColor = System.Drawing.Color.Transparent
         Me.lblName2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName2.Location = New System.Drawing.Point(3, 110)
-        Me.lblName2.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.lblName2.Location = New System.Drawing.Point(4, 135)
+        Me.lblName2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
         Me.lblName2.Name = "lblName2"
-        Me.lblName2.Size = New System.Drawing.Size(218, 24)
+        Me.lblName2.Size = New System.Drawing.Size(291, 30)
         Me.lblName2.TabIndex = 14
         Me.lblName2.Text = "Venue 2"
         '
@@ -145,20 +140,20 @@ Partial Class VenueList
         Me.pnl3.Controls.Add(Me.lblType3)
         Me.pnl3.Controls.Add(Me.lblName3)
         Me.pnl3.Controls.Add(Me.picVenue3)
-        Me.pnl3.Location = New System.Drawing.Point(604, 122)
-        Me.pnl3.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnl3.Location = New System.Drawing.Point(805, 150)
+        Me.pnl3.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.pnl3.Name = "pnl3"
-        Me.pnl3.Size = New System.Drawing.Size(226, 163)
+        Me.pnl3.Size = New System.Drawing.Size(301, 200)
         Me.pnl3.TabIndex = 5
         '
         'lblType3
         '
         Me.lblType3.BackColor = System.Drawing.Color.Transparent
         Me.lblType3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType3.Location = New System.Drawing.Point(3, 137)
-        Me.lblType3.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblType3.Location = New System.Drawing.Point(4, 169)
+        Me.lblType3.Margin = New System.Windows.Forms.Padding(4)
         Me.lblType3.Name = "lblType3"
-        Me.lblType3.Size = New System.Drawing.Size(218, 20)
+        Me.lblType3.Size = New System.Drawing.Size(291, 25)
         Me.lblType3.TabIndex = 16
         Me.lblType3.Text = "Type3"
         '
@@ -167,10 +162,10 @@ Partial Class VenueList
         Me.lblName3.AutoEllipsis = True
         Me.lblName3.BackColor = System.Drawing.Color.Transparent
         Me.lblName3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName3.Location = New System.Drawing.Point(3, 110)
-        Me.lblName3.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.lblName3.Location = New System.Drawing.Point(4, 135)
+        Me.lblName3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
         Me.lblName3.Name = "lblName3"
-        Me.lblName3.Size = New System.Drawing.Size(218, 24)
+        Me.lblName3.Size = New System.Drawing.Size(291, 30)
         Me.lblName3.TabIndex = 14
         Me.lblName3.Text = "Venue 3"
         '
@@ -179,7 +174,7 @@ Partial Class VenueList
         Me.picVenue3.Location = New System.Drawing.Point(0, 0)
         Me.picVenue3.Margin = New System.Windows.Forms.Padding(0)
         Me.picVenue3.Name = "picVenue3"
-        Me.picVenue3.Size = New System.Drawing.Size(224, 107)
+        Me.picVenue3.Size = New System.Drawing.Size(299, 132)
         Me.picVenue3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue3.TabIndex = 15
         Me.picVenue3.TabStop = False
@@ -190,20 +185,20 @@ Partial Class VenueList
         Me.pnl1.Controls.Add(Me.lblType1)
         Me.pnl1.Controls.Add(Me.lblName1)
         Me.pnl1.Controls.Add(Me.picVenue1)
-        Me.pnl1.Location = New System.Drawing.Point(130, 122)
-        Me.pnl1.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnl1.Location = New System.Drawing.Point(173, 150)
+        Me.pnl1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.pnl1.Name = "pnl1"
-        Me.pnl1.Size = New System.Drawing.Size(226, 163)
+        Me.pnl1.Size = New System.Drawing.Size(301, 200)
         Me.pnl1.TabIndex = 3
         '
         'lblType1
         '
         Me.lblType1.BackColor = System.Drawing.Color.Transparent
         Me.lblType1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType1.Location = New System.Drawing.Point(3, 137)
-        Me.lblType1.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblType1.Location = New System.Drawing.Point(4, 169)
+        Me.lblType1.Margin = New System.Windows.Forms.Padding(4)
         Me.lblType1.Name = "lblType1"
-        Me.lblType1.Size = New System.Drawing.Size(218, 20)
+        Me.lblType1.Size = New System.Drawing.Size(291, 25)
         Me.lblType1.TabIndex = 14
         Me.lblType1.Text = "Type1"
         '
@@ -212,10 +207,10 @@ Partial Class VenueList
         Me.lblName1.AutoEllipsis = True
         Me.lblName1.BackColor = System.Drawing.Color.Transparent
         Me.lblName1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName1.Location = New System.Drawing.Point(3, 110)
-        Me.lblName1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.lblName1.Location = New System.Drawing.Point(4, 135)
+        Me.lblName1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
         Me.lblName1.Name = "lblName1"
-        Me.lblName1.Size = New System.Drawing.Size(218, 24)
+        Me.lblName1.Size = New System.Drawing.Size(291, 30)
         Me.lblName1.TabIndex = 13
         Me.lblName1.Text = "Venue 1"
         '
@@ -224,7 +219,7 @@ Partial Class VenueList
         Me.picVenue1.Location = New System.Drawing.Point(0, 0)
         Me.picVenue1.Margin = New System.Windows.Forms.Padding(0)
         Me.picVenue1.Name = "picVenue1"
-        Me.picVenue1.Size = New System.Drawing.Size(224, 107)
+        Me.picVenue1.Size = New System.Drawing.Size(299, 132)
         Me.picVenue1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue1.TabIndex = 14
         Me.picVenue1.TabStop = False
@@ -236,10 +231,10 @@ Partial Class VenueList
         Me.pnl5.Controls.Add(Me.lblType5)
         Me.pnl5.Controls.Add(Me.lblRate6)
         Me.pnl5.Controls.Add(Me.picVenue5)
-        Me.pnl5.Location = New System.Drawing.Point(368, 297)
-        Me.pnl5.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnl5.Location = New System.Drawing.Point(491, 366)
+        Me.pnl5.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.pnl5.Name = "pnl5"
-        Me.pnl5.Size = New System.Drawing.Size(226, 163)
+        Me.pnl5.Size = New System.Drawing.Size(301, 200)
         Me.pnl5.TabIndex = 7
         '
         'lblName5
@@ -247,10 +242,10 @@ Partial Class VenueList
         Me.lblName5.AutoEllipsis = True
         Me.lblName5.BackColor = System.Drawing.Color.Transparent
         Me.lblName5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName5.Location = New System.Drawing.Point(3, 110)
-        Me.lblName5.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.lblName5.Location = New System.Drawing.Point(4, 135)
+        Me.lblName5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
         Me.lblName5.Name = "lblName5"
-        Me.lblName5.Size = New System.Drawing.Size(218, 24)
+        Me.lblName5.Size = New System.Drawing.Size(291, 30)
         Me.lblName5.TabIndex = 14
         Me.lblName5.Text = "Venue 5"
         '
@@ -258,10 +253,10 @@ Partial Class VenueList
         '
         Me.lblType5.BackColor = System.Drawing.Color.Transparent
         Me.lblType5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType5.Location = New System.Drawing.Point(3, 137)
-        Me.lblType5.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblType5.Location = New System.Drawing.Point(4, 169)
+        Me.lblType5.Margin = New System.Windows.Forms.Padding(4)
         Me.lblType5.Name = "lblType5"
-        Me.lblType5.Size = New System.Drawing.Size(218, 20)
+        Me.lblType5.Size = New System.Drawing.Size(291, 25)
         Me.lblType5.TabIndex = 16
         Me.lblType5.Text = "Type5"
         '
@@ -269,10 +264,10 @@ Partial Class VenueList
         '
         Me.lblRate6.BackColor = System.Drawing.Color.Transparent
         Me.lblRate6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRate6.Location = New System.Drawing.Point(53, 171)
-        Me.lblRate6.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblRate6.Location = New System.Drawing.Point(71, 210)
+        Me.lblRate6.Margin = New System.Windows.Forms.Padding(4)
         Me.lblRate6.Name = "lblRate6"
-        Me.lblRate6.Size = New System.Drawing.Size(212, 20)
+        Me.lblRate6.Size = New System.Drawing.Size(283, 25)
         Me.lblRate6.TabIndex = 16
         Me.lblRate6.Text = "Type6"
         '
@@ -281,7 +276,7 @@ Partial Class VenueList
         Me.picVenue5.Location = New System.Drawing.Point(0, 0)
         Me.picVenue5.Margin = New System.Windows.Forms.Padding(0)
         Me.picVenue5.Name = "picVenue5"
-        Me.picVenue5.Size = New System.Drawing.Size(224, 107)
+        Me.picVenue5.Size = New System.Drawing.Size(299, 132)
         Me.picVenue5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue5.TabIndex = 15
         Me.picVenue5.TabStop = False
@@ -292,21 +287,21 @@ Partial Class VenueList
         Me.pnl6.Controls.Add(Me.lblType6)
         Me.pnl6.Controls.Add(Me.picVenue6)
         Me.pnl6.Controls.Add(Me.lblName6)
-        Me.pnl6.Location = New System.Drawing.Point(604, 297)
-        Me.pnl6.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnl6.Location = New System.Drawing.Point(805, 366)
+        Me.pnl6.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.pnl6.Name = "pnl6"
-        Me.pnl6.Size = New System.Drawing.Size(226, 163)
+        Me.pnl6.Size = New System.Drawing.Size(301, 200)
         Me.pnl6.TabIndex = 8
         '
         'lblType6
         '
         Me.lblType6.BackColor = System.Drawing.Color.Transparent
         Me.lblType6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType6.Location = New System.Drawing.Point(3, 137)
-        Me.lblType6.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblType6.Location = New System.Drawing.Point(4, 169)
+        Me.lblType6.Margin = New System.Windows.Forms.Padding(4)
         Me.lblType6.Name = "lblType6"
         Me.lblType6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblType6.Size = New System.Drawing.Size(218, 20)
+        Me.lblType6.Size = New System.Drawing.Size(291, 25)
         Me.lblType6.TabIndex = 17
         Me.lblType6.Text = "Type6"
         '
@@ -315,7 +310,7 @@ Partial Class VenueList
         Me.picVenue6.Location = New System.Drawing.Point(0, 0)
         Me.picVenue6.Margin = New System.Windows.Forms.Padding(0)
         Me.picVenue6.Name = "picVenue6"
-        Me.picVenue6.Size = New System.Drawing.Size(224, 107)
+        Me.picVenue6.Size = New System.Drawing.Size(299, 132)
         Me.picVenue6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue6.TabIndex = 15
         Me.picVenue6.TabStop = False
@@ -325,10 +320,10 @@ Partial Class VenueList
         Me.lblName6.AutoEllipsis = True
         Me.lblName6.BackColor = System.Drawing.Color.Transparent
         Me.lblName6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName6.Location = New System.Drawing.Point(3, 110)
-        Me.lblName6.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.lblName6.Location = New System.Drawing.Point(4, 135)
+        Me.lblName6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
         Me.lblName6.Name = "lblName6"
-        Me.lblName6.Size = New System.Drawing.Size(218, 24)
+        Me.lblName6.Size = New System.Drawing.Size(291, 30)
         Me.lblName6.TabIndex = 14
         Me.lblName6.Text = "Venue 6"
         '
@@ -338,10 +333,10 @@ Partial Class VenueList
         Me.pnl4.Controls.Add(Me.picVenue4)
         Me.pnl4.Controls.Add(Me.lblType4)
         Me.pnl4.Controls.Add(Me.lblName4)
-        Me.pnl4.Location = New System.Drawing.Point(130, 297)
-        Me.pnl4.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnl4.Location = New System.Drawing.Point(173, 366)
+        Me.pnl4.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.pnl4.Name = "pnl4"
-        Me.pnl4.Size = New System.Drawing.Size(226, 163)
+        Me.pnl4.Size = New System.Drawing.Size(301, 200)
         Me.pnl4.TabIndex = 6
         '
         'picVenue4
@@ -349,7 +344,7 @@ Partial Class VenueList
         Me.picVenue4.Location = New System.Drawing.Point(0, 0)
         Me.picVenue4.Margin = New System.Windows.Forms.Padding(0)
         Me.picVenue4.Name = "picVenue4"
-        Me.picVenue4.Size = New System.Drawing.Size(224, 107)
+        Me.picVenue4.Size = New System.Drawing.Size(299, 132)
         Me.picVenue4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue4.TabIndex = 15
         Me.picVenue4.TabStop = False
@@ -358,10 +353,10 @@ Partial Class VenueList
         '
         Me.lblType4.BackColor = System.Drawing.Color.Transparent
         Me.lblType4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType4.Location = New System.Drawing.Point(3, 137)
-        Me.lblType4.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblType4.Location = New System.Drawing.Point(4, 169)
+        Me.lblType4.Margin = New System.Windows.Forms.Padding(4)
         Me.lblType4.Name = "lblType4"
-        Me.lblType4.Size = New System.Drawing.Size(218, 20)
+        Me.lblType4.Size = New System.Drawing.Size(291, 25)
         Me.lblType4.TabIndex = 16
         Me.lblType4.Text = "Type4"
         '
@@ -370,10 +365,10 @@ Partial Class VenueList
         Me.lblName4.AutoEllipsis = True
         Me.lblName4.BackColor = System.Drawing.Color.Transparent
         Me.lblName4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName4.Location = New System.Drawing.Point(3, 110)
-        Me.lblName4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.lblName4.Location = New System.Drawing.Point(4, 135)
+        Me.lblName4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 0)
         Me.lblName4.Name = "lblName4"
-        Me.lblName4.Size = New System.Drawing.Size(218, 24)
+        Me.lblName4.Size = New System.Drawing.Size(291, 30)
         Me.lblName4.TabIndex = 14
         Me.lblName4.Text = "Venue 4"
         '
@@ -384,10 +379,10 @@ Partial Class VenueList
         Me.btnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrevious.Location = New System.Drawing.Point(7, 122)
+        Me.btnPrevious.Location = New System.Drawing.Point(9, 150)
         Me.btnPrevious.Margin = New System.Windows.Forms.Padding(0)
         Me.btnPrevious.Name = "btnPrevious"
-        Me.btnPrevious.Size = New System.Drawing.Size(52, 338)
+        Me.btnPrevious.Size = New System.Drawing.Size(69, 416)
         Me.btnPrevious.TabIndex = 10
         Me.btnPrevious.Text = "<"
         Me.btnPrevious.UseVisualStyleBackColor = True
@@ -399,100 +394,33 @@ Partial Class VenueList
         Me.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.Location = New System.Drawing.Point(887, 122)
+        Me.btnNext.Location = New System.Drawing.Point(1184, 150)
         Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(52, 338)
+        Me.btnNext.Size = New System.Drawing.Size(69, 416)
         Me.btnNext.TabIndex = 11
         Me.btnNext.Text = ">"
         Me.btnNext.UseVisualStyleBackColor = True
         '
-        'bookHistoBtn
+        'btnBack
         '
-        Me.bookHistoBtn.BackColor = System.Drawing.Color.Lime
-        Me.bookHistoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.bookHistoBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookHistoBtn.Location = New System.Drawing.Point(341, 45)
-        Me.bookHistoBtn.Name = "bookHistoBtn"
-        Me.bookHistoBtn.Size = New System.Drawing.Size(120, 50)
-        Me.bookHistoBtn.TabIndex = 0
-        Me.bookHistoBtn.Text = "View Booking History"
-        Me.bookHistoBtn.UseVisualStyleBackColor = False
-        '
-        'mkBookBtn
-        '
-        Me.mkBookBtn.BackColor = System.Drawing.Color.Aqua
-        Me.mkBookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.mkBookBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mkBookBtn.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.mkBookBtn.Location = New System.Drawing.Point(215, 45)
-        Me.mkBookBtn.Name = "mkBookBtn"
-        Me.mkBookBtn.Size = New System.Drawing.Size(120, 50)
-        Me.mkBookBtn.TabIndex = 0
-        Me.mkBookBtn.Text = "Make Booking"
-        Me.mkBookBtn.UseVisualStyleBackColor = False
-        '
-        'pwChangeBtn
-        '
-        Me.pwChangeBtn.BackColor = System.Drawing.Color.Orange
-        Me.pwChangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.pwChangeBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pwChangeBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.pwChangeBtn.Location = New System.Drawing.Point(89, 45)
-        Me.pwChangeBtn.Name = "pwChangeBtn"
-        Me.pwChangeBtn.Size = New System.Drawing.Size(120, 50)
-        Me.pwChangeBtn.TabIndex = 14
-        Me.pwChangeBtn.Text = "Change Password"
-        Me.pwChangeBtn.UseVisualStyleBackColor = False
-        '
-        'venueMngBtn
-        '
-        Me.venueMngBtn.BackColor = System.Drawing.Color.Silver
-        Me.venueMngBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.venueMngBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.venueMngBtn.Location = New System.Drawing.Point(215, 45)
-        Me.venueMngBtn.Name = "venueMngBtn"
-        Me.venueMngBtn.Size = New System.Drawing.Size(120, 50)
-        Me.venueMngBtn.TabIndex = 15
-        Me.venueMngBtn.Text = "Manage Venue"
-        Me.venueMngBtn.UseVisualStyleBackColor = False
-        '
-        'genReportBtn
-        '
-        Me.genReportBtn.BackColor = System.Drawing.Color.SkyBlue
-        Me.genReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.genReportBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.genReportBtn.Location = New System.Drawing.Point(341, 45)
-        Me.genReportBtn.Name = "genReportBtn"
-        Me.genReportBtn.Size = New System.Drawing.Size(120, 50)
-        Me.genReportBtn.TabIndex = 16
-        Me.genReportBtn.Text = "Generate Report"
-        Me.genReportBtn.UseVisualStyleBackColor = False
-        '
-        'cancelBtn
-        '
-        Me.cancelBtn.BackColor = System.Drawing.Color.Red
-        Me.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cancelBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cancelBtn.Location = New System.Drawing.Point(467, 45)
-        Me.cancelBtn.Name = "cancelBtn"
-        Me.cancelBtn.Size = New System.Drawing.Size(120, 50)
-        Me.cancelBtn.TabIndex = 17
-        Me.cancelBtn.Text = "Cancel Booking"
-        Me.cancelBtn.UseVisualStyleBackColor = False
+        Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(100, 40)
+        Me.btnBack.TabIndex = 12
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'VenueList
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(946, 547)
-        Me.Controls.Add(Me.cancelBtn)
-        Me.Controls.Add(Me.genReportBtn)
-        Me.Controls.Add(Me.venueMngBtn)
-        Me.Controls.Add(Me.pwChangeBtn)
-        Me.Controls.Add(Me.mkBookBtn)
-        Me.Controls.Add(Me.bookHistoBtn)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.pnl1)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnPrevious)
@@ -505,7 +433,7 @@ Partial Class VenueList
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.Name = "VenueList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -556,10 +484,5 @@ Partial Class VenueList
     Friend WithEvents picVenue6 As PictureBox
     Friend WithEvents picVenue4 As PictureBox
     Friend WithEvents lblType6 As Label
-    Friend WithEvents bookHistoBtn As Button
-    Friend WithEvents mkBookBtn As Button
-    Friend WithEvents pwChangeBtn As Button
-    Friend WithEvents venueMngBtn As Button
-    Friend WithEvents genReportBtn As Button
-    Friend WithEvents cancelBtn As Button
+    Friend WithEvents btnBack As Button
 End Class
