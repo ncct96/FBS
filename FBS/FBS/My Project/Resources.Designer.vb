@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property _1200px_Donald_Trump_official_portrait() As System.Drawing.Bitmap
+        Friend ReadOnly Property _Exit() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1200px_Donald_Trump_official_portrait", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("_Exit", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -73,9 +73,29 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property _66938284_p0() As System.Drawing.Bitmap
+        Friend ReadOnly Property Book() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_66938284_p0", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Book", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property FBS() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("FBS", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Home() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Home", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

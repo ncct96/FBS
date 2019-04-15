@@ -74,6 +74,9 @@
     <ApplicationIcon>FBS.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -86,6 +89,18 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40.Trial\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40.Trial\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40.Trial\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -107,17 +122,25 @@
     <Compile Include="AdminVenue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Booking.Designer.vb">
       <DependentUpon>Booking.vb</DependentUpon>
     </Compile>
     <Compile Include="Booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Timeslot.vb" />
     <Compile Include="DB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="FBSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVars.vb" />
     <Compile Include="ImagePopUp.Designer.vb">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
@@ -127,10 +150,6 @@
     <Compile Include="BookingHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Image_Modal.Designer.vb">
-      <DependentUpon>Image_Modal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Image_Modal.vb">
     <Compile Include="ImagePopUp.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +180,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NicholasReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NicholasReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PasswordChange.Designer.vb">
+      <DependentUpon>PasswordChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordChange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NicholasReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NicholasReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Register.Designer.vb">
       <DependentUpon>Register.vb</DependentUpon>
@@ -205,11 +242,22 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NicholasReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NicholasReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordChange.resx">
+      <DependentUpon>PasswordChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGenerator.resx">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>
@@ -229,6 +277,17 @@
     </None>
     <None Include="DB.dbml.layout">
       <DependentUpon>DB.dbml</DependentUpon>
+    </None>
+    <None Include="FBSDataSet.xsc">
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FBSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FBSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FBSDataSet.xss">
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -266,19 +325,21 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\1200px-Donald_Trump_official_portrait.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\66938284_p0.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FBS.ico" />
+    <None Include="resources\Book.png" />
+    <None Include="resources\Exit.png" />
+    <None Include="resources\Home.png" />
+    <None Include="resources\FBS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

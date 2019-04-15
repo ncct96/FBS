@@ -3,29 +3,51 @@
     Private Result As New List(Of Venue)
     Private IDs(6) As Integer
     Private Index = 0
+    Private FirstRun = True
+    Private VenueTypes() As String = {"Badminton Court", "Basketball Court", "Football Field", "Gymnasium", "Tennis Court", "Swimming Pool"}
 
     'ON FORM LOAD
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        If FirstRun Then
+            cboType.Items.Clear()
+            cboType.Items.Add("All")
+            For Each type In VenueTypes
+                cboType.Items.Add(type)
+            Next
+            FirstRun = False
+        End If
+
+        cboType.SelectedIndex = 0
+
+        If Result.Count > 6 Then
+            MaxStep = Result.Count / 6
+        Else
+            MaxStep = 1
+        End If
+    End Sub
+
+    Private Sub OnIndexChange(sender As Object, e As EventArgs) Handles cboType.SelectedIndexChanged
         Try
             Dim db As New DBDataContext
-            Dim rs = From venue In db.Venues Select venue
-            Result = rs.ToList
+            If cboType.SelectedIndex = 0 Then
+                Dim rs = From venue In db.Venues Select venue
+                Result = rs.ToList
+            Else
+                Dim rs = From venue In db.Venues Select venue Where venue.VenueType = cboType.SelectedItem.ToString
+                Result = rs.ToList
+            End If
         Catch ex As Exception
             MsgBox("Unable to contact database", MsgBoxStyle.Exclamation, "Error")
+            IsX = False
             Me.Close()
             Return
         End Try
 
         If Result.Count = 0 Then
             MsgBox("No records found!", MsgBoxStyle.Exclamation, "Error")
+            IsX = False
             Me.Close()
             Return
-        End If
-
-        If Result.Count > 6 Then
-            MaxStep = Result.Count / 6
-        Else
-            MaxStep = 1
         End If
 
         Index = 0
@@ -201,7 +223,7 @@
         Me.Show()
     End Sub
 
-    Private Sub MouseEnterEvent(sender As Object, e As EventArgs) Handles pnl1.MouseEnter, pnl2.MouseEnter, pnl3.MouseEnter, pnl4.MouseEnter, pnl5.MouseEnter, pnl6.MouseEnter, btnNext.MouseEnter, btnPrevious.MouseEnter, picVenue6.MouseEnter, picVenue5.MouseEnter, picVenue4.MouseEnter, picVenue3.MouseEnter, picVenue2.MouseEnter, picVenue1.MouseEnter
+    Private Sub MouseEnterEvent(sender As Object, e As EventArgs) Handles pnl1.MouseEnter, pnl2.MouseEnter, pnl3.MouseEnter, pnl4.MouseEnter, pnl5.MouseEnter, pnl6.MouseEnter, btnNext.MouseEnter, btnPrevious.MouseEnter, picVenue6.MouseEnter, picVenue5.MouseEnter, picVenue4.MouseEnter, picVenue3.MouseEnter, picVenue2.MouseEnter, picVenue1.MouseEnter, btnBack.MouseEnter
         Me.Cursor = Cursors.Hand
         If TypeOf sender Is Panel Then
             Dim pnl As Panel = DirectCast(sender, Panel)
@@ -209,7 +231,7 @@
         End If
     End Sub
 
-    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles pnl1.MouseLeave, pnl2.MouseLeave, pnl3.MouseLeave, pnl4.MouseLeave, pnl5.MouseLeave, pnl6.MouseLeave, btnNext.MouseLeave, btnPrevious.MouseLeave, picVenue6.MouseLeave, picVenue5.MouseLeave, picVenue4.MouseLeave, picVenue3.MouseLeave, picVenue2.MouseLeave, picVenue1.MouseLeave
+    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles pnl1.MouseLeave, pnl2.MouseLeave, pnl3.MouseLeave, pnl4.MouseLeave, pnl5.MouseLeave, pnl6.MouseLeave, btnNext.MouseLeave, btnPrevious.MouseLeave, picVenue6.MouseLeave, picVenue5.MouseLeave, picVenue4.MouseLeave, picVenue3.MouseLeave, picVenue2.MouseLeave, picVenue1.MouseLeave, btnBack.MouseLeave
         Me.Cursor = Cursors.Default
         If TypeOf sender Is Panel Then
             Dim pnl As Panel = DirectCast(sender, Panel)
@@ -228,5 +250,17 @@
         Dim pnl As Label = DirectCast(sender, Label)
         Debug.Write(pnl.Parent)
         MouseLeaveEvent(pnl.Parent, New EventArgs)
+    End Sub
+
+    Private IsX = True
+    Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If IsX Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub GoBack(sender As Object, e As EventArgs) Handles btnBack.Click
+        IsX = False
+        Me.Close()
     End Sub
 End Class
