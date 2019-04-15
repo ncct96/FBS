@@ -23,14 +23,14 @@ Partial Class PasswordChange
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.oldpasswTxt = New System.Windows.Forms.TextBox()
-        Me.newpasswTxt = New System.Windows.Forms.TextBox()
-        Me.repasswTxt = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.confirmBtn = New System.Windows.Forms.Button()
         Me.cancelBtn = New System.Windows.Forms.Button()
+        Me.confirmBtn = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.repasswTxt = New System.Windows.Forms.TextBox()
+        Me.newpasswTxt = New System.Windows.Forms.TextBox()
+        Me.oldpasswTxt = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,53 +51,15 @@ Partial Class PasswordChange
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Change Password"
         '
-        'oldpasswTxt
+        'cancelBtn
         '
-        Me.oldpasswTxt.Location = New System.Drawing.Point(115, 36)
-        Me.oldpasswTxt.Name = "oldpasswTxt"
-        Me.oldpasswTxt.Size = New System.Drawing.Size(100, 20)
-        Me.oldpasswTxt.TabIndex = 0
-        '
-        'newpasswTxt
-        '
-        Me.newpasswTxt.Location = New System.Drawing.Point(115, 71)
-        Me.newpasswTxt.Name = "newpasswTxt"
-        Me.newpasswTxt.Size = New System.Drawing.Size(100, 20)
-        Me.newpasswTxt.TabIndex = 1
-        '
-        'repasswTxt
-        '
-        Me.repasswTxt.Location = New System.Drawing.Point(115, 102)
-        Me.repasswTxt.Name = "repasswTxt"
-        Me.repasswTxt.Size = New System.Drawing.Size(100, 20)
-        Me.repasswTxt.TabIndex = 2
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 43)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Old Password : "
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(22, 74)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "New Password : "
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 105)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Retype Password :"
+        Me.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.cancelBtn.Location = New System.Drawing.Point(124, 137)
+        Me.cancelBtn.Name = "cancelBtn"
+        Me.cancelBtn.Size = New System.Drawing.Size(75, 23)
+        Me.cancelBtn.TabIndex = 7
+        Me.cancelBtn.Text = "Cancel"
+        Me.cancelBtn.UseVisualStyleBackColor = True
         '
         'confirmBtn
         '
@@ -108,19 +70,60 @@ Partial Class PasswordChange
         Me.confirmBtn.Text = "Confirm"
         Me.confirmBtn.UseVisualStyleBackColor = True
         '
-        'cancelBtn
+        'Label3
         '
-        Me.cancelBtn.Location = New System.Drawing.Point(124, 137)
-        Me.cancelBtn.Name = "cancelBtn"
-        Me.cancelBtn.Size = New System.Drawing.Size(75, 23)
-        Me.cancelBtn.TabIndex = 7
-        Me.cancelBtn.Text = "Cancel"
-        Me.cancelBtn.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(13, 105)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(96, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Retype Password :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(22, 74)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(87, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "New Password : "
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(28, 43)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Old Password : "
+        '
+        'repasswTxt
+        '
+        Me.repasswTxt.Location = New System.Drawing.Point(115, 102)
+        Me.repasswTxt.Name = "repasswTxt"
+        Me.repasswTxt.Size = New System.Drawing.Size(100, 20)
+        Me.repasswTxt.TabIndex = 2
+        '
+        'newpasswTxt
+        '
+        Me.newpasswTxt.Location = New System.Drawing.Point(115, 71)
+        Me.newpasswTxt.Name = "newpasswTxt"
+        Me.newpasswTxt.Size = New System.Drawing.Size(100, 20)
+        Me.newpasswTxt.TabIndex = 1
+        '
+        'oldpasswTxt
+        '
+        Me.oldpasswTxt.Location = New System.Drawing.Point(115, 36)
+        Me.oldpasswTxt.Name = "oldpasswTxt"
+        Me.oldpasswTxt.Size = New System.Drawing.Size(100, 20)
+        Me.oldpasswTxt.TabIndex = 0
         '
         'PasswordChange
         '
+        Me.AcceptButton = Me.confirmBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.cancelBtn
         Me.ClientSize = New System.Drawing.Size(349, 280)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "PasswordChange"
