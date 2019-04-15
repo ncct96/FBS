@@ -181,6 +181,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NicholasReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NicholasReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     <Compile Include="PasswordChange.Designer.vb">
       <DependentUpon>PasswordChange.vb</DependentUpon>
     </Compile>
@@ -243,6 +248,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="NicholasReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NicholasReport.vb</LastGenOutput>
     <EmbeddedResource Include="PasswordChange.resx">
       <DependentUpon>PasswordChange.vb</DependentUpon>
     </EmbeddedResource>
