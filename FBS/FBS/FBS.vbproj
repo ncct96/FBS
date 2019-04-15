@@ -107,6 +107,7 @@
     <Compile Include="AdminVenue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Booking.Designer.vb">
       <DependentUpon>Booking.vb</DependentUpon>
     </Compile>
@@ -118,7 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.dbml</DependentUpon>
     </Compile>
-	<Compile Include="GlobalVars.vb" />
+    <Compile Include="GlobalVars.vb" />
     <Compile Include="ImagePopUp.Designer.vb">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
     </Compile>
@@ -276,9 +277,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FBS.ico" />
+    <None Include="resources\FBS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
