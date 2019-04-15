@@ -6,6 +6,7 @@ Public Class Login
     Private Sub loginbtn_Click(sender As Object, e As EventArgs) Handles loginbtn.Click
         Dim username As String = If(CStr(usernametxt.Text), "")
         Dim password As String = If(CStr(passwordtxt.Text), "")
+        Dim tf As Boolean = False
 
         Dim err As New StringBuilder()
         Dim ctr As Control = Nothing
@@ -17,12 +18,12 @@ Public Class Login
                 err.AppendLine("Please Input Your Account's Password.")
                 ctr = If(ctr, passwordtxt)
             Else
-                Dim stringCon As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+                Dim stringCon As String = My.Settings.FBSConnectionString
                 Dim connection As New SqlConnection(stringCon)
 
-                ' Open Database Connection for userCommand
+                ' userCommand Reader Open
                 connection.Open()
-                Dim userSelect As String = "SELECT CustName FROM Customer WHERE CustName = @Name AND CustPass = @Pass"
+                Dim userSelect As String = "SELECT CustId FROM Customer WHERE CustName = @Name AND CustPass = @Pass"
                 Dim userCommand As New SqlCommand(userSelect, connection)
                 userCommand.Parameters.AddWithValue("@Name", username)
                 userCommand.Parameters.AddWithValue("@Pass", password)
@@ -32,12 +33,22 @@ Public Class Login
                 If userRetrieval.HasRows Then
                     MessageBox.Show("Welcome Back " + "User", "User Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     GlobalVars.currentUser = username
-                Else
-                    ' Close Database Connection
+                    GlobalVars.currentType = "Customer"
+                    ' userCommand Reader Close
                     connection.Close()
 
+                    ' userCommand Scalar Open
                     connection.Open()
-                    Dim adminSelect As String = "SELECT AdminName FROM Admin WHERE AdminName = @Name AND AdminPassw = @Passw"
+                    GlobalVars.currentId = userCommand.ExecuteScalar
+                    ' userCommand Scalar Close
+                    connection.Close()
+                    tf = True
+                Else
+                    ' userCommand Reader Close
+                    connection.Close()
+                    ' adminCommand Reader Open
+                    connection.Open()
+                    Dim adminSelect As String = "SELECT AdminId FROM Admin WHERE AdminName = @Name AND AdminPassw = @Passw"
                     Dim adminCommand As New SqlCommand(adminSelect, connection)
                     adminCommand.Parameters.AddWithValue("@Name", username)
                     adminCommand.Parameters.AddWithValue("@Passw", password)
@@ -45,6 +56,15 @@ Public Class Login
                     If adminRetrieval.HasRows Then
                         MessageBox.Show("Welcome Back " + "Admin", "Admin Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         GlobalVars.currentUser = username
+                        GlobalVars.currentType = "Admin"
+                        ' adminCommand Reader Close
+                        connection.Close()
+                        ' adminCommand Scalar Open
+                        connection.Open()
+                        GlobalVars.currentId = adminCommand.ExecuteScalar
+                        ' adminCommand Scalar Close
+                        connection.Close()
+                        tf = True
                     Else
                         MessageBox.Show("Invalid Login Information.", "Account not found", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -54,6 +74,11 @@ Public Class Login
                 MessageBox.Show(err.ToString(), "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 ctr.Focus()
                 Return
+            End If
+
+            If tf Then
+                Dim pass = New BookingHistory
+                pass.Show()
             End If
         Catch ex As Exception
 

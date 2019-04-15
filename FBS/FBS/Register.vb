@@ -18,6 +18,9 @@ Public Class Register
         ElseIf passw.Equals("") Then
             err.AppendLine("Please input your password.")
             ctr = If(ctr, pwtxt)
+        ElseIf retype.Equals("") Then
+            err.AppendLine("Please retype your password.")
+            ctr = If(ctr, retypetxt)
         ElseIf phone.Equals("") Then
             err.AppendLine("Please input A valid phone number.")
             ctr = If(ctr, phonetxt)
@@ -25,7 +28,7 @@ Public Class Register
             err.AppendLine("Please ensure the password retype is correct.")
             ctr = If(ctr, retypetxt)
         Else
-            Dim stringCon As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+            Dim stringCon As String = My.Settings.FBSConnectionString
             Dim connection As New SqlConnection(stringCon)
 
             ' Open 1st Database Connection
@@ -42,24 +45,13 @@ Public Class Register
                 ' Close 1st Database Connection
                 connection.Close()
 
-                connection.Open()
-                Dim checkCount As String = "SELECT * FROM Customer"
-                Dim count As Integer = 1001
-                Dim commandCount As New SqlCommand(checkCount, connection)
-                Dim countRetrieval As New SqlDataAdapter(checkCount, stringCon)
-                Dim ds As New DataSet
-                countRetrieval.Fill(ds, "Customer")
-                Dim dbcount As Integer = ds.Tables("Customer").Rows.Count
-                count += dbcount
-                connection.Close()
-
                 ' Open 2nd Database Connection
                 connection.Open()
-                Dim registerAccount As String = "INSERT INTO Customer VALUES (@count, @usern, @passw)"
+                Dim registerAccount As String = "INSERT INTO Customer VALUES (@usern, @passw, @number)"
                 Dim comm As New SqlCommand(registerAccount, connection)
-                comm.Parameters.AddWithValue("@count", "C" + count.ToString)
                 comm.Parameters.AddWithValue("@usern", usern)
                 comm.Parameters.AddWithValue("@passw", passw)
+                comm.Parameters.AddWithValue("@number", phone)
                 comm.ExecuteNonQuery()
 
                 ' Close 2nd Database Connection
