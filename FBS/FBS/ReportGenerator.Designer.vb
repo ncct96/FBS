@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ReportGenerator
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,14 @@ Partial Class ReportGenerator
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportGenerator))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.ExceptionReport = New System.Drawing.Printing.PrintDocument()
+        Me.dlgPrintPreview = New System.Windows.Forms.PrintPreviewDialog()
         Me.SuspendLayout()
         '
         'Button1
@@ -64,6 +66,21 @@ Partial Class ReportGenerator
         Me.Button3.Text = "Generate Exception"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'ExceptionReport
+        '
+        Me.ExceptionReport.OriginAtMargins = True
+        '
+        'dlgPrintPreview
+        '
+        Me.dlgPrintPreview.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.dlgPrintPreview.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.dlgPrintPreview.ClientSize = New System.Drawing.Size(400, 300)
+        Me.dlgPrintPreview.Enabled = True
+        Me.dlgPrintPreview.Icon = CType(resources.GetObject("dlgPrintPreview.Icon"), System.Drawing.Icon)
+        Me.dlgPrintPreview.Name = "dlgPrintPreview"
+        Me.dlgPrintPreview.UseAntiAlias = True
+        Me.dlgPrintPreview.Visible = False
+        '
         'ReportGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -85,4 +102,6 @@ Partial Class ReportGenerator
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents ExceptionReport As Printing.PrintDocument
+    Friend WithEvents dlgPrintPreview As PrintPreviewDialog
 End Class

@@ -122,6 +122,7 @@
     <Compile Include="AdminVenue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Booking.Designer.vb">
       <DependentUpon>Booking.vb</DependentUpon>
     </Compile>
@@ -133,6 +134,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="FBSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="GlobalVars.vb" />
     <Compile Include="ImagePopUp.Designer.vb">
@@ -174,6 +180,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PasswordChange.Designer.vb">
+      <DependentUpon>PasswordChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordChange.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NicholasReport.vb">
       <AutoGen>True</AutoGen>
@@ -231,9 +243,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="NicholasReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>NicholasReport.vb</LastGenOutput>
+    <EmbeddedResource Include="PasswordChange.resx">
+      <DependentUpon>PasswordChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGenerator.resx">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>
@@ -253,6 +267,17 @@
     </None>
     <None Include="DB.dbml.layout">
       <DependentUpon>DB.dbml</DependentUpon>
+    </None>
+    <None Include="FBSDataSet.xsc">
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FBSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FBSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FBSDataSet.xss">
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -290,9 +315,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\1200px-Donald_Trump_official_portrait.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +326,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FBS.ico" />
+    <None Include="resources\Book.png" />
+    <None Include="resources\Exit.png" />
+    <None Include="resources\Home.png" />
+    <None Include="resources\FBS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
