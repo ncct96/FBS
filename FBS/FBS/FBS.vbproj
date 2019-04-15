@@ -186,6 +186,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NicholasReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PasswordChange.Designer.vb">
       <DependentUpon>PasswordChange.vb</DependentUpon>
     </Compile>
@@ -251,6 +252,7 @@
     <EmbeddedResource Include="NicholasReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NicholasReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PasswordChange.resx">
       <DependentUpon>PasswordChange.vb</DependentUpon>
     </EmbeddedResource>
