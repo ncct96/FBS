@@ -9,6 +9,35 @@
       <Column Name="VenueMaxCapacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="VenueRecommendations" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="VenueRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Venue_Timeslot" Member="Timeslots" ThisKey="VenueID" OtherKey="VenueID" Type="Timeslot" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="Bookings">
+    <Type Name="Booking">
+      <Column Name="BookingID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BookingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookingTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="VisitDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookingCharges" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SlotID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Timeslot_Booking" Member="Timeslot" ThisKey="SlotID" OtherKey="SlotID" Type="Timeslot" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Timeslot" Member="Timeslots">
+    <Type Name="Timeslot">
+      <Column Name="SlotID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookingID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VenueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Timeslot_Booking" Member="Bookings" ThisKey="SlotID" OtherKey="SlotID" Type="Booking" />
+      <Association Name="Venue_Timeslot" Member="Venue" ThisKey="VenueID" OtherKey="VenueID" Type="Venue" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

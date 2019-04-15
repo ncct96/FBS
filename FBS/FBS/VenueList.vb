@@ -38,12 +38,14 @@
             End If
         Catch ex As Exception
             MsgBox("Unable to contact database", MsgBoxStyle.Exclamation, "Error")
+            IsX = False
             Me.Close()
             Return
         End Try
 
         If Result.Count = 0 Then
             MsgBox("No records found!", MsgBoxStyle.Exclamation, "Error")
+            IsX = False
             Me.Close()
             Return
         End If
@@ -221,7 +223,7 @@
         Me.Show()
     End Sub
 
-    Private Sub MouseEnterEvent(sender As Object, e As EventArgs) Handles pnl1.MouseEnter, pnl2.MouseEnter, pnl3.MouseEnter, pnl4.MouseEnter, pnl5.MouseEnter, pnl6.MouseEnter, btnNext.MouseEnter, btnPrevious.MouseEnter, picVenue6.MouseEnter, picVenue5.MouseEnter, picVenue4.MouseEnter, picVenue3.MouseEnter, picVenue2.MouseEnter, picVenue1.MouseEnter
+    Private Sub MouseEnterEvent(sender As Object, e As EventArgs) Handles pnl1.MouseEnter, pnl2.MouseEnter, pnl3.MouseEnter, pnl4.MouseEnter, pnl5.MouseEnter, pnl6.MouseEnter, btnNext.MouseEnter, btnPrevious.MouseEnter, picVenue6.MouseEnter, picVenue5.MouseEnter, picVenue4.MouseEnter, picVenue3.MouseEnter, picVenue2.MouseEnter, picVenue1.MouseEnter, btnBack.MouseEnter
         Me.Cursor = Cursors.Hand
         If TypeOf sender Is Panel Then
             Dim pnl As Panel = DirectCast(sender, Panel)
@@ -229,7 +231,7 @@
         End If
     End Sub
 
-    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles pnl1.MouseLeave, pnl2.MouseLeave, pnl3.MouseLeave, pnl4.MouseLeave, pnl5.MouseLeave, pnl6.MouseLeave, btnNext.MouseLeave, btnPrevious.MouseLeave, picVenue6.MouseLeave, picVenue5.MouseLeave, picVenue4.MouseLeave, picVenue3.MouseLeave, picVenue2.MouseLeave, picVenue1.MouseLeave
+    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles pnl1.MouseLeave, pnl2.MouseLeave, pnl3.MouseLeave, pnl4.MouseLeave, pnl5.MouseLeave, pnl6.MouseLeave, btnNext.MouseLeave, btnPrevious.MouseLeave, picVenue6.MouseLeave, picVenue5.MouseLeave, picVenue4.MouseLeave, picVenue3.MouseLeave, picVenue2.MouseLeave, picVenue1.MouseLeave, btnBack.MouseLeave
         Me.Cursor = Cursors.Default
         If TypeOf sender Is Panel Then
             Dim pnl As Panel = DirectCast(sender, Panel)
@@ -248,5 +250,17 @@
         Dim pnl As Label = DirectCast(sender, Label)
         Debug.Write(pnl.Parent)
         MouseLeaveEvent(pnl.Parent, New EventArgs)
+    End Sub
+
+    Private IsX = True
+    Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If IsX Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub GoBack(sender As Object, e As EventArgs) Handles btnBack.Click
+        IsX = False
+        Me.Close()
     End Sub
 End Class
