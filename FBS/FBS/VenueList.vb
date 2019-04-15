@@ -24,6 +24,22 @@
         Else
             MaxStep = 1
         End If
+
+        ' Check current user
+        If GlobalVars.currentType.Equals("Customer") Then
+            mkBookBtn.Visible = True
+            bookHistoBtn.Visible = True
+            cancelBtn.Visible = True
+            genReportBtn.Visible = False
+            venueMngBtn.Visible = False
+        ElseIf GlobalVars.currentType.Equals("Admin") Then
+            mkBookBtn.Visible = False
+            bookHistoBtn.Visible = False
+            cancelBtn.Visible = False
+            genReportBtn.Visible = True
+            venueMngBtn.Visible = True
+        End If
+
     End Sub
 
     Private Sub OnIndexChange(sender As Object, e As EventArgs) Handles cboType.SelectedIndexChanged
@@ -248,5 +264,10 @@
         Dim pnl As Label = DirectCast(sender, Label)
         Debug.Write(pnl.Parent)
         MouseLeaveEvent(pnl.Parent, New EventArgs)
+    End Sub
+
+    Private Sub pwChangeBtn_Click(sender As Object, e As EventArgs) Handles pwChangeBtn.Click
+        Dim passwPage As New PasswordChange
+        passwPage.ShowDialog()
     End Sub
 End Class
