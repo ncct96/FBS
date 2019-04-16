@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FBS" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=ncct96.database.windows.net;Initial Catalog=FBS;User ID=ncct96;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="FBS.My.MySettings" SettingsPropertyName="FBSConnectionString2" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Booking" Member="Bookings">
-    <Type Name="Booking">
-      <Column Name="BookingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="BookingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="BookingTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="BookingCharges" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="CustID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SlotID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.Timeslot" Member="Timeslots">
+    <Type Name="Timeslot">
+      <Column Name="Time" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="VenueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Customer_Booking" Member="Customer" ThisKey="CustID" OtherKey="CustID" Type="Customer" IsForeignKey="true" />
-      <Association Name="Timeslot_Booking" Member="Timeslot" ThisKey="SlotID" OtherKey="SlotID" Type="Timeslot" IsForeignKey="true" />
+      <Column Name="SlotID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Slot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Venue_Timeslot" Member="Venue" ThisKey="VenueID" OtherKey="VenueID" Type="Venue" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Customer" Member="Customers">
@@ -23,16 +20,17 @@
       <Association Name="Customer_Booking" Member="Bookings" ThisKey="CustID" OtherKey="CustID" Type="Booking" />
     </Type>
   </Table>
-  <Table Name="dbo.Timeslot" Member="Timeslots">
-    <Type Name="Timeslot">
-      <Column Name="Time" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="VenueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="SlotID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Slot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Timeslot_Booking" Member="Bookings" ThisKey="SlotID" OtherKey="SlotID" Type="Booking" />
-      <Association Name="Venue_Timeslot" Member="Venue" ThisKey="VenueID" OtherKey="VenueID" Type="Venue" IsForeignKey="true" />
+  <Table Name="dbo.Booking" Member="Bookings">
+    <Type Name="Booking">
+      <Column Name="BookingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookingTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookingCharges" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SlotID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Customer_Booking" Member="Customer" ThisKey="CustID" OtherKey="CustID" Type="Customer" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Venue" Member="Venues">

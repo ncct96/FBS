@@ -53,15 +53,26 @@ Public Class FrmBooking
                 .BookingDate = bookingDate,
                 .BookingTime = bookingTime,
                 .BookingCharges = totalPayment,
-                .VisitDate = bookingDate,
-                .CustID = 1,
-                .SlotID = 1,
-                .Status = False'Convert.ToInt32(lstTimeslot.SelectedItem.ToString)
+                .VisitDate = dtpBooking.Value,
+                .CustID = GlobalVars.currentId,
+                .SlotID = lstTimeslot.SelectedIndex + 1,
+                .Status = "Pending"'Convert.ToInt32(lstTimeslot.SelectedItem.ToString)
             }
 
             Debug.Print(s.CustID)
 
             db.Bookings.InsertOnSubmit(s)
+            db.SubmitChanges()
+
+            Dim slot As New Timeslot With {
+                .Slot = lstTimeslot.SelectedIndex + 1,
+                .[Date] = dtpBooking.Value,
+                .Status = False,
+                .VenueID = cbVenue.SelectedValue,
+                .Time = lstTimeslot.SelectedItem.ToString
+            }
+
+            db.Timeslots.InsertOnSubmit(slot)
             db.SubmitChanges()
             MessageBox.Show("Successfully insert record")
         Catch ex As Exception
