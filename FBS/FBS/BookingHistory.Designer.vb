@@ -23,41 +23,30 @@ Partial Class BookingHistory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.BookingHistGrid = New System.Windows.Forms.DataGridView()
         Me.showGrpBox = New System.Windows.Forms.GroupBox()
         Me.CompletedFilter = New System.Windows.Forms.RadioButton()
         Me.OngoingFilter = New System.Windows.Forms.RadioButton()
         Me.advanceGrpBox = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.searchTxt = New System.Windows.Forms.TextBox()
-        Me.BookingDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BookingTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VisitDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BookingChargesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.VenueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FBSDataSet = New FBS.FBSDataSet()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.deleteBtn = New System.Windows.Forms.Button()
+        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BookingTableAdapter = New FBS.FBSDataSetTableAdapters.BookingTableAdapter()
-        CType(Me.BookingHistGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.VenueTableAdapter = New FBS.FBSDataSetTableAdapters.VenueTableAdapter()
+        Me.BookingHistGrid = New System.Windows.Forms.DataGridView()
+        Me.BookingID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookingDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FeesChargedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.showGrpBox.SuspendLayout()
         Me.advanceGrpBox.SuspendLayout()
-        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FBSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingHistGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'BookingHistGrid
-        '
-        Me.BookingHistGrid.AllowUserToAddRows = False
-        Me.BookingHistGrid.AllowUserToDeleteRows = False
-        Me.BookingHistGrid.AutoGenerateColumns = False
-        Me.BookingHistGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.BookingHistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BookingHistGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingDateDataGridViewTextBoxColumn, Me.BookingTimeDataGridViewTextBoxColumn, Me.VisitDateDataGridViewTextBoxColumn, Me.BookingChargesDataGridViewTextBoxColumn})
-        Me.BookingHistGrid.DataSource = Me.BookingBindingSource
-        Me.BookingHistGrid.Location = New System.Drawing.Point(218, 25)
-        Me.BookingHistGrid.Name = "BookingHistGrid"
-        Me.BookingHistGrid.ReadOnly = True
-        Me.BookingHistGrid.Size = New System.Drawing.Size(417, 319)
-        Me.BookingHistGrid.TabIndex = 1
         '
         'showGrpBox
         '
@@ -94,106 +83,149 @@ Partial Class BookingHistory
         '
         'advanceGrpBox
         '
+        Me.advanceGrpBox.Controls.Add(Me.ComboBox1)
         Me.advanceGrpBox.Controls.Add(Me.Label1)
-        Me.advanceGrpBox.Controls.Add(Me.searchTxt)
         Me.advanceGrpBox.Location = New System.Drawing.Point(12, 25)
         Me.advanceGrpBox.Name = "advanceGrpBox"
-        Me.advanceGrpBox.Size = New System.Drawing.Size(200, 100)
+        Me.advanceGrpBox.Size = New System.Drawing.Size(192, 100)
         Me.advanceGrpBox.TabIndex = 3
         Me.advanceGrpBox.TabStop = False
         Me.advanceGrpBox.Text = "Search : "
         '
-        'Label1
+        'ComboBox1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Input details for search : "
+        Me.ComboBox1.DataSource = Me.VenueBindingSource
+        Me.ComboBox1.DisplayMember = "VenueType"
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(20, 54)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(148, 26)
+        Me.ComboBox1.TabIndex = 5
+        Me.ComboBox1.ValueMember = "VenueType"
         '
-        'searchTxt
+        'VenueBindingSource
         '
-        Me.searchTxt.Location = New System.Drawing.Point(20, 51)
-        Me.searchTxt.Multiline = True
-        Me.searchTxt.Name = "searchTxt"
-        Me.searchTxt.Size = New System.Drawing.Size(158, 24)
-        Me.searchTxt.TabIndex = 0
-        '
-        'BookingDateDataGridViewTextBoxColumn
-        '
-        Me.BookingDateDataGridViewTextBoxColumn.DataPropertyName = "BookingDate"
-        Me.BookingDateDataGridViewTextBoxColumn.HeaderText = "BookingDate"
-        Me.BookingDateDataGridViewTextBoxColumn.Name = "BookingDateDataGridViewTextBoxColumn"
-        Me.BookingDateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BookingTimeDataGridViewTextBoxColumn
-        '
-        Me.BookingTimeDataGridViewTextBoxColumn.DataPropertyName = "BookingTime"
-        Me.BookingTimeDataGridViewTextBoxColumn.HeaderText = "BookingTime"
-        Me.BookingTimeDataGridViewTextBoxColumn.Name = "BookingTimeDataGridViewTextBoxColumn"
-        Me.BookingTimeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'VisitDateDataGridViewTextBoxColumn
-        '
-        Me.VisitDateDataGridViewTextBoxColumn.DataPropertyName = "VisitDate"
-        Me.VisitDateDataGridViewTextBoxColumn.HeaderText = "VisitDate"
-        Me.VisitDateDataGridViewTextBoxColumn.Name = "VisitDateDataGridViewTextBoxColumn"
-        Me.VisitDateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BookingChargesDataGridViewTextBoxColumn
-        '
-        Me.BookingChargesDataGridViewTextBoxColumn.DataPropertyName = "BookingCharges"
-        Me.BookingChargesDataGridViewTextBoxColumn.HeaderText = "BookingCharges"
-        Me.BookingChargesDataGridViewTextBoxColumn.Name = "BookingChargesDataGridViewTextBoxColumn"
-        Me.BookingChargesDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BookingBindingSource
-        '
-        Me.BookingBindingSource.DataMember = "Booking"
-        Me.BookingBindingSource.DataSource = Me.FBSDataSet
+        Me.VenueBindingSource.DataMember = "Venue"
+        Me.VenueBindingSource.DataSource = Me.FBSDataSet
         '
         'FBSDataSet
         '
         Me.FBSDataSet.DataSetName = "FBSDataSet"
         Me.FBSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(17, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(164, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Select the Venue for Searching : "
+        '
+        'deleteBtn
+        '
+        Me.deleteBtn.Location = New System.Drawing.Point(52, 265)
+        Me.deleteBtn.Name = "deleteBtn"
+        Me.deleteBtn.Size = New System.Drawing.Size(100, 50)
+        Me.deleteBtn.TabIndex = 4
+        Me.deleteBtn.Text = "Delete"
+        Me.deleteBtn.UseVisualStyleBackColor = True
+        '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.FBSDataSet
+        '
         'BookingTableAdapter
         '
         Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'VenueTableAdapter
+        '
+        Me.VenueTableAdapter.ClearBeforeFill = True
+        '
+        'BookingHistGrid
+        '
+        Me.BookingHistGrid.AllowUserToAddRows = False
+        Me.BookingHistGrid.AutoGenerateColumns = False
+        Me.BookingHistGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.BookingHistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BookingHistGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingID, Me.VenueDataGridViewTextBoxColumn, Me.BookingDateDataGridViewTextBoxColumn, Me.FeesChargedDataGridViewTextBoxColumn})
+        Me.BookingHistGrid.DataSource = Me.BookingBindingSource
+        Me.BookingHistGrid.Location = New System.Drawing.Point(241, 25)
+        Me.BookingHistGrid.Name = "BookingHistGrid"
+        Me.BookingHistGrid.ReadOnly = True
+        Me.BookingHistGrid.Size = New System.Drawing.Size(438, 319)
+        Me.BookingHistGrid.TabIndex = 1
+        '
+        'BookingID
+        '
+        Me.BookingID.DataPropertyName = "BookingID"
+        Me.BookingID.HeaderText = "BookingID"
+        Me.BookingID.Name = "BookingID"
+        Me.BookingID.ReadOnly = True
+        '
+        'VenueDataGridViewTextBoxColumn
+        '
+        Me.VenueDataGridViewTextBoxColumn.DataPropertyName = "Venue"
+        Me.VenueDataGridViewTextBoxColumn.HeaderText = "Venue"
+        Me.VenueDataGridViewTextBoxColumn.Name = "VenueDataGridViewTextBoxColumn"
+        Me.VenueDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BookingDateDataGridViewTextBoxColumn
+        '
+        Me.BookingDateDataGridViewTextBoxColumn.DataPropertyName = "Booking Date"
+        Me.BookingDateDataGridViewTextBoxColumn.HeaderText = "Booking Date"
+        Me.BookingDateDataGridViewTextBoxColumn.Name = "BookingDateDataGridViewTextBoxColumn"
+        Me.BookingDateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FeesChargedDataGridViewTextBoxColumn
+        '
+        Me.FeesChargedDataGridViewTextBoxColumn.DataPropertyName = "Fees Charged"
+        Me.FeesChargedDataGridViewTextBoxColumn.HeaderText = "Fees Charged"
+        Me.FeesChargedDataGridViewTextBoxColumn.Name = "FeesChargedDataGridViewTextBoxColumn"
+        Me.FeesChargedDataGridViewTextBoxColumn.ReadOnly = True
         '
         'BookingHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(647, 364)
+        Me.ClientSize = New System.Drawing.Size(691, 364)
+        Me.Controls.Add(Me.deleteBtn)
         Me.Controls.Add(Me.advanceGrpBox)
         Me.Controls.Add(Me.showGrpBox)
         Me.Controls.Add(Me.BookingHistGrid)
         Me.Name = "BookingHistory"
         Me.Text = "Booking History"
-        CType(Me.BookingHistGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.showGrpBox.ResumeLayout(False)
         Me.showGrpBox.PerformLayout()
         Me.advanceGrpBox.ResumeLayout(False)
         Me.advanceGrpBox.PerformLayout()
-        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FBSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingHistGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BookingHistGrid As DataGridView
     Friend WithEvents showGrpBox As GroupBox
     Friend WithEvents OngoingFilter As RadioButton
     Friend WithEvents CompletedFilter As RadioButton
     Friend WithEvents advanceGrpBox As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents searchTxt As TextBox
     Friend WithEvents FBSDataSet As FBSDataSet
     Friend WithEvents BookingBindingSource As BindingSource
     Friend WithEvents BookingTableAdapter As FBSDataSetTableAdapters.BookingTableAdapter
-    Friend WithEvents BookingDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BookingTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents deleteBtn As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents VenueBindingSource As BindingSource
+    Friend WithEvents VenueTableAdapter As FBSDataSetTableAdapters.VenueTableAdapter
+    Friend WithEvents BookingHistGrid As DataGridView
     Friend WithEvents VisitDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingChargesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BookingID As DataGridViewTextBoxColumn
+    Friend WithEvents VenueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BookingDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FeesChargedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
