@@ -260,6 +260,7 @@
     <EmbeddedResource Include="DailyRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DailyRpt.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteAccount.resx">
       <DependentUpon>DeleteAccount.vb</DependentUpon>
     </EmbeddedResource>
