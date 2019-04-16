@@ -24,6 +24,7 @@ Partial Class FrmBooking
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.VenueDSBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VenueDataSet = New FBS.VenueDataSet()
         Me.VenueDSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.lstTimeslot = New System.Windows.Forms.ListBox()
         Me.lblTotalPayment = New System.Windows.Forms.Label()
@@ -42,6 +43,7 @@ Partial Class FrmBooking
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.VenueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cbActivityType = New System.Windows.Forms.ComboBox()
+        Me.VenueBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.cbVenue = New System.Windows.Forms.ComboBox()
         Me.lblVenue = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
@@ -49,8 +51,6 @@ Partial Class FrmBooking
         Me.dtpBooking = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.VenueBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VenueDataSet = New FBS.VenueDataSet()
-        Me.VenueBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.VenueTableAdapter1 = New FBS.VenueDataSetTableAdapters.VenueTableAdapter()
         CType(Me.VenueDSBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,9 +59,8 @@ Partial Class FrmBooking
         CType(Me.VenueBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VenueBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VenueDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VenueBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'VenueDSBindingSource1
@@ -69,7 +68,7 @@ Partial Class FrmBooking
         Me.VenueDSBindingSource1.DataSource = Me.VenueDataSet
         Me.VenueDSBindingSource1.Position = 0
         '
-        'VenueDS
+        'VenueDataSet
         '
         Me.VenueDataSet.DataSetName = "VenueDataSet"
         Me.VenueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
@@ -82,7 +81,6 @@ Partial Class FrmBooking
         'lstTimeslot
         '
         Me.lstTimeslot.FormattingEnabled = True
-        Me.lstTimeslot.Items.AddRange(New Object() {"10:00 am - 12:00 pm", "12:00 pm - 2:00 pm", "2:00 pm - 4:00 pm", "4:00 pm - 6:00 pm", "6:00 pm - 8:00 pm", "8:00 pm - 10:00 pm"})
         Me.lstTimeslot.Location = New System.Drawing.Point(219, 282)
         Me.lstTimeslot.Name = "lstTimeslot"
         Me.lstTimeslot.Size = New System.Drawing.Size(144, 43)
@@ -110,7 +108,7 @@ Partial Class FrmBooking
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(159, 34)
+        Me.Label4.Location = New System.Drawing.Point(188, 34)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(12, 13)
         Me.Label4.TabIndex = 20
@@ -153,7 +151,7 @@ Partial Class FrmBooking
         'lblHour
         '
         Me.lblHour.AutoSize = True
-        Me.lblHour.Location = New System.Drawing.Point(195, 34)
+        Me.lblHour.Location = New System.Drawing.Point(215, 34)
         Me.lblHour.Name = "lblHour"
         Me.lblHour.Size = New System.Drawing.Size(39, 13)
         Me.lblHour.TabIndex = 17
@@ -177,10 +175,6 @@ Partial Class FrmBooking
         Me.lblRate.Size = New System.Drawing.Size(26, 15)
         Me.lblRate.TabIndex = 35
         Me.lblRate.Text = "RM"
-        '
-        'VenueTableAdapter
-        '
-        Me.VenueTableAdapter1.ClearBeforeFill = True
         '
         'VenueBindingSource1
         '
@@ -237,6 +231,11 @@ Partial Class FrmBooking
         Me.cbActivityType.Size = New System.Drawing.Size(121, 21)
         Me.cbActivityType.TabIndex = 34
         Me.cbActivityType.ValueMember = "VenueType"
+        '
+        'VenueBindingSource3
+        '
+        Me.VenueBindingSource3.DataMember = "Venue"
+        Me.VenueBindingSource3.DataSource = Me.VenueDataSet
         '
         'cbVenue
         '
@@ -302,16 +301,6 @@ Partial Class FrmBooking
         Me.VenueBindingSource2.DataMember = "Venue"
         Me.VenueBindingSource2.DataSource = Me.VenueDSBindingSource
         '
-        'VenueDataSet
-        '
-        Me.VenueDataSet.DataSetName = "VenueDataSet"
-        Me.VenueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VenueBindingSource3
-        '
-        Me.VenueBindingSource3.DataMember = "Venue"
-        Me.VenueBindingSource3.DataSource = Me.VenueDataSet
-        '
         'VenueTableAdapter1
         '
         Me.VenueTableAdapter1.ClearBeforeFill = True
@@ -346,9 +335,8 @@ Partial Class FrmBooking
         CType(Me.VenueBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VenueBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VenueDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VenueBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VenueBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
