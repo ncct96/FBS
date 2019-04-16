@@ -123,13 +123,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Booking.Designer.vb">
-      <DependentUpon>Booking.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Booking.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Timeslot.vb" />
     <Compile Include="DB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +132,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FBSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBooking.Designer.vb">
+      <DependentUpon>FrmBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBooking.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GlobalVars.vb" />
     <Compile Include="ImagePopUp.Designer.vb">
@@ -199,10 +198,10 @@
     <Compile Include="Register.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VenueDS.Designer.vb">
+    <Compile Include="VenueDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VenueDS.xsd</DependentUpon>
+      <DependentUpon>VenueDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="VenueInfo.Designer.vb">
       <DependentUpon>VenueInfo.vb</DependentUpon>
@@ -221,8 +220,8 @@
     <EmbeddedResource Include="AdminVenue.resx">
       <DependentUpon>AdminVenue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking.resx">
-      <DependentUpon>Booking.vb</DependentUpon>
+    <EmbeddedResource Include="FrmBooking.resx">
+      <DependentUpon>FrmBooking.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImagePopUp.resx">
       <DependentUpon>ImagePopUp.vb</DependentUpon>
@@ -294,16 +293,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="VenueDS.xsc">
-      <DependentUpon>VenueDS.xsd</DependentUpon>
+    <None Include="VenueDataSet.xsc">
+      <DependentUpon>VenueDataSet.xsd</DependentUpon>
     </None>
-    <None Include="VenueDS.xsd">
+    <None Include="VenueDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VenueDS.Designer.vb</LastGenOutput>
+      <LastGenOutput>VenueDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="VenueDS.xss">
-      <DependentUpon>VenueDS.xsd</DependentUpon>
+    <None Include="VenueDataSet.xss">
+      <DependentUpon>VenueDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

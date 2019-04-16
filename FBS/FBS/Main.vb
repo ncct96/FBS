@@ -14,9 +14,9 @@
             venueList.ShowDialog()
             Me.Show()
         ElseIf sender.Equals(picBooking) Then
-            Dim booking As New Booking
+            'Dim booking As New Booking
             Me.Hide()
-            booking.ShowDialog()
+            'booking.ShowDialog()
             Me.Show()
         ElseIf sender.Equals(picExit) Then
             IsX = False

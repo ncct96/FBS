@@ -1,14 +1,14 @@
 ﻿Public Class VenueList
-    Private MaxStep = 0
+    Private MaxStep As Integer = 0
     Private Result As New List(Of Venue)
     Private IDs(6) As Integer
-    Private Index = 0
-    Private FirstRun = True
+    Private Index As Integer = 0
+    Private FirstRun As Boolean = True
     Private VenueTypes() As String = {"Badminton Court", "Basketball Court", "Football Field", "Gymnasium", "Tennis Court", "Swimming Pool"}
 
     'ON FORM LOAD
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        If FirstRun Then
+        If CBool(FirstRun) Then
             cboType.Items.Clear()
             cboType.Items.Add("All")
             For Each type In VenueTypes
@@ -20,7 +20,7 @@
         cboType.SelectedIndex = 0
 
         If Result.Count > 6 Then
-            MaxStep = Result.Count / 6
+            MaxStep = CInt(Result.Count / 6)
         Else
             MaxStep = 1
         End If
@@ -254,7 +254,7 @@
 
     Private IsX = True
     Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        If IsX Then
+        If CBool(IsX) Then
             Application.Exit()
         End If
     End Sub

@@ -1,14 +1,14 @@
-﻿Imports System.Data.SqlClient
-Imports System.Configuration
-Public Class Booking
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
+
+Public Class FrmBooking
     Public _Booking As New List(Of Timeslot)
     Dim rate As Double
     Dim timeSlotCount As Integer
     Dim totalPayment As Double
-    Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'VenueDS.Venue' table. You can move, or remove it, as needed.
-        Me.VenueTableAdapter.FillVenue(Me.VenueDS.Venue)
-        'initTimeslot()
+    Private Sub FrmBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'VenueDataSet.Venue' table. You can move, or remove it, as needed.
+        Me.VenueTableAdapter1.Fill(Me.VenueDataSet.Venue)
         rate = LoadVenueRate()
         dtpBooking.MinDate = Date.Today().AddDays(1)
         dtpBooking.MaxDate = Date.Today().AddDays(10)
@@ -45,9 +45,9 @@ Public Class Booking
             Dim cmd As New SqlCommand(bookingSQL, conn)
             conn.Open()
 
-            ID = cmd.ExecuteScalar
+            ID = CInt(cmd.ExecuteScalar)
 
-            If String.IsNullOrEmpty(ID) Then
+            If String.IsNullOrEmpty(CType(ID, String)) Then
                 ID = 1
             End If
         Catch ex As Exception
@@ -99,7 +99,7 @@ Public Class Booking
 
             conn.Open()
 
-            rate = cmd.ExecuteScalar
+            rate = CDbl(cmd.ExecuteScalar)
 
             lblRate.Text = "RM " & Format(rate, "f")
         Catch ex As Exception
@@ -141,19 +141,6 @@ Public Class Booking
     End Function
 
     Private Sub lstTimeslot_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstTimeslot.SelectedIndexChanged
-        totalPayment = CalcTotalPymt(rate)
-        lblTotalPayment.Text = "RM " & Format(totalPayment, "f")
+
     End Sub
-
-    'Private Sub cbEndTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbEndTime.SelectedIndexChanged
-    '    Debug.Print(cbEndTime.SelectedItem)
-    '    Dim endTime As String
-    '    If cbEndTime.SelectedItem = "0:00" Then
-
-    '    End If
-    'End Sub
-
-    'Private Sub dtpBooking_ValueChanged(sender As Object, e As EventArgs) Handles dtpBooking.ValueChanged
-    '    Debug.Print(dtpBooking.Value)
-    'End Sub
 End Class

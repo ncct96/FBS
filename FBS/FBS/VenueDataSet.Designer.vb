@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("VenueDS"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("VenueDataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class VenueDS
+Partial Public Class VenueDataSet
     Inherits Global.System.Data.DataSet
     
     Private tableVenue As VenueDataTable
@@ -128,7 +128,7 @@ Partial Public Class VenueDS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As VenueDS = CType(MyBase.Clone,VenueDS)
+        Dim cln As VenueDataSet = CType(MyBase.Clone,VenueDataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -199,9 +199,9 @@ Partial Public Class VenueDS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "VenueDS"
+        Me.DataSetName = "VenueDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/VenueDS.xsd"
+        Me.Namespace = "http://tempuri.org/VenueDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableVenue = New VenueDataTable()
@@ -225,7 +225,7 @@ Partial Public Class VenueDS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As VenueDS = New VenueDS()
+        Dim ds As VenueDataSet = New VenueDataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -296,20 +296,6 @@ Partial Public Class VenueDS
         Private columnVenueRecommendations As Global.System.Data.DataColumn
         
         Private columnVenueRate As Global.System.Data.DataColumn
-        
-        Private columnExpr1 As Global.System.Data.DataColumn
-        
-        Private columnExpr2 As Global.System.Data.DataColumn
-        
-        Private columnExpr3 As Global.System.Data.DataColumn
-        
-        Private columnExpr4 As Global.System.Data.DataColumn
-        
-        Private columnExpr5 As Global.System.Data.DataColumn
-        
-        Private columnExpr6 As Global.System.Data.DataColumn
-        
-        Private columnExpr7 As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -403,62 +389,6 @@ Partial Public Class VenueDS
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr1Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr1
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr2Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr2
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr3Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr3
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr4Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr4
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr5Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr5
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr6Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr6
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Expr7Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnExpr7
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -495,9 +425,9 @@ Partial Public Class VenueDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddVenueRow(ByVal VenueID As Integer, ByVal VenueType As String, ByVal VenueName As String, ByVal VenuePicture() As Byte, ByVal VenueMaxCapacity As Integer, ByVal VenueRecommendations As String, ByVal VenueRate As Decimal, ByVal Expr2 As String, ByVal Expr3 As String, ByVal Expr4() As Byte, ByVal Expr5 As Integer, ByVal Expr6 As String, ByVal Expr7 As Decimal) As VenueRow
+        Public Overloads Function AddVenueRow(ByVal VenueType As String, ByVal VenueName As String, ByVal VenuePicture() As Byte, ByVal VenueMaxCapacity As Integer, ByVal VenueRecommendations As String, ByVal VenueRate As Decimal) As VenueRow
             Dim rowVenueRow As VenueRow = CType(Me.NewRow,VenueRow)
-            Dim columnValuesArray() As Object = New Object() {VenueID, VenueType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecommendations, VenueRate, Nothing, Expr2, Expr3, Expr4, Expr5, Expr6, Expr7}
+            Dim columnValuesArray() As Object = New Object() {Nothing, VenueType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecommendations, VenueRate}
             rowVenueRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVenueRow)
             Return rowVenueRow
@@ -533,13 +463,6 @@ Partial Public Class VenueDS
             Me.columnVenueMaxCapacity = MyBase.Columns("VenueMaxCapacity")
             Me.columnVenueRecommendations = MyBase.Columns("VenueRecommendations")
             Me.columnVenueRate = MyBase.Columns("VenueRate")
-            Me.columnExpr1 = MyBase.Columns("Expr1")
-            Me.columnExpr2 = MyBase.Columns("Expr2")
-            Me.columnExpr3 = MyBase.Columns("Expr3")
-            Me.columnExpr4 = MyBase.Columns("Expr4")
-            Me.columnExpr5 = MyBase.Columns("Expr5")
-            Me.columnExpr6 = MyBase.Columns("Expr6")
-            Me.columnExpr7 = MyBase.Columns("Expr7")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -559,36 +482,17 @@ Partial Public Class VenueDS
             MyBase.Columns.Add(Me.columnVenueRecommendations)
             Me.columnVenueRate = New Global.System.Data.DataColumn("VenueRate", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnVenueRate)
-            Me.columnExpr1 = New Global.System.Data.DataColumn("Expr1", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr1)
-            Me.columnExpr2 = New Global.System.Data.DataColumn("Expr2", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr2)
-            Me.columnExpr3 = New Global.System.Data.DataColumn("Expr3", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr3)
-            Me.columnExpr4 = New Global.System.Data.DataColumn("Expr4", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr4)
-            Me.columnExpr5 = New Global.System.Data.DataColumn("Expr5", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr5)
-            Me.columnExpr6 = New Global.System.Data.DataColumn("Expr6", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr6)
-            Me.columnExpr7 = New Global.System.Data.DataColumn("Expr7", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnExpr7)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnVenueID}, true))
+            Me.columnVenueID.AutoIncrement = true
+            Me.columnVenueID.AutoIncrementSeed = -1
+            Me.columnVenueID.AutoIncrementStep = -1
             Me.columnVenueID.AllowDBNull = false
+            Me.columnVenueID.ReadOnly = true
             Me.columnVenueID.Unique = true
             Me.columnVenueType.MaxLength = 50
             Me.columnVenueName.AllowDBNull = false
             Me.columnVenueName.MaxLength = 30
             Me.columnVenueRecommendations.MaxLength = 30
-            Me.columnExpr1.AutoIncrement = true
-            Me.columnExpr1.AutoIncrementSeed = -1
-            Me.columnExpr1.AutoIncrementStep = -1
-            Me.columnExpr1.AllowDBNull = false
-            Me.columnExpr1.ReadOnly = true
-            Me.columnExpr2.MaxLength = 50
-            Me.columnExpr3.AllowDBNull = false
-            Me.columnExpr3.MaxLength = 30
-            Me.columnExpr6.MaxLength = 30
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -656,7 +560,7 @@ Partial Public Class VenueDS
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As VenueDS = New VenueDS()
+            Dim ds As VenueDataSet = New VenueDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -832,103 +736,6 @@ Partial Public Class VenueDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr1() As Integer
-            Get
-                Return CType(Me(Me.tableVenue.Expr1Column),Integer)
-            End Get
-            Set
-                Me(Me.tableVenue.Expr1Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr2() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableVenue.Expr2Column),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr2' in table 'Venue' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVenue.Expr2Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr3() As String
-            Get
-                Return CType(Me(Me.tableVenue.Expr3Column),String)
-            End Get
-            Set
-                Me(Me.tableVenue.Expr3Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr4() As Byte()
-            Get
-                Try 
-                    Return CType(Me(Me.tableVenue.Expr4Column),Byte())
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr4' in table 'Venue' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVenue.Expr4Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr5() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableVenue.Expr5Column),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr5' in table 'Venue' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVenue.Expr5Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr6() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableVenue.Expr6Column),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr6' in table 'Venue' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVenue.Expr6Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Expr7() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tableVenue.Expr7Column),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr7' in table 'Venue' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVenue.Expr7Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsVenueTypeNull() As Boolean
             Return Me.IsNull(Me.tableVenue.VenueTypeColumn)
         End Function
@@ -986,66 +793,6 @@ Partial Public Class VenueDS
         Public Sub SetVenueRateNull()
             Me(Me.tableVenue.VenueRateColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsExpr2Null() As Boolean
-            Return Me.IsNull(Me.tableVenue.Expr2Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetExpr2Null()
-            Me(Me.tableVenue.Expr2Column) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsExpr4Null() As Boolean
-            Return Me.IsNull(Me.tableVenue.Expr4Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetExpr4Null()
-            Me(Me.tableVenue.Expr4Column) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsExpr5Null() As Boolean
-            Return Me.IsNull(Me.tableVenue.Expr5Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetExpr5Null()
-            Me(Me.tableVenue.Expr5Column) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsExpr6Null() As Boolean
-            Return Me.IsNull(Me.tableVenue.Expr6Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetExpr6Null()
-            Me(Me.tableVenue.Expr6Column) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsExpr7Null() As Boolean
-            Return Me.IsNull(Me.tableVenue.Expr7Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetExpr7Null()
-            Me(Me.tableVenue.Expr7Column) = Global.System.Convert.DBNull
-        End Sub
     End Class
     
     '''<summary>
@@ -1085,7 +832,7 @@ Partial Public Class VenueDS
     End Class
 End Class
 
-Namespace VenueDSTableAdapters
+Namespace VenueDataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -1221,29 +968,16 @@ Namespace VenueDSTableAdapters
             tableMapping.ColumnMappings.Add("VenueMaxCapacity", "VenueMaxCapacity")
             tableMapping.ColumnMappings.Add("VenueRecommendations", "VenueRecommendations")
             tableMapping.ColumnMappings.Add("VenueRate", "VenueRate")
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1")
-            tableMapping.ColumnMappings.Add("Expr2", "Expr2")
-            tableMapping.ColumnMappings.Add("Expr3", "Expr3")
-            tableMapping.ColumnMappings.Add("Expr4", "Expr4")
-            tableMapping.ColumnMappings.Add("Expr5", "Expr5")
-            tableMapping.ColumnMappings.Add("Expr6", "Expr6")
-            tableMapping.ColumnMappings.Add("Expr7", "Expr7")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Venue] WHERE (([VenueID] = @Original_VenueID) AND ((@IsNull_VenueTyp"& _ 
-                "e = 1 AND [VenueType] IS NULL) OR ([VenueType] = @Original_VenueType)) AND ([Ven"& _ 
-                "ueName] = @Original_VenueName) AND ((@IsNull_VenueMaxCapacity = 1 AND [VenueMaxC"& _ 
-                "apacity] IS NULL) OR ([VenueMaxCapacity] = @Original_VenueMaxCapacity)) AND ((@I"& _ 
-                "sNull_VenueRecommendations = 1 AND [VenueRecommendations] IS NULL) OR ([VenueRec"& _ 
-                "ommendations] = @Original_VenueRecommendations)) AND ((@IsNull_VenueRate = 1 AND"& _ 
-                " [VenueRate] IS NULL) OR ([VenueRate] = @Original_VenueRate)) AND ([VenueID] = @"& _ 
-                "Original_Expr1) AND ((@IsNull_Expr2 = 1 AND [VenueType] IS NULL) OR ([VenueType]"& _ 
-                " = @Original_Expr2)) AND ([VenueName] = @Original_Expr3) AND ((@IsNull_Expr5 = 1"& _ 
-                " AND [VenueMaxCapacity] IS NULL) OR ([VenueMaxCapacity] = @Original_Expr5)) AND "& _ 
-                "((@IsNull_Expr6 = 1 AND [VenueRecommendations] IS NULL) OR ([VenueRecommendation"& _ 
-                "s] = @Original_Expr6)) AND ((@IsNull_Expr7 = 1 AND [VenueRate] IS NULL) OR ([Ven"& _ 
-                "ueRate] = @Original_Expr7)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Venue] WHERE (([VenueID] = @Original_VenueID) AND ((@IsNull_Ve"& _ 
+                "nueType = 1 AND [VenueType] IS NULL) OR ([VenueType] = @Original_VenueType)) AND"& _ 
+                " ([VenueName] = @Original_VenueName) AND ((@IsNull_VenueMaxCapacity = 1 AND [Ven"& _ 
+                "ueMaxCapacity] IS NULL) OR ([VenueMaxCapacity] = @Original_VenueMaxCapacity)) AN"& _ 
+                "D ((@IsNull_VenueRecommendations = 1 AND [VenueRecommendations] IS NULL) OR ([Ve"& _ 
+                "nueRecommendations] = @Original_VenueRecommendations)) AND ((@IsNull_VenueRate ="& _ 
+                " 1 AND [VenueRate] IS NULL) OR ([VenueRate] = @Original_VenueRate)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VenueType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -1255,27 +989,13 @@ Namespace VenueDSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueRecommendations", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRecommendations", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VenueRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueRate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr1", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr1", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr2", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr2", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr3", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr5", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr5", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr6", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr6", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr6", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr6", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr7", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr7", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr7", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr7", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Venue] ([VenueType], [VenueName], [VenuePicture], [VenueMaxCapacity]"& _ 
-                ", [VenueRecommendations], [VenueRate], [VenueType], [VenueName], [VenuePicture],"& _ 
-                " [VenueMaxCapacity], [VenueRecommendations], [VenueRate]) VALUES (@VenueType, @V"& _ 
-                "enueName, @VenuePicture, @VenueMaxCapacity, @VenueRecommendations, @VenueRate, @"& _ 
-                "Expr2, @Expr3, @Expr4, @Expr5, @Expr6, @Expr7);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT VenueID, VenueType, Venu"& _ 
-                "eName, VenuePicture, VenueMaxCapacity, VenueRecommendations, VenueRate, VenueID "& _ 
-                "AS Expr1, VenueType AS Expr2, VenueName AS Expr3, VenuePicture AS Expr4, VenueMa"& _ 
-                "xCapacity AS Expr5, VenueRecommendations AS Expr6, VenueRate AS Expr7 FROM Venue"& _ 
-                " WHERE (VenueID = SCOPE_IDENTITY()) AND (VenueID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Venue] ([VenueType], [VenueName], [VenuePicture], [VenueMaxCap"& _ 
+                "acity], [VenueRecommendations], [VenueRate]) VALUES (@VenueType, @VenueName, @Ve"& _ 
+                "nuePicture, @VenueMaxCapacity, @VenueRecommendations, @VenueRate);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Venue"& _ 
+                "ID, VenueType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecommendations, "& _ 
+                "VenueRate FROM Venue WHERE (VenueID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1283,35 +1003,20 @@ Namespace VenueDSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueMaxCapacity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueMaxCapacity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueRecommendations", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRecommendations", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueRate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr4", Global.System.Data.SqlDbType.Image, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr4", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr5", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr6", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr6", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr7", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr7", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Venue] SET [VenueType] = @VenueType, [VenueName] = @VenueName, [VenuePict"& _ 
-                "ure] = @VenuePicture, [VenueMaxCapacity] = @VenueMaxCapacity, [VenueRecommendati"& _ 
-                "ons] = @VenueRecommendations, [VenueRate] = @VenueRate, [VenueType] = @Expr2, [V"& _ 
-                "enueName] = @Expr3, [VenuePicture] = @Expr4, [VenueMaxCapacity] = @Expr5, [Venue"& _ 
-                "Recommendations] = @Expr6, [VenueRate] = @Expr7 WHERE (([VenueID] = @Original_Ve"& _ 
-                "nueID) AND ((@IsNull_VenueType = 1 AND [VenueType] IS NULL) OR ([VenueType] = @O"& _ 
-                "riginal_VenueType)) AND ([VenueName] = @Original_VenueName) AND ((@IsNull_VenueM"& _ 
-                "axCapacity = 1 AND [VenueMaxCapacity] IS NULL) OR ([VenueMaxCapacity] = @Origina"& _ 
-                "l_VenueMaxCapacity)) AND ((@IsNull_VenueRecommendations = 1 AND [VenueRecommenda"& _ 
-                "tions] IS NULL) OR ([VenueRecommendations] = @Original_VenueRecommendations)) AN"& _ 
-                "D ((@IsNull_VenueRate = 1 AND [VenueRate] IS NULL) OR ([VenueRate] = @Original_V"& _ 
-                "enueRate)) AND ([VenueID] = @Original_Expr1) AND ((@IsNull_Expr2 = 1 AND [VenueT"& _ 
-                "ype] IS NULL) OR ([VenueType] = @Original_Expr2)) AND ([VenueName] = @Original_E"& _ 
-                "xpr3) AND ((@IsNull_Expr5 = 1 AND [VenueMaxCapacity] IS NULL) OR ([VenueMaxCapac"& _ 
-                "ity] = @Original_Expr5)) AND ((@IsNull_Expr6 = 1 AND [VenueRecommendations] IS N"& _ 
-                "ULL) OR ([VenueRecommendations] = @Original_Expr6)) AND ((@IsNull_Expr7 = 1 AND "& _ 
-                "[VenueRate] IS NULL) OR ([VenueRate] = @Original_Expr7)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT VenueID, Venu"& _ 
-                "eType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecommendations, VenueRat"& _ 
-                "e, VenueID AS Expr1, VenueType AS Expr2, VenueName AS Expr3, VenuePicture AS Exp"& _ 
-                "r4, VenueMaxCapacity AS Expr5, VenueRecommendations AS Expr6, VenueRate AS Expr7"& _ 
-                " FROM Venue WHERE (VenueID = @VenueID) AND (VenueID = @VenueID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Venue] SET [VenueType] = @VenueType, [VenueName] = @VenueName, [Ven"& _ 
+                "uePicture] = @VenuePicture, [VenueMaxCapacity] = @VenueMaxCapacity, [VenueRecomm"& _ 
+                "endations] = @VenueRecommendations, [VenueRate] = @VenueRate WHERE (([VenueID] ="& _ 
+                " @Original_VenueID) AND ((@IsNull_VenueType = 1 AND [VenueType] IS NULL) OR ([Ve"& _ 
+                "nueType] = @Original_VenueType)) AND ([VenueName] = @Original_VenueName) AND ((@"& _ 
+                "IsNull_VenueMaxCapacity = 1 AND [VenueMaxCapacity] IS NULL) OR ([VenueMaxCapacit"& _ 
+                "y] = @Original_VenueMaxCapacity)) AND ((@IsNull_VenueRecommendations = 1 AND [Ve"& _ 
+                "nueRecommendations] IS NULL) OR ([VenueRecommendations] = @Original_VenueRecomme"& _ 
+                "ndations)) AND ((@IsNull_VenueRate = 1 AND [VenueRate] IS NULL) OR ([VenueRate] "& _ 
+                "= @Original_VenueRate)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT VenueID, VenueType, VenueName, VenuePicture, V"& _ 
+                "enueMaxCapacity, VenueRecommendations, VenueRate FROM Venue WHERE (VenueID = @Ve"& _ 
+                "nueID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1319,12 +1024,6 @@ Namespace VenueDSTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueMaxCapacity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueMaxCapacity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueRecommendations", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRecommendations", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueRate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr4", Global.System.Data.SqlDbType.Image, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr4", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr5", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr6", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr6", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Expr7", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr7", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VenueType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -1335,16 +1034,6 @@ Namespace VenueDSTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueRecommendations", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRecommendations", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VenueRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VenueRate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr1", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr1", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr2", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr2", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr3", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr5", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr5", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr6", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr6", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr6", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr6", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Expr7", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr7", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Expr7", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Expr7", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VenueID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "VenueID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -1361,9 +1050,8 @@ Namespace VenueDSTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Venue.*, VenueID AS Expr1, VenueType AS Expr2, VenueName AS Expr3, " &
-                "VenuePicture AS Expr4, VenueMaxCapacity AS Expr5, VenueRecommendations AS Expr6," &
-                " VenueRate AS Expr7" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Venue"
+            Me._commandCollection(0).CommandText = "SELECT VenueID, VenueType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecomm"& _ 
+                "endations, VenueRate FROM dbo.Venue"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1371,7 +1059,7 @@ Namespace VenueDSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function FillVenue(ByVal dataTable As VenueDS.VenueDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As VenueDataSet.VenueDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1384,9 +1072,9 @@ Namespace VenueDSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As VenueDS.VenueDataTable
+        Public Overloads Overridable Function GetData() As VenueDataSet.VenueDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As VenueDS.VenueDataTable = New VenueDS.VenueDataTable()
+            Dim dataTable As VenueDataSet.VenueDataTable = New VenueDataSet.VenueDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1394,14 +1082,14 @@ Namespace VenueDSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As VenueDS.VenueDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As VenueDataSet.VenueDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As VenueDS) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As VenueDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "Venue")
         End Function
         
@@ -1423,7 +1111,7 @@ Namespace VenueDSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_VenueID As Integer, ByVal Original_VenueType As String, ByVal Original_VenueName As String, ByVal Original_VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal Original_VenueRecommendations As String, ByVal Original_VenueRate As Global.System.Nullable(Of Decimal), ByVal Original_Expr1 As Integer, ByVal Original_Expr2 As String, ByVal Original_Expr3 As String, ByVal Original_Expr5 As Integer, ByVal Original_Expr6 As String, ByVal Original_Expr7 As Decimal) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_VenueID As Integer, ByVal Original_VenueType As String, ByVal Original_VenueName As String, ByVal Original_VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal Original_VenueRecommendations As String, ByVal Original_VenueRate As Global.System.Nullable(Of Decimal)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_VenueID,Integer)
             If (Original_VenueType Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -1458,28 +1146,6 @@ Namespace VenueDSTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Expr1,Integer)
-            If (Original_Expr2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Expr2")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Expr2,String)
-            End If
-            If (Original_Expr3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Expr3")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_Expr3,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_Expr5,Integer)
-            If (Original_Expr6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Expr6")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(Original_Expr6,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(18).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(19).Value = CType(Original_Expr7,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1499,7 +1165,7 @@ Namespace VenueDSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal VenueType As String, ByVal VenueName As String, ByVal VenuePicture() As Byte, ByVal VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal VenueRecommendations As String, ByVal VenueRate As Global.System.Nullable(Of Decimal), ByVal Expr2 As String, ByVal Expr3 As String, ByVal Expr4() As Byte, ByVal Expr5 As Integer, ByVal Expr6 As String, ByVal Expr7 As Decimal) As Integer
+        Public Overloads Overridable Function Insert(ByVal VenueType As String, ByVal VenueName As String, ByVal VenuePicture() As Byte, ByVal VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal VenueRecommendations As String, ByVal VenueRate As Global.System.Nullable(Of Decimal)) As Integer
             If (VenueType Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -1530,28 +1196,6 @@ Namespace VenueDSTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (Expr2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr2")
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Expr2,String)
-            End If
-            If (Expr3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr3")
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Expr3,String)
-            End If
-            If (Expr4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr4")
-            Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Expr4,Byte())
-            End If
-            Me.Adapter.InsertCommand.Parameters(9).Value = CType(Expr5,Integer)
-            If (Expr6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr6")
-            Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Expr6,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(11).Value = CType(Expr7,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1571,32 +1215,7 @@ Namespace VenueDSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal VenueType As String,  _
-                    ByVal VenueName As String,  _
-                    ByVal VenuePicture() As Byte,  _
-                    ByVal VenueMaxCapacity As Global.System.Nullable(Of Integer),  _
-                    ByVal VenueRecommendations As String,  _
-                    ByVal VenueRate As Global.System.Nullable(Of Decimal),  _
-                    ByVal Expr2 As String,  _
-                    ByVal Expr3 As String,  _
-                    ByVal Expr4() As Byte,  _
-                    ByVal Expr5 As Integer,  _
-                    ByVal Expr6 As String,  _
-                    ByVal Expr7 As Decimal,  _
-                    ByVal Original_VenueID As Integer,  _
-                    ByVal Original_VenueType As String,  _
-                    ByVal Original_VenueName As String,  _
-                    ByVal Original_VenueMaxCapacity As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_VenueRecommendations As String,  _
-                    ByVal Original_VenueRate As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Expr1 As Integer,  _
-                    ByVal Original_Expr2 As String,  _
-                    ByVal Original_Expr3 As String,  _
-                    ByVal Original_Expr5 As Integer,  _
-                    ByVal Original_Expr6 As String,  _
-                    ByVal Original_Expr7 As Decimal,  _
-                    ByVal VenueID As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal VenueType As String, ByVal VenueName As String, ByVal VenuePicture() As Byte, ByVal VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal VenueRecommendations As String, ByVal VenueRate As Global.System.Nullable(Of Decimal), ByVal Original_VenueID As Integer, ByVal Original_VenueType As String, ByVal Original_VenueName As String, ByVal Original_VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal Original_VenueRecommendations As String, ByVal Original_VenueRate As Global.System.Nullable(Of Decimal), ByVal VenueID As Integer) As Integer
             If (VenueType Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -1627,85 +1246,41 @@ Namespace VenueDSTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (Expr2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr2")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Expr2,String)
-            End If
-            If (Expr3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr3")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Expr3,String)
-            End If
-            If (Expr4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr4")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Expr4,Byte())
-            End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Expr5,Integer)
-            If (Expr6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Expr6")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Expr6,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Expr7,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_VenueID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_VenueID,Integer)
             If (Original_VenueType Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_VenueType,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_VenueType,String)
             End If
             If (Original_VenueName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_VenueName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_VenueName,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_VenueName,String)
             End If
             If (Original_VenueMaxCapacity.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_VenueMaxCapacity.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_VenueMaxCapacity.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
             If (Original_VenueRecommendations Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_VenueRecommendations,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_VenueRecommendations,String)
             End If
             If (Original_VenueRate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_VenueRate.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_VenueRate.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Expr1,Integer)
-            If (Original_Expr2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Expr2")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Expr2,String)
-            End If
-            If (Original_Expr3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Expr3")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Expr3,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Expr5,Integer)
-            If (Original_Expr6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Expr6")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_Expr6,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_Expr7,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(32).Value = CType(VenueID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(VenueID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1725,32 +1300,8 @@ Namespace VenueDSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal VenueType As String,  _
-                    ByVal VenueName As String,  _
-                    ByVal VenuePicture() As Byte,  _
-                    ByVal VenueMaxCapacity As Global.System.Nullable(Of Integer),  _
-                    ByVal VenueRecommendations As String,  _
-                    ByVal VenueRate As Global.System.Nullable(Of Decimal),  _
-                    ByVal Expr2 As String,  _
-                    ByVal Expr3 As String,  _
-                    ByVal Expr4() As Byte,  _
-                    ByVal Expr5 As Integer,  _
-                    ByVal Expr6 As String,  _
-                    ByVal Expr7 As Decimal,  _
-                    ByVal Original_VenueID As Integer,  _
-                    ByVal Original_VenueType As String,  _
-                    ByVal Original_VenueName As String,  _
-                    ByVal Original_VenueMaxCapacity As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_VenueRecommendations As String,  _
-                    ByVal Original_VenueRate As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Expr1 As Integer,  _
-                    ByVal Original_Expr2 As String,  _
-                    ByVal Original_Expr3 As String,  _
-                    ByVal Original_Expr5 As Integer,  _
-                    ByVal Original_Expr6 As String,  _
-                    ByVal Original_Expr7 As Decimal) As Integer
-            Return Me.Update(VenueType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecommendations, VenueRate, Expr2, Expr3, Expr4, Expr5, Expr6, Expr7, Original_VenueID, Original_VenueType, Original_VenueName, Original_VenueMaxCapacity, Original_VenueRecommendations, Original_VenueRate, Original_Expr1, Original_Expr2, Original_Expr3, Original_Expr5, Original_Expr6, Original_Expr7, Original_VenueID)
+        Public Overloads Overridable Function Update(ByVal VenueType As String, ByVal VenueName As String, ByVal VenuePicture() As Byte, ByVal VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal VenueRecommendations As String, ByVal VenueRate As Global.System.Nullable(Of Decimal), ByVal Original_VenueID As Integer, ByVal Original_VenueType As String, ByVal Original_VenueName As String, ByVal Original_VenueMaxCapacity As Global.System.Nullable(Of Integer), ByVal Original_VenueRecommendations As String, ByVal Original_VenueRate As Global.System.Nullable(Of Decimal)) As Integer
+            Return Me.Update(VenueType, VenueName, VenuePicture, VenueMaxCapacity, VenueRecommendations, VenueRate, Original_VenueID, Original_VenueType, Original_VenueName, Original_VenueMaxCapacity, Original_VenueRecommendations, Original_VenueRate, Original_VenueID)
         End Function
     End Class
     
@@ -1846,7 +1397,7 @@ Namespace VenueDSTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As VenueDS, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As VenueDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._venueTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Venue.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
@@ -1865,7 +1416,7 @@ Namespace VenueDSTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As VenueDS, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As VenueDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._venueTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Venue.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
@@ -1883,7 +1434,7 @@ Namespace VenueDSTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As VenueDS, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As VenueDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._venueTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Venue.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
@@ -1927,7 +1478,7 @@ Namespace VenueDSTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As VenueDS) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As VenueDataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

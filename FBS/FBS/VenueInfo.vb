@@ -14,7 +14,7 @@
             End If
 
             lblName.Text = venue.VenueName
-            lblRate.Text = Decimal.Parse(venue.VenueRate).ToString("0.00")
+            lblRate.Text = Decimal.Parse(CType(venue.VenueRate, String)).ToString("0.00")
             lblType.Text = venue.VenueType
             lblCapacity.Text = venue.VenueMaxCapacity.ToString
             lblEvent.Text = venue.VenueRecommendations
@@ -50,9 +50,9 @@
         ImgPopUp.ShowDialog()
     End Sub
 
-    Private IsX = True
+    Private IsX As Boolean = True
     Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        If IsX Then
+        If CBool(IsX) Then
             Application.Exit()
         End If
     End Sub
