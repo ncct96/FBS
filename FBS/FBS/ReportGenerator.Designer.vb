@@ -28,6 +28,7 @@ Partial Class ReportGenerator
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ExceptionReport = New System.Drawing.Printing.PrintDocument()
         Me.dlgPrintPreview = New System.Windows.Forms.PrintPreviewDialog()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -81,12 +82,25 @@ Partial Class ReportGenerator
         Me.dlgPrintPreview.UseAntiAlias = True
         Me.dlgPrintPreview.Visible = False
         '
+        'btnBack
+        '
+        Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(100, 40)
+        Me.btnBack.TabIndex = 62
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'ReportGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -104,4 +118,5 @@ Partial Class ReportGenerator
     Friend WithEvents Button3 As Button
     Friend WithEvents ExceptionReport As Printing.PrintDocument
     Friend WithEvents dlgPrintPreview As PrintPreviewDialog
+    Friend WithEvents btnBack As Button
 End Class

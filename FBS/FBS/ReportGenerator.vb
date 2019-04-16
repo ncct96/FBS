@@ -4,6 +4,18 @@
         dlgPrintPreview.ShowDialog(Me)
     End Sub
 
+    Private IsX As Boolean = True
+    Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If CBool(IsX) Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub GoBack(sender As Object, e As EventArgs) Handles btnBack.Click
+        IsX = False
+        Me.Close()
+    End Sub
+
     Private Sub ExceptionReport_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles ExceptionReport.PrintPage
         Dim fontHeader As New Font("Calibri", 24, FontStyle.Bold)
         Dim fontSubheader As New Font("Calibri", 12)
