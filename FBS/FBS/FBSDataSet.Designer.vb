@@ -1491,10 +1491,12 @@ Namespace FBSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges, BookingID FROM Bookin"& _ 
-                "g WHERE (CustID = @custid)"
+            Me._commandCollection(0).CommandText = "SELECT        BookingDate, BookingTime, VisitDate, BookingCharges, BookingID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FRO"& _ 
+                "M            Booking"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (CustID ="&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELE"& _ 
+                "CT        CustID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               FROM            Customer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                          WHERE        (CustName = @custName)))"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@custid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CustID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@custName", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT BookingCharges, BookingDate, BookingID, BookingTime, VisitDate FROM Bookin"& _ 
@@ -1506,9 +1508,13 @@ Namespace FBSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As FBSDataSet.BookingDataTable, ByVal custid As Integer) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As FBSDataSet.BookingDataTable, ByVal custName As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(custid,Integer)
+            If (custName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("custName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(custName,String)
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -1520,9 +1526,13 @@ Namespace FBSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal custid As Integer) As FBSDataSet.BookingDataTable
+        Public Overloads Overridable Function GetData(ByVal custName As String) As FBSDataSet.BookingDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(custid,Integer)
+            If (custName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("custName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(custName,String)
+            End If
             Dim dataTable As FBSDataSet.BookingDataTable = New FBSDataSet.BookingDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

@@ -37,6 +37,7 @@ Partial Class BookingHistory
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FBSDataSet = New FBS.FBSDataSet()
         Me.BookingTableAdapter = New FBS.FBSDataSetTableAdapters.BookingTableAdapter()
+        Me.deleteBtn = New System.Windows.Forms.Button()
         CType(Me.BookingHistGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.showGrpBox.SuspendLayout()
         Me.advanceGrpBox.SuspendLayout()
@@ -47,7 +48,6 @@ Partial Class BookingHistory
         'BookingHistGrid
         '
         Me.BookingHistGrid.AllowUserToAddRows = False
-        Me.BookingHistGrid.AllowUserToDeleteRows = False
         Me.BookingHistGrid.AutoGenerateColumns = False
         Me.BookingHistGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BookingHistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -162,11 +162,21 @@ Partial Class BookingHistory
         '
         Me.BookingTableAdapter.ClearBeforeFill = True
         '
+        'deleteBtn
+        '
+        Me.deleteBtn.Location = New System.Drawing.Point(52, 265)
+        Me.deleteBtn.Name = "deleteBtn"
+        Me.deleteBtn.Size = New System.Drawing.Size(100, 50)
+        Me.deleteBtn.TabIndex = 4
+        Me.deleteBtn.Text = "Delete"
+        Me.deleteBtn.UseVisualStyleBackColor = True
+        '
         'BookingHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(647, 364)
+        Me.Controls.Add(Me.deleteBtn)
         Me.Controls.Add(Me.advanceGrpBox)
         Me.Controls.Add(Me.showGrpBox)
         Me.Controls.Add(Me.BookingHistGrid)
@@ -196,4 +206,5 @@ Partial Class BookingHistory
     Friend WithEvents BookingTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents VisitDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingChargesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents deleteBtn As Button
 End Class
