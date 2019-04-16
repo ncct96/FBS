@@ -229,6 +229,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Slot.vb" />
+    <Compile Include="UpdateStatus.Designer.vb">
+      <DependentUpon>UpdateStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VenueDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportGenerator.resx">
       <DependentUpon>ReportGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStatus.resx">
+      <DependentUpon>UpdateStatus.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueInfo.resx">
       <DependentUpon>VenueInfo.vb</DependentUpon>

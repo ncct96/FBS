@@ -91,20 +91,20 @@ CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
         End If
     End Sub
 
-    Private Sub BookingHistGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BookingHistGrid.CellContentDoubleClick
-        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
-            Dim popup As New PopUp
-            Try
-                popup.updateDateTime.DataBindings.Add("Value", BookingHistGrid.DataSource, "VisitDate")
-                If popup.ShowDialog = Windows.Forms.DialogResult.OK Then
-                    ' Update Queries here
-                    Dim updateQuery As String = "UPDATE BOOKING SET VisitDate = @value"
-                End If
-            Catch ex As Exception
+    'Private Sub BookingHistGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BookingHistGrid.CellContentDoubleClick
+    '    If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+    '        Dim popup As New PopUp
+    '        Try
+    '            popup.updateDateTime.DataBindings.Add("Value", BookingHistGrid.DataSource, "VisitDate")
+    '            If popup.ShowDialog = Windows.Forms.DialogResult.OK Then
+    '                ' Update Queries here
+    '                Dim updateQuery As String = "UPDATE BOOKING SET VisitDate = @value"
+    '            End If
+    '        Catch ex As Exception
 
-            End Try
-        End If
-    End Sub
+    '        End Try
+    '    End If
+    'End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim searchIndex As String = ComboBox1.SelectedValue.ToString

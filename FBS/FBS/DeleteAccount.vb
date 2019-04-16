@@ -14,13 +14,13 @@ Public Class DeleteAccount
         If Not searchVal.Equals("") Then
             searchData(searchVal)
         Else
-            CustomerBindingSource.ResetBindings(False)
+            refreshData()
         End If
     End Sub
 
     Private Sub searchData(value As String)
         Try
-            Dim searchQuery As String = "SELECT CustName, CustPass, CustNumber FROM Customer WHERE CustName LIKE @pattern OR CustPass LIKE @pattern OR CustNumber LIKE @pattern"
+            Dim searchQuery As String = "SELECT CustID, CustName, CustPass, CustNumber FROM Customer WHERE CustName LIKE @pattern OR CustPass LIKE @pattern OR CustNumber LIKE @pattern"
             Dim searchCommand As New SqlCommand(searchQuery, connection)
             searchCommand.Parameters.AddWithValue("@pattern", value)
             Dim adapter As New SqlDataAdapter(searchCommand)
@@ -56,9 +56,11 @@ Public Class DeleteAccount
         End Try
     End Sub
     Private Sub refreshData()
-        Me.AccountGrid.DataSource = Nothing
-        Me.CustomerTableAdapter.Fill(Me.FBSDataSet.Customer)
-        Me.AccountGrid.DataSource = Me.CustomerBindingSource
-        Me.AccountGrid.Refresh()
+        'Me.AccountGrid.DataSource = Nothing
+        'Me.CustomerTableAdapter.Fill(Me.FBSDataSet.Customer)
+        'Me.AccountGrid.DataSource = Me.CustomerBindingSource
+        'Me.AccountGrid.Refresh()
+        CustomerBindingSource.DataSource = CustomerTableAdapter.GetData
+        CustomerBindingSource.ResetBindings(True)
     End Sub
 End Class

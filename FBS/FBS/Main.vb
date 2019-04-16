@@ -59,6 +59,7 @@
         End If
     End Sub
 
+    ' Ck partial edits starts
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim bookHistory As New BookingHistory
         Me.Hide()
@@ -72,4 +73,12 @@
         deleteAcc.ShowDialog()
         Me.Show()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim updateStat As New UpdateStatus
+        Me.Hide()
+        updateStat.ShowDialog()
+        Me.Show()
+    End Sub
+    ' Ck partial edits end
 End Class
