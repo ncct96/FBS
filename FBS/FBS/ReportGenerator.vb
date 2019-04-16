@@ -92,4 +92,11 @@ Public Class ReportGenerator
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         cboLessMore.SelectedIndex = 0
     End Sub
+
+    Private Sub btnDetailed_Click(sender As Object, e As EventArgs) Handles btnDetailed.Click
+        Dim DailyRpt As New NicholasReportViewer
+        Me.Hide()
+        DailyRpt.ShowDialog()
+        Me.Show()
+    End Sub
 End Class
