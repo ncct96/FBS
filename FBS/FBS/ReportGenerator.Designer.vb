@@ -34,7 +34,6 @@ Partial Class ReportGenerator
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -86,6 +85,7 @@ Partial Class ReportGenerator
         Me.dlgPrintPreview.Enabled = True
         Me.dlgPrintPreview.Icon = CType(resources.GetObject("dlgPrintPreview.Icon"), System.Drawing.Icon)
         Me.dlgPrintPreview.Name = "dlgPrintPreview"
+        Me.dlgPrintPreview.ShowIcon = False
         Me.dlgPrintPreview.UseAntiAlias = True
         Me.dlgPrintPreview.Visible = False
         '
@@ -144,7 +144,6 @@ Partial Class ReportGenerator
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtAmount)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -154,18 +153,6 @@ Partial Class ReportGenerator
         Me.GroupBox1.Size = New System.Drawing.Size(300, 337)
         Me.GroupBox1.TabIndex = 67
         Me.GroupBox1.TabStop = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"2019", "2018", "2017"})
-        Me.ComboBox1.Location = New System.Drawing.Point(11, 212)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(8)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(278, 37)
-        Me.ComboBox1.TabIndex = 67
         '
         'ReportGenerator
         '
@@ -180,6 +167,7 @@ Partial Class ReportGenerator
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ReportGenerator"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReportGenerator"
@@ -200,5 +188,4 @@ Partial Class ReportGenerator
     Friend WithEvents Label2 As Label
     Friend WithEvents txtAmount As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
 End Class
