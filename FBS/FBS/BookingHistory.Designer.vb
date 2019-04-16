@@ -36,6 +36,7 @@ Partial Class BookingHistory
         Me.BookingTableAdapter = New FBS.FBSDataSetTableAdapters.BookingTableAdapter()
         Me.VenueTableAdapter = New FBS.FBSDataSetTableAdapters.VenueTableAdapter()
         Me.BookingHistGrid = New System.Windows.Forms.DataGridView()
+        Me.BookingID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BookingDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FeesChargedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -150,13 +151,20 @@ Partial Class BookingHistory
         Me.BookingHistGrid.AutoGenerateColumns = False
         Me.BookingHistGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BookingHistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BookingHistGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.VenueDataGridViewTextBoxColumn, Me.BookingDateDataGridViewTextBoxColumn, Me.FeesChargedDataGridViewTextBoxColumn})
+        Me.BookingHistGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingID, Me.VenueDataGridViewTextBoxColumn, Me.BookingDateDataGridViewTextBoxColumn, Me.FeesChargedDataGridViewTextBoxColumn})
         Me.BookingHistGrid.DataSource = Me.BookingBindingSource
         Me.BookingHistGrid.Location = New System.Drawing.Point(241, 25)
         Me.BookingHistGrid.Name = "BookingHistGrid"
         Me.BookingHistGrid.ReadOnly = True
         Me.BookingHistGrid.Size = New System.Drawing.Size(438, 319)
         Me.BookingHistGrid.TabIndex = 1
+        '
+        'BookingID
+        '
+        Me.BookingID.DataPropertyName = "BookingID"
+        Me.BookingID.HeaderText = "BookingID"
+        Me.BookingID.Name = "BookingID"
+        Me.BookingID.ReadOnly = True
         '
         'VenueDataGridViewTextBoxColumn
         '
@@ -216,6 +224,7 @@ Partial Class BookingHistory
     Friend WithEvents BookingHistGrid As DataGridView
     Friend WithEvents VisitDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingChargesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BookingID As DataGridViewTextBoxColumn
     Friend WithEvents VenueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FeesChargedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

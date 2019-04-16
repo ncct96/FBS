@@ -71,7 +71,24 @@ CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
     End Sub
 
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
-        ' Delete Queries here
+        If BookingHistGrid.SelectedRows.Count > 0 Then
+            Dim deleteRow As String = Me.BookingHistGrid.SelectedRows(0).Cells("BookingID").Value.ToString
+            Dim result As Integer = MessageBox.Show("Are you sure to cancel this booking?", "Cancel Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If result = DialogResult.OK Then
+                connection.Open()
+                ' Delete Queries here
+                Dim deleteQuery As String = "DELETE FROM Booking WHERE BookingID = @bookId"
+                Dim deleteCommand As New SqlCommand(deleteQuery, connection)
+                deleteCommand.Parameters.AddWithValue("@bookId", deleteRow)
+                deleteCommand.ExecuteNonQuery()
+                MessageBox.Show("Booking Cancelled", "Cancel Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                connection.Close()
+            Else
+
+            End If
+        Else
+            MessageBox.Show("Please select the row for booking cancellation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     Private Sub BookingHistGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BookingHistGrid.CellContentDoubleClick
