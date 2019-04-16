@@ -203,6 +203,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VenueDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportGenerator.Designer.vb">
+      <DependentUpon>ReportGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VenueInfo.Designer.vb">
       <DependentUpon>VenueInfo.vb</DependentUpon>
     </Compile>
