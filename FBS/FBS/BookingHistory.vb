@@ -25,12 +25,12 @@ Public Class BookingHistory
             If OngoingFilter.Checked Then
                 searchQuery = "SELECT b.BookingDate, b.BookingTime, b.VisitDate, b.BookingCharges FROM BOOKING b, Timeslot t, Venue v WHERE
                 b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
-                b.Status = 0 AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
+                b.Status = 'Pending' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
 			    (SELECT VenueID from Venue where VenueType = @venue)"
             ElseIf CompletedFilter.Checked Then
                 searchQuery = "SELECT b.BookingDate, b.BookingTime, b.VisitDate, b.BookingCharges FROM BOOKING b, Timeslot t, Venue v WHERE
                 b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
-                b.Status = 1 AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
+                b.Status = 'Paid' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
 			    (SELECT VenueID from Venue where VenueType = @venue)"
             End If
             If Not searchQuery.Equals("") Then
@@ -43,13 +43,13 @@ Public Class BookingHistory
                 BookingHistGrid.DataSource = table
             End If
         Catch ex As Exception
-
+            MessageBox.Show(ex.ToString, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
 
     Private Sub OngoingFilter_CheckedChanged(sender As Object, e As EventArgs) Handles OngoingFilter.CheckedChanged
-        Dim ongoingQuery As String = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE Status = 0 AND 
+        Dim ongoingQuery As String = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE Status = 'Pending' AND 
 CustID = (SELECT CustID FROM Customer WHERE CustName = @custName1)"
         Dim ongoingCommand As New SqlCommand(ongoingQuery, connection)
         ongoingCommand.Parameters.AddWithValue("@custName1", GlobalVars.currentUser)
@@ -60,7 +60,7 @@ CustID = (SELECT CustID FROM Customer WHERE CustName = @custName1)"
     End Sub
 
     Private Sub CompletedFilter_CheckedChanged(sender As Object, e As EventArgs) Handles CompletedFilter.CheckedChanged
-        Dim completedQuery As String = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE Status = 1 AND 
+        Dim completedQuery As String = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE Status = 'Paid' AND 
 CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
         Dim completedCommand As New SqlCommand(completedQuery, connection)
         completedCommand.Parameters.AddWithValue("@custName2", GlobalVars.currentUser)
