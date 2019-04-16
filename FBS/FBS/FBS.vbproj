@@ -192,6 +192,12 @@
     <Compile Include="PasswordChange.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PopUp.Designer.vb">
+      <DependentUpon>PopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Register.Designer.vb">
       <DependentUpon>Register.vb</DependentUpon>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordChange.resx">
       <DependentUpon>PasswordChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp.resx">
+      <DependentUpon>PopUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportGenerator.resx">
       <DependentUpon>ReportGenerator.vb</DependentUpon>

@@ -58,4 +58,11 @@
             picView.Image = My.Resources.Reports
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim bookHistory As New BookingHistory
+        Me.Hide()
+        bookHistory.ShowDialog()
+        Me.Show()
+    End Sub
 End Class
