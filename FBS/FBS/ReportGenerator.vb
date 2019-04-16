@@ -1,7 +1,19 @@
-﻿Public Class ReportGenerator
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        dlgPrintPreview.Document = ExceptionReport
-        dlgPrintPreview.ShowDialog(Me)
+﻿Imports System.Text
+
+Public Class ReportGenerator
+    Private Amount As Integer
+
+    Private Sub GenerateException(sender As Object, e As EventArgs) Handles btnException.Click
+        If Not Integer.TryParse(txtAmount.Text.Trim(" "), Amount) Then
+            MsgBox("Please enter a valid amount", MsgBoxStyle.Exclamation, "Error")
+            Return
+        ElseIf Amount < 0 Then
+            MsgBox("Please enter a higher amount", MsgBoxStyle.Exclamation, "Error")
+            Return
+        Else
+            dlgPrintPreview.Document = ExceptionReport
+            dlgPrintPreview.ShowDialog(Me)
+        End If
     End Sub
 
     Private IsX As Boolean = True
@@ -25,10 +37,53 @@
             "Generated on {0:dd-MMMM-yyyy hh:mm:sss tt}" + vbNewLine + "Prepared by: ", DateTime.Now
         )
 
+        Dim body As New StringBuilder()
+        Dim db As New DBDataContext
+        body.Append("ID   Count  Name" + vbNewLine)
+        body.Append("---- ------ --------------------" + vbNewLine)
+        If cboLessMore.SelectedIndex = 1 Then
+            Dim rs = From venue In db.Venues Select venue Where venue.Timeslots.Count > Amount
+            Try
+                If rs.Equals(Nothing) Then
+                    body.Append("No records matching the criteria were found")
+                Else
+                    For Each item In rs
+                        Dim count = (From ts In db.Timeslots Select ts Where ts.VenueID = item.VenueID).Count
+                        body.AppendFormat("{0, 4}", item.VenueID).AppendFormat(" {0, 6}", count.ToString).Append(" " + item.VenueName + vbNewLine)
+                    Next
+                End If
+            Catch ex As Exception
+                MsgBox("Unable to contact database", MsgBoxStyle.Exclamation, "Error")
+                dlgPrintPreview.Close()
+                Return
+            End Try
+        ElseIf cboLessMore.SelectedIndex = 0 Then
+            Dim rs = From venue In db.Venues Select venue Where venue.Timeslots.Count < Amount
+            Try
+                If rs.Equals(Nothing) Then
+                    body.Append("No records matching the criteria were found")
+                Else
+                    For Each item In rs
+                        Dim count = (From ts In db.Timeslots Select ts Where ts.VenueID = item.VenueID).Count
+                        body.AppendFormat("{0, 4}", item.VenueID).AppendFormat(" {0, 6}", count.ToString).Append(" " + item.VenueName + vbNewLine)
+                    Next
+                End If
+            Catch ex As Exception
+                MsgBox("Unable to contact database", MsgBoxStyle.Exclamation, "Error")
+                dlgPrintPreview.Close()
+                Return
+            End Try
+        End If
+
         With e.Graphics
             .DrawImage(My.Resources.FBS, 0, 0, 80, 100)
             .DrawString(header, fontHeader, Brushes.DodgerBlue, 100, 0)
             .DrawString(subheader, fontSubheader, Brushes.Black, 100, 40)
+            .DrawString(body.ToString, fontBody, Brushes.Black, 0, 120)
         End With
+    End Sub
+
+    Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        cboLessMore.SelectedIndex = 0
     End Sub
 End Class

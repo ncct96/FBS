@@ -23,49 +23,56 @@ Partial Class ReportGenerator
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportGenerator))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnSummary = New System.Windows.Forms.Button()
+        Me.btnDetailed = New System.Windows.Forms.Button()
+        Me.btnException = New System.Windows.Forms.Button()
         Me.ExceptionReport = New System.Drawing.Printing.PrintDocument()
         Me.dlgPrintPreview = New System.Windows.Forms.PrintPreviewDialog()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cboLessMore = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtAmount = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnSummary
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(174, 500)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(8)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(300, 80)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Generate Summary"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSummary.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSummary.Location = New System.Drawing.Point(174, 500)
+        Me.btnSummary.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnSummary.Name = "btnSummary"
+        Me.btnSummary.Size = New System.Drawing.Size(300, 80)
+        Me.btnSummary.TabIndex = 0
+        Me.btnSummary.Text = "Generate Summary"
+        Me.btnSummary.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnDetailed
         '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(490, 500)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(8)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(300, 80)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Generate Detailed"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnDetailed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDetailed.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetailed.Location = New System.Drawing.Point(490, 500)
+        Me.btnDetailed.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnDetailed.Name = "btnDetailed"
+        Me.btnDetailed.Size = New System.Drawing.Size(300, 80)
+        Me.btnDetailed.TabIndex = 1
+        Me.btnDetailed.Text = "Generate Detailed"
+        Me.btnDetailed.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnException
         '
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(806, 500)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(8)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(300, 80)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Generate Exception"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnException.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnException.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnException.Location = New System.Drawing.Point(806, 500)
+        Me.btnException.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnException.Name = "btnException"
+        Me.btnException.Size = New System.Drawing.Size(300, 80)
+        Me.btnException.TabIndex = 2
+        Me.btnException.Text = "Generate Exception"
+        Me.btnException.UseVisualStyleBackColor = True
         '
         'ExceptionReport
         '
@@ -94,6 +101,72 @@ Partial Class ReportGenerator
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(11, 26)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(278, 67)
+        Me.Label1.TabIndex = 63
+        Me.Label1.Text = "List Facilities that have total bookings that are"
+        '
+        'cboLessMore
+        '
+        Me.cboLessMore.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboLessMore.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboLessMore.FormattingEnabled = True
+        Me.cboLessMore.Items.AddRange(New Object() {"Less Than", "More Than"})
+        Me.cboLessMore.Location = New System.Drawing.Point(11, 109)
+        Me.cboLessMore.Margin = New System.Windows.Forms.Padding(8)
+        Me.cboLessMore.Name = "cboLessMore"
+        Me.cboLessMore.Size = New System.Drawing.Size(278, 37)
+        Me.cboLessMore.TabIndex = 64
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(204, 165)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 29)
+        Me.Label2.TabIndex = 65
+        Me.Label2.Text = "overall"
+        '
+        'txtAmount
+        '
+        Me.txtAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAmount.Location = New System.Drawing.Point(11, 162)
+        Me.txtAmount.Margin = New System.Windows.Forms.Padding(8)
+        Me.txtAmount.Name = "txtAmount"
+        Me.txtAmount.Size = New System.Drawing.Size(182, 34)
+        Me.txtAmount.TabIndex = 66
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.txtAmount)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.cboLessMore)
+        Me.GroupBox1.Location = New System.Drawing.Point(806, 142)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(300, 337)
+        Me.GroupBox1.TabIndex = 67
+        Me.GroupBox1.TabStop = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"2019", "2018", "2017"})
+        Me.ComboBox1.Location = New System.Drawing.Point(11, 212)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(8)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(278, 37)
+        Me.ComboBox1.TabIndex = 67
+        '
         'ReportGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -101,22 +174,31 @@ Partial Class ReportGenerator
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnException)
+        Me.Controls.Add(Me.btnDetailed)
+        Me.Controls.Add(Me.btnSummary)
+        Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ReportGenerator"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReportGenerator"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnSummary As Button
+    Friend WithEvents btnDetailed As Button
+    Friend WithEvents btnException As Button
     Friend WithEvents ExceptionReport As Printing.PrintDocument
     Friend WithEvents dlgPrintPreview As PrintPreviewDialog
     Friend WithEvents btnBack As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cboLessMore As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtAmount As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
