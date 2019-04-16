@@ -23,6 +23,8 @@ Partial Class BookingHistory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.showGrpBox = New System.Windows.Forms.GroupBox()
         Me.CompletedFilter = New System.Windows.Forms.RadioButton()
         Me.OngoingFilter = New System.Windows.Forms.RadioButton()
@@ -148,14 +150,31 @@ Partial Class BookingHistory
         'BookingHistGrid
         '
         Me.BookingHistGrid.AllowUserToAddRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.BookingHistGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.BookingHistGrid.AutoGenerateColumns = False
         Me.BookingHistGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.BookingHistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BookingHistGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.BookingHistGrid.ColumnHeadersHeight = 30
         Me.BookingHistGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingID, Me.VenueDataGridViewTextBoxColumn, Me.BookingDateDataGridViewTextBoxColumn, Me.FeesChargedDataGridViewTextBoxColumn})
         Me.BookingHistGrid.DataSource = Me.BookingBindingSource
-        Me.BookingHistGrid.Location = New System.Drawing.Point(241, 25)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.BookingHistGrid.DefaultCellStyle = DataGridViewCellStyle2
+        Me.BookingHistGrid.Location = New System.Drawing.Point(210, 25)
         Me.BookingHistGrid.Name = "BookingHistGrid"
         Me.BookingHistGrid.ReadOnly = True
+        Me.BookingHistGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.BookingHistGrid.RowHeadersVisible = False
+        Me.BookingHistGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.BookingHistGrid.Size = New System.Drawing.Size(438, 319)
         Me.BookingHistGrid.TabIndex = 1
         '
@@ -191,7 +210,7 @@ Partial Class BookingHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(691, 364)
+        Me.ClientSize = New System.Drawing.Size(664, 353)
         Me.Controls.Add(Me.deleteBtn)
         Me.Controls.Add(Me.advanceGrpBox)
         Me.Controls.Add(Me.showGrpBox)
