@@ -133,6 +133,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FBSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FBSDataSet.vb">
+      <DependentUpon>FBSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmBooking.Designer.vb">
       <DependentUpon>FrmBooking.vb</DependentUpon>
     </Compile>

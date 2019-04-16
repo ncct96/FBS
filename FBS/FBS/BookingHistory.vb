@@ -4,6 +4,8 @@ Public Class BookingHistory
     Dim stringCon As String = My.Settings.FBSConnectionString
     Dim connection As New SqlConnection(stringCon)
     Private Sub BookingHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'FBSDataSet.Venue' table. You can move, or remove it, as needed.
+        Me.VenueTableAdapter.Fill(Me.FBSDataSet.Venue)
         'TODO: This line of code loads data into the 'FBSDataSet.Booking' table. You can move, or remove it, as needed.
         Me.BookingTableAdapter.Fill(FBSDataSet.Booking, GlobalVars.currentUser)
     End Sub
@@ -17,31 +19,33 @@ Public Class BookingHistory
 
     End Sub
 
-    Private Sub searchTxt_TextChanged(sender As Object, e As EventArgs) Handles searchTxt.TextChanged
-        Dim input As String = If(CStr(searchTxt.Text), "")
-        filterData(input)
-    End Sub
-
     Private Sub filterData(value As String)
         Dim searchQuery As String = ""
-        If OngoingFilter.Checked Then
-            searchQuery = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE
-            CONCAT(BookingDate, BookingTime, VisitDate, BookingChanges) AND Status = 0 AND 
-            CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) LIKE @search"
-        ElseIf CompletedFilter.Checked Then
-            searchQuery = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE
-            CONCAT(BookingDate, BookingTime, VisitDate, BookingChanges) AND Status = 1 AND 
-            CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) LIKE @search"
-        End If
-        If Not searchQuery.Equals("") Then
-            Dim command As New SqlCommand(searchQuery, connection)
-            command.Parameters.AddWithValue("@custName", GlobalVars.currentUser)
-            command.Parameters.AddWithValue("@search", value)
-            Dim adapter As New SqlDataAdapter(command)
-            Dim table As New DataTable()
-            adapter.Fill(table)
-            BookingHistGrid.DataSource = table
-        End If
+        Try
+            If OngoingFilter.Checked Then
+                searchQuery = "SELECT b.BookingDate, b.BookingTime, b.VisitDate, b.BookingCharges FROM BOOKING b, Timeslot t, Venue v WHERE
+                b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
+                b.Status = 0 AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
+			    (SELECT VenueID from Venue where VenueType = @venue)"
+            ElseIf CompletedFilter.Checked Then
+                searchQuery = "SELECT b.BookingDate, b.BookingTime, b.VisitDate, b.BookingCharges FROM BOOKING b, Timeslot t, Venue v WHERE
+                b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
+                b.Status = 1 AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
+			    (SELECT VenueID from Venue where VenueType = @venue)"
+            End If
+            If Not searchQuery.Equals("") Then
+                Dim command As New SqlCommand(searchQuery, connection)
+                command.Parameters.AddWithValue("@custName", GlobalVars.currentUser)
+                command.Parameters.AddWithValue("@venue", value)
+                Dim adapter As New SqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+                BookingHistGrid.DataSource = table
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub OngoingFilter_CheckedChanged(sender As Object, e As EventArgs) Handles OngoingFilter.CheckedChanged
@@ -83,5 +87,10 @@ CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
 
             End Try
         End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Dim searchIndex As String = ComboBox1.SelectedValue.ToString
+        filterData(searchIndex)
     End Sub
 End Class
