@@ -31,16 +31,22 @@ Public Class ReportGenerator
     Private Sub ExceptionReport_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles ExceptionReport.PrintPage
         Dim fontHeader As New Font("Calibri", 24, FontStyle.Bold)
         Dim fontSubheader As New Font("Calibri", 12)
-        Dim fontBody As New Font("Consolas", 10)
-        Dim header = "Usage summary for year"
+        Dim fontBody As New Font("Consolas", 14)
+        Dim header As String
+
+        If cboLessMore.SelectedIndex = 0 Then
+            header = "Facilities that have less than " + txtAmount.Text.ToString + " bookings"
+        Else
+            header = "Facilities that have more than " + txtAmount.Text.ToString + " bookings"
+        End If
         Dim subheader As String = String.Format(
-            "Generated on {0:dd-MMMM-yyyy hh:mm:sss tt}" + vbNewLine + "Prepared by: ", DateTime.Now
+            "Generated on {0:dd-MMMM-yyyy hh:mm:sss tt}" + vbNewLine + "Prepared by: " + GlobalVars.currentUser, DateTime.Now
         )
 
         Dim body As New StringBuilder()
         Dim db As New DBDataContext
-        body.Append("ID   Count  Name" + vbNewLine)
-        body.Append("---- ------ --------------------" + vbNewLine)
+        body.Append("ID   Count  Name                           Type" + vbNewLine)
+        body.Append("---- ------ ------------------------------ -------------------" + vbNewLine)
         If cboLessMore.SelectedIndex = 1 Then
             Dim rs = From venue In db.Venues Select venue Where venue.Timeslots.Count > Amount
             Try
@@ -49,7 +55,7 @@ Public Class ReportGenerator
                 Else
                     For Each item In rs
                         Dim count = (From ts In db.Timeslots Select ts Where ts.VenueID = item.VenueID).Count
-                        body.AppendFormat("{0, 4}", item.VenueID).AppendFormat(" {0, 6}", count.ToString).Append(" " + item.VenueName + vbNewLine)
+                        body.AppendFormat("{0, 4}", item.VenueID).AppendFormat(" {0, 6}", count.ToString).AppendFormat(" {0, 30}", item.VenueName).AppendFormat(" {0, 20}", item.VenueType).Append(vbNewLine)
                     Next
                 End If
             Catch ex As Exception
@@ -65,7 +71,7 @@ Public Class ReportGenerator
                 Else
                     For Each item In rs
                         Dim count = (From ts In db.Timeslots Select ts Where ts.VenueID = item.VenueID).Count
-                        body.AppendFormat("{0, 4}", item.VenueID).AppendFormat(" {0, 6}", count.ToString).Append(" " + item.VenueName + vbNewLine)
+                        body.AppendFormat("{0, 4}", item.VenueID).AppendFormat(" {0, 6}", count.ToString).AppendFormat(" {0, 30}", item.VenueName).AppendFormat(" {0, 20}", item.VenueType).Append(vbNewLine)
                     Next
                 End If
             Catch ex As Exception
