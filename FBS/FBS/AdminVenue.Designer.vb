@@ -37,6 +37,7 @@ Partial Class AdminVenue
         Me.cboID = New System.Windows.Forms.ComboBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.cboType = New System.Windows.Forms.ComboBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -196,6 +197,18 @@ Partial Class AdminVenue
         Me.cboType.Size = New System.Drawing.Size(315, 37)
         Me.cboType.TabIndex = 27
         '
+        'btnBack
+        '
+        Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(100, 40)
+        Me.btnBack.TabIndex = 62
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'AdminVenue
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -203,6 +216,7 @@ Partial Class AdminVenue
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.cboID)
         Me.Controls.Add(Me.btnUpdate)
@@ -244,4 +258,5 @@ Partial Class AdminVenue
     Friend WithEvents cboID As ComboBox
     Friend WithEvents btnUpdate As Button
     Friend WithEvents cboType As ComboBox
+    Friend WithEvents btnBack As Button
 End Class

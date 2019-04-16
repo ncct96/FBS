@@ -264,10 +264,15 @@ Public Class AdminVenue
         End If
     End Sub
 
-    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave, cboType.MouseLeave
-        Me.Cursor = Cursors.Default
-        If sender.Equals(picVenue) Then
-            picVenue.SizeMode = PictureBoxSizeMode.Zoom
+    Private IsX As Boolean = True
+    Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If CBool(IsX) Then
+            Application.Exit()
         End If
+    End Sub
+
+    Private Sub GoBack(sender As Object, e As EventArgs) Handles btnBack.Click
+        IsX = False
+        Me.Close()
     End Sub
 End Class
