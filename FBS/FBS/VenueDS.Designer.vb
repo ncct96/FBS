@@ -1361,9 +1361,9 @@ Namespace VenueDSTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Venue.*, VenueID AS Expr1, VenueType AS Expr2, VenueName AS Expr3, "& _ 
-                "VenuePicture AS Expr4, VenueMaxCapacity AS Expr5, VenueRecommendations AS Expr6,"& _ 
-                " VenueRate AS Expr7"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Venue"
+            Me._commandCollection(0).CommandText = "SELECT Venue.*, VenueID AS Expr1, VenueType AS Expr2, VenueName AS Expr3, " &
+                "VenuePicture AS Expr4, VenueMaxCapacity AS Expr5, VenueRecommendations AS Expr6," &
+                " VenueRate AS Expr7" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Venue"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

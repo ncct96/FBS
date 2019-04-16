@@ -4,7 +4,7 @@ Public Class AdminVenue
     Private VenueName, VenueEvent As String
     Private Rate As Decimal
     Private Capacity As Integer
-    Private IsFirstRun = True
+    Private IsFirstRun As Boolean = True
     Private Modified As Boolean = False
     Private IsNew As Boolean = True
     Private OverPay As Boolean = False
@@ -78,11 +78,11 @@ Public Class AdminVenue
 
                 venue.VenueName = VenueName
                 venue.VenueRate = Rate
-                venue.VenueType = cboType.SelectedItem
+                venue.VenueType = CType(cboType.SelectedItem, String)
                 venue.VenueMaxCapacity = Capacity
                 venue.VenueRecommendations = VenueEvent
 
-                If PictureChanged Then
+                If CBool(PictureChanged) Then
                     Try
                         Dim ms As New MemoryStream
                         picVenue.Image.Save(ms, Imaging.ImageFormat.Jpeg)
@@ -129,7 +129,7 @@ Public Class AdminVenue
             txtCapacity.Text = venue.VenueMaxCapacity.ToString()
             txtEvent.Text = venue.VenueRecommendations
             txtName.Text = venue.VenueName
-            txtRate.Text = Decimal.Parse(venue.VenueRate).ToString("0.00")
+            txtRate.Text = Decimal.Parse(CType(venue.VenueRate, String)).ToString("0.00")
             cboType.SelectedIndex = cboType.FindString(venue.VenueType)
             picVenue.Image = Image.FromStream(New MemoryStream(venue.VenuePicture.ToArray))
 
@@ -155,7 +155,7 @@ Public Class AdminVenue
         Else
             If MsgBox("Delete Record? This action cannot be undone.", MsgBoxStyle.OkCancel, "Deleting record") = DialogResult.OK Then
                 Dim db As New DBDataContext
-                Dim venue = db.Venues.FirstOrDefault(Function(v) v.VenueID = Integer.Parse(cboID.SelectedValue))
+                Dim venue = db.Venues.FirstOrDefault(Function(v) v.VenueID = Integer.Parse(CType(cboID.SelectedValue, String)))
 
                 If venue Is Nothing Then
                     MsgBox("Oops, we couldn't find that record, try refreshing this page!", MsgBoxStyle.Exclamation, "Error")

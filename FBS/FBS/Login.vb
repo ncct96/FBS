@@ -39,7 +39,7 @@ Public Class Login
 
                     ' userCommand Scalar Open
                     connection.Open()
-                    GlobalVars.currentId = userCommand.ExecuteScalar
+                    GlobalVars.currentId = CType(userCommand.ExecuteScalar, String)
                     ' userCommand Scalar Close
                     connection.Close()
                     tf = True
@@ -61,7 +61,7 @@ Public Class Login
                         connection.Close()
                         ' adminCommand Scalar Open
                         connection.Open()
-                        GlobalVars.currentId = adminCommand.ExecuteScalar
+                        GlobalVars.currentId = CType(adminCommand.ExecuteScalar, String)
                         ' adminCommand Scalar Close
                         connection.Close()
                         tf = True
@@ -77,8 +77,10 @@ Public Class Login
             End If
 
             If tf Then
-                Dim pass As New VenueList
+                Dim pass As New Main
+                Me.Hide()
                 pass.ShowDialog()
+                Me.Show()
             End If
         Catch ex As Exception
 
