@@ -54,7 +54,7 @@ Partial Class BookingHistory
         Me.showGrpBox.Controls.Add(Me.OngoingFilter)
         Me.showGrpBox.Location = New System.Drawing.Point(12, 131)
         Me.showGrpBox.Name = "showGrpBox"
-        Me.showGrpBox.Size = New System.Drawing.Size(168, 86)
+        Me.showGrpBox.Size = New System.Drawing.Size(168, 81)
         Me.showGrpBox.TabIndex = 2
         Me.showGrpBox.TabStop = False
         Me.showGrpBox.Text = "Show Booking :"
@@ -64,9 +64,9 @@ Partial Class BookingHistory
         Me.CompletedFilter.AutoSize = True
         Me.CompletedFilter.Location = New System.Drawing.Point(20, 52)
         Me.CompletedFilter.Name = "CompletedFilter"
-        Me.CompletedFilter.Size = New System.Drawing.Size(75, 17)
+        Me.CompletedFilter.Size = New System.Drawing.Size(46, 17)
         Me.CompletedFilter.TabIndex = 1
-        Me.CompletedFilter.Text = "Completed"
+        Me.CompletedFilter.Text = "Paid"
         Me.CompletedFilter.UseVisualStyleBackColor = True
         '
         'OngoingFilter
@@ -75,10 +75,10 @@ Partial Class BookingHistory
         Me.OngoingFilter.Checked = True
         Me.OngoingFilter.Location = New System.Drawing.Point(20, 29)
         Me.OngoingFilter.Name = "OngoingFilter"
-        Me.OngoingFilter.Size = New System.Drawing.Size(65, 17)
+        Me.OngoingFilter.Size = New System.Drawing.Size(64, 17)
         Me.OngoingFilter.TabIndex = 0
         Me.OngoingFilter.TabStop = True
-        Me.OngoingFilter.Text = "Ongoing"
+        Me.OngoingFilter.Text = "Pending"
         Me.OngoingFilter.UseVisualStyleBackColor = True
         '
         'advanceGrpBox

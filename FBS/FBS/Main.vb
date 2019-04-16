@@ -22,9 +22,9 @@
             End If
         ElseIf sender.Equals(picView) Then
             If GlobalVars.currentType.Equals("Customer") Then
-                'Dim booking As New Booking
+                Dim Booking As New FrmBooking
                 Me.Hide()
-                'booking.ShowDialog()
+                Booking.ShowDialog()
                 Me.Show()
             Else
                 Dim reportGenerator As New ReportGenerator

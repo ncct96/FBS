@@ -36,9 +36,9 @@ Public Class DeleteAccount
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
         Try
             If AccountGrid.SelectedRows.Count > 0 Then
-                Dim deleteRow As String = Me.AccountGrid.SelectedRows(0).Cells("CustID").Value.ToString
+                Dim deleteRow As String = Me.AccountGrid.SelectedRows(0).Cells(0).Value.ToString
                 Dim result As Integer = MessageBox.Show("Are you sure to cancel this booking?", "Cancel Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If result = DialogResult.OK Then
+                If result = DialogResult.Yes Then
                     connection.Open()
                     Dim deleteUserQuery As String = "DELETE FROM Customer WHERE CustID = @custoid"
                     Dim deleteUserCommand As New SqlCommand(deleteUserQuery, connection)
@@ -46,6 +46,7 @@ Public Class DeleteAccount
                     deleteUserCommand.ExecuteNonQuery()
                     MessageBox.Show("User Account Deleted.", "Delete Account", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     connection.Close()
+                    refreshData()
                 End If
             Else
                 MessageBox.Show("Please select the row for booking cancellation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -53,6 +54,11 @@ Public Class DeleteAccount
         Catch ex As Exception
             MessageBox.Show(ex.ToString, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
+    End Sub
+    Private Sub refreshData()
+        Me.AccountGrid.DataSource = Nothing
+        Me.CustomerTableAdapter.Fill(Me.FBSDataSet.Customer)
+        Me.AccountGrid.DataSource = Me.CustomerBindingSource
+        Me.AccountGrid.Refresh()
     End Sub
 End Class

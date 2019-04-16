@@ -41,10 +41,10 @@ Partial Class ReportGenerator
         '
         Me.btnSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSummary.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSummary.Location = New System.Drawing.Point(174, 500)
-        Me.btnSummary.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnSummary.Location = New System.Drawing.Point(130, 406)
+        Me.btnSummary.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btnSummary.Name = "btnSummary"
-        Me.btnSummary.Size = New System.Drawing.Size(300, 80)
+        Me.btnSummary.Size = New System.Drawing.Size(225, 65)
         Me.btnSummary.TabIndex = 0
         Me.btnSummary.Text = "Generate Summary"
         Me.btnSummary.UseVisualStyleBackColor = True
@@ -53,10 +53,10 @@ Partial Class ReportGenerator
         '
         Me.btnDetailed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDetailed.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetailed.Location = New System.Drawing.Point(490, 500)
-        Me.btnDetailed.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnDetailed.Location = New System.Drawing.Point(368, 406)
+        Me.btnDetailed.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btnDetailed.Name = "btnDetailed"
-        Me.btnDetailed.Size = New System.Drawing.Size(300, 80)
+        Me.btnDetailed.Size = New System.Drawing.Size(225, 65)
         Me.btnDetailed.TabIndex = 1
         Me.btnDetailed.Text = "Generate Detailed"
         Me.btnDetailed.UseVisualStyleBackColor = True
@@ -65,10 +65,10 @@ Partial Class ReportGenerator
         '
         Me.btnException.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnException.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnException.Location = New System.Drawing.Point(806, 500)
-        Me.btnException.Margin = New System.Windows.Forms.Padding(8)
+        Me.btnException.Location = New System.Drawing.Point(604, 406)
+        Me.btnException.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btnException.Name = "btnException"
-        Me.btnException.Size = New System.Drawing.Size(300, 80)
+        Me.btnException.Size = New System.Drawing.Size(225, 65)
         Me.btnException.TabIndex = 2
         Me.btnException.Text = "Generate Exception"
         Me.btnException.UseVisualStyleBackColor = True
@@ -94,9 +94,10 @@ Partial Class ReportGenerator
         Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Location = New System.Drawing.Point(9, 10)
+        Me.btnBack.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(100, 40)
+        Me.btnBack.Size = New System.Drawing.Size(75, 32)
         Me.btnBack.TabIndex = 62
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = True
@@ -104,10 +105,10 @@ Partial Class ReportGenerator
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(11, 26)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(8)
+        Me.Label1.Location = New System.Drawing.Point(8, 21)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(278, 67)
+        Me.Label1.Size = New System.Drawing.Size(208, 54)
         Me.Label1.TabIndex = 63
         Me.Label1.Text = "List Facilities that have total bookings that are"
         '
@@ -117,29 +118,30 @@ Partial Class ReportGenerator
         Me.cboLessMore.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboLessMore.FormattingEnabled = True
         Me.cboLessMore.Items.AddRange(New Object() {"Less Than", "More Than"})
-        Me.cboLessMore.Location = New System.Drawing.Point(11, 109)
-        Me.cboLessMore.Margin = New System.Windows.Forms.Padding(8)
+        Me.cboLessMore.Location = New System.Drawing.Point(8, 89)
+        Me.cboLessMore.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.cboLessMore.Name = "cboLessMore"
-        Me.cboLessMore.Size = New System.Drawing.Size(278, 37)
+        Me.cboLessMore.Size = New System.Drawing.Size(210, 32)
         Me.cboLessMore.TabIndex = 64
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(204, 165)
+        Me.Label2.Location = New System.Drawing.Point(153, 134)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 29)
+        Me.Label2.Size = New System.Drawing.Size(65, 24)
         Me.Label2.TabIndex = 65
         Me.Label2.Text = "overall"
         '
         'txtAmount
         '
         Me.txtAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAmount.Location = New System.Drawing.Point(11, 162)
-        Me.txtAmount.Margin = New System.Windows.Forms.Padding(8)
+        Me.txtAmount.Location = New System.Drawing.Point(8, 132)
+        Me.txtAmount.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txtAmount.Name = "txtAmount"
-        Me.txtAmount.Size = New System.Drawing.Size(182, 34)
+        Me.txtAmount.Size = New System.Drawing.Size(138, 29)
         Me.txtAmount.TabIndex = 66
         '
         'GroupBox1
@@ -148,18 +150,20 @@ Partial Class ReportGenerator
         Me.GroupBox1.Controls.Add(Me.txtAmount)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cboLessMore)
-        Me.GroupBox1.Location = New System.Drawing.Point(806, 142)
+        Me.GroupBox1.Location = New System.Drawing.Point(604, 115)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(300, 337)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(225, 274)
         Me.GroupBox1.TabIndex = 67
         Me.GroupBox1.TabStop = False
         '
         'ReportGenerator
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.ClientSize = New System.Drawing.Size(946, 547)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnException)
         Me.Controls.Add(Me.btnDetailed)
@@ -167,6 +171,7 @@ Partial Class ReportGenerator
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MaximizeBox = False
         Me.Name = "ReportGenerator"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
