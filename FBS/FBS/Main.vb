@@ -65,4 +65,11 @@
         bookHistory.ShowDialog()
         Me.Show()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim deleteAcc As New DeleteAccount
+        Me.Hide()
+        deleteAcc.ShowDialog()
+        Me.Show()
+    End Sub
 End Class

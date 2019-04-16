@@ -32,6 +32,7 @@ Partial Class Main
         Me.picView = New System.Windows.Forms.PictureBox()
         Me.lblView = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.picExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,12 +132,21 @@ Partial Class Main
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(66, 74)
+        Me.Button1.Location = New System.Drawing.Point(12, 74)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(133, 23)
         Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Booking Management"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(24, 124)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(133, 23)
+        Me.Button2.TabIndex = 17
+        Me.Button2.Text = "User Management"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Main
         '
@@ -144,6 +154,7 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(946, 547)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblView)
         Me.Controls.Add(Me.lblExit)
@@ -175,4 +186,5 @@ Partial Class Main
     Friend WithEvents picView As PictureBox
     Friend WithEvents lblView As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
