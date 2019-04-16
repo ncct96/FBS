@@ -48,10 +48,10 @@ Public Class Login
                     connection.Close()
                     ' adminCommand Reader Open
                     connection.Open()
-                    Dim adminSelect As String = "SELECT AdminId FROM Admin WHERE AdminName = @Name AND AdminPassw = @Passw"
+                    Dim adminSelect As String = "SELECT AdminId FROM Admin WHERE AdminName = @AName AND AdminPassw = @APassw"
                     Dim adminCommand As New SqlCommand(adminSelect, connection)
-                    adminCommand.Parameters.AddWithValue("@Name", username)
-                    adminCommand.Parameters.AddWithValue("@Passw", password)
+                    adminCommand.Parameters.AddWithValue("@AName", username)
+                    adminCommand.Parameters.AddWithValue("@APassw", password)
                     Dim adminRetrieval As SqlDataReader = adminCommand.ExecuteReader
                     If adminRetrieval.HasRows Then
                         MessageBox.Show("Welcome Back " + "Admin", "Admin Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information)

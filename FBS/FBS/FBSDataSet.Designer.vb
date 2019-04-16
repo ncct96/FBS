@@ -318,17 +318,15 @@ Partial Public Class FBSDataSet
     Partial Public Class BookingDataTable
         Inherits Global.System.Data.TypedTableBase(Of BookingRow)
         
-        Private columnBookingID As Global.System.Data.DataColumn
-        
         Private columnBookingDate As Global.System.Data.DataColumn
-        
-        Private columnBookingTime As Global.System.Data.DataColumn
         
         Private columnVisitDate As Global.System.Data.DataColumn
         
         Private columnBookingCharges As Global.System.Data.DataColumn
         
-        Private columnDuration As Global.System.Data.DataColumn
+        Private columnBookingTime As Global.System.Data.DataColumn
+        
+        Private columnBookingID As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -367,25 +365,9 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property BookingIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnBookingID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property BookingDateColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnBookingDate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property BookingTimeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnBookingTime
             End Get
         End Property
         
@@ -407,9 +389,17 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property DurationColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property BookingTimeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDuration
+                Return Me.columnBookingTime
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BookingIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBookingID
             End Get
         End Property
         
@@ -450,9 +440,9 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddBookingRow(ByVal BookingID As String, ByVal BookingDate As Date, ByVal BookingTime As System.TimeSpan, ByVal VisitDate As Date, ByVal BookingCharges As Decimal, ByVal Duration As Integer) As BookingRow
+        Public Overloads Function AddBookingRow(ByVal BookingDate As Date, ByVal VisitDate As Date, ByVal BookingCharges As Decimal, ByVal BookingTime As String) As BookingRow
             Dim rowBookingRow As BookingRow = CType(Me.NewRow,BookingRow)
-            Dim columnValuesArray() As Object = New Object() {BookingID, BookingDate, BookingTime, VisitDate, BookingCharges, Duration}
+            Dim columnValuesArray() As Object = New Object() {BookingDate, VisitDate, BookingCharges, BookingTime, Nothing}
             rowBookingRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowBookingRow)
             Return rowBookingRow
@@ -460,7 +450,7 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByBookingID(ByVal BookingID As String) As BookingRow
+        Public Function FindByBookingID(ByVal BookingID As Integer) As BookingRow
             Return CType(Me.Rows.Find(New Object() {BookingID}),BookingRow)
         End Function
         
@@ -481,33 +471,34 @@ Partial Public Class FBSDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnBookingID = MyBase.Columns("BookingID")
             Me.columnBookingDate = MyBase.Columns("BookingDate")
-            Me.columnBookingTime = MyBase.Columns("BookingTime")
             Me.columnVisitDate = MyBase.Columns("VisitDate")
             Me.columnBookingCharges = MyBase.Columns("BookingCharges")
-            Me.columnDuration = MyBase.Columns("Duration")
+            Me.columnBookingTime = MyBase.Columns("BookingTime")
+            Me.columnBookingID = MyBase.Columns("BookingID")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnBookingID = New Global.System.Data.DataColumn("BookingID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBookingID)
             Me.columnBookingDate = New Global.System.Data.DataColumn("BookingDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookingDate)
-            Me.columnBookingTime = New Global.System.Data.DataColumn("BookingTime", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBookingTime)
             Me.columnVisitDate = New Global.System.Data.DataColumn("VisitDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnVisitDate)
             Me.columnBookingCharges = New Global.System.Data.DataColumn("BookingCharges", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookingCharges)
-            Me.columnDuration = New Global.System.Data.DataColumn("Duration", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDuration)
+            Me.columnBookingTime = New Global.System.Data.DataColumn("BookingTime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBookingTime)
+            Me.columnBookingID = New Global.System.Data.DataColumn("BookingID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBookingID)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnBookingID}, true))
+            Me.columnBookingTime.MaxLength = 50
+            Me.columnBookingID.AutoIncrement = true
+            Me.columnBookingID.AutoIncrementSeed = -1
+            Me.columnBookingID.AutoIncrementStep = -1
             Me.columnBookingID.AllowDBNull = false
+            Me.columnBookingID.ReadOnly = true
             Me.columnBookingID.Unique = true
-            Me.columnBookingID.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -985,17 +976,6 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property BookingID() As String
-            Get
-                Return CType(Me(Me.tableBooking.BookingIDColumn),String)
-            End Get
-            Set
-                Me(Me.tableBooking.BookingIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BookingDate() As Date
             Get
                 Try 
@@ -1006,21 +986,6 @@ Partial Public Class FBSDataSet
             End Get
             Set
                 Me(Me.tableBooking.BookingDateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property BookingTime() As System.TimeSpan
-            Get
-                Try 
-                    Return CType(Me(Me.tableBooking.BookingTimeColumn),Global.System.TimeSpan)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'BookingTime' in table 'Booking' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableBooking.BookingTimeColumn) = value
             End Set
         End Property
         
@@ -1056,16 +1021,27 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Duration() As Integer
+        Public Property BookingTime() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableBooking.DurationColumn),Integer)
+                    Return CType(Me(Me.tableBooking.BookingTimeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Duration' in table 'Booking' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BookingTime' in table 'Booking' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableBooking.DurationColumn) = value
+                Me(Me.tableBooking.BookingTimeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BookingID() As Integer
+            Get
+                Return CType(Me(Me.tableBooking.BookingIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableBooking.BookingIDColumn) = value
             End Set
         End Property
         
@@ -1079,18 +1055,6 @@ Partial Public Class FBSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetBookingDateNull()
             Me(Me.tableBooking.BookingDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsBookingTimeNull() As Boolean
-            Return Me.IsNull(Me.tableBooking.BookingTimeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetBookingTimeNull()
-            Me(Me.tableBooking.BookingTimeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1119,14 +1083,14 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsDurationNull() As Boolean
-            Return Me.IsNull(Me.tableBooking.DurationColumn)
+        Public Function IsBookingTimeNull() As Boolean
+            Return Me.IsNull(Me.tableBooking.BookingTimeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetDurationNull()
-            Me(Me.tableBooking.DurationColumn) = Global.System.Convert.DBNull
+        Public Sub SetBookingTimeNull()
+            Me(Me.tableBooking.BookingTimeColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1462,12 +1426,11 @@ Namespace FBSDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Booking"
-            tableMapping.ColumnMappings.Add("BookingID", "BookingID")
             tableMapping.ColumnMappings.Add("BookingDate", "BookingDate")
-            tableMapping.ColumnMappings.Add("BookingTime", "BookingTime")
             tableMapping.ColumnMappings.Add("VisitDate", "VisitDate")
             tableMapping.ColumnMappings.Add("BookingCharges", "BookingCharges")
-            tableMapping.ColumnMappings.Add("Duration", "Duration")
+            tableMapping.ColumnMappings.Add("BookingTime", "BookingTime")
+            tableMapping.ColumnMappings.Add("BookingID", "BookingID")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -1476,66 +1439,43 @@ Namespace FBSDataSetTableAdapters
                 "BookingTime] IS NULL) OR ([BookingTime] = @Original_BookingTime)) AND ((@IsNull_"& _ 
                 "VisitDate = 1 AND [VisitDate] IS NULL) OR ([VisitDate] = @Original_VisitDate)) A"& _ 
                 "ND ((@IsNull_BookingCharges = 1 AND [BookingCharges] IS NULL) OR ([BookingCharge"& _ 
-                "s] = @Original_BookingCharges)) AND ((@IsNull_Duration = 1 AND [Duration] IS NUL"& _ 
-                "L) OR ([Duration] = @Original_Duration)) AND ([BookingID] = @Original_BookingID)"& _ 
-                ")"
+                "s] = @Original_BookingCharges)) AND ([BookingID] = @Original_BookingID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookingTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingTime", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VisitDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VisitDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VisitDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookingCharges", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingCharges", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingCharges", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingCharges", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duration", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duration", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingID", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Booking] ([BookingDate], [BookingTime], [VisitDate], [BookingCharges"& _ 
-                "], [Duration], [BookingID]) VALUES (@BookingDate, @BookingTime, @VisitDate, @Boo"& _ 
-                "kingCharges, @Duration, @BookingID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT BookingDate, BookingTime, VisitDate"& _ 
-                ", BookingCharges, Duration, BookingID FROM Booking WHERE (BookingID = @BookingID"& _ 
-                ")"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VisitDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingCharges", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingCharges", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duration", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingID", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [Booking] SET [BookingDate] = @BookingDate, [BookingTime] = @BookingTime, "& _ 
-                "[VisitDate] = @VisitDate, [BookingCharges] = @BookingCharges, [Duration] = @Dura"& _ 
-                "tion, [BookingID] = @BookingID WHERE (((@IsNull_BookingDate = 1 AND [BookingDate"& _ 
-                "] IS NULL) OR ([BookingDate] = @Original_BookingDate)) AND ((@IsNull_BookingTime"& _ 
-                " = 1 AND [BookingTime] IS NULL) OR ([BookingTime] = @Original_BookingTime)) AND "& _ 
-                "((@IsNull_VisitDate = 1 AND [VisitDate] IS NULL) OR ([VisitDate] = @Original_Vis"& _ 
-                "itDate)) AND ((@IsNull_BookingCharges = 1 AND [BookingCharges] IS NULL) OR ([Boo"& _ 
-                "kingCharges] = @Original_BookingCharges)) AND ((@IsNull_Duration = 1 AND [Durati"& _ 
-                "on] IS NULL) OR ([Duration] = @Original_Duration)) AND ([BookingID] = @Original_"& _ 
-                "BookingID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT BookingDate, BookingTime, VisitDate, BookingCharges, Durati"& _ 
-                "on, BookingID FROM Booking WHERE (BookingID = @BookingID)"
+                "[VisitDate] = @VisitDate, [BookingCharges] = @BookingCharges WHERE (((@IsNull_Bo"& _ 
+                "okingDate = 1 AND [BookingDate] IS NULL) OR ([BookingDate] = @Original_BookingDa"& _ 
+                "te)) AND ((@IsNull_BookingTime = 1 AND [BookingTime] IS NULL) OR ([BookingTime] "& _ 
+                "= @Original_BookingTime)) AND ((@IsNull_VisitDate = 1 AND [VisitDate] IS NULL) O"& _ 
+                "R ([VisitDate] = @Original_VisitDate)) AND ((@IsNull_BookingCharges = 1 AND [Boo"& _ 
+                "kingCharges] IS NULL) OR ([BookingCharges] = @Original_BookingCharges)) AND ([Bo"& _ 
+                "okingID] = @Original_BookingID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT BookingDate, BookingTime, VisitDate, B"& _ 
+                "ookingCharges, BookingID FROM Booking WHERE (BookingID = @BookingID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VisitDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingTime", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VisitDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingCharges", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingCharges", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duration", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingID", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookingTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingTime", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VisitDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VisitDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VisitDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisitDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookingCharges", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingCharges", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingCharges", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingCharges", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duration", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duration", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingID", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookingID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BookingID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BookingID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1551,14 +1491,14 @@ Namespace FBSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges, Duration, BookingID F"& _ 
-                "ROM Booking "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE CustId = @custid"
+            Me._commandCollection(0).CommandText = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges, BookingID FROM Bookin"& _ 
+                "g WHERE (CustID = @custid)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@custid", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "CustID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@custid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CustID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT BookingCharges, BookingDate, BookingID, BookingTime, Duration, VisitDate F"& _ 
-                "ROM Booking"
+            Me._commandCollection(1).CommandText = "SELECT BookingCharges, BookingDate, BookingID, BookingTime, VisitDate FROM Bookin"& _ 
+                "g"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1566,13 +1506,9 @@ Namespace FBSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As FBSDataSet.BookingDataTable, ByVal custid As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As FBSDataSet.BookingDataTable, ByVal custid As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (custid Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(custid,String)
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(custid,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -1584,13 +1520,9 @@ Namespace FBSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal custid As String) As FBSDataSet.BookingDataTable
+        Public Overloads Overridable Function GetData(ByVal custid As Integer) As FBSDataSet.BookingDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (custid Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(custid,String)
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(custid,Integer)
             Dim dataTable As FBSDataSet.BookingDataTable = New FBSDataSet.BookingDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -1641,7 +1573,7 @@ Namespace FBSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_BookingDate As Global.System.Nullable(Of Date), ByVal Original_BookingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_VisitDate As Global.System.Nullable(Of Date), ByVal Original_BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_Duration As Global.System.Nullable(Of Integer), ByVal Original_BookingID As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_BookingDate As Global.System.Nullable(Of Date), ByVal Original_BookingTime As String, ByVal Original_VisitDate As Global.System.Nullable(Of Date), ByVal Original_BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_BookingID As Integer) As Integer
             If (Original_BookingDate.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_BookingDate.Value,Date)
@@ -1649,12 +1581,12 @@ Namespace FBSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (Original_BookingTime.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_BookingTime.Value,System.TimeSpan)
-            Else
+            If (Original_BookingTime Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_BookingTime,String)
             End If
             If (Original_VisitDate.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
@@ -1670,18 +1602,7 @@ Namespace FBSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (Original_Duration.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Duration.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BookingID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_BookingID")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_BookingID,String)
-            End If
+            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_BookingID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1700,67 +1621,17 @@ Namespace FBSDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal BookingDate As Global.System.Nullable(Of Date), ByVal BookingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal VisitDate As Global.System.Nullable(Of Date), ByVal BookingCharges As Global.System.Nullable(Of Decimal), ByVal Duration As Global.System.Nullable(Of Integer), ByVal BookingID As String) As Integer
-            If (BookingDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(BookingDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (BookingTime.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(BookingTime.Value,System.TimeSpan)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (VisitDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(VisitDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (BookingCharges.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(BookingCharges.Value,Decimal)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Duration.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Duration.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (BookingID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("BookingID")
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(BookingID,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal BookingDate As Global.System.Nullable(Of Date), ByVal BookingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal VisitDate As Global.System.Nullable(Of Date), ByVal BookingCharges As Global.System.Nullable(Of Decimal), ByVal Duration As Global.System.Nullable(Of Integer), ByVal BookingID As String, ByVal Original_BookingDate As Global.System.Nullable(Of Date), ByVal Original_BookingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_VisitDate As Global.System.Nullable(Of Date), ByVal Original_BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_Duration As Global.System.Nullable(Of Integer), ByVal Original_BookingID As String) As Integer
+        Public Overloads Overridable Function Update(ByVal BookingDate As Global.System.Nullable(Of Date), ByVal BookingTime As String, ByVal VisitDate As Global.System.Nullable(Of Date), ByVal BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_BookingDate As Global.System.Nullable(Of Date), ByVal Original_BookingTime As String, ByVal Original_VisitDate As Global.System.Nullable(Of Date), ByVal Original_BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_BookingID As Integer, ByVal BookingID As Integer) As Integer
             If (BookingDate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BookingDate.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (BookingTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BookingTime.Value,System.TimeSpan)
-            Else
+            If (BookingTime Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BookingTime,String)
             End If
             If (VisitDate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(VisitDate.Value,Date)
@@ -1772,56 +1643,36 @@ Namespace FBSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (Duration.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Duration.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (BookingID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("BookingID")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(BookingID,String)
-            End If
             If (Original_BookingDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_BookingDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_BookingDate.Value,Date)
             Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BookingTime Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_BookingTime,String)
             End If
-            If (Original_BookingTime.HasValue = true) Then
+            If (Original_VisitDate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_BookingTime.Value,System.TimeSpan)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_VisitDate.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_VisitDate.HasValue = true) Then
+            If (Original_BookingCharges.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_VisitDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_BookingCharges.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_BookingCharges.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_BookingCharges.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Duration.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Duration.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BookingID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_BookingID")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_BookingID,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_BookingID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(BookingID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1841,8 +1692,8 @@ Namespace FBSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal BookingDate As Global.System.Nullable(Of Date), ByVal BookingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal VisitDate As Global.System.Nullable(Of Date), ByVal BookingCharges As Global.System.Nullable(Of Decimal), ByVal Duration As Global.System.Nullable(Of Integer), ByVal Original_BookingDate As Global.System.Nullable(Of Date), ByVal Original_BookingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_VisitDate As Global.System.Nullable(Of Date), ByVal Original_BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_Duration As Global.System.Nullable(Of Integer), ByVal Original_BookingID As String) As Integer
-            Return Me.Update(BookingDate, BookingTime, VisitDate, BookingCharges, Duration, Original_BookingID, Original_BookingDate, Original_BookingTime, Original_VisitDate, Original_BookingCharges, Original_Duration, Original_BookingID)
+        Public Overloads Overridable Function Update(ByVal BookingDate As Global.System.Nullable(Of Date), ByVal BookingTime As String, ByVal VisitDate As Global.System.Nullable(Of Date), ByVal BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_BookingDate As Global.System.Nullable(Of Date), ByVal Original_BookingTime As String, ByVal Original_VisitDate As Global.System.Nullable(Of Date), ByVal Original_BookingCharges As Global.System.Nullable(Of Decimal), ByVal Original_BookingID As Integer) As Integer
+            Return Me.Update(BookingDate, BookingTime, VisitDate, BookingCharges, Original_BookingDate, Original_BookingTime, Original_VisitDate, Original_BookingCharges, Original_BookingID, Original_BookingID)
         End Function
     End Class
     
