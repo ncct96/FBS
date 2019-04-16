@@ -33,6 +33,7 @@ Partial Class Main
         Me.lblView = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.picExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,12 +149,22 @@ Partial Class Main
         Me.Button2.Text = "User Management"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(12, 165)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(168, 23)
+        Me.Button3.TabIndex = 18
+        Me.Button3.Text = "Update Payment Status"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(946, 547)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblView)
@@ -187,4 +198,5 @@ Partial Class Main
     Friend WithEvents lblView As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

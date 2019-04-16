@@ -24,6 +24,9 @@ Partial Class DeleteAccount
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.AccountGrid = New System.Windows.Forms.DataGridView()
+        Me.deleteBtn = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.searchTxt = New System.Windows.Forms.TextBox()
         Me.CustIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustPassDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -31,9 +34,6 @@ Partial Class DeleteAccount
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FBSDataSet = New FBS.FBSDataSet()
         Me.CustomerTableAdapter = New FBS.FBSDataSetTableAdapters.CustomerTableAdapter()
-        Me.deleteBtn = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.searchTxt = New System.Windows.Forms.TextBox()
         CType(Me.AccountGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FBSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,8 +49,35 @@ Partial Class DeleteAccount
         Me.AccountGrid.Location = New System.Drawing.Point(16, 66)
         Me.AccountGrid.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountGrid.Name = "AccountGrid"
+        Me.AccountGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.AccountGrid.Size = New System.Drawing.Size(443, 185)
         Me.AccountGrid.TabIndex = 0
+        '
+        'deleteBtn
+        '
+        Me.deleteBtn.Location = New System.Drawing.Point(361, 259)
+        Me.deleteBtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.deleteBtn.Name = "deleteBtn"
+        Me.deleteBtn.Size = New System.Drawing.Size(100, 31)
+        Me.deleteBtn.TabIndex = 1
+        Me.deleteBtn.Text = "Delete"
+        Me.deleteBtn.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(50, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(117, 16)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Search for Users : "
+        '
+        'searchTxt
+        '
+        Me.searchTxt.Location = New System.Drawing.Point(173, 37)
+        Me.searchTxt.Name = "searchTxt"
+        Me.searchTxt.Size = New System.Drawing.Size(159, 22)
+        Me.searchTxt.TabIndex = 3
         '
         'CustIDDataGridViewTextBoxColumn
         '
@@ -90,32 +117,6 @@ Partial Class DeleteAccount
         'CustomerTableAdapter
         '
         Me.CustomerTableAdapter.ClearBeforeFill = True
-        '
-        'deleteBtn
-        '
-        Me.deleteBtn.Location = New System.Drawing.Point(361, 259)
-        Me.deleteBtn.Margin = New System.Windows.Forms.Padding(4)
-        Me.deleteBtn.Name = "deleteBtn"
-        Me.deleteBtn.Size = New System.Drawing.Size(100, 31)
-        Me.deleteBtn.TabIndex = 1
-        Me.deleteBtn.Text = "Delete"
-        Me.deleteBtn.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 40)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 16)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Search for Users : "
-        '
-        'searchTxt
-        '
-        Me.searchTxt.Location = New System.Drawing.Point(173, 37)
-        Me.searchTxt.Name = "searchTxt"
-        Me.searchTxt.Size = New System.Drawing.Size(159, 22)
-        Me.searchTxt.TabIndex = 3
         '
         'DeleteAccount
         '

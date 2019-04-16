@@ -154,6 +154,31 @@ FROM            Venue</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Booking1TableAdapter" GeneratorDataComponentClassName="Booking1TableAdapter" Name="Booking1" UserDataComponentName="Booking1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FBSConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        b.BookingID AS 'Booking ID', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged', c.CustName AS 'Customer Name', v.VenueType AS 'Venue'
+FROM            Booking AS b INNER JOIN
+                         Customer AS c ON b.CustID = c.CustID INNER JOIN
+                         Timeslot AS t ON b.SlotID = t.SlotID INNER JOIN
+                         Venue AS v ON t.VenueID = v.VenueID
+WHERE        (b.Status = 'Pending')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Booking ID" DataSetColumn="Booking ID" />
+              <Mapping SourceColumn="Booking Date" DataSetColumn="Booking Date" />
+              <Mapping SourceColumn="Fees Charged" DataSetColumn="Fees Charged" />
+              <Mapping SourceColumn="Customer Name" DataSetColumn="Customer Name" />
+              <Mapping SourceColumn="Venue" DataSetColumn="Venue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -162,7 +187,7 @@ FROM            Venue</CommandText>
   <xs:element name="FBSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FBSDataSet" msprop:Generator_UserDSName="FBSDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_UserTableName="Booking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_RowEvArgName="BookingRowChangeEvent" msprop:Generator_RowClassName="BookingRow">
+        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_RowClassName="BookingRow" msprop:Generator_UserTableName="Booking" msprop:Generator_RowEvArgName="BookingRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BookingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBookingID" msprop:Generator_ColumnPropNameInRow="BookingID" msprop:Generator_ColumnPropNameInTable="BookingIDColumn" msprop:Generator_UserColumnName="BookingID" type="xs:int" />
@@ -178,7 +203,7 @@ FROM            Venue</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Timeslot" msprop:Generator_TableClassName="TimeslotDataTable" msprop:Generator_TableVarName="tableTimeslot" msprop:Generator_TablePropName="Timeslot" msprop:Generator_RowDeletingName="TimeslotRowDeleting" msprop:Generator_RowChangingName="TimeslotRowChanging" msprop:Generator_RowEvHandlerName="TimeslotRowChangeEventHandler" msprop:Generator_RowDeletedName="TimeslotRowDeleted" msprop:Generator_UserTableName="Timeslot" msprop:Generator_RowChangedName="TimeslotRowChanged" msprop:Generator_RowEvArgName="TimeslotRowChangeEvent" msprop:Generator_RowClassName="TimeslotRow">
+        <xs:element name="Timeslot" msprop:Generator_TableClassName="TimeslotDataTable" msprop:Generator_TableVarName="tableTimeslot" msprop:Generator_RowChangedName="TimeslotRowChanged" msprop:Generator_TablePropName="Timeslot" msprop:Generator_RowDeletingName="TimeslotRowDeleting" msprop:Generator_RowChangingName="TimeslotRowChanging" msprop:Generator_RowEvHandlerName="TimeslotRowChangeEventHandler" msprop:Generator_RowDeletedName="TimeslotRowDeleted" msprop:Generator_RowClassName="TimeslotRow" msprop:Generator_UserTableName="Timeslot" msprop:Generator_RowEvArgName="TimeslotRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:duration" minOccurs="0" />
@@ -190,7 +215,7 @@ FROM            Venue</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Venue" msprop:Generator_TableClassName="VenueDataTable" msprop:Generator_TableVarName="tableVenue" msprop:Generator_RowChangedName="VenueRowChanged" msprop:Generator_TablePropName="Venue" msprop:Generator_RowDeletingName="VenueRowDeleting" msprop:Generator_RowChangingName="VenueRowChanging" msprop:Generator_RowEvHandlerName="VenueRowChangeEventHandler" msprop:Generator_RowDeletedName="VenueRowDeleted" msprop:Generator_RowClassName="VenueRow" msprop:Generator_UserTableName="Venue" msprop:Generator_RowEvArgName="VenueRowChangeEvent">
+        <xs:element name="Venue" msprop:Generator_TableClassName="VenueDataTable" msprop:Generator_TableVarName="tableVenue" msprop:Generator_TablePropName="Venue" msprop:Generator_RowDeletingName="VenueRowDeleting" msprop:Generator_RowChangingName="VenueRowChanging" msprop:Generator_RowEvHandlerName="VenueRowChangeEventHandler" msprop:Generator_RowDeletedName="VenueRowDeleted" msprop:Generator_UserTableName="Venue" msprop:Generator_RowChangedName="VenueRowChanged" msprop:Generator_RowEvArgName="VenueRowChangeEvent" msprop:Generator_RowClassName="VenueRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VenueType" msprop:Generator_ColumnVarNameInTable="columnVenueType" msprop:Generator_ColumnPropNameInRow="VenueType" msprop:Generator_ColumnPropNameInTable="VenueTypeColumn" msprop:Generator_UserColumnName="VenueType" minOccurs="0">
@@ -203,7 +228,7 @@ FROM            Venue</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_UserTableName="Customer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_RowEvArgName="CustomerRowChangeEvent" msprop:Generator_RowClassName="CustomerRow">
+        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_RowClassName="CustomerRow" msprop:Generator_UserTableName="Customer" msprop:Generator_RowEvArgName="CustomerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CustID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCustID" msprop:Generator_ColumnPropNameInRow="CustID" msprop:Generator_ColumnPropNameInTable="CustIDColumn" msprop:Generator_UserColumnName="CustID" type="xs:int" />
@@ -231,6 +256,29 @@ FROM            Venue</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Booking1" msprop:Generator_TableClassName="Booking1DataTable" msprop:Generator_TableVarName="tableBooking1" msprop:Generator_TablePropName="Booking1" msprop:Generator_RowDeletingName="Booking1RowDeleting" msprop:Generator_RowChangingName="Booking1RowChanging" msprop:Generator_RowEvHandlerName="Booking1RowChangeEventHandler" msprop:Generator_RowDeletedName="Booking1RowDeleted" msprop:Generator_UserTableName="Booking1" msprop:Generator_RowChangedName="Booking1RowChanged" msprop:Generator_RowEvArgName="Booking1RowChangeEvent" msprop:Generator_RowClassName="Booking1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Booking_x0020_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBooking_ID" msprop:Generator_ColumnPropNameInRow="Booking_ID" msprop:Generator_ColumnPropNameInTable="Booking_IDColumn" msprop:Generator_UserColumnName="Booking ID" type="xs:int" />
+              <xs:element name="Booking_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnBooking_Date" msprop:Generator_ColumnPropNameInRow="Booking_Date" msprop:Generator_ColumnPropNameInTable="Booking_DateColumn" msprop:Generator_UserColumnName="Booking Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Fees_x0020_Charged" msprop:Generator_ColumnVarNameInTable="columnFees_Charged" msprop:Generator_ColumnPropNameInRow="Fees_Charged" msprop:Generator_ColumnPropNameInTable="Fees_ChargedColumn" msprop:Generator_UserColumnName="Fees Charged" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Customer_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnCustomer_Name" msprop:Generator_ColumnPropNameInRow="Customer_Name" msprop:Generator_ColumnPropNameInTable="Customer_NameColumn" msprop:Generator_UserColumnName="Customer Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Venue" msprop:Generator_ColumnVarNameInTable="columnVenue" msprop:Generator_ColumnPropNameInRow="Venue" msprop:Generator_ColumnPropNameInTable="VenueColumn" msprop:Generator_UserColumnName="Venue" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -244,6 +292,10 @@ FROM            Venue</CommandText>
     <xs:unique name="Customer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Customer" />
       <xs:field xpath="mstns:CustID" />
+    </xs:unique>
+    <xs:unique name="Booking1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Booking1" />
+      <xs:field xpath="mstns:Booking_x0020_ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
