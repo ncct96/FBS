@@ -236,7 +236,7 @@ Partial Class AdminVenue
         Me.MaximizeBox = False
         Me.Name = "AdminVenue"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Admin_Venue"
+        Me.Text = "Facility Maintenance"
         Me.TransparencyKey = System.Drawing.Color.Maroon
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

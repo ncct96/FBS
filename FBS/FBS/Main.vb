@@ -81,7 +81,7 @@
             lblUser.Text = "Change Password"
             picUser.Image = My.Resources.User
         Else
-            lblVenue.Text = "Venue Maintenence"
+            lblVenue.Text = "Facility Maintenence"
             picVenue.Image = My.Resources.Gears
             lblBooking.Text = "Update Payment Status"
             picBooking.Image = My.Resources.Book
