@@ -54,30 +54,43 @@ Public Class FrmBooking
             Dim db As New DBDataContext()
             'Dim cust = db.Customers.FirstOrDefault(Function(o) o.CustID = 2)
 
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+            Dim conn As New SqlConnection(strConn)
+
+            Dim tIdentitySQL As String = "SELECT IDENT_CURRENT('Timeslot')"
+            Dim comm As New SqlCommand(tIdentitySQL, conn)
+
+            conn.Open()
+
+            Dim tLastIdent As Integer = comm.ExecuteScalar
+
+            Debug.Print("sadsadsadsa" & tLastIdent)
+
+            conn.Close()
+
             Dim s As New Booking With {
                 .BookingDate = bookingDate,
                 .BookingTime = bookingTime,
                 .BookingCharges = totalPayment,
                 .VisitDate = dtpBooking.Value,
                 .CustID = GlobalVars.currentId,
-                .SlotID = lstTimeslot.SelectedIndex + 1,
+                .SlotID = tLastIdent,
                 .Status = "Pending"'Convert.ToInt32(lstTimeslot.SelectedItem.ToString)
             }
 
             db.Bookings.InsertOnSubmit(s)
             db.SubmitChanges()
 
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
-            Dim conn As New SqlConnection(strConn)
+            conn.Close()
 
-            Dim identitySQL As String = "SELECT IDENT_CURRENT('Booking')"
-            Dim cmd As New SqlCommand(identitySQL, conn)
+            Dim bIdentitySQL As String = "SELECT IDENT_CURRENT('Booking')"
+            Dim cmd As New SqlCommand(bIdentitySQL, conn)
 
             conn.Open()
 
-            Dim lastIdent As Integer = cmd.ExecuteScalar
+            Dim bLastIdent As Integer = cmd.ExecuteScalar
 
-            Debug.Print("sadsadsadsa" & lastIdent)
+            Debug.Print("sadsadsadsa" & bLastIdent)
 
             conn.Close()
 
@@ -87,7 +100,7 @@ Public Class FrmBooking
                 .Status = False,
                 .VenueID = cbVenue.SelectedValue,
                 .Time = lstTimeslot.SelectedItem.ToString,
-                .BookingID = lastIdent
+                .BookingID = bLastIdent
             }
 
             db.Timeslots.InsertOnSubmit(slot)
@@ -208,22 +221,22 @@ Public Class FrmBooking
 
     Function initSlotName()
         Dim slot, slot1, slot2, slot3, slot4, slot5 As New Slot
-        slot.slotID = 1
+        slot.slotID = 0
         slot.slotName = "10:00 am - 12:00 pm"
 
-        slot1.slotID = 2
+        slot1.slotID = 1
         slot1.slotName = "12:00 pm - 2:00 pm"
 
-        slot2.slotID = 3
+        slot2.slotID = 2
         slot2.slotName = "2:00 pm - 4:00 pm"
 
-        slot3.slotID = 4
+        slot3.slotID = 3
         slot3.slotName = "4:00 pm - 6:00 pm"
 
-        slot4.slotID = 5
+        slot4.slotID = 4
         slot4.slotName = "6:00 pm - 8:00 pm"
 
-        slot5.slotID = 6
+        slot5.slotID = 5
         slot5.slotName = "8:00 pm - 10:00 pm"
 
         slotArr(0) = slot
