@@ -30,12 +30,12 @@ Public Class BookingHistory
             If OngoingFilter.Checked Then
                 searchQuery = "SELECT b.BookingID, v.VenueType AS 'Venue', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged' FROM BOOKING b, Timeslot t, Venue v WHERE
                 b.BookingID = t.BookingID and v.VenueID = t.VenueID and  
-                b.Status = 'Pending' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
+                b.Status = 'Pending' AND b.CustID IN (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID IN 
 			    (SELECT VenueID from Venue where VenueType = @venue)"
             ElseIf CompletedFilter.Checked Then
                 searchQuery = "SELECT b.BookingID, v.VenueType AS 'Venue', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged' FROM BOOKING b, Timeslot t, Venue v WHERE
                 b.BookingID = t.BookingID and v.VenueID = t.VenueID and 
-                b.Status = 'Paid' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
+                b.Status = 'Paid' AND b.CustID IN (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID IN 
 			    (SELECT VenueID from Venue where VenueType = @venue)"
             End If
             If Not searchQuery.Equals("") Then

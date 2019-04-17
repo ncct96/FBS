@@ -1759,6 +1759,8 @@ Partial Public Class FBSDataSet
         
         Private columnVenue As Global.System.Data.DataColumn
         
+        Private columnStatus As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1835,6 +1837,14 @@ Partial Public Class FBSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1871,9 +1881,9 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddBooking1Row(ByVal Booking_Date As Date, ByVal Fees_Charged As Decimal, ByVal Customer_Name As String, ByVal Venue As String) As Booking1Row
+        Public Overloads Function AddBooking1Row(ByVal Booking_Date As Date, ByVal Fees_Charged As Decimal, ByVal Customer_Name As String, ByVal Venue As String, ByVal Status As String) As Booking1Row
             Dim rowBooking1Row As Booking1Row = CType(Me.NewRow,Booking1Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Booking_Date, Fees_Charged, Customer_Name, Venue}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Booking_Date, Fees_Charged, Customer_Name, Venue, Status}
             rowBooking1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowBooking1Row)
             Return rowBooking1Row
@@ -1907,6 +1917,7 @@ Partial Public Class FBSDataSet
             Me.columnFees_Charged = MyBase.Columns("Fees Charged")
             Me.columnCustomer_Name = MyBase.Columns("Customer Name")
             Me.columnVenue = MyBase.Columns("Venue")
+            Me.columnStatus = MyBase.Columns("Status")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1922,6 +1933,8 @@ Partial Public Class FBSDataSet
             MyBase.Columns.Add(Me.columnCustomer_Name)
             Me.columnVenue = New Global.System.Data.DataColumn("Venue", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnVenue)
+            Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStatus)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnBooking_ID}, true))
             Me.columnBooking_ID.AutoIncrement = true
             Me.columnBooking_ID.AutoIncrementSeed = -1
@@ -1932,6 +1945,7 @@ Partial Public Class FBSDataSet
             Me.columnCustomer_Name.AllowDBNull = false
             Me.columnCustomer_Name.MaxLength = 50
             Me.columnVenue.MaxLength = 50
+            Me.columnStatus.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3588,6 +3602,21 @@ Partial Public Class FBSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableBooking1.StatusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'Booking1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableBooking1.StatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsBooking_DateNull() As Boolean
             Return Me.IsNull(Me.tableBooking1.Booking_DateColumn)
         End Function
@@ -3620,6 +3649,18 @@ Partial Public Class FBSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetVenueNull()
             Me(Me.tableBooking1.VenueColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsStatusNull() As Boolean
+            Return Me.IsNull(Me.tableBooking1.StatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetStatusNull()
+            Me(Me.tableBooking1.StatusColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -5596,6 +5637,7 @@ Namespace FBSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Fees Charged", "Fees Charged")
             tableMapping.ColumnMappings.Add("Customer Name", "Customer Name")
             tableMapping.ColumnMappings.Add("Venue", "Venue")
+            tableMapping.ColumnMappings.Add("Status", "Status")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -5614,10 +5656,10 @@ Namespace FBSDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        b.BookingID AS 'Booking ID', b.VisitDate AS 'Booking Date', b.Booki"& _ 
                 "ngCharges AS 'Fees Charged', c.CustName AS 'Customer Name', v.VenueType AS 'Venu"& _ 
-                "e'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Booking AS b INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Customer A"& _ 
-                "S c ON b.CustID = c.CustID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Timeslot AS t ON"& _ 
-                " b.BookingID = t.BookingID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Venue AS v ON t."& _ 
-                "VenueID = v.VenueID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (b.Status = 'Pending')"
+                "e', b.Status as 'Status'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Booking AS b INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
+                "            Customer AS c ON b.CustID = c.CustID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
+                "      Timeslot AS t ON b.BookingID = t.BookingID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
+                "      Venue AS v ON t.VenueID = v.VenueID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (b.Status = 'Pending')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

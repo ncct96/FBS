@@ -130,7 +130,7 @@ Partial Class DeleteAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(433, 276)
+        Me.ClientSize = New System.Drawing.Size(449, 276)
         Me.Controls.Add(Me.deleteBtn)
         Me.Controls.Add(Me.AccountGrid)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

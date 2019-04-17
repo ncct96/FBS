@@ -29,15 +29,16 @@ Partial Class UpdateStatus
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UpdateStatus))
         Me.UpdatePayGrid = New System.Windows.Forms.DataGridView()
+        Me.PaymentBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FBSDataSet = New FBS.FBSDataSet()
+        Me.PaymentTableAdapter = New FBS.FBSDataSetTableAdapters.Booking1TableAdapter()
+        Me.updateBtn = New System.Windows.Forms.Button()
         Me.BookingIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BookingDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FeesChargedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PaymentBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FBSDataSet = New FBS.FBSDataSet()
-        Me.PaymentTableAdapter = New FBS.FBSDataSetTableAdapters.Booking1TableAdapter()
-        Me.updateBtn = New System.Windows.Forms.Button()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.UpdatePayGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PaymentBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FBSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +50,7 @@ Partial Class UpdateStatus
         Me.UpdatePayGrid.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
         Me.UpdatePayGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.UpdatePayGrid.AutoGenerateColumns = False
@@ -63,13 +64,13 @@ Partial Class UpdateStatus
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.UpdatePayGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.UpdatePayGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.UpdatePayGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingIDDataGridViewTextBoxColumn, Me.BookingDateDataGridViewTextBoxColumn, Me.FeesChargedDataGridViewTextBoxColumn, Me.CustomerNameDataGridViewTextBoxColumn, Me.VenueDataGridViewTextBoxColumn})
+        Me.UpdatePayGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingIDDataGridViewTextBoxColumn, Me.BookingDateDataGridViewTextBoxColumn, Me.FeesChargedDataGridViewTextBoxColumn, Me.CustomerNameDataGridViewTextBoxColumn, Me.VenueDataGridViewTextBoxColumn, Me.Status})
         Me.UpdatePayGrid.DataSource = Me.PaymentBindingSource
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowFrame
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.UpdatePayGrid.DefaultCellStyle = DataGridViewCellStyle3
@@ -87,8 +88,33 @@ Partial Class UpdateStatus
         Me.UpdatePayGrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.UpdatePayGrid.RowHeadersVisible = False
         Me.UpdatePayGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.UpdatePayGrid.Size = New System.Drawing.Size(1219, 562)
+        Me.UpdatePayGrid.Size = New System.Drawing.Size(600, 562)
         Me.UpdatePayGrid.TabIndex = 0
+        '
+        'PaymentBindingSource
+        '
+        Me.PaymentBindingSource.DataMember = "Booking1"
+        Me.PaymentBindingSource.DataSource = Me.FBSDataSet
+        '
+        'FBSDataSet
+        '
+        Me.FBSDataSet.DataSetName = "FBSDataSet"
+        Me.FBSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PaymentTableAdapter
+        '
+        Me.PaymentTableAdapter.ClearBeforeFill = True
+        '
+        'updateBtn
+        '
+        Me.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.updateBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.updateBtn.Location = New System.Drawing.Point(401, 582)
+        Me.updateBtn.Name = "updateBtn"
+        Me.updateBtn.Size = New System.Drawing.Size(214, 61)
+        Me.updateBtn.TabIndex = 2
+        Me.updateBtn.Text = "Update"
+        Me.updateBtn.UseVisualStyleBackColor = True
         '
         'BookingIDDataGridViewTextBoxColumn
         '
@@ -121,36 +147,17 @@ Partial Class UpdateStatus
         Me.VenueDataGridViewTextBoxColumn.HeaderText = "Venue"
         Me.VenueDataGridViewTextBoxColumn.Name = "VenueDataGridViewTextBoxColumn"
         '
-        'PaymentBindingSource
+        'Status
         '
-        Me.PaymentBindingSource.DataMember = "Booking1"
-        Me.PaymentBindingSource.DataSource = Me.FBSDataSet
-        '
-        'FBSDataSet
-        '
-        Me.FBSDataSet.DataSetName = "FBSDataSet"
-        Me.FBSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PaymentTableAdapter
-        '
-        Me.PaymentTableAdapter.ClearBeforeFill = True
-        '
-        'updateBtn
-        '
-        Me.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.updateBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.updateBtn.Location = New System.Drawing.Point(1036, 600)
-        Me.updateBtn.Name = "updateBtn"
-        Me.updateBtn.Size = New System.Drawing.Size(214, 61)
-        Me.updateBtn.TabIndex = 2
-        Me.updateBtn.Text = "Update"
-        Me.updateBtn.UseVisualStyleBackColor = True
+        Me.Status.DataPropertyName = "Status"
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
         '
         'UpdateStatus
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.ClientSize = New System.Drawing.Size(629, 655)
         Me.Controls.Add(Me.updateBtn)
         Me.Controls.Add(Me.UpdatePayGrid)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -171,16 +178,17 @@ Partial Class UpdateStatus
     Friend WithEvents FBSDataSet As FBSDataSet
     Friend WithEvents PaymentBindingSource As BindingSource
     Friend WithEvents PaymentTableAdapter As FBSDataSetTableAdapters.Booking1TableAdapter
-    Friend WithEvents BookingIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BookingDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents VisitDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingChargesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SlotIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents updateBtn As Button
+    Friend WithEvents BookingIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BookingDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FeesChargedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustomerNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents VenueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents updateBtn As Button
+    Friend WithEvents Status As DataGridViewTextBoxColumn
 End Class

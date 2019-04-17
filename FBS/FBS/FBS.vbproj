@@ -132,6 +132,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookingDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CancellationReport.Designer.vb">
+      <DependentUpon>CancellationReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CancellationReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancellationSum.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CancellationSum.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKreport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CKreport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DailyRpt.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,18 +165,6 @@
     </Compile>
     <Compile Include="DeleteAccount.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacilitiesReport.Designer.vb">
-      <DependentUpon>FacilitiesReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FacilitiesReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacilitiesSummary.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FacilitiesSummary.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FBSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -275,19 +280,19 @@
     <EmbeddedResource Include="AdminVenue.resx">
       <DependentUpon>AdminVenue.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CancellationReport.resx">
+      <DependentUpon>CancellationReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancellationSum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CancellationSum.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DailyRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DailyRpt.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteAccount.resx">
       <DependentUpon>DeleteAccount.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacilitiesReport.resx">
-      <DependentUpon>FacilitiesReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacilitiesSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>FacilitiesSummary.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBooking.resx">
       <DependentUpon>FrmBooking.vb</DependentUpon>
@@ -347,6 +352,17 @@
     </None>
     <None Include="BookingDS.xss">
       <DependentUpon>BookingDS.xsd</DependentUpon>
+    </None>
+    <None Include="CKreport.xsc">
+      <DependentUpon>CKreport.xsd</DependentUpon>
+    </None>
+    <None Include="CKreport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CKreport.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CKreport.xss">
+      <DependentUpon>CKreport.xsd</DependentUpon>
     </None>
     <None Include="DB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
