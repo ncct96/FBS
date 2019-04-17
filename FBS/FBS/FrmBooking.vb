@@ -31,17 +31,25 @@ Public Class FrmBooking
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
-        Dim ID As Integer
-        Dim result As Integer = MessageBox.Show("Confirm your booking?", "Booking Confirmation", MessageBoxButtons.YesNoCancel)
-        If result = DialogResult.No Then
-            IsX = False
-            Me.Close()
-        ElseIf result = DialogResult.Yes Then
-            insertBooking(ID)
-            initSlotName()
-            CheckSlot()
-            resetSlot()
-            initAvailableSlot()
+        If lstTimeslot.SelectedIndex <> -1 Then
+            Dim ID As Integer
+            If lstTimeslot.SelectedItem.ToString = "NOT AVAILABLE" Then
+                MessageBox.Show("Timeslot is not available, please choose again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                Dim result As Integer = MessageBox.Show("Confirm your booking?", "Booking Confirmation", MessageBoxButtons.YesNoCancel)
+                If result = DialogResult.No Then
+                    IsX = False
+                    Me.Close()
+                ElseIf result = DialogResult.Yes Then
+                    insertBooking(ID)
+                    initSlotName()
+                    CheckSlot()
+                    resetSlot()
+                    initAvailableSlot()
+                End If
+            End If
+        Else
+            MessageBox.Show("Please select a timeslot for booking!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -111,6 +119,7 @@ Public Class FrmBooking
             MessageBox.Show(ex.ToString())
         End Try
 
+
     End Function
 
     Function CalcTotalPymt(rate As Double) As Double
@@ -134,7 +143,7 @@ Public Class FrmBooking
                         If s.Slot = i Then
                             Debug.Print("hi1")
                             If s.Status = False Then
-                                slotArr(i - 1) = Nothing
+                                slotArr(i - 1).slotName = "NOT AVAILABLE"
                             End If
                         End If
                     End If

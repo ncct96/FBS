@@ -28,6 +28,13 @@ Public Class ReportGenerator
         Me.Close()
     End Sub
 
+    Private Sub btnSummary_Click(sender As Object, e As EventArgs) Handles btnSummary.Click
+        Dim cancRpt As New CancellationReport
+        Me.Hide()
+        cancRpt.ShowDialog()
+        Me.Show()
+    End Sub
+
     Private Sub ExceptionReport_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles ExceptionReport.PrintPage
         Dim fontHeader As New Font("Calibri", 24, FontStyle.Bold)
         Dim fontSubheader As New Font("Calibri", 12)
@@ -99,4 +106,6 @@ Public Class ReportGenerator
         DailyRpt.ShowDialog()
         Me.Show()
     End Sub
+
+
 End Class

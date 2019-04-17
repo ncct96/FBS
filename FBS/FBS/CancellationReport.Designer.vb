@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FacilitiesReport
+Partial Class CancellationReport
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,31 +22,31 @@ Partial Class FacilitiesReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.FacilitiesReportViewer = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.CrystalReportViewer2 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
-        'FacilitiesReportViewer
+        'CrystalReportViewer2
         '
-        Me.FacilitiesReportViewer.ActiveViewIndex = -1
-        Me.FacilitiesReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FacilitiesReportViewer.Cursor = System.Windows.Forms.Cursors.Default
-        Me.FacilitiesReportViewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FacilitiesReportViewer.Location = New System.Drawing.Point(0, 0)
-        Me.FacilitiesReportViewer.Name = "FacilitiesReportViewer"
-        Me.FacilitiesReportViewer.Size = New System.Drawing.Size(800, 450)
-        Me.FacilitiesReportViewer.TabIndex = 0
+        Me.CrystalReportViewer2.ActiveViewIndex = -1
+        Me.CrystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer2.Location = New System.Drawing.Point(0, 0)
+        Me.CrystalReportViewer2.Name = "CrystalReportViewer2"
+        Me.CrystalReportViewer2.Size = New System.Drawing.Size(800, 450)
+        Me.CrystalReportViewer2.TabIndex = 0
         '
-        'FacilitiesReport
+        'CancellationReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.FacilitiesReportViewer)
-        Me.Name = "FacilitiesReport"
-        Me.Text = "FacilitiesReport"
+        Me.Controls.Add(Me.CrystalReportViewer2)
+        Me.Name = "CancellationReport"
+        Me.Text = "CancellationReport"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents FacilitiesReportViewer As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents CrystalReportViewer2 As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

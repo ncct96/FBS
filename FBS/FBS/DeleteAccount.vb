@@ -9,15 +9,6 @@ Public Class DeleteAccount
         CustomerBindingSource.DataSource = CustomerTableAdapter.GetData
     End Sub
 
-    Private Sub searchTxt_TextChanged(sender As Object, e As EventArgs) Handles searchTxt.TextChanged
-        Dim searchVal As String = If(CStr(searchTxt.Text), "")
-        If Not searchVal.Equals("") Then
-            searchData(searchVal)
-        Else
-            refreshData()
-        End If
-    End Sub
-
     Private Sub searchData(value As String)
         Try
             Dim searchQuery As String = "SELECT CustID, CustName, CustPass, CustNumber FROM Customer WHERE CustName LIKE @pattern OR CustPass LIKE @pattern OR CustNumber LIKE @pattern"
