@@ -149,6 +149,11 @@
     <Compile Include="DeleteAccount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FacilitiesReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacilitiesReport.rpt</DependentUpon>
+    </Compile>
     <Compile Include="FBSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -269,6 +274,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteAccount.resx">
       <DependentUpon>DeleteAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacilitiesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FacilitiesReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBooking.resx">
       <DependentUpon>FrmBooking.vb</DependentUpon>
