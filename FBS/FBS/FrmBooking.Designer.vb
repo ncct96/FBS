@@ -40,7 +40,7 @@ Partial Class FrmBooking
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnBook = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblPicture = New System.Windows.Forms.PictureBox()
         Me.VenueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cbActivityType = New System.Windows.Forms.ComboBox()
         Me.VenueBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
@@ -57,7 +57,7 @@ Partial Class FrmBooking
         CType(Me.VenueDSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.VenueBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lblPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenueBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -208,13 +208,15 @@ Partial Class FrmBooking
         Me.Label6.TabIndex = 33
         Me.Label6.Text = "Activity:"
         '
-        'PictureBox1
+        'lblPicture
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(486, 149)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
+        Me.lblPicture.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.VenueBindingSource, "VenuePicture", True))
+        Me.lblPicture.Location = New System.Drawing.Point(492, 109)
+        Me.lblPicture.Name = "lblPicture"
+        Me.lblPicture.Size = New System.Drawing.Size(240, 135)
+        Me.lblPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.lblPicture.TabIndex = 30
+        Me.lblPicture.TabStop = False
         '
         'VenueBindingSource
         '
@@ -317,7 +319,7 @@ Partial Class FrmBooking
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnBook)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.lblPicture)
         Me.Controls.Add(Me.cbActivityType)
         Me.Controls.Add(Me.cbVenue)
         Me.Controls.Add(Me.lblVenue)
@@ -333,7 +335,7 @@ Partial Class FrmBooking
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.VenueBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lblPicture, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VenueBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VenueBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -358,7 +360,6 @@ Partial Class FrmBooking
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnBook As Button
     Friend WithEvents Label6 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents VenueBindingSource As BindingSource
     Friend WithEvents cbActivityType As ComboBox
     Friend WithEvents cbVenue As ComboBox
@@ -371,4 +372,5 @@ Partial Class FrmBooking
     Friend WithEvents VenueDataSet As VenueDataSet
     Friend WithEvents VenueBindingSource3 As BindingSource
     Friend WithEvents VenueTableAdapter1 As VenueDataSetTableAdapters.VenueTableAdapter
+    Friend WithEvents lblPicture As PictureBox
 End Class

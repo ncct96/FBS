@@ -6,8 +6,11 @@ Public Class BookingHistory
     Private Sub BookingHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'FBSDataSet.Venue' table. You can move, or remove it, as needed.
         Me.VenueTableAdapter.Fill(Me.FBSDataSet.Venue)
+        Debug.Print("saddsadsadsa")
         'TODO: This line of code loads data into the 'FBSDataSet.Booking' table. You can move, or remove it, as needed.
         Me.BookingTableAdapter.Fill(FBSDataSet.Booking, GlobalVars.currentUser)
+        Debug.Print("saddsadsadsa")
+
     End Sub
 
     Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)

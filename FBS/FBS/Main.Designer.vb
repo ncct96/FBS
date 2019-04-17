@@ -163,7 +163,7 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(946, 547)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

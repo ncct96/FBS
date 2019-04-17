@@ -132,7 +132,18 @@ Public Class FrmBooking
 
             rate = CDbl(cmd.ExecuteScalar)
 
+            conn.Close()
 
+            Dim picSQL As String = "SELECT VenuePicture FROM Venue WHERE VenueID = @ID"
+            Dim comm As New SqlCommand(picSQL, conn)
+            comm.Parameters.AddWithValue("@ID", cbVenue.SelectedValue)
+
+            conn.Open()
+
+            Dim pic As Byte() = comm.ExecuteScalar
+            lblPicture.Image = Image.FromStream(New IO.MemoryStream(pic))
+
+            conn.Close()
             totalPayment = CalcTotalPymt(rate)
             lblTotalPayment.Text = "RM " & Format(totalPayment, "f")
             lblRate.Text = "RM " & Format(rate, "f")
