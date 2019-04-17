@@ -28,6 +28,21 @@ Public Class ReportGenerator
         Me.Close()
     End Sub
 
+    Private Sub btnSummary_Click(sender As Object, e As EventArgs) Handles btnSummary.Click
+        Dim textHead As New Font("Calibri", 24, FontStyle.Bold)
+        Dim textSubHead As New Font("Calibri", 14, FontStyle.Bold)
+        Dim textBody As New Font("Consolas", 14)
+        Dim header As String
+
+        Dim stringQuery As String = "SELECT "
+
+        Dim body As New StringBuilder
+        Dim database As New DBDataContext
+        body.Append("Venue Name         Venue Type              Venue Rate      " + vbNewLine)
+        body.Append("------------        -----------------      ------------------" + vbNewLine)
+
+    End Sub
+
     Private Sub ExceptionReport_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles ExceptionReport.PrintPage
         Dim fontHeader As New Font("Calibri", 24, FontStyle.Bold)
         Dim fontSubheader As New Font("Calibri", 12)
@@ -99,4 +114,6 @@ Public Class ReportGenerator
         DailyRpt.ShowDialog()
         Me.Show()
     End Sub
+
+
 End Class
