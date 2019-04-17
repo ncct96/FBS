@@ -395,6 +395,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FBS.ico" />
+    <None Include="resources\User.png" />
+    <None Include="resources\Time.png" />
     <None Include="resources\Reports.png" />
     <None Include="resources\Gears.png" />
     <None Include="resources\Book.png" />
