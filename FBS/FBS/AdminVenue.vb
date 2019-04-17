@@ -235,7 +235,7 @@ Public Class AdminVenue
         Dim dt As New DataTable
         dt.Columns.Add("Text", GetType(String))
         dt.Columns.Add("Value", GetType(Integer))
-        dt.Rows.Add("[ Add New Venue ]", -1)
+        dt.Rows.Add("[ Add New Facility ]", -1)
 
         Dim db As New DBDataContext
         Dim rs = From venue In db.Venues Select venue
@@ -261,6 +261,13 @@ Public Class AdminVenue
         Me.Cursor = Cursors.Hand
         If sender.Equals(picVenue) Then
             picVenue.SizeMode = PictureBoxSizeMode.CenterImage
+        End If
+    End Sub
+
+    Private Sub MouseLeaveEvent(sender As Object, e As EventArgs) Handles picVenue.MouseLeave, btnUpdate.MouseLeave, btnDelete.MouseLeave, cboID.MouseLeave, cboType.MouseLeave
+        Me.Cursor = Cursors.Default
+        If sender.Equals(picVenue) Then
+            picVenue.SizeMode = PictureBoxSizeMode.Zoom
         End If
     End Sub
 
