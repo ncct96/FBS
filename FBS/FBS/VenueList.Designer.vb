@@ -437,7 +437,7 @@ Partial Class VenueList
         Me.MaximizeBox = False
         Me.Name = "VenueList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "VenueList"
+        Me.Text = "Facility List"
         Me.TransparencyKey = System.Drawing.Color.Maroon
         Me.pnl2.ResumeLayout(False)
         CType(Me.picVenue2, System.ComponentModel.ISupportInitialize).EndInit()
