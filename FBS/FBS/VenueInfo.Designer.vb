@@ -224,7 +224,7 @@ Partial Class VenueInfo
         Me.MaximizeBox = False
         Me.Name = "VenueInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "VenueInfo"
+        Me.Text = "Facility Info"
         Me.TransparencyKey = System.Drawing.Color.Maroon
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

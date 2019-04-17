@@ -235,7 +235,7 @@ Public Class AdminVenue
         Dim dt As New DataTable
         dt.Columns.Add("Text", GetType(String))
         dt.Columns.Add("Value", GetType(Integer))
-        dt.Rows.Add("[ Add New Venue ]", -1)
+        dt.Rows.Add("[ Add New Facility ]", -1)
 
         Dim db As New DBDataContext
         Dim rs = From venue In db.Venues Select venue

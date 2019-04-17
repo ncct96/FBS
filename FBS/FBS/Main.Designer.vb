@@ -25,28 +25,30 @@ Partial Class Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblExit = New System.Windows.Forms.Label()
+        Me.lblVenue = New System.Windows.Forms.Label()
+        Me.lblView = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
+        Me.lblBooking = New System.Windows.Forms.Label()
+        Me.picBooking = New System.Windows.Forms.PictureBox()
+        Me.picUser = New System.Windows.Forms.PictureBox()
+        Me.picView = New System.Windows.Forms.PictureBox()
         Me.picExit = New System.Windows.Forms.PictureBox()
         Me.picVenue = New System.Windows.Forms.PictureBox()
-        Me.lblVenue = New System.Windows.Forms.Label()
-        Me.picView = New System.Windows.Forms.PictureBox()
-        Me.lblView = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        CType(Me.picBooking, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblName
         '
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.lblName.Location = New System.Drawing.Point(43, 54)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(36, 0, 36, 0)
+        Me.lblName.Location = New System.Drawing.Point(57, 66)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(48, 0, 48, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(861, 50)
+        Me.lblName.Size = New System.Drawing.Size(1148, 62)
         Me.lblName.TabIndex = 0
         Me.lblName.Text = "Welcome back [Name]!"
         Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -54,34 +56,103 @@ Partial Class Main
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(43, 113)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(36, 0, 36, 0)
+        Me.Label2.Location = New System.Drawing.Point(57, 139)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(48, 0, 48, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(861, 40)
+        Me.Label2.Size = New System.Drawing.Size(1148, 49)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "What would you like to do today?"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblExit
+        'lblVenue
         '
-        Me.lblExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblExit.Location = New System.Drawing.Point(579, 390)
-        Me.lblExit.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblExit.Name = "lblExit"
-        Me.lblExit.Size = New System.Drawing.Size(150, 50)
-        Me.lblExit.TabIndex = 10
-        Me.lblExit.Text = "Logout"
-        Me.lblExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblVenue.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVenue.Location = New System.Drawing.Point(185, 481)
+        Me.lblVenue.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblVenue.Name = "lblVenue"
+        Me.lblVenue.Size = New System.Drawing.Size(200, 62)
+        Me.lblVenue.TabIndex = 14
+        Me.lblVenue.Text = "View Facilities"
+        Me.lblVenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblView
+        '
+        Me.lblView.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblView.Location = New System.Drawing.Point(647, 481)
+        Me.lblView.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblView.Name = "lblView"
+        Me.lblView.Size = New System.Drawing.Size(200, 62)
+        Me.lblView.TabIndex = 15
+        Me.lblView.Text = "Booking History"
+        Me.lblView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblUser
+        '
+        Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUser.Location = New System.Drawing.Point(878, 481)
+        Me.lblUser.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblUser.Name = "lblUser"
+        Me.lblUser.Size = New System.Drawing.Size(200, 62)
+        Me.lblUser.TabIndex = 20
+        Me.lblUser.Text = "picManagement"
+        Me.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblBooking
+        '
+        Me.lblBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBooking.Location = New System.Drawing.Point(416, 481)
+        Me.lblBooking.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblBooking.Name = "lblBooking"
+        Me.lblBooking.Size = New System.Drawing.Size(200, 62)
+        Me.lblBooking.TabIndex = 22
+        Me.lblBooking.Text = "Make Booking"
+        Me.lblBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picBooking
+        '
+        Me.picBooking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picBooking.Image = Global.FBS.My.Resources.Resources.Book
+        Me.picBooking.Location = New System.Drawing.Point(417, 280)
+        Me.picBooking.Margin = New System.Windows.Forms.Padding(16)
+        Me.picBooking.Name = "picBooking"
+        Me.picBooking.Size = New System.Drawing.Size(199, 200)
+        Me.picBooking.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picBooking.TabIndex = 21
+        Me.picBooking.TabStop = False
+        '
+        'picUser
+        '
+        Me.picUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picUser.Image = Global.FBS.My.Resources.Resources.User
+        Me.picUser.Location = New System.Drawing.Point(879, 281)
+        Me.picUser.Margin = New System.Windows.Forms.Padding(16)
+        Me.picUser.Name = "picUser"
+        Me.picUser.Size = New System.Drawing.Size(199, 200)
+        Me.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picUser.TabIndex = 19
+        Me.picUser.TabStop = False
+        '
+        'picView
+        '
+        Me.picView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picView.Image = Global.FBS.My.Resources.Resources.Time
+        Me.picView.Location = New System.Drawing.Point(648, 280)
+        Me.picView.Margin = New System.Windows.Forms.Padding(16)
+        Me.picView.Name = "picView"
+        Me.picView.Size = New System.Drawing.Size(199, 200)
+        Me.picView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picView.TabIndex = 12
+        Me.picView.TabStop = False
         '
         'picExit
         '
         Me.picExit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picExit.Image = Global.FBS.My.Resources.Resources._Exit
-        Me.picExit.Location = New System.Drawing.Point(579, 228)
-        Me.picExit.Margin = New System.Windows.Forms.Padding(12, 13, 12, 13)
+        Me.picExit.Location = New System.Drawing.Point(1187, 25)
+        Me.picExit.Margin = New System.Windows.Forms.Padding(16)
         Me.picExit.Name = "picExit"
-        Me.picExit.Size = New System.Drawing.Size(150, 163)
-        Me.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picExit.Size = New System.Drawing.Size(50, 50)
+        Me.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picExit.TabIndex = 7
         Me.picExit.TabStop = False
         '
@@ -89,86 +160,25 @@ Partial Class Main
         '
         Me.picVenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picVenue.Image = Global.FBS.My.Resources.Resources.Home
-        Me.picVenue.Location = New System.Drawing.Point(231, 228)
-        Me.picVenue.Margin = New System.Windows.Forms.Padding(12, 13, 12, 13)
+        Me.picVenue.Location = New System.Drawing.Point(186, 280)
+        Me.picVenue.Margin = New System.Windows.Forms.Padding(16)
         Me.picVenue.Name = "picVenue"
-        Me.picVenue.Size = New System.Drawing.Size(150, 163)
+        Me.picVenue.Size = New System.Drawing.Size(199, 200)
         Me.picVenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.picVenue.TabIndex = 13
         Me.picVenue.TabStop = False
         '
-        'lblVenue
-        '
-        Me.lblVenue.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVenue.Location = New System.Drawing.Point(231, 390)
-        Me.lblVenue.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblVenue.Name = "lblVenue"
-        Me.lblVenue.Size = New System.Drawing.Size(150, 50)
-        Me.lblVenue.TabIndex = 14
-        Me.lblVenue.Text = "View Facilities"
-        Me.lblVenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'picView
-        '
-        Me.picView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picView.Image = Global.FBS.My.Resources.Resources.Book
-        Me.picView.Location = New System.Drawing.Point(405, 228)
-        Me.picView.Margin = New System.Windows.Forms.Padding(12, 13, 12, 13)
-        Me.picView.Name = "picView"
-        Me.picView.Size = New System.Drawing.Size(150, 163)
-        Me.picView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.picView.TabIndex = 12
-        Me.picView.TabStop = False
-        '
-        'lblView
-        '
-        Me.lblView.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblView.Location = New System.Drawing.Point(405, 390)
-        Me.lblView.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblView.Name = "lblView"
-        Me.lblView.Size = New System.Drawing.Size(150, 50)
-        Me.lblView.TabIndex = 15
-        Me.lblView.Text = "Make a Booking"
-        Me.lblView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(12, 74)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(133, 23)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Booking Management"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(24, 124)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 23)
-        Me.Button2.TabIndex = 17
-        Me.Button2.Text = "User Management"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(12, 165)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(168, 23)
-        Me.Button3.TabIndex = 18
-        Me.Button3.Text = "Update Payment Status"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(946, 547)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.lblBooking)
+        Me.Controls.Add(Me.picBooking)
+        Me.Controls.Add(Me.lblUser)
+        Me.Controls.Add(Me.picUser)
         Me.Controls.Add(Me.lblView)
-        Me.Controls.Add(Me.lblExit)
         Me.Controls.Add(Me.picView)
         Me.Controls.Add(Me.picExit)
         Me.Controls.Add(Me.lblVenue)
@@ -177,13 +187,16 @@ Partial Class Main
         Me.Controls.Add(Me.lblName)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Main"
+        Me.Text = "Home"
+        CType(Me.picBooking, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picUser, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picVenue, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -191,12 +204,12 @@ Partial Class Main
     Friend WithEvents lblName As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents picExit As PictureBox
-    Friend WithEvents lblExit As Label
     Friend WithEvents picVenue As PictureBox
     Friend WithEvents lblVenue As Label
     Friend WithEvents picView As PictureBox
     Friend WithEvents lblView As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents lblUser As Label
+    Friend WithEvents picUser As PictureBox
+    Friend WithEvents lblBooking As Label
+    Friend WithEvents picBooking As PictureBox
 End Class

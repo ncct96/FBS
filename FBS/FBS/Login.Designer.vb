@@ -132,7 +132,7 @@ Partial Class Login
         'picLogo
         '
         Me.picLogo.Image = Global.FBS.My.Resources.Resources.FBS
-        Me.picLogo.Location = New System.Drawing.Point(532, 43)
+        Me.picLogo.Location = New System.Drawing.Point(540, 43)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(200, 200)
         Me.picLogo.TabIndex = 6
