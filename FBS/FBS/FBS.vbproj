@@ -132,6 +132,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookingDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CancellationSummary.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CancellationSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DailyRpt.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,18 +154,6 @@
     </Compile>
     <Compile Include="DeleteAccount.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacilitiesReport.Designer.vb">
-      <DependentUpon>FacilitiesReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FacilitiesReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacilitiesSummary.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FacilitiesSummary.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FBSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -275,19 +269,16 @@
     <EmbeddedResource Include="AdminVenue.resx">
       <DependentUpon>AdminVenue.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CancellationSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CancellationSummary.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DailyRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DailyRpt.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteAccount.resx">
       <DependentUpon>DeleteAccount.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacilitiesReport.resx">
-      <DependentUpon>FacilitiesReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacilitiesSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>FacilitiesSummary.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBooking.resx">
       <DependentUpon>FrmBooking.vb</DependentUpon>
