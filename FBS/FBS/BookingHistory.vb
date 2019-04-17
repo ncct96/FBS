@@ -3,11 +3,13 @@
 Public Class BookingHistory
     Dim stringCon As String = My.Settings.FBSConnectionString
     Dim connection As New SqlConnection(stringCon)
+    Dim emptyString As String = ""
     Private Sub BookingHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'FBSDataSet.Venue' table. You can move, or remove it, as needed.
         Me.VenueTableAdapter.Fill(Me.FBSDataSet.Venue)
         'TODO: This line of code loads data into the 'FBSDataSet.Booking' table. You can move, or remove it, as needed.
         Me.BookingTableAdapter.Fill(FBSDataSet.Booking, GlobalVars.currentUser)
+        emptyString = ComboBox1.SelectedValue.ToString
     End Sub
 
     Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)
@@ -23,12 +25,12 @@ Public Class BookingHistory
         Dim searchQuery As String = ""
         Try
             If OngoingFilter.Checked Then
-                searchQuery = "SELECT b.BookingDate, b.BookingTime, b.VisitDate, b.BookingCharges FROM BOOKING b, Timeslot t, Venue v WHERE
+                searchQuery = "SELECT b.BookingID, v.VenueType AS 'Venue', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged' FROM BOOKING b, Timeslot t, Venue v WHERE
                 b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
                 b.Status = 'Pending' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
 			    (SELECT VenueID from Venue where VenueType = @venue)"
             ElseIf CompletedFilter.Checked Then
-                searchQuery = "SELECT b.BookingDate, b.BookingTime, b.VisitDate, b.BookingCharges FROM BOOKING b, Timeslot t, Venue v WHERE
+                searchQuery = "SELECT b.BookingID, v.VenueType AS 'Venue', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged' FROM BOOKING b, Timeslot t, Venue v WHERE
                 b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
                 b.Status = 'Paid' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName) AND v.VenueID = 
 			    (SELECT VenueID from Venue where VenueType = @venue)"
@@ -41,6 +43,7 @@ Public Class BookingHistory
                 Dim table As New DataTable()
                 adapter.Fill(table)
                 BookingHistGrid.DataSource = table
+                'refreshData()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.ToString, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -48,26 +51,51 @@ Public Class BookingHistory
 
     End Sub
 
+    Private Sub refreshData()
+        BookingBindingSource.DataSource = BookingTableAdapter.GetData(GlobalVars.currentUser)
+        BookingBindingSource.ResetBindings(True)
+    End Sub
+
     Private Sub OngoingFilter_CheckedChanged(sender As Object, e As EventArgs) Handles OngoingFilter.CheckedChanged
-        Dim ongoingQuery As String = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE Status = 'Pending' AND 
-CustID = (SELECT CustID FROM Customer WHERE CustName = @custName1)"
-        Dim ongoingCommand As New SqlCommand(ongoingQuery, connection)
-        ongoingCommand.Parameters.AddWithValue("@custName1", GlobalVars.currentUser)
-        Dim adapter As New SqlDataAdapter(ongoingCommand)
-        Dim table As New DataTable()
-        adapter.Fill(table)
-        BookingHistGrid.DataSource = table
+        'Dim venueSelected As String = If(ComboBox1.SelectedIndex.ToString, "")
+        ' Dim ongoingQuery As String
+        ' ongoingQuery = "SELECT b.BookingID, v.VenueType AS 'Venue', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged' FROM BOOKING b, Timeslot t, Venue v WHERE
+        '         b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
+        '         b.Status = 'Paid' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName1) AND v.VenueID = 
+        '(SELECT VenueID from Venue where VenueType = @venue1)"
+        ' Dim ongoingCommand As New SqlCommand(ongoingQuery, connection)
+        ' ongoingCommand.Parameters.AddWithValue("@custName1", GlobalVars.currentUser)
+        ' ongoingCommand.Parameters.AddWithValue("@venue1", venueSelected)
+        ' Dim adapter As New SqlDataAdapter(ongoingCommand)
+        ' Dim table As New DataTable()
+        ' adapter.Fill(table)
+        ' BookingHistGrid.DataSource = table
+        'refreshData()
+        If Not emptyString.Equals("") Then
+            filterData(emptyString)
+        End If
+
     End Sub
 
     Private Sub CompletedFilter_CheckedChanged(sender As Object, e As EventArgs) Handles CompletedFilter.CheckedChanged
-        Dim completedQuery As String = "SELECT BookingDate, BookingTime, VisitDate, BookingCharges FROM BOOKING WHERE Status = 'Paid' AND 
-CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
-        Dim completedCommand As New SqlCommand(completedQuery, connection)
-        completedCommand.Parameters.AddWithValue("@custName2", GlobalVars.currentUser)
-        Dim adapter As New SqlDataAdapter(completedCommand)
-        Dim table As New DataTable()
-        adapter.Fill(table)
-        BookingHistGrid.DataSource = table
+        'Dim venueSelected As String = If(ComboBox1.SelectedIndex.ToString, "")
+        ' Dim completedQuery As String
+        ' completedQuery = "SELECT b.BookingID, v.VenueType AS 'Venue', b.VisitDate AS 'Booking Date', b.BookingCharges AS 'Fees Charged' FROM BOOKING b, Timeslot t, Venue v WHERE
+        '         b.SlotID = t.SlotID and v.VenueID = t.SlotID and 
+        '         b.Status = 'Paid' AND b.CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2) AND v.VenueID = 
+        '(SELECT VenueID from Venue where VenueType = @venue2)"
+        ' Dim completedCommand As New SqlCommand(completedQuery, connection)
+        ' completedCommand.Parameters.AddWithValue("@custName2", GlobalVars.currentUser)
+        ' completedCommand.Parameters.AddWithValue("@venue2", venueSelected)
+        ' Dim adapter As New SqlDataAdapter(completedCommand)
+        ' Dim table As New DataTable()
+        ' adapter.Fill(table)
+        ' BookingHistGrid.DataSource = table
+        ' ' refreshData()
+        If Not emptyString.Equals("") Then
+            filterData(emptyString)
+        End If
+
     End Sub
 
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
@@ -91,23 +119,9 @@ CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
         End If
     End Sub
 
-    'Private Sub BookingHistGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BookingHistGrid.CellContentDoubleClick
-    '    If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
-    '        Dim popup As New PopUp
-    '        Try
-    '            popup.updateDateTime.DataBindings.Add("Value", BookingHistGrid.DataSource, "VisitDate")
-    '            If popup.ShowDialog = Windows.Forms.DialogResult.OK Then
-    '                ' Update Queries here
-    '                Dim updateQuery As String = "UPDATE BOOKING SET VisitDate = @value"
-    '            End If
-    '        Catch ex As Exception
-
-    '        End Try
-    '    End If
-    'End Sub
-
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        Dim searchIndex As String = ComboBox1.SelectedValue.ToString
+        Dim searchIndex As String = If(ComboBox1.SelectedValue.ToString, "")
+        emptyString = searchIndex
         filterData(searchIndex)
     End Sub
 End Class

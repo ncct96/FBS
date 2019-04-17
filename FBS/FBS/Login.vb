@@ -83,7 +83,7 @@ Public Class Login
                 Me.Show()
             End If
         Catch ex As Exception
-
+            MessageBox.Show(ex.ToString, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
