@@ -9,7 +9,7 @@ Public Class DeleteAccount
         CustomerBindingSource.DataSource = CustomerTableAdapter.GetData
     End Sub
 
-    Private Sub searchTxt_TextChanged(sender As Object, e As EventArgs) Handles searchTxt.TextChanged
+    Private Sub searchTxt_TextChanged(sender As Object, e As EventArgs)
         Dim searchVal As String = If(CStr(searchTxt.Text), "")
         If Not searchVal.Equals("") Then
             searchData(searchVal)
