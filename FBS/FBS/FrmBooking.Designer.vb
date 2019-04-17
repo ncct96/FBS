@@ -38,7 +38,6 @@ Partial Class FrmBooking
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lblRate = New System.Windows.Forms.Label()
         Me.VenueBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnBook = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblPicture = New System.Windows.Forms.PictureBox()
@@ -86,7 +85,7 @@ Partial Class FrmBooking
         Me.lstTimeslot.FormattingEnabled = True
         Me.lstTimeslot.ItemHeight = 24
         Me.lstTimeslot.Location = New System.Drawing.Point(140, 280)
-        Me.lstTimeslot.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.lstTimeslot.Margin = New System.Windows.Forms.Padding(6)
         Me.lstTimeslot.Name = "lstTimeslot"
         Me.lstTimeslot.Size = New System.Drawing.Size(338, 100)
         Me.lstTimeslot.TabIndex = 38
@@ -176,7 +175,7 @@ Partial Class FrmBooking
         Me.lblRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRate.Location = New System.Drawing.Point(140, 200)
-        Me.lblRate.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.lblRate.Margin = New System.Windows.Forms.Padding(6)
         Me.lblRate.Name = "lblRate"
         Me.lblRate.Size = New System.Drawing.Size(251, 27)
         Me.lblRate.TabIndex = 35
@@ -186,17 +185,6 @@ Partial Class FrmBooking
         '
         Me.VenueBindingSource1.DataMember = "Venue"
         Me.VenueBindingSource1.DataSource = Me.VenueDSBindingSource
-        '
-        'btnCancel
-        '
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(483, 505)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(112, 41)
-        Me.btnCancel.TabIndex = 32
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnBook
         '
@@ -241,7 +229,7 @@ Partial Class FrmBooking
         Me.cbActivityType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbActivityType.FormattingEnabled = True
         Me.cbActivityType.Location = New System.Drawing.Point(140, 114)
-        Me.cbActivityType.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.cbActivityType.Margin = New System.Windows.Forms.Padding(6)
         Me.cbActivityType.Name = "cbActivityType"
         Me.cbActivityType.Size = New System.Drawing.Size(338, 32)
         Me.cbActivityType.TabIndex = 34
@@ -259,7 +247,7 @@ Partial Class FrmBooking
         Me.cbVenue.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVenue.FormattingEnabled = True
         Me.cbVenue.Location = New System.Drawing.Point(140, 157)
-        Me.cbVenue.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.cbVenue.Margin = New System.Windows.Forms.Padding(6)
         Me.cbVenue.Name = "cbVenue"
         Me.cbVenue.Size = New System.Drawing.Size(338, 32)
         Me.cbVenue.TabIndex = 29
@@ -300,7 +288,7 @@ Partial Class FrmBooking
         Me.dtpBooking.Checked = False
         Me.dtpBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpBooking.Location = New System.Drawing.Point(140, 240)
-        Me.dtpBooking.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.dtpBooking.Margin = New System.Windows.Forms.Padding(6)
         Me.dtpBooking.MinDate = New Date(2019, 3, 18, 0, 0, 0, 0)
         Me.dtpBooking.Name = "dtpBooking"
         Me.dtpBooking.Size = New System.Drawing.Size(338, 29)
@@ -333,7 +321,7 @@ Partial Class FrmBooking
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.Location = New System.Drawing.Point(9, 10)
-        Me.btnBack.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBack.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 32)
         Me.btnBack.TabIndex = 62
@@ -351,7 +339,6 @@ Partial Class FrmBooking
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblRate)
-        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnBook)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblPicture)
@@ -395,7 +382,6 @@ Partial Class FrmBooking
     Friend WithEvents Label11 As Label
     Friend WithEvents lblRate As Label
     Friend WithEvents VenueBindingSource1 As BindingSource
-    Friend WithEvents btnCancel As Button
     Friend WithEvents btnBook As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents VenueBindingSource As BindingSource

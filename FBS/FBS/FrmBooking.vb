@@ -196,7 +196,7 @@ Public Class FrmBooking
         Return rate
     End Function
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) 
         initSlotName()
         CheckSlot()
         resetSlot()
