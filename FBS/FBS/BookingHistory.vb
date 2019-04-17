@@ -75,7 +75,7 @@ CustID = (SELECT CustID FROM Customer WHERE CustName = @custName2)"
 
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
         If BookingHistGrid.SelectedRows.Count > 0 Then
-            Dim deleteRow As String = Me.BookingHistGrid.SelectedRows(0).Cells("BookingID").Value.ToString
+            Dim deleteRow As String = Me.BookingHistGrid.SelectedRows(0).Cells(0).Value.ToString
             Dim result As Integer = MessageBox.Show("Are you sure to cancel this booking?", "Cancel Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If result = DialogResult.OK Then
                 connection.Open()

@@ -84,40 +84,37 @@ Partial Class FrmBooking
         '
         Me.lstTimeslot.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstTimeslot.FormattingEnabled = True
-        Me.lstTimeslot.ItemHeight = 29
-        Me.lstTimeslot.Location = New System.Drawing.Point(187, 345)
-        Me.lstTimeslot.Margin = New System.Windows.Forms.Padding(8)
+        Me.lstTimeslot.ItemHeight = 24
+        Me.lstTimeslot.Location = New System.Drawing.Point(140, 280)
+        Me.lstTimeslot.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.lstTimeslot.Name = "lstTimeslot"
-        Me.lstTimeslot.Size = New System.Drawing.Size(449, 33)
+        Me.lstTimeslot.Size = New System.Drawing.Size(338, 76)
         Me.lstTimeslot.TabIndex = 38
         '
         'lblTotalPayment
         '
         Me.lblTotalPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotalPayment.Location = New System.Drawing.Point(204, 89)
-        Me.lblTotalPayment.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotalPayment.Location = New System.Drawing.Point(153, 72)
         Me.lblTotalPayment.Name = "lblTotalPayment"
-        Me.lblTotalPayment.Size = New System.Drawing.Size(190, 31)
+        Me.lblTotalPayment.Size = New System.Drawing.Size(143, 26)
         Me.lblTotalPayment.TabIndex = 22
         Me.lblTotalPayment.Text = "RM"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(23, 89)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(17, 72)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(173, 29)
+        Me.Label9.Size = New System.Drawing.Size(134, 24)
         Me.Label9.TabIndex = 21
         Me.Label9.Text = "Total Payment:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(398, 44)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(298, 36)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(24, 29)
+        Me.Label4.Size = New System.Drawing.Size(20, 24)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "x"
         '
@@ -130,11 +127,9 @@ Partial Class FrmBooking
         Me.GroupBox2.Controls.Add(Me.lblPrice)
         Me.GroupBox2.Controls.Add(Me.lblHour)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(187, 432)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Location = New System.Drawing.Point(140, 365)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(527, 133)
+        Me.GroupBox2.Size = New System.Drawing.Size(395, 108)
         Me.GroupBox2.TabIndex = 37
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Price Summary"
@@ -142,30 +137,27 @@ Partial Class FrmBooking
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(23, 44)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(17, 36)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(75, 29)
+        Me.Label8.Size = New System.Drawing.Size(58, 24)
         Me.Label8.TabIndex = 18
         Me.Label8.Text = "Price:"
         '
         'lblPrice
         '
         Me.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblPrice.Location = New System.Drawing.Point(204, 44)
-        Me.lblPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPrice.Location = New System.Drawing.Point(153, 36)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(190, 31)
+        Me.lblPrice.Size = New System.Drawing.Size(143, 26)
         Me.lblPrice.TabIndex = 19
         Me.lblPrice.Text = "RM"
         '
         'lblHour
         '
         Me.lblHour.AutoSize = True
-        Me.lblHour.Location = New System.Drawing.Point(420, 44)
-        Me.lblHour.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblHour.Location = New System.Drawing.Point(315, 36)
         Me.lblHour.Name = "lblHour"
-        Me.lblHour.Size = New System.Drawing.Size(89, 29)
+        Me.lblHour.Size = New System.Drawing.Size(70, 24)
         Me.lblHour.TabIndex = 17
         Me.lblHour.Text = "hour(s)"
         '
@@ -173,10 +165,9 @@ Partial Class FrmBooking
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(533, 247)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(400, 201)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(103, 29)
+        Me.Label11.Size = New System.Drawing.Size(82, 24)
         Me.Label11.TabIndex = 36
         Me.Label11.Text = "per hour"
         '
@@ -184,10 +175,10 @@ Partial Class FrmBooking
         '
         Me.lblRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRate.Location = New System.Drawing.Point(187, 246)
-        Me.lblRate.Margin = New System.Windows.Forms.Padding(8)
+        Me.lblRate.Location = New System.Drawing.Point(140, 200)
+        Me.lblRate.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.lblRate.Name = "lblRate"
-        Me.lblRate.Size = New System.Drawing.Size(334, 33)
+        Me.lblRate.Size = New System.Drawing.Size(251, 27)
         Me.lblRate.TabIndex = 35
         Me.lblRate.Text = "RM"
         '
@@ -200,10 +191,9 @@ Partial Class FrmBooking
         '
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(644, 610)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Location = New System.Drawing.Point(483, 496)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(150, 50)
+        Me.btnCancel.Size = New System.Drawing.Size(112, 41)
         Me.btnCancel.TabIndex = 32
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -212,10 +202,9 @@ Partial Class FrmBooking
         '
         Me.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook.Location = New System.Drawing.Point(486, 610)
-        Me.btnBook.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBook.Location = New System.Drawing.Point(364, 496)
         Me.btnBook.Name = "btnBook"
-        Me.btnBook.Size = New System.Drawing.Size(150, 50)
+        Me.btnBook.Size = New System.Drawing.Size(112, 41)
         Me.btnBook.TabIndex = 31
         Me.btnBook.Text = "Book"
         Me.btnBook.UseVisualStyleBackColor = True
@@ -224,20 +213,18 @@ Partial Class FrmBooking
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(83, 143)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(62, 116)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(92, 29)
+        Me.Label6.Size = New System.Drawing.Size(72, 24)
         Me.Label6.TabIndex = 33
         Me.Label6.Text = "Activity:"
         '
         'lblPicture
         '
         Me.lblPicture.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.VenueBindingSource, "VenuePicture", True))
-        Me.lblPicture.Location = New System.Drawing.Point(672, 124)
-        Me.lblPicture.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblPicture.Location = New System.Drawing.Point(511, 112)
         Me.lblPicture.Name = "lblPicture"
-        Me.lblPicture.Size = New System.Drawing.Size(480, 300)
+        Me.lblPicture.Size = New System.Drawing.Size(360, 244)
         Me.lblPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.lblPicture.TabIndex = 30
         Me.lblPicture.TabStop = False
@@ -253,10 +240,10 @@ Partial Class FrmBooking
         Me.cbActivityType.DisplayMember = "VenueType"
         Me.cbActivityType.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbActivityType.FormattingEnabled = True
-        Me.cbActivityType.Location = New System.Drawing.Point(187, 140)
-        Me.cbActivityType.Margin = New System.Windows.Forms.Padding(8)
+        Me.cbActivityType.Location = New System.Drawing.Point(140, 114)
+        Me.cbActivityType.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.cbActivityType.Name = "cbActivityType"
-        Me.cbActivityType.Size = New System.Drawing.Size(449, 37)
+        Me.cbActivityType.Size = New System.Drawing.Size(338, 32)
         Me.cbActivityType.TabIndex = 34
         Me.cbActivityType.ValueMember = "VenueType"
         '
@@ -271,10 +258,10 @@ Partial Class FrmBooking
         Me.cbVenue.DisplayMember = "VenueName"
         Me.cbVenue.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVenue.FormattingEnabled = True
-        Me.cbVenue.Location = New System.Drawing.Point(187, 193)
-        Me.cbVenue.Margin = New System.Windows.Forms.Padding(8)
+        Me.cbVenue.Location = New System.Drawing.Point(140, 157)
+        Me.cbVenue.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.cbVenue.Name = "cbVenue"
-        Me.cbVenue.Size = New System.Drawing.Size(449, 37)
+        Me.cbVenue.Size = New System.Drawing.Size(338, 32)
         Me.cbVenue.TabIndex = 29
         Me.cbVenue.ValueMember = "VenueID"
         '
@@ -282,10 +269,9 @@ Partial Class FrmBooking
         '
         Me.lblVenue.AutoSize = True
         Me.lblVenue.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVenue.Location = New System.Drawing.Point(87, 196)
-        Me.lblVenue.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblVenue.Location = New System.Drawing.Point(65, 159)
         Me.lblVenue.Name = "lblVenue"
-        Me.lblVenue.Size = New System.Drawing.Size(88, 29)
+        Me.lblVenue.Size = New System.Drawing.Size(72, 24)
         Me.lblVenue.TabIndex = 28
         Me.lblVenue.Text = "Venue:"
         '
@@ -293,10 +279,9 @@ Partial Class FrmBooking
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(106, 300)
-        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDate.Location = New System.Drawing.Point(80, 244)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(69, 29)
+        Me.lblDate.Size = New System.Drawing.Size(53, 24)
         Me.lblDate.TabIndex = 27
         Me.lblDate.Text = "Date:"
         '
@@ -304,10 +289,9 @@ Partial Class FrmBooking
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(100, 345)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(75, 280)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 29)
+        Me.Label2.Size = New System.Drawing.Size(58, 24)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Time:"
         '
@@ -315,11 +299,11 @@ Partial Class FrmBooking
         '
         Me.dtpBooking.Checked = False
         Me.dtpBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpBooking.Location = New System.Drawing.Point(187, 295)
-        Me.dtpBooking.Margin = New System.Windows.Forms.Padding(8)
+        Me.dtpBooking.Location = New System.Drawing.Point(140, 240)
+        Me.dtpBooking.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.dtpBooking.MinDate = New Date(2019, 3, 18, 0, 0, 0, 0)
         Me.dtpBooking.Name = "dtpBooking"
-        Me.dtpBooking.Size = New System.Drawing.Size(449, 34)
+        Me.dtpBooking.Size = New System.Drawing.Size(338, 29)
         Me.dtpBooking.TabIndex = 25
         '
         'Label1
@@ -327,10 +311,9 @@ Partial Class FrmBooking
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.Window
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(396, 23)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(297, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(470, 69)
+        Me.Label1.Size = New System.Drawing.Size(383, 55)
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "Make a Booking"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -349,19 +332,20 @@ Partial Class FrmBooking
         Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Location = New System.Drawing.Point(9, 10)
+        Me.btnBack.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(100, 40)
+        Me.btnBack.Size = New System.Drawing.Size(75, 32)
         Me.btnBack.TabIndex = 62
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = True
         '
         'FrmBooking
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.ClientSize = New System.Drawing.Size(946, 547)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.lstTimeslot)
         Me.Controls.Add(Me.GroupBox2)
@@ -379,7 +363,6 @@ Partial Class FrmBooking
         Me.Controls.Add(Me.dtpBooking)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "FrmBooking"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

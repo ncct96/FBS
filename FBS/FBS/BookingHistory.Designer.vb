@@ -43,6 +43,7 @@ Partial Class BookingHistory
         Me.VenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BookingDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FeesChargedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.showGrpBox.SuspendLayout()
         Me.advanceGrpBox.SuspendLayout()
         CType(Me.VenueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,11 +56,9 @@ Partial Class BookingHistory
         '
         Me.showGrpBox.Controls.Add(Me.CompletedFilter)
         Me.showGrpBox.Controls.Add(Me.OngoingFilter)
-        Me.showGrpBox.Location = New System.Drawing.Point(16, 161)
-        Me.showGrpBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.showGrpBox.Location = New System.Drawing.Point(12, 131)
         Me.showGrpBox.Name = "showGrpBox"
-        Me.showGrpBox.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.showGrpBox.Size = New System.Drawing.Size(224, 100)
+        Me.showGrpBox.Size = New System.Drawing.Size(168, 81)
         Me.showGrpBox.TabIndex = 2
         Me.showGrpBox.TabStop = False
         Me.showGrpBox.Text = "Show Booking :"
@@ -67,10 +66,9 @@ Partial Class BookingHistory
         'CompletedFilter
         '
         Me.CompletedFilter.AutoSize = True
-        Me.CompletedFilter.Location = New System.Drawing.Point(27, 64)
-        Me.CompletedFilter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CompletedFilter.Location = New System.Drawing.Point(20, 52)
         Me.CompletedFilter.Name = "CompletedFilter"
-        Me.CompletedFilter.Size = New System.Drawing.Size(57, 21)
+        Me.CompletedFilter.Size = New System.Drawing.Size(46, 17)
         Me.CompletedFilter.TabIndex = 1
         Me.CompletedFilter.Text = "Paid"
         Me.CompletedFilter.UseVisualStyleBackColor = True
@@ -79,10 +77,9 @@ Partial Class BookingHistory
         '
         Me.OngoingFilter.AutoSize = True
         Me.OngoingFilter.Checked = True
-        Me.OngoingFilter.Location = New System.Drawing.Point(27, 36)
-        Me.OngoingFilter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OngoingFilter.Location = New System.Drawing.Point(20, 29)
         Me.OngoingFilter.Name = "OngoingFilter"
-        Me.OngoingFilter.Size = New System.Drawing.Size(81, 21)
+        Me.OngoingFilter.Size = New System.Drawing.Size(64, 17)
         Me.OngoingFilter.TabIndex = 0
         Me.OngoingFilter.TabStop = True
         Me.OngoingFilter.Text = "Pending"
@@ -92,11 +89,9 @@ Partial Class BookingHistory
         '
         Me.advanceGrpBox.Controls.Add(Me.ComboBox1)
         Me.advanceGrpBox.Controls.Add(Me.Label1)
-        Me.advanceGrpBox.Location = New System.Drawing.Point(16, 31)
-        Me.advanceGrpBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.advanceGrpBox.Location = New System.Drawing.Point(12, 25)
         Me.advanceGrpBox.Name = "advanceGrpBox"
-        Me.advanceGrpBox.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.advanceGrpBox.Size = New System.Drawing.Size(256, 123)
+        Me.advanceGrpBox.Size = New System.Drawing.Size(192, 100)
         Me.advanceGrpBox.TabIndex = 3
         Me.advanceGrpBox.TabStop = False
         Me.advanceGrpBox.Text = "Search : "
@@ -107,10 +102,9 @@ Partial Class BookingHistory
         Me.ComboBox1.DisplayMember = "VenueType"
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(27, 66)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox1.Location = New System.Drawing.Point(20, 54)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(196, 32)
+        Me.ComboBox1.Size = New System.Drawing.Size(148, 26)
         Me.ComboBox1.TabIndex = 5
         Me.ComboBox1.ValueMember = "VenueType"
         '
@@ -127,21 +121,19 @@ Partial Class BookingHistory
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(23, 30)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(17, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(217, 17)
+        Me.Label1.Size = New System.Drawing.Size(164, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Select the Venue for Searching : "
         '
         'deleteBtn
         '
-        Me.deleteBtn.Location = New System.Drawing.Point(69, 326)
-        Me.deleteBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.deleteBtn.Location = New System.Drawing.Point(49, 247)
         Me.deleteBtn.Name = "deleteBtn"
-        Me.deleteBtn.Size = New System.Drawing.Size(133, 62)
+        Me.deleteBtn.Size = New System.Drawing.Size(100, 50)
         Me.deleteBtn.TabIndex = 4
-        Me.deleteBtn.Text = "Delete"
+        Me.deleteBtn.Text = "Cancel"
         Me.deleteBtn.UseVisualStyleBackColor = True
         '
         'BookingBindingSource
@@ -179,14 +171,13 @@ Partial Class BookingHistory
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.BookingHistGrid.DefaultCellStyle = DataGridViewCellStyle2
-        Me.BookingHistGrid.Location = New System.Drawing.Point(280, 31)
-        Me.BookingHistGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BookingHistGrid.Location = New System.Drawing.Point(210, 25)
         Me.BookingHistGrid.Name = "BookingHistGrid"
         Me.BookingHistGrid.ReadOnly = True
         Me.BookingHistGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.BookingHistGrid.RowHeadersVisible = False
         Me.BookingHistGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BookingHistGrid.Size = New System.Drawing.Size(584, 393)
+        Me.BookingHistGrid.Size = New System.Drawing.Size(438, 319)
         Me.BookingHistGrid.TabIndex = 1
         '
         'BookingID
@@ -217,19 +208,30 @@ Partial Class BookingHistory
         Me.FeesChargedDataGridViewTextBoxColumn.Name = "FeesChargedDataGridViewTextBoxColumn"
         Me.FeesChargedDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'Label2
+        '
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 300)
+        Me.Label2.MinimumSize = New System.Drawing.Size(30, 70)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(175, 70)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "*Please note that you only can cancel booking 3 days before the appointment date"
+        '
         'BookingHistory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.ClientSize = New System.Drawing.Size(946, 547)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.deleteBtn)
         Me.Controls.Add(Me.advanceGrpBox)
         Me.Controls.Add(Me.showGrpBox)
         Me.Controls.Add(Me.BookingHistGrid)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "BookingHistory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -264,4 +266,5 @@ Partial Class BookingHistory
     Friend WithEvents VenueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BookingDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FeesChargedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As Label
 End Class
