@@ -34,6 +34,7 @@ Public Class FrmBooking
         Dim ID As Integer
         Dim result As Integer = MessageBox.Show("Confirm your booking?", "Booking Confirmation", MessageBoxButtons.YesNoCancel)
         If result = DialogResult.No Then
+            IsX = False
             Me.Close()
         ElseIf result = DialogResult.Yes Then
             insertBooking(ID)
@@ -132,7 +133,18 @@ Public Class FrmBooking
 
             rate = CDbl(cmd.ExecuteScalar)
 
+            conn.Close()
 
+            Dim picSQL As String = "SELECT VenuePicture FROM Venue WHERE VenueID = @ID"
+            Dim comm As New SqlCommand(picSQL, conn)
+            comm.Parameters.AddWithValue("@ID", cbVenue.SelectedValue)
+
+            conn.Open()
+
+            Dim pic As Byte() = comm.ExecuteScalar
+            lblPicture.Image = Image.FromStream(New IO.MemoryStream(pic))
+
+            conn.Close()
             totalPayment = CalcTotalPymt(rate)
             lblTotalPayment.Text = "RM " & Format(totalPayment, "f")
             lblRate.Text = "RM " & Format(rate, "f")
@@ -228,5 +240,17 @@ Public Class FrmBooking
         CheckSlot()
         resetSlot()
         initAvailableSlot()
+    End Sub
+
+    Private IsX As Boolean = True
+    Private Sub OnFormClose(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If CBool(IsX) Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub GoBack(sender As Object, e As EventArgs) Handles btnBack.Click
+        IsX = False
+        Me.Close()
     End Sub
 End Class
