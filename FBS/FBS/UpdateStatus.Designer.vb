@@ -27,6 +27,7 @@ Partial Class UpdateStatus
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UpdateStatus))
         Me.UpdatePayGrid = New System.Windows.Forms.DataGridView()
         Me.BookingIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BookingDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,7 +73,7 @@ Partial Class UpdateStatus
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.UpdatePayGrid.DefaultCellStyle = DataGridViewCellStyle3
-        Me.UpdatePayGrid.Location = New System.Drawing.Point(13, 13)
+        Me.UpdatePayGrid.Location = New System.Drawing.Point(15, 13)
         Me.UpdatePayGrid.Margin = New System.Windows.Forms.Padding(4)
         Me.UpdatePayGrid.Name = "UpdatePayGrid"
         Me.UpdatePayGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -86,7 +87,7 @@ Partial Class UpdateStatus
         Me.UpdatePayGrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.UpdatePayGrid.RowHeadersVisible = False
         Me.UpdatePayGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.UpdatePayGrid.Size = New System.Drawing.Size(503, 282)
+        Me.UpdatePayGrid.Size = New System.Drawing.Size(1219, 562)
         Me.UpdatePayGrid.TabIndex = 0
         '
         'BookingIDDataGridViewTextBoxColumn
@@ -136,23 +137,27 @@ Partial Class UpdateStatus
         '
         'updateBtn
         '
+        Me.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.updateBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.updateBtn.Location = New System.Drawing.Point(426, 302)
+        Me.updateBtn.Location = New System.Drawing.Point(1036, 600)
         Me.updateBtn.Name = "updateBtn"
-        Me.updateBtn.Size = New System.Drawing.Size(90, 32)
+        Me.updateBtn.Size = New System.Drawing.Size(214, 61)
         Me.updateBtn.TabIndex = 2
         Me.updateBtn.Text = "Update"
         Me.updateBtn.UseVisualStyleBackColor = True
         '
         'UpdateStatus
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(531, 338)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.updateBtn)
         Me.Controls.Add(Me.UpdatePayGrid)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
         Me.Name = "UpdateStatus"
         Me.Text = "UpdateStatus"
         CType(Me.UpdatePayGrid, System.ComponentModel.ISupportInitialize).EndInit()
