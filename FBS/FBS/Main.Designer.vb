@@ -140,7 +140,7 @@ Partial Class Main
         Me.picView.Margin = New System.Windows.Forms.Padding(16)
         Me.picView.Name = "picView"
         Me.picView.Size = New System.Drawing.Size(199, 200)
-        Me.picView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picView.TabIndex = 12
         Me.picView.TabStop = False
         '
@@ -152,7 +152,7 @@ Partial Class Main
         Me.picExit.Margin = New System.Windows.Forms.Padding(16)
         Me.picExit.Name = "picExit"
         Me.picExit.Size = New System.Drawing.Size(50, 50)
-        Me.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picExit.TabIndex = 7
         Me.picExit.TabStop = False
         '
