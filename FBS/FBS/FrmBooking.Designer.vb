@@ -88,7 +88,7 @@ Partial Class FrmBooking
         Me.lstTimeslot.Location = New System.Drawing.Point(140, 280)
         Me.lstTimeslot.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.lstTimeslot.Name = "lstTimeslot"
-        Me.lstTimeslot.Size = New System.Drawing.Size(338, 76)
+        Me.lstTimeslot.Size = New System.Drawing.Size(338, 100)
         Me.lstTimeslot.TabIndex = 38
         '
         'lblTotalPayment
@@ -127,7 +127,7 @@ Partial Class FrmBooking
         Me.GroupBox2.Controls.Add(Me.lblPrice)
         Me.GroupBox2.Controls.Add(Me.lblHour)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(140, 365)
+        Me.GroupBox2.Location = New System.Drawing.Point(140, 382)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(395, 108)
         Me.GroupBox2.TabIndex = 37
@@ -191,7 +191,7 @@ Partial Class FrmBooking
         '
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(483, 496)
+        Me.btnCancel.Location = New System.Drawing.Point(483, 505)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(112, 41)
         Me.btnCancel.TabIndex = 32
@@ -202,7 +202,7 @@ Partial Class FrmBooking
         '
         Me.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook.Location = New System.Drawing.Point(364, 496)
+        Me.btnBook.Location = New System.Drawing.Point(365, 505)
         Me.btnBook.Name = "btnBook"
         Me.btnBook.Size = New System.Drawing.Size(112, 41)
         Me.btnBook.TabIndex = 31
@@ -222,7 +222,7 @@ Partial Class FrmBooking
         'lblPicture
         '
         Me.lblPicture.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.VenueBindingSource, "VenuePicture", True))
-        Me.lblPicture.Location = New System.Drawing.Point(511, 112)
+        Me.lblPicture.Location = New System.Drawing.Point(504, 101)
         Me.lblPicture.Name = "lblPicture"
         Me.lblPicture.Size = New System.Drawing.Size(360, 244)
         Me.lblPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -345,7 +345,7 @@ Partial Class FrmBooking
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(946, 547)
+        Me.ClientSize = New System.Drawing.Size(946, 558)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.lstTimeslot)
         Me.Controls.Add(Me.GroupBox2)

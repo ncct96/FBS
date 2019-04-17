@@ -129,11 +129,11 @@ Partial Class BookingHistory
         '
         'deleteBtn
         '
-        Me.deleteBtn.Location = New System.Drawing.Point(49, 247)
+        Me.deleteBtn.Location = New System.Drawing.Point(48, 237)
         Me.deleteBtn.Name = "deleteBtn"
         Me.deleteBtn.Size = New System.Drawing.Size(100, 50)
         Me.deleteBtn.TabIndex = 4
-        Me.deleteBtn.Text = "Cancel"
+        Me.deleteBtn.Text = "Cancel "
         Me.deleteBtn.UseVisualStyleBackColor = True
         '
         'BookingBindingSource
@@ -211,13 +211,13 @@ Partial Class BookingHistory
         'Label2
         '
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 300)
-        Me.Label2.MinimumSize = New System.Drawing.Size(30, 70)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(29, 303)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(175, 70)
+        Me.Label2.Size = New System.Drawing.Size(164, 92)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "*Please note that you only can cancel booking 3 days before the appointment date"
+        Me.Label2.Text = "*Please note that you are only allow to cancel booking that are 3 days before app" &
+    "ointment date"
         '
         'BookingHistory
         '
