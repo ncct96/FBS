@@ -61,4 +61,11 @@
         IsX = False
         Me.Close()
     End Sub
+
+    Private Sub btnReserve_Click(sender As Object, e As EventArgs) Handles btnReserve.Click
+        Dim booking As New FrmBooking
+        Me.Hide()
+        FrmBooking.ShowDialog()
+        Me.Show()
+    End Sub
 End Class
