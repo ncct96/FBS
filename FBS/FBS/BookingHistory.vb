@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class BookingHistory
+    Dim currentDate As Date = Date.Now
     Dim stringCon As String = My.Settings.FBSConnectionString
     Dim connection As New SqlConnection(stringCon)
     Dim emptyString As String = ""
@@ -105,18 +106,41 @@ Public Class BookingHistory
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
         If BookingHistGrid.SelectedRows.Count > 0 Then
             Dim deleteRow As String = Me.BookingHistGrid.SelectedRows(0).Cells(0).Value.ToString
-            Dim result As Integer = MessageBox.Show("Are you sure to cancel this booking?", "Cancel Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-            If result = DialogResult.Yes Then
-                connection.Open()
-                ' Delete Queries here
-                Dim deleteQuery As String = "DELETE FROM Booking WHERE BookingID = @bookId"
-                Dim deleteCommand As New SqlCommand(deleteQuery, connection)
-                deleteCommand.Parameters.AddWithValue("@bookId", deleteRow)
-                deleteCommand.ExecuteNonQuery()
-                MessageBox.Show("Booking Cancelled", "Cancel Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                connection.Close()
-            Else
+            Dim selectDate As Date = Me.BookingHistGrid.SelectedRows(0).Cells(2).Value.ToString
+            Dim diff As Integer
+            diff = (selectDate - currentDate).TotalDays
 
+            Debug.Print(diff)
+
+            If diff >= 3 Then
+                Dim result As Integer = MessageBox.Show("Are you sure to cancel this booking?", "Cancel Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If result = DialogResult.Yes Then
+                    connection.Open()
+                    ' Update Queries here
+                    Dim updateQuery As String = "UPDATE Booking SET Status = @status WHERE BookingID = @bookId"
+                    Dim deleteCommand As New SqlCommand(updateQuery, connection)
+                    deleteCommand.Parameters.AddWithValue("@status", "Cancelled")
+                    deleteCommand.Parameters.AddWithValue("@bookId", deleteRow)
+                    deleteCommand.ExecuteNonQuery()
+                    MessageBox.Show("Booking Cancelled", "Cancel Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    connection.Close()
+
+                    connection.Open()
+                    ' Update Queries here
+                    Dim releaseQuery As String = "UPDATE Timeslot SET Status = @status WHERE BookingID = @bookId"
+                    Dim releaseCommand As New SqlCommand(releaseQuery, connection)
+                    releaseCommand.Parameters.AddWithValue("@status", True)
+                    releaseCommand.Parameters.AddWithValue("@bookId", deleteRow)
+                    releaseCommand.ExecuteNonQuery()
+                    Debug.Print("Slot Released")
+                    connection.Close()
+
+                    refreshData()
+                Else
+
+                End If
+            Else
+                MessageBox.Show("You're not allow to cancel booking that are not 3 days before the appointment date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Else
             MessageBox.Show("Please select the row for booking cancellation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
