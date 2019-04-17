@@ -38,6 +38,10 @@ Public Class FrmBooking
             Me.Close()
         ElseIf result = DialogResult.Yes Then
             insertBooking(ID)
+            initSlotName()
+            CheckSlot()
+            resetSlot()
+            initAvailableSlot()
         End If
     End Sub
 
@@ -60,21 +64,35 @@ Public Class FrmBooking
                 .Status = "Pending"'Convert.ToInt32(lstTimeslot.SelectedItem.ToString)
             }
 
-            Debug.Print(s.CustID)
-
             db.Bookings.InsertOnSubmit(s)
             db.SubmitChanges()
+
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("FBSConnectionString").ConnectionString
+            Dim conn As New SqlConnection(strConn)
+
+            Dim identitySQL As String = "SELECT IDENT_CURRENT('Booking')"
+            Dim cmd As New SqlCommand(identitySQL, conn)
+
+            conn.Open()
+
+            Dim lastIdent As Integer = cmd.ExecuteScalar
+
+            Debug.Print("sadsadsadsa" & lastIdent)
+
+            conn.Close()
 
             Dim slot As New Timeslot With {
                 .Slot = lstTimeslot.SelectedIndex + 1,
                 .[Date] = dtpBooking.Value,
                 .Status = False,
                 .VenueID = cbVenue.SelectedValue,
-                .Time = lstTimeslot.SelectedItem.ToString
+                .Time = lstTimeslot.SelectedItem.ToString,
+                .BookingID = lastIdent
             }
 
             db.Timeslots.InsertOnSubmit(slot)
             db.SubmitChanges()
+
             MessageBox.Show("Successfully insert record")
         Catch ex As Exception
             MessageBox.Show(ex.ToString())

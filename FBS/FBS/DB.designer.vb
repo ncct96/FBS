@@ -31,11 +31,11 @@ Partial Public Class DBDataContext
   #Region "Extensibility Method Definitions"
   Partial Private Sub OnCreated()
   End Sub
-  Partial Private Sub InsertTimeslot(instance As Timeslot)
+  Partial Private Sub InsertBooking(instance As Booking)
     End Sub
-  Partial Private Sub UpdateTimeslot(instance As Timeslot)
+  Partial Private Sub UpdateBooking(instance As Booking)
     End Sub
-  Partial Private Sub DeleteTimeslot(instance As Timeslot)
+  Partial Private Sub DeleteBooking(instance As Booking)
     End Sub
   Partial Private Sub InsertCustomer(instance As Customer)
     End Sub
@@ -43,11 +43,11 @@ Partial Public Class DBDataContext
     End Sub
   Partial Private Sub DeleteCustomer(instance As Customer)
     End Sub
-  Partial Private Sub InsertBooking(instance As Booking)
+  Partial Private Sub InsertTimeslot(instance As Timeslot)
     End Sub
-  Partial Private Sub UpdateBooking(instance As Booking)
+  Partial Private Sub UpdateTimeslot(instance As Timeslot)
     End Sub
-  Partial Private Sub DeleteBooking(instance As Booking)
+  Partial Private Sub DeleteTimeslot(instance As Timeslot)
     End Sub
   Partial Private Sub InsertVenue(instance As Venue)
     End Sub
@@ -82,9 +82,9 @@ Partial Public Class DBDataContext
 		OnCreated
 	End Sub
 	
-	Public ReadOnly Property Timeslots() As System.Data.Linq.Table(Of Timeslot)
+	Public ReadOnly Property Bookings() As System.Data.Linq.Table(Of Booking)
 		Get
-			Return Me.GetTable(Of Timeslot)
+			Return Me.GetTable(Of Booking)
 		End Get
 	End Property
 	
@@ -94,9 +94,9 @@ Partial Public Class DBDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property Bookings() As System.Data.Linq.Table(Of Booking)
+	Public ReadOnly Property Timeslots() As System.Data.Linq.Table(Of Timeslot)
 		Get
-			Return Me.GetTable(Of Booking)
+			Return Me.GetTable(Of Timeslot)
 		End Get
 	End Property
 	
@@ -107,25 +107,31 @@ Partial Public Class DBDataContext
 	End Property
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Timeslot")>  _
-Partial Public Class Timeslot
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Booking")>  _
+Partial Public Class Booking
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
 	
-	Private _Time As String
+	Private _BookingID As Integer
 	
-	Private _Date As Date
+	Private _BookingDate As System.Nullable(Of Date)
 	
-	Private _VenueID As Integer
+	Private _BookingTime As String
 	
-	Private _Status As System.Nullable(Of Boolean)
+	Private _VisitDate As System.Nullable(Of Date)
 	
-	Private _SlotID As Integer
+	Private _BookingCharges As System.Nullable(Of Decimal)
 	
-	Private _Slot As Integer
+	Private _CustID As Integer
 	
-	Private _Venue As EntityRef(Of Venue)
+	Private _SlotID As System.Nullable(Of Integer)
+	
+	Private _Status As String
+	
+	Private _Timeslots As EntitySet(Of Timeslot)
+	
+	Private _Customer As EntityRef(Of Customer)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -134,115 +140,155 @@ Partial Public Class Timeslot
     End Sub
     Partial Private Sub OnCreated()
     End Sub
-    Partial Private Sub OnTimeChanging(value As String)
+    Partial Private Sub OnBookingIDChanging(value As Integer)
     End Sub
-    Partial Private Sub OnTimeChanged()
+    Partial Private Sub OnBookingIDChanged()
     End Sub
-    Partial Private Sub OnDateChanging(value As Date)
+    Partial Private Sub OnBookingDateChanging(value As System.Nullable(Of Date))
     End Sub
-    Partial Private Sub OnDateChanged()
+    Partial Private Sub OnBookingDateChanged()
     End Sub
-    Partial Private Sub OnVenueIDChanging(value As Integer)
+    Partial Private Sub OnBookingTimeChanging(value As String)
     End Sub
-    Partial Private Sub OnVenueIDChanged()
+    Partial Private Sub OnBookingTimeChanged()
     End Sub
-    Partial Private Sub OnStatusChanging(value As System.Nullable(Of Boolean))
+    Partial Private Sub OnVisitDateChanging(value As System.Nullable(Of Date))
     End Sub
-    Partial Private Sub OnStatusChanged()
+    Partial Private Sub OnVisitDateChanged()
     End Sub
-    Partial Private Sub OnSlotIDChanging(value As Integer)
+    Partial Private Sub OnBookingChargesChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnBookingChargesChanged()
+    End Sub
+    Partial Private Sub OnCustIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCustIDChanged()
+    End Sub
+    Partial Private Sub OnSlotIDChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnSlotIDChanged()
     End Sub
-    Partial Private Sub OnSlotChanging(value As Integer)
+    Partial Private Sub OnStatusChanging(value As String)
     End Sub
-    Partial Private Sub OnSlotChanged()
+    Partial Private Sub OnStatusChanged()
     End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
-		Me._Venue = CType(Nothing, EntityRef(Of Venue))
+		Me._Timeslots = New EntitySet(Of Timeslot)(AddressOf Me.attach_Timeslots, AddressOf Me.detach_Timeslots)
+		Me._Customer = CType(Nothing, EntityRef(Of Customer))
 		OnCreated
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Time", DbType:="NVarChar(MAX)")>  _
-	Public Property Time() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property BookingID() As Integer
 		Get
-			Return Me._Time
+			Return Me._BookingID
 		End Get
 		Set
-			If (String.Equals(Me._Time, value) = false) Then
-				Me.OnTimeChanging(value)
+			If ((Me._BookingID = value)  _
+						= false) Then
+				Me.OnBookingIDChanging(value)
 				Me.SendPropertyChanging
-				Me._Time = value
-				Me.SendPropertyChanged("Time")
-				Me.OnTimeChanged
+				Me._BookingID = value
+				Me.SendPropertyChanged("BookingID")
+				Me.OnBookingIDChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date NOT NULL")>  _
-	Public Property [Date]() As Date
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingDate", DbType:="Date")>  _
+	Public Property BookingDate() As System.Nullable(Of Date)
 		Get
-			Return Me._Date
+			Return Me._BookingDate
 		End Get
 		Set
-			If ((Me._Date = value)  _
-						= false) Then
-				Me.OnDateChanging(value)
+			If (Me._BookingDate.Equals(value) = false) Then
+				Me.OnBookingDateChanging(value)
 				Me.SendPropertyChanging
-				Me._Date = value
-				Me.SendPropertyChanged("[Date]")
-				Me.OnDateChanged
+				Me._BookingDate = value
+				Me.SendPropertyChanged("BookingDate")
+				Me.OnBookingDateChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VenueID", DbType:="Int NOT NULL")>  _
-	Public Property VenueID() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingTime", DbType:="NVarChar(50)")>  _
+	Public Property BookingTime() As String
 		Get
-			Return Me._VenueID
+			Return Me._BookingTime
 		End Get
 		Set
-			If ((Me._VenueID = value)  _
+			If (String.Equals(Me._BookingTime, value) = false) Then
+				Me.OnBookingTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._BookingTime = value
+				Me.SendPropertyChanged("BookingTime")
+				Me.OnBookingTimeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VisitDate", DbType:="Date")>  _
+	Public Property VisitDate() As System.Nullable(Of Date)
+		Get
+			Return Me._VisitDate
+		End Get
+		Set
+			If (Me._VisitDate.Equals(value) = false) Then
+				Me.OnVisitDateChanging(value)
+				Me.SendPropertyChanging
+				Me._VisitDate = value
+				Me.SendPropertyChanged("VisitDate")
+				Me.OnVisitDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingCharges", DbType:="Money")>  _
+	Public Property BookingCharges() As System.Nullable(Of Decimal)
+		Get
+			Return Me._BookingCharges
+		End Get
+		Set
+			If (Me._BookingCharges.Equals(value) = false) Then
+				Me.OnBookingChargesChanging(value)
+				Me.SendPropertyChanging
+				Me._BookingCharges = value
+				Me.SendPropertyChanged("BookingCharges")
+				Me.OnBookingChargesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CustID", DbType:="Int NOT NULL")>  _
+	Public Property CustID() As Integer
+		Get
+			Return Me._CustID
+		End Get
+		Set
+			If ((Me._CustID = value)  _
 						= false) Then
-				If Me._Venue.HasLoadedOrAssignedValue Then
+				If Me._Customer.HasLoadedOrAssignedValue Then
 					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
 				End If
-				Me.OnVenueIDChanging(value)
+				Me.OnCustIDChanging(value)
 				Me.SendPropertyChanging
-				Me._VenueID = value
-				Me.SendPropertyChanged("VenueID")
-				Me.OnVenueIDChanged
+				Me._CustID = value
+				Me.SendPropertyChanged("CustID")
+				Me.OnCustIDChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="Bit")>  _
-	Public Property Status() As System.Nullable(Of Boolean)
-		Get
-			Return Me._Status
-		End Get
-		Set
-			If (Me._Status.Equals(value) = false) Then
-				Me.OnStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._Status = value
-				Me.SendPropertyChanged("Status")
-				Me.OnStatusChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SlotID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property SlotID() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SlotID", DbType:="Int")>  _
+	Public Property SlotID() As System.Nullable(Of Integer)
 		Get
 			Return Me._SlotID
 		End Get
 		Set
-			If ((Me._SlotID = value)  _
-						= false) Then
+			If (Me._SlotID.Equals(value) = false) Then
 				Me.OnSlotIDChanging(value)
 				Me.SendPropertyChanging
 				Me._SlotID = value
@@ -252,47 +298,56 @@ Partial Public Class Timeslot
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Slot", DbType:="Int NOT NULL")>  _
-	Public Property Slot() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="NVarChar(50)")>  _
+	Public Property Status() As String
 		Get
-			Return Me._Slot
+			Return Me._Status
 		End Get
 		Set
-			If ((Me._Slot = value)  _
-						= false) Then
-				Me.OnSlotChanging(value)
+			If (String.Equals(Me._Status, value) = false) Then
+				Me.OnStatusChanging(value)
 				Me.SendPropertyChanging
-				Me._Slot = value
-				Me.SendPropertyChanged("Slot")
-				Me.OnSlotChanged
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Venue_Timeslot", Storage:="_Venue", ThisKey:="VenueID", OtherKey:="VenueID", IsForeignKey:=true)>  _
-	Public Property Venue() As Venue
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Booking_Timeslot", Storage:="_Timeslots", ThisKey:="BookingID", OtherKey:="BookingID")>  _
+	Public Property Timeslots() As EntitySet(Of Timeslot)
 		Get
-			Return Me._Venue.Entity
+			Return Me._Timeslots
 		End Get
 		Set
-			Dim previousValue As Venue = Me._Venue.Entity
+			Me._Timeslots.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Customer_Booking", Storage:="_Customer", ThisKey:="CustID", OtherKey:="CustID", IsForeignKey:=true)>  _
+	Public Property Customer() As Customer
+		Get
+			Return Me._Customer.Entity
+		End Get
+		Set
+			Dim previousValue As Customer = Me._Customer.Entity
 			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Venue.HasLoadedOrAssignedValue = false)) Then
+						OrElse (Me._Customer.HasLoadedOrAssignedValue = false)) Then
 				Me.SendPropertyChanging
 				If ((previousValue Is Nothing)  _
 							= false) Then
-					Me._Venue.Entity = Nothing
-					previousValue.Timeslots.Remove(Me)
+					Me._Customer.Entity = Nothing
+					previousValue.Bookings.Remove(Me)
 				End If
-				Me._Venue.Entity = value
+				Me._Customer.Entity = value
 				If ((value Is Nothing)  _
 							= false) Then
-					value.Timeslots.Add(Me)
-					Me._VenueID = value.VenueID
+					value.Bookings.Add(Me)
+					Me._CustID = value.CustID
 				Else
-					Me._VenueID = CType(Nothing, Integer)
+					Me._CustID = CType(Nothing, Integer)
 				End If
-				Me.SendPropertyChanged("Venue")
+				Me.SendPropertyChanged("Customer")
 			End If
 		End Set
 	End Property
@@ -313,6 +368,16 @@ Partial Public Class Timeslot
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+	
+	Private Sub attach_Timeslots(ByVal entity As Timeslot)
+		Me.SendPropertyChanging
+		entity.Booking = Me
+	End Sub
+	
+	Private Sub detach_Timeslots(ByVal entity As Timeslot)
+		Me.SendPropertyChanging
+		entity.Booking = Nothing
 	End Sub
 End Class
 
@@ -467,29 +532,29 @@ Partial Public Class Customer
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Booking")>  _
-Partial Public Class Booking
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Timeslot")>  _
+Partial Public Class Timeslot
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
 	
-	Private _BookingID As Integer
+	Private _Time As String
 	
-	Private _BookingDate As System.Nullable(Of Date)
+	Private _Date As Date
 	
-	Private _BookingTime As String
+	Private _VenueID As Integer
 	
-	Private _VisitDate As System.Nullable(Of Date)
+	Private _Status As System.Nullable(Of Boolean)
 	
-	Private _BookingCharges As System.Nullable(Of Decimal)
+	Private _SlotID As Integer
 	
-	Private _CustID As Integer
+	Private _Slot As Integer
 	
-	Private _SlotID As System.Nullable(Of Integer)
+	Private _BookingID As System.Nullable(Of Integer)
 	
-	Private _Status As String
+	Private _Booking As EntityRef(Of Booking)
 	
-	Private _Customer As EntityRef(Of Customer)
+	Private _Venue As EntityRef(Of Venue)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -498,170 +563,103 @@ Partial Public Class Booking
     End Sub
     Partial Private Sub OnCreated()
     End Sub
-    Partial Private Sub OnBookingIDChanging(value As Integer)
+    Partial Private Sub OnTimeChanging(value As String)
     End Sub
-    Partial Private Sub OnBookingIDChanged()
+    Partial Private Sub OnTimeChanged()
     End Sub
-    Partial Private Sub OnBookingDateChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnDateChanging(value As Date)
     End Sub
-    Partial Private Sub OnBookingDateChanged()
+    Partial Private Sub OnDateChanged()
     End Sub
-    Partial Private Sub OnBookingTimeChanging(value As String)
+    Partial Private Sub OnVenueIDChanging(value As Integer)
     End Sub
-    Partial Private Sub OnBookingTimeChanged()
+    Partial Private Sub OnVenueIDChanged()
     End Sub
-    Partial Private Sub OnVisitDateChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnStatusChanging(value As System.Nullable(Of Boolean))
     End Sub
-    Partial Private Sub OnVisitDateChanged()
+    Partial Private Sub OnStatusChanged()
     End Sub
-    Partial Private Sub OnBookingChargesChanging(value As System.Nullable(Of Decimal))
-    End Sub
-    Partial Private Sub OnBookingChargesChanged()
-    End Sub
-    Partial Private Sub OnCustIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnCustIDChanged()
-    End Sub
-    Partial Private Sub OnSlotIDChanging(value As System.Nullable(Of Integer))
+    Partial Private Sub OnSlotIDChanging(value As Integer)
     End Sub
     Partial Private Sub OnSlotIDChanged()
     End Sub
-    Partial Private Sub OnStatusChanging(value As String)
+    Partial Private Sub OnSlotChanging(value As Integer)
     End Sub
-    Partial Private Sub OnStatusChanged()
+    Partial Private Sub OnSlotChanged()
+    End Sub
+    Partial Private Sub OnBookingIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnBookingIDChanged()
     End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
-		Me._Customer = CType(Nothing, EntityRef(Of Customer))
+		Me._Booking = CType(Nothing, EntityRef(Of Booking))
+		Me._Venue = CType(Nothing, EntityRef(Of Venue))
 		OnCreated
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property BookingID() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Time", DbType:="NVarChar(MAX)")>  _
+	Public Property Time() As String
 		Get
-			Return Me._BookingID
+			Return Me._Time
 		End Get
 		Set
-			If ((Me._BookingID = value)  _
+			If (String.Equals(Me._Time, value) = false) Then
+				Me.OnTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._Time = value
+				Me.SendPropertyChanged("Time")
+				Me.OnTimeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date NOT NULL")>  _
+	Public Property [Date]() As Date
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If ((Me._Date = value)  _
 						= false) Then
-				Me.OnBookingIDChanging(value)
+				Me.OnDateChanging(value)
 				Me.SendPropertyChanging
-				Me._BookingID = value
-				Me.SendPropertyChanged("BookingID")
-				Me.OnBookingIDChanged
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingDate", DbType:="Date")>  _
-	Public Property BookingDate() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VenueID", DbType:="Int NOT NULL")>  _
+	Public Property VenueID() As Integer
 		Get
-			Return Me._BookingDate
+			Return Me._VenueID
 		End Get
 		Set
-			If (Me._BookingDate.Equals(value) = false) Then
-				Me.OnBookingDateChanging(value)
-				Me.SendPropertyChanging
-				Me._BookingDate = value
-				Me.SendPropertyChanged("BookingDate")
-				Me.OnBookingDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingTime", DbType:="NVarChar(50)")>  _
-	Public Property BookingTime() As String
-		Get
-			Return Me._BookingTime
-		End Get
-		Set
-			If (String.Equals(Me._BookingTime, value) = false) Then
-				Me.OnBookingTimeChanging(value)
-				Me.SendPropertyChanging
-				Me._BookingTime = value
-				Me.SendPropertyChanged("BookingTime")
-				Me.OnBookingTimeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VisitDate", DbType:="Date")>  _
-	Public Property VisitDate() As System.Nullable(Of Date)
-		Get
-			Return Me._VisitDate
-		End Get
-		Set
-			If (Me._VisitDate.Equals(value) = false) Then
-				Me.OnVisitDateChanging(value)
-				Me.SendPropertyChanging
-				Me._VisitDate = value
-				Me.SendPropertyChanged("VisitDate")
-				Me.OnVisitDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingCharges", DbType:="Money")>  _
-	Public Property BookingCharges() As System.Nullable(Of Decimal)
-		Get
-			Return Me._BookingCharges
-		End Get
-		Set
-			If (Me._BookingCharges.Equals(value) = false) Then
-				Me.OnBookingChargesChanging(value)
-				Me.SendPropertyChanging
-				Me._BookingCharges = value
-				Me.SendPropertyChanged("BookingCharges")
-				Me.OnBookingChargesChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CustID", DbType:="Int NOT NULL")>  _
-	Public Property CustID() As Integer
-		Get
-			Return Me._CustID
-		End Get
-		Set
-			If ((Me._CustID = value)  _
+			If ((Me._VenueID = value)  _
 						= false) Then
-				If Me._Customer.HasLoadedOrAssignedValue Then
+				If Me._Venue.HasLoadedOrAssignedValue Then
 					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
 				End If
-				Me.OnCustIDChanging(value)
+				Me.OnVenueIDChanging(value)
 				Me.SendPropertyChanging
-				Me._CustID = value
-				Me.SendPropertyChanged("CustID")
-				Me.OnCustIDChanged
+				Me._VenueID = value
+				Me.SendPropertyChanged("VenueID")
+				Me.OnVenueIDChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SlotID", DbType:="Int")>  _
-	Public Property SlotID() As System.Nullable(Of Integer)
-		Get
-			Return Me._SlotID
-		End Get
-		Set
-			If (Me._SlotID.Equals(value) = false) Then
-				Me.OnSlotIDChanging(value)
-				Me.SendPropertyChanging
-				Me._SlotID = value
-				Me.SendPropertyChanged("SlotID")
-				Me.OnSlotIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="NVarChar(50)")>  _
-	Public Property Status() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="Bit")>  _
+	Public Property Status() As System.Nullable(Of Boolean)
 		Get
 			Return Me._Status
 		End Get
 		Set
-			If (String.Equals(Me._Status, value) = false) Then
+			If (Me._Status.Equals(value) = false) Then
 				Me.OnStatusChanging(value)
 				Me.SendPropertyChanging
 				Me._Status = value
@@ -671,30 +669,111 @@ Partial Public Class Booking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Customer_Booking", Storage:="_Customer", ThisKey:="CustID", OtherKey:="CustID", IsForeignKey:=true)>  _
-	Public Property Customer() As Customer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SlotID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property SlotID() As Integer
 		Get
-			Return Me._Customer.Entity
+			Return Me._SlotID
 		End Get
 		Set
-			Dim previousValue As Customer = Me._Customer.Entity
+			If ((Me._SlotID = value)  _
+						= false) Then
+				Me.OnSlotIDChanging(value)
+				Me.SendPropertyChanging
+				Me._SlotID = value
+				Me.SendPropertyChanged("SlotID")
+				Me.OnSlotIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Slot", DbType:="Int NOT NULL")>  _
+	Public Property Slot() As Integer
+		Get
+			Return Me._Slot
+		End Get
+		Set
+			If ((Me._Slot = value)  _
+						= false) Then
+				Me.OnSlotChanging(value)
+				Me.SendPropertyChanging
+				Me._Slot = value
+				Me.SendPropertyChanged("Slot")
+				Me.OnSlotChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BookingID", DbType:="Int")>  _
+	Public Property BookingID() As System.Nullable(Of Integer)
+		Get
+			Return Me._BookingID
+		End Get
+		Set
+			If (Me._BookingID.Equals(value) = false) Then
+				If Me._Booking.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnBookingIDChanging(value)
+				Me.SendPropertyChanging
+				Me._BookingID = value
+				Me.SendPropertyChanged("BookingID")
+				Me.OnBookingIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Booking_Timeslot", Storage:="_Booking", ThisKey:="BookingID", OtherKey:="BookingID", IsForeignKey:=true)>  _
+	Public Property Booking() As Booking
+		Get
+			Return Me._Booking.Entity
+		End Get
+		Set
+			Dim previousValue As Booking = Me._Booking.Entity
 			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Customer.HasLoadedOrAssignedValue = false)) Then
+						OrElse (Me._Booking.HasLoadedOrAssignedValue = false)) Then
 				Me.SendPropertyChanging
 				If ((previousValue Is Nothing)  _
 							= false) Then
-					Me._Customer.Entity = Nothing
-					previousValue.Bookings.Remove(Me)
+					Me._Booking.Entity = Nothing
+					previousValue.Timeslots.Remove(Me)
 				End If
-				Me._Customer.Entity = value
+				Me._Booking.Entity = value
 				If ((value Is Nothing)  _
 							= false) Then
-					value.Bookings.Add(Me)
-					Me._CustID = value.CustID
+					value.Timeslots.Add(Me)
+					Me._BookingID = value.BookingID
 				Else
-					Me._CustID = CType(Nothing, Integer)
+					Me._BookingID = CType(Nothing, Nullable(Of Integer))
 				End If
-				Me.SendPropertyChanged("Customer")
+				Me.SendPropertyChanged("Booking")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Venue_Timeslot", Storage:="_Venue", ThisKey:="VenueID", OtherKey:="VenueID", IsForeignKey:=true)>  _
+	Public Property Venue() As Venue
+		Get
+			Return Me._Venue.Entity
+		End Get
+		Set
+			Dim previousValue As Venue = Me._Venue.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Venue.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Venue.Entity = Nothing
+					previousValue.Timeslots.Remove(Me)
+				End If
+				Me._Venue.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Timeslots.Add(Me)
+					Me._VenueID = value.VenueID
+				Else
+					Me._VenueID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("Venue")
 			End If
 		End Set
 	End Property
@@ -832,7 +911,7 @@ Partial Public Class Venue
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VenuePicture", DbType:="Image", CanBeNull:=true, UpdateCheck:=UpdateCheck.Never)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VenuePicture", DbType:="Image", UpdateCheck:=UpdateCheck.Never)>  _
 	Public Property VenuePicture() As System.Data.Linq.Binary
 		Get
 			Return Me._VenuePicture
