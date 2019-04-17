@@ -113,6 +113,7 @@ Public Class BookingHistory
                 deleteCommand.ExecuteNonQuery()
                 MessageBox.Show("Booking Cancelled", "Cancel Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 connection.Close()
+                refreshData()
             Else
 
             End If
